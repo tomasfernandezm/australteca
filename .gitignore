@@ -9,7 +9,7 @@
 *.ear
 
 /gradle/*
-/.idea/*
+.idea/
 /build/*
 /db/*
 /out/*

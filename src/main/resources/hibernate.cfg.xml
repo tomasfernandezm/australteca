@@ -13,13 +13,13 @@
 
         <!-- Assume test is the database name -->
         <property name="hibernate.connection.url">
-            jdbc:hsqldb:file:/home/tomi/projects/australteca/db/database
+            jdbc:hsqldb:hsql://localhost/australteca
         </property>
 
         <property name="hbm2ddl.auto">create</property>
 
         <property name="hibernate.connection.username">
-            sa
+            SA
         </property>
         <property name="hibernate.connection.password">
 
