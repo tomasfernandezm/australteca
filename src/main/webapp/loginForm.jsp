@@ -1,12 +1,10 @@
 <%@ page import="org.securityfilter.example.Constants"%>
 
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <title><%=Constants.LOGIN_TITLE%></title>
     </head>
-
     <body>
 
         <h1><%=Constants.LOGIN_TITLE%></h1>

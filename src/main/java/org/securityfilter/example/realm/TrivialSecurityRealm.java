@@ -105,7 +105,7 @@ public class TrivialSecurityRealm extends SimpleSecurityRealmBase {
    }
 
    /**
-    * Setter for exampleProperty to deomonstrate setting realm properties from config file.
+    * Setter for exampleProperty to demonstrate setting realm properties from config file.
     *
     * This has no effect other than printing a message when the property is set.
     *

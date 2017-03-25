@@ -4,15 +4,21 @@
     "-//SecurityFilter.org//DTD Security Filter Configuration 2.0//EN"
     "http://www.securityfilter.org/dtd/securityfilter-config_2_0.dtd">
 
+<!-- securityfilter-config is the configuration of the security filter -->
+
 <securityfilter-config>
 
+    <!-- security-constraint acts as a filter for a specific jsp page
+    -->
    <security-constraint>
       <web-resource-collection>
          <web-resource-name>Secure Page</web-resource-name>
          <url-pattern>/securePage.jsp</url-pattern>
       </web-resource-collection>
       <auth-constraint>
-         <role-name>inthisrole</role-name>
+          <!-- Role del usuario, sirve para identificar al usuario y para determinar
+          si el tipo de usuario puede estar en estas páginas, a medida que hagamos más, habrá que ir agregando -->
+          <role-name>user</role-name>
       </auth-constraint>
    </security-constraint>
 
@@ -35,8 +41,8 @@
       </form-login-config>
    </login-config>
 
-   <realm className="org.securityfilter.example.realm.TrivialSecurityRealm">
-      <realm-param name="exampleProperty" value="it works!" />
+   <realm className="org.securityfilter.example.realm.LoginSecurityRealm">
+      <realm-param name="exampleProperty" value="it works!" /> <!-- Ni idea que es esto-->
    </realm>
 
 </securityfilter-config>
