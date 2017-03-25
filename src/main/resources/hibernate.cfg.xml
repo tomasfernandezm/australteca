@@ -24,6 +24,6 @@
         <property name="hibernate.connection.password">
 
         </property>
-        <mapping class="Employee"/>
+        <mapping class="entity.User"/>
     </session-factory>
 </hibernate-configuration>
