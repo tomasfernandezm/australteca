@@ -21,3 +21,4 @@ db/
 gradle/
 lib/
 .gradle/
+.DS_Store

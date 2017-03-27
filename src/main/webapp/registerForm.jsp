@@ -17,7 +17,7 @@
     <form id="<%=Constants.LOGIN_FORM_ID%>" action="<%=response.encodeURL(Constants.LOGIN_FORM_ACTION)%>" method="POST">
 
         Email:
-            <input type="text" name= "mail"/>
+        <input type="text" name= "mail"/>
 
         Password:
         <input type="password" name="password" />
