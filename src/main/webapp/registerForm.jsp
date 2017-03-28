@@ -1,4 +1,6 @@
-<%@ page import="org.securityfilter.example.Constants" %><%--
+<%@ page import="org.securityfilter.example.Constants" %>
+<%@ page import="org.securityfilter.example.MyConstants" %>
+<%@ page import="entity.User" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 26/3/17
@@ -12,18 +14,25 @@
     <title><%=Constants.LOGIN_TITLE%></title>
 </head>
 <body>
-<h1> Australteca </h1>
+<h1><%=MyConstants.MY_HOME_TITLE%></h1>
+
 <%@include file="/menu.jsp" %>
-    <form id="<%=Constants.LOGIN_FORM_ID%>" action="<%=response.encodeURL(Constants.LOGIN_FORM_ACTION)%>" method="POST">
+    <form id="<%=MyConstants.REGISTER_FORM_ID%>" action="registerConfirmation.jsp" method="POST">
+
+        Name:
+        <input type="text" name= "name"/>
+
+        Lastname:
+        <input type="text" name= "lastname"/>
 
         Email:
-        <input type="text" name= "mail"/>
+        <input type="text" name= "email"/>
 
         Password:
         <input type="password" name="password" />
 
         Password confirmation:
-        <input type="password" name="password2" />
+        <input type="password" name="passwordC" />
 
 
         <select name="career">
@@ -32,7 +41,9 @@
         </select>
 
 
+
     <input type="Submit" name="Unirme">
+
 
 </form>
 
