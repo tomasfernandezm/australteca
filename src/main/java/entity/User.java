@@ -1,8 +1,8 @@
 package entity;
 
-import org.hibernate.sql.ordering.antlr.GeneratedOrderByFragmentRendererTokenTypes;
-
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by tomi on 22/03/17.
@@ -35,16 +35,50 @@ public class User {
     @Column(name = "ROLE")
     private String role;
 
+    @ManyToMany
+    private List<Subject> subjects = new ArrayList<Subject>();
+
+    private boolean moderator;
+    private boolean admin;
+
     public User() {
     }
 
-    public User(String firstName, String lastName, String email, String course, String password, String role) {
+    public User(String firstName, String lastName, String email, String course,
+                String password, boolean moderator, boolean admin) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.course = course;
         this.password = password;
-        this.role = role;
+        this.moderator = moderator;
+        this.admin = admin;
+        assignRole();
+    }
+
+    public void makeModerator() {
+        moderator = false;
+        admin = true;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void makeAdmin(){
+        admin = true;
+        moderator = false;
+    }
+
+    public void makeStandard(){
+        admin = moderator = false;
+    }
+
+    private void assignRole(){
+        if(admin) role = "admin";
+        else if(moderator) role = "moderator";
+        else role = "user";
     }
 
     public String getId() {
@@ -97,9 +131,5 @@ public class User {
 
     public String getRole() {
         return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }

@@ -16,7 +16,7 @@ public class UserManager {
     public static int saveUser(String name, String lName, String email, String password, String passwordC, String career){
         int status = -1;
         if(name != null && lName!=null && checkEmail(email) && checkPassword(password, passwordC)) {
-            User userRegister = new User(name, lName, email, career, password, "user");
+            User userRegister = new User(name, lName, email, career, password, false, false);
             addDB(userRegister);
             status = 1;
         }

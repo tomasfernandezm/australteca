@@ -16,7 +16,9 @@
             jdbc:hsqldb:hsql://localhost/australteca
         </property>
 
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">
+            update
+        </property>
 
         <property name="hibernate.connection.username">
             SA
