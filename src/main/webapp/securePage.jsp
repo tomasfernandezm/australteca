@@ -11,7 +11,8 @@
 
         <h1><%=Constants.SECURE_TITLE%></h1>
 
-        <%@include file="/menu.jsp" %>
+        <%@include file="/menuSF.jsp" %>
+        | <a href="<%=response.encodeURL("logout.jsp")%>">Cerrar Sesion</a>
 
         Welcome <i><%=request.getRemoteUser()%></i>, you are viewing a secure page.
 

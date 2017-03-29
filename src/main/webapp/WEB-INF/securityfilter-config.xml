@@ -14,6 +14,7 @@
       <web-resource-collection>
          <web-resource-name>Secure Page</web-resource-name>
          <url-pattern>/securePage.jsp</url-pattern>
+         <url-pattern>/subject.jsp</url-pattern>
       </web-resource-collection>
       <auth-constraint>
           <!-- Role del usuario, sirve para identificar al usuario y para determinar

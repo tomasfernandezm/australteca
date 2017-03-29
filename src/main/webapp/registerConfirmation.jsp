@@ -37,7 +37,7 @@
 <a href="loginForm.jsp">Iniciar sesión</a>
 <% } else { %>
 <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
-<a href="registerForm.jsp">Registrarse</a>
+<a href="loginForm.jsp">Registrarse</a>
 <% } %>
 
 </body>

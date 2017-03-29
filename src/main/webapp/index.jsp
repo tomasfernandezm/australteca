@@ -1,4 +1,5 @@
 <%@ page import="org.securityfilter.example.Constants"%>
+<%@ page import="org.securityfilter.example.MyConstants" %>
 
 <html>
 
@@ -8,8 +9,8 @@
     </head>
 
     <body>
-        <h1><%=Constants.HOME_TITLE%></h1>
-        <%@include file="/menu.jsp" %>
+        <h1><%=MyConstants.MY_HOME_TITLE%></h1>
+        <%@include file="/mainMenu/mainMenu.jsp" %>
         Welcome to the Security Filter example application. Use the menu above to navigate the site.
 
         <h2>POST to the Secure Page</h2>

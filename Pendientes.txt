@@ -1,0 +1,4 @@
+Cosas que hay que hacer:
+1-chequear mail
+2-Empezar materia ABM
+3-baja y modificacion de usuario
