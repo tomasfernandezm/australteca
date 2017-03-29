@@ -14,7 +14,7 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
     @Override
     public boolean booleanAuthenticate(String username, String password) {
         User user = getUser(username);
-        if(user != null && user.getId().equals(username) && user.getPassword().equals(password)){
+        if(user != null && user.getEmail().equals(username) && user.getPassword().equals(password)){
             return true;
         }else{
             return false;
@@ -40,7 +40,6 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
     @Override
     public boolean isUserInRole(String username, String role) {
         User user = getUser(username);
-        if(user.getId().equals(username) && user.getRole().equals(role)) return true;
-        return false;
+        return user.getId().equals(username) && user.getRole().equals(role);
     }
 }

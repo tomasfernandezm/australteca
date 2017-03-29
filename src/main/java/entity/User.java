@@ -1,5 +1,7 @@
 package entity;
 
+import org.hibernate.sql.ordering.antlr.GeneratedOrderByFragmentRendererTokenTypes;
+
 import javax.persistence.*;
 
 /**
@@ -10,7 +12,7 @@ import javax.persistence.*;
 @Table(name = "USER")
 public class User {
 
-    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID")
     private String id;
 
@@ -20,6 +22,7 @@ public class User {
     @Column(name = "LNAME")
     private String lastName;
 
+    @Id
     @Column(name = "EMAIL")
     private String email;
 
@@ -35,8 +38,7 @@ public class User {
     public User() {
     }
 
-    public User(String id, String firstName, String lastName, String email, String course, String password, String role) {
-        this.id = id;
+    public User(String firstName, String lastName, String email, String course, String password, String role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

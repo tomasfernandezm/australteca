@@ -1,27 +1,22 @@
-package entity;
+package manager;
 
 import entity.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import util.HibernateUtil;
 
 
 /**
  * Created by tomasforman on 28/3/17.
  */
-public class Register {
-    private static SessionFactory factory;
-
-
-
-
-
+public class UserManager {
 
     public static int saveUser(String name, String lName, String email, String password, String passwordC, String career){
         int status = -1;
         if(name != null && lName!=null && checkEmail(email) && checkPassword(password, passwordC)) {
-            User userRegister = new User("6", name, lName, email, career, password, "user");
+            User userRegister = new User(name, lName, email, career, password, "user");
             addDB(userRegister);
             status = 1;
         }
@@ -29,17 +24,11 @@ public class Register {
     }
 
     private static void addDB(User user){
-        try{
-            factory = new org.hibernate.cfg.Configuration().configure().addAnnotatedClass(User.class).buildSessionFactory();
-        }catch (Throwable ex) {
-            System.err.println("Failed to create sessionFactory object." + ex);
-            throw new ExceptionInInitializerError(ex);
-        }
 
-        Session session = factory.openSession();
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = null;
-
         try{
+
             tx = session.beginTransaction();
             session.save(user);
             tx.commit();
@@ -57,7 +46,6 @@ public class Register {
         if(p1.equals(p2))return true;
         return false;
     }
-
 
     private static Boolean checkEmail(String email){
         return true;

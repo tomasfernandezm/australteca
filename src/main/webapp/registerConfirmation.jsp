@@ -8,13 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>entity.Register confirmation</title>
+    <title>manager.UserManager confirmation</title>
 </head>
 <body>
 
 <h1><%=MyConstants.MY_HOME_TITLE%></h1>
 
-<%@page import="entity.Register"%>
+<%@page import="manager.UserManager"%>
 <%@ page import="org.securityfilter.example.MyConstants" %>
 <jsp:useBean id="obj" class="entity.User"/>
 <jsp:setProperty property="*" name="obj"/>
@@ -28,7 +28,7 @@
         String passwordC = request.getParameter("passwordC");
         String career = request.getParameter("career");
 
-        int status = entity.Register.saveUser(name, lname, email, password, passwordC, career);
+        int status = UserManager.saveUser(name, lname, email, password, passwordC, career);
 
 
     %>
