@@ -34,6 +34,7 @@
     %>
 <% if (status > 0) { %>
 <p> Te has registrado correctamente!</p>
+<a href="loginForm.jsp">Iniciar sesión</a>
 <% } else { %>
 <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
 <a href="registerForm.jsp">Registrarse</a>

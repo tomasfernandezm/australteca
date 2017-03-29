@@ -21,7 +21,7 @@ public class Register {
     public static int saveUser(String name, String lName, String email, String password, String passwordC, String career){
         int status = -1;
         if(name != null && lName!=null && checkEmail(email) && checkPassword(password, passwordC)) {
-            User userRegister = new User("4", name, lName, email, career, password, "user");
+            User userRegister = new User("6", name, lName, email, career, password, "user");
             addDB(userRegister);
             status = 1;
         }
