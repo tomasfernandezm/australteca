@@ -35,8 +35,8 @@ public class User {
     @Column(name = "ROLE")
     private String role;
 
-    @ManyToMany
-    private List<Subject> subjects = new ArrayList<Subject>();
+    /*@ManyToMany
+    private List<Subject> subjects = new ArrayList<Subject>();*/
 
     private boolean moderator;
     private boolean admin;
