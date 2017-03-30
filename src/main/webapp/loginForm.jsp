@@ -26,12 +26,12 @@
 
 
         <form id="<%=MyConstants.REGISTER_FORM_ID%>" action="registerConfirmation.jsp" method="POST">
-            <div>
-                Name:
-                <input type="text" name= "name" required/>
+                <div>
+                    Name:
+                    <input type="text" name= "name" required/>
 
-                Lastname:
-                <input type="text" name= "lastname" required/>
+                    Lastname:
+                    <input type="text" name= "lastname" required/>
                 <div/>
 
                 <div>
@@ -57,7 +57,7 @@
                 </div>
 
 
-                <input type="Submit" name="Unirme">
+                <input type="Submit" value="Unirme">
 
 
         </form>
