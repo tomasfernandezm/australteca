@@ -1,53 +1,38 @@
 package manager;
 
+import com.sun.istack.internal.NotNull;
 import entity.User;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import util.HibernateUtil;
+
+import javax.persistence.EntityNotFoundException;
 
 
 /**
  * Created by tomasforman on 28/3/17.
  */
-public class UserManager {
+public class UserManager extends EntityManager<User> {
 
-    public static int saveUser(String name, String lName, String email, String password, String passwordC, String career){
-        int status = -1;
-        if(name != null && lName!=null && checkEmail(email) && checkPassword(password, passwordC)) {
+    public void add(@NotNull String name, @NotNull String lName, @NotNull String email,
+                   @NotNull String password, @NotNull String passwordC, @NotNull String career){
+
+        if(checkEmail(email) && checkPassword(password, passwordC)) {
             User userRegister = new User(name, lName, email, career, password, false, false);
-            addDB(userRegister);
-            status = 1;
-        }
-        return status;
-    }
-
-    private static void addDB(User user){
-
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction tx = null;
-        try{
-
-            tx = session.beginTransaction();
-            session.save(user);
-            tx.commit();
-        }catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
-            e.printStackTrace();
-        }finally {
-            session.close();
+            addToDatabase(userRegister);
         }
     }
 
+    public void modify(){
 
-    private static Boolean checkPassword(String p1, String p2){
-        if(p1 == null || p2 == null)return false;
-        if(p1.equals(p2))return true;
-        return false;
     }
 
-    private static Boolean checkEmail(String email){
+    public void delete(@NotNull Integer userID){
+        deleteFromDatabase(User.class, userID);
+    }
+
+    private boolean checkPassword(@NotNull String p1, @NotNull String p2){
+        return p1.equals(p2);
+    }
+
+    private boolean checkEmail(String email){
         return true;
     }
 }

@@ -12,16 +12,18 @@ import java.util.Date;
 public class Commentary {
 
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "ID")
+    @Column(name = "COMMENTARY_ID")
     private int id;
 
-    @Column (name = "CREATIONDATE")
+    @Temporal(TemporalType.DATE)
+    @Column (name = "COMMENTARY_CREATION_DATE")
     private Date creationDate;
 
-    @Column (name = "LASTMODIFICATIONDATE")
+    @Temporal(TemporalType.DATE)
+    @Column (name = "COMMENTARY_LAST_MODIFICATION_DATE")
     private Date lastModificationDate;
 
-    @Column (name = "COMMENTARY")
+    @Column (name = "COMMENTARY_COMMENTARY")
     private String commentary;
 
     @OneToOne
@@ -30,8 +32,8 @@ public class Commentary {
     public Commentary() {
     }
 
-    public Commentary(Date creationDate, String commentary, User author) {
-        this.creationDate = creationDate;
+    public Commentary(String commentary, User author) {
+        this.creationDate = new Date();
         this.lastModificationDate = creationDate;
         this.commentary = commentary;
         this.author = author;

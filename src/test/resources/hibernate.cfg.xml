@@ -27,5 +27,10 @@
 
         <property name="hibernate.current_session_context_class">thread</property>
         <mapping class="entity.User"/>
+        <mapping class="entity.Commentary"/>
+        <mapping class="entity.Subject"/>
+        <mapping class="entity.Professor"/>
+        <mapping class="manager.Entity"/>
+
     </session-factory>
 </hibernate-configuration>

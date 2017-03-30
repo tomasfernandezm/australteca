@@ -2,7 +2,9 @@ package entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by tomi on 29/03/17.
@@ -13,23 +15,26 @@ import java.util.List;
 public class Subject {
 
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "ID")
+    @Column(name = "SUBJECT_ID")
     private int id;
 
     @OneToMany
     private final List<Commentary> commentaryList = new ArrayList<Commentary>();
 
-    @Column (name = "SCORE")
+    @Column (name = "SUBJECT_SCORE")
     private double score;
 
-    @Column (name = "AMOUNTOFSCORES")
+    @Column (name = "SUBJECT_AMOUNT_OF_SCORES")
     private double amountOfScores;
 
-    @Column (name = "NAME")
+    @Column (name = "SUBJECT_NAME")
     private String subjectName;
 
     @ManyToMany
     private final List<Professor> professors = new ArrayList<Professor>();
+
+    @OneToMany
+    private final List<Commentary> commentaries = new ArrayList<Commentary>();
 
     @ManyToMany
     private final List<User> subscribedUsers = new ArrayList<User>();

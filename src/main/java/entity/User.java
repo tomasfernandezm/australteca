@@ -1,8 +1,12 @@
 package entity;
 
+import org.hibernate.annotations.ManyToAny;
+
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by tomi on 22/03/17.
@@ -12,34 +16,33 @@ import java.util.List;
 @Table(name = "USER")
 public class User {
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "ID")
-    private String id;
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "USER_ID")
+    private Integer id;
 
-    @Column(name = "FNAME")
+    @Column(name = "USER_FNAME")
     private String firstName;
 
-    @Column(name = "LNAME")
+    @Column(name = "USER_LNAME")
     private String lastName;
 
-    @Id
-    @Column(name = "EMAIL")
+    @Column(name = "USER_EMAIL", unique = true)
     private String email;
 
-    @Column(name = "COURSE")
+    @Column(name = "USER_COURSE")
     private String course;
 
-    @Column(name = "PASSWORD")
+    @Column(name = "USER_PASSWORD")
     private String password;
 
-    @Column(name = "ROLE")
+    @Column(name = "USER_ROLE")
     private String role;
 
-    /*@ManyToMany
-    private List<Subject> subjects = new ArrayList<Subject>();*/
+    @ManyToMany
+    private final List<Subject> subjects = new ArrayList<Subject>();
 
-    private boolean moderator;
-    private boolean admin;
+    @OneToMany
+    private final List<Commentary> commentaries = new ArrayList<Commentary>();
 
     public User() {
     }
@@ -52,41 +55,41 @@ public class User {
         this.email = email;
         this.course = course;
         this.password = password;
-        this.moderator = moderator;
-        this.admin = admin;
-        assignRole();
-    }
-
-    public void makeModerator() {
-        moderator = false;
-        admin = true;
-    }
-
-    public boolean isAdmin() {
-        return admin;
+        assignRole(moderator, admin);
     }
 
     public void makeAdmin(){
-        admin = true;
-        moderator = false;
+        role = EntityConstants.ADMINISTRATOR;
+    }
+
+    public void makeModerator(){
+        role = EntityConstants.MODERATOR;
     }
 
     public void makeStandard(){
-        admin = moderator = false;
+        role = EntityConstants.STANDARD;
     }
 
-    private void assignRole(){
-        if(admin) role = "admin";
-        else if(moderator) role = "moderator";
-        else role = "user";
+    public boolean isStandard(){
+        return role.equals(EntityConstants.STANDARD);
     }
 
-    public String getId() {
+    public boolean isModerator(){
+        return role.equals(EntityConstants.MODERATOR);
+    }
+
+    public boolean isAdmin(){
+        return role.equals(EntityConstants.ADMINISTRATOR);
+    }
+
+    private void assignRole(boolean admin, boolean moderator){
+        if(admin) role = EntityConstants.ADMINISTRATOR;
+        else if(moderator) role = EntityConstants.MODERATOR;
+        else role = EntityConstants.STANDARD;
+    }
+
+    public Integer getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getFirstName() {

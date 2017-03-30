@@ -22,8 +22,8 @@ public class LoginSecurityRealmTester {
         String userID = null;
         try{
             tx = session.beginTransaction();
-            User user = new User("testUser", "pepito", "gimenez",
-                    "elpepo@ing.austral.edu.ar", "informática", "password", "role");
+            User user = new User("pepito", "gimenez",
+                    "elpepo@ing.austral.edu.ar", "informática", "password", false, false);
             userID = (String) session.save(user);
             tx.commit();
         }catch (HibernateException e) {

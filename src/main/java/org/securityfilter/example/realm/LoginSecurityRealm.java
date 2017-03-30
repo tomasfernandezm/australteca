@@ -1,5 +1,6 @@
 package org.securityfilter.example.realm;
 
+import com.sun.istack.internal.NotNull;
 import entity.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -21,7 +22,7 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
         }
     }
 
-    private User getUser(String userID){
+    private User getUser(@NotNull String userID){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx =  null;
         User user = null;
