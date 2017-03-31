@@ -62,4 +62,8 @@ public class Commentary {
     public void setCommentary(String commentary) {
         this.commentary = commentary;
     }
+
+    public int getId() {
+        return id;
+    }
 }

@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import util.HibernateUtil;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.function.BiConsumer;
 
 /**
  * Created by tomi on 29/03/17.
@@ -24,19 +25,9 @@ public class ProfessorManager extends EntityManager<Professor> {
     }
 
     public void addSubject(@NotNull Integer professorID, @NotNull Subject subject){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction tx = null;
-        try{
-            tx = session.beginTransaction();
-            Professor professor = (Professor) session.get(Professor.class, professorID);
-            professor.addSubject(subject);
-            session.update(professor);
-            tx.commit();
-        }catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
-            e.printStackTrace();
-        }finally {
-            session.close();
-        }
+        BiConsumer<Professor, Subject> biConsumer = (professor, subjectToAdd) ->{
+            professor.getSubjects().add(subjectToAdd);
+        };
+        modify(Professor.class, professorID, subject, biConsumer);
     }
 }

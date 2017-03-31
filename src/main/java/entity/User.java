@@ -1,5 +1,6 @@
 package entity;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.*;
@@ -38,11 +39,11 @@ public class User {
     @Column(name = "USER_ROLE")
     private String role;
 
-    @ManyToMany
-    private final List<Subject> subjects = new ArrayList<Subject>();
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private final List<Subject> subjects = new ArrayList<>();
 
-    @OneToMany
-    private final List<Commentary> commentaries = new ArrayList<Commentary>();
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private final List<Commentary> commentaries = new ArrayList<>();
 
     public User() {
     }
@@ -134,5 +135,13 @@ public class User {
 
     public String getRole() {
         return role;
+    }
+
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public List<Commentary> getCommentaries() {
+        return commentaries;
     }
 }
