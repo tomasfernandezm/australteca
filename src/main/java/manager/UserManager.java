@@ -18,7 +18,7 @@ public class UserManager extends EntityManager<User> {
     // va a posibilitar tirarlo al EntityManager, de ultima se hace un override
 
     public Integer add(@NotNull String name, @NotNull String lName, @NotNull String email,
-                   @NotNull String password, @NotNull String passwordC, @NotNull String career){
+                       @NotNull String password, @NotNull String passwordC, @NotNull String career){
 
         Integer result = null;
 

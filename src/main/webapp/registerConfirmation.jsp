@@ -28,7 +28,7 @@
         String passwordC = request.getParameter("passwordC");
         String career = request.getParameter("career");
 
-        int status = UserManager.add(name, lname, email, password, passwordC, career);
+        int status = manager.UserManager.add(name, lname, email, password, passwordC, career);
 
 
     %>

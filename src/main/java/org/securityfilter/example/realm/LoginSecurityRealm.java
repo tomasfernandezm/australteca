@@ -41,6 +41,6 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
     @Override
     public boolean isUserInRole(String username, String role) {
         User user = getUser(username);
-        return user.getId().equals(username) && user.getRole().equals(role);
+        return user.equals(username) && user.getRole().equals(role);
     }
 }
