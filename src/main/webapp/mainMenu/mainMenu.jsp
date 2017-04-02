@@ -8,10 +8,10 @@
 <p>
 
     Navigation Main Menu: [
-    <a href="<%=response.encodeURL("home.jsp")%>">Inicio</a>
-    | <a href="<%=response.encodeURL("subject.jsp")%>">Materias</a>
-    | <a href="<%=response.encodeURL("work.jsp")%>">Trabajo</a>
-    | <a href="<%=response.encodeURL("discussions.jsp")%>">Discuciones</a>
-    | <a href="<%=response.encodeURL("logout.jsp")%>">Cerrar Sesion</a>
+    <a href="<%=response.encodeURL("/mainMenu/home.jsp")%>">Inicio</a>
+    | <a href="<%=response.encodeURL("/mainMenu/subject.jsp")%>">Materias</a>
+    | <a href="<%=response.encodeURL("/mainMenu/work.jsp")%>">Trabajo</a>
+    | <a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a>
+    | <a href="<%=response.encodeURL("/logout.jsp")%>">Cerrar Sesion</a>
 
     ]<p>

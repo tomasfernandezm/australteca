@@ -16,6 +16,7 @@
 
 <%@page import="manager.UserManager"%>
 <%@ page import="org.securityfilter.example.MyConstants" %>
+<%@ page import="manager.UserManager" %>
 <jsp:useBean id="obj" class="entity.User"/>
 <jsp:setProperty property="*" name="obj"/>
 
@@ -28,9 +29,7 @@
         String passwordC = request.getParameter("passwordC");
         String career = request.getParameter("career");
 
-        int status = manager.UserManager.add(name, lname, email, password, passwordC, career);
-
-
+        int status = (new UserManager()).add(name, lname, email, password, passwordC, career);
     %>
 <% if (status > 0) { %>
 <p> Te has registrado correctamente!</p>

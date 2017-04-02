@@ -14,15 +14,13 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
 
     @Override
     public boolean booleanAuthenticate(String username, String password) {
-        User user = getUser(username);
-        if(user != null && user.getEmail().equals(username) && user.getPassword().equals(password)){
-            return true;
-        }else{
-            return false;
-        }
+        User user = getUser(Integer.parseInt(username));
+        if(user != null && user.getId().equals(Integer.parseInt(username)) &&
+                user.getPassword().equals(password)) return true;
+        return false;
     }
 
-    private User getUser(@NotNull String userID){
+    private User getUser(@NotNull Integer userID){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx =  null;
         User user = null;
@@ -40,7 +38,7 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
 
     @Override
     public boolean isUserInRole(String username, String role) {
-        User user = getUser(username);
-        return user.equals(username) && user.getRole().equals(role);
+        User user = getUser(Integer.parseInt(username));
+        return user != null && user.getId().equals(Integer.parseInt(username)) && user.getRole().equals(role);
     }
 }

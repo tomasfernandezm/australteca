@@ -1,30 +1,36 @@
 package org.securityfilter.example;
 
+import com.sun.istack.internal.NotNull;
+import entity.EntityConstants;
 import entity.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 import org.securityfilter.example.realm.LoginSecurityRealm;
 import util.HibernateUtil;
 
-import java.io.Serializable;
 
 /**
  * Created by tomi on 25/03/17.
  */
 public class LoginSecurityRealmTester {
 
-    private String persistUser(){
+    @NotNull
+    private User giveUser(){
+        return new User("pepito", "gimenez", "elpepo@ing.austral.edu.ar",
+                "informática", "password", false, false);
+    }
+
+    private Integer persistUser(){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = null;
-        String userID = null;
+        Integer userID = null;
         try{
             tx = session.beginTransaction();
-            User user = new User("pepito", "gimenez",
-                    "elpepo@ing.austral.edu.ar", "informática", "password", false, false);
-            userID = (String) session.save(user);
+            User user = giveUser();
+            userID = (Integer) session.save(user);
             tx.commit();
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
@@ -38,20 +44,20 @@ public class LoginSecurityRealmTester {
     @Test
     public void booleanAuthenticateTest() {
         LoginSecurityRealm lsr = new LoginSecurityRealm();
-        persistUser();
-        boolean validate = lsr.booleanAuthenticate("testUsr", "password");
-        assertTrue(!validate);
-        validate = lsr.booleanAuthenticate("testUser", "password");
-        assertTrue(validate);
+        Integer userId = persistUser();
+        boolean validate = lsr.booleanAuthenticate("5", "password");
+        assertThat(!validate).isTrue();
+        validate = lsr.booleanAuthenticate(userId.toString(), "password");
+        assertThat(validate).isTrue();
     }
 
     @Test
     public void isUserInRoleTest(){
         LoginSecurityRealm lsr = new LoginSecurityRealm();
-        persistUser();
-        boolean validate = lsr.isUserInRole("testUser", "notThisRole");
-        assertTrue(!validate);
-        validate = lsr.isUserInRole("testUser", "role");
-        assertTrue(validate);
+        Integer userId = persistUser();
+        boolean validate = lsr.isUserInRole("7", "notThisRole");
+        assertThat(!validate).isTrue();
+        validate = lsr.isUserInRole(userId.toString(), EntityConstants.STANDARD);
+        assertThat(validate).isTrue();
     }
 }
