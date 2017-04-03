@@ -27,7 +27,7 @@ public class Professor {
     @Column(name = "PROFESSOR_DEGREE")
     private String degree;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Subject> subjects = new ArrayList<Subject>();
 
     public Professor() {

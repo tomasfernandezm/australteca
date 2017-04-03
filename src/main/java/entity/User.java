@@ -1,13 +1,13 @@
 package entity;
 
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by tomi on 22/03/17.
@@ -39,11 +39,12 @@ public class User {
     @Column(name = "USER_ROLE")
     private String role;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private final List<Subject> subjects = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    private final Set<Subject> subjects = new HashSet<>();
+
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private final List<Commentary> commentaries = new ArrayList<>();
+    private final Set<Commentary> commentaries = new HashSet<>();
 
     public User() {
     }
@@ -137,11 +138,11 @@ public class User {
         return role;
     }
 
-    public List<Subject> getSubjects() {
+    public Set<Subject> getSubjects() {
         return subjects;
     }
 
-    public List<Commentary> getCommentaries() {
+    public Set<Commentary> getCommentaries() {
         return commentaries;
     }
 }

@@ -7,10 +7,10 @@ import javax.persistence.*;
  */
 
 @Table(name = "ENTITY")
-@javax.persistence.Entity
-public class Entity {
+@Entity
+public class GenericEntity {
 
-    @Id
+    @Id @GeneratedValue
     @Column(name = "ENTITY_ID")
     private int id;
 
@@ -23,17 +23,20 @@ public class Entity {
     @Column(name = "ENTITY_AGE")
     private int age;
 
-    Entity() {
+    public GenericEntity() {
     }
 
-    Entity(Integer id, String firstName, String lastName, int age) {
-        this.id = id;
+    public GenericEntity(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }
 
-    public boolean equals(Entity other){
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean equals(GenericEntity other){
         return other.id == id;
     }
 

@@ -29,14 +29,18 @@ public class Commentary {
     @OneToOne
     private User author;
 
+    @OneToOne
+    private Subject subject;
+
     public Commentary() {
     }
 
-    public Commentary(String commentary, User author) {
+    public Commentary(String commentary, User author, Subject subject) {
         this.creationDate = new Date();
         this.lastModificationDate = creationDate;
         this.commentary = commentary;
         this.author = author;
+        this.subject = subject;
     }
 
     public Date getCreationDate() {

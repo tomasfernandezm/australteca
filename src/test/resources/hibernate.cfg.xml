@@ -30,7 +30,7 @@
         <mapping class="entity.Commentary"/>
         <mapping class="entity.Subject"/>
         <mapping class="entity.Professor"/>
-        <mapping class="manager.Entity"/>
+        <mapping class="manager.GenericEntity"/>
 
     </session-factory>
 </hibernate-configuration>

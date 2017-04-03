@@ -33,10 +33,10 @@ public class Subject {
     @ManyToMany
     private final List<Professor> professors = new ArrayList<Professor>();
 
-    @OneToMany
+    @OneToMany (cascade = CascadeType.ALL)
     private final List<Commentary> commentaries = new ArrayList<Commentary>();
 
-    @ManyToMany
+    @ManyToMany 
     private final List<User> subscribedUsers = new ArrayList<User>();
 
     public Subject() {
