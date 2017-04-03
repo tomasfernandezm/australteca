@@ -1,0 +1,27 @@
+
+form.navbar-form input.btn-default{
+	color:red;
+
+}
+
+.navbar-inverse{
+	background-color: #0c0e75;
+	border-radius: 0px;
+	
+	}
+	
+	
+form.navbar-form label {
+	
+	color: white;
+	font-family: Helvetica, sans-serif;
+	
+	}
+	
+	
+form.navbar-form input {
+	border: 1px solid #FFFFFF;
+	border-radius: 3px;
+	background-color: white;
+
+	}
