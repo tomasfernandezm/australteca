@@ -9,37 +9,38 @@
 </head>
 
 <body>
-<nav class="navbar navbar-inverse container-fluid">
+
+<nav class="navbar navbar-inverse container-fluid" role="navigation">
   <div>
-    <div class="navbar-header "> <a class="navbar-brand"><%=MyConstants.MY_HOME_TITLE%></a> </div>
-    <form class="navbar-form navbar-right">
-      <div class="form-group">
-        <label id="email"for="email">Email</label>
-        <input type="text" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
-      </div>
-      <div class="form-group">
-        <label for "password">Password</label>
-        <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
-      </div>
-      <input type="Submit" class="btn btn-default btn-login"  value="Iniciar sesion">
-    </form>
+    <div class="navbar-header "> 
+         <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Desplegar navegacion</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    	<a class="navbar-brand"><%=MyConstants.MY_HOME_TITLE%></a> 
+    </div>
+    
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <form class="navbar-form navbar-right" id="<%=Constants.LOGIN_FORM_ID%>" action="<%=response.encodeURL(Constants.LOGIN_FORM_ACTION)%>" method="POST">
+          <div class="form-group">
+            <label id="email"for="email">Email</label>
+            <input type="text" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
+          </div>
+          <div class="form-group">
+            <label for "password">Password</label>
+            <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
+          </div>
+          <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
+        </form>
+    </div>
   </div>
 </nav>
-<h1><%=MyConstants.MY_HOME_TITLE%></h1>
 
-<!--      <form id="<%=Constants.LOGIN_FORM_ID%>" action="<%=response.encodeURL(Constants.LOGIN_FORM_ACTION)%>" method="POST">
-			<div class="form-group">
-            	<label for="email">Email</label>
-            	<input type="text" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
-            </div>
-			<div class="form-group">
-            	<label for "password">Password</label>
-            	<input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
-			</div>
-            <input type="Submit" class="btn btn-default" value="Iniciar sesion">
 
-        </form>
-        -->
+
 
 <form id="<%=MyConstants.REGISTER_FORM_ID%>" action="registerConfirmation.jsp" method="POST">
   <div>
