@@ -27,7 +27,7 @@ public class User {
     @Column(name = "USER_LNAME")
     private String lastName;
 
-    @Column(name = "USER_EMAIL", unique = true)
+    @Column(name = "USER_EMAIL", unique = true, nullable = false)
     private String email;
 
     @Column(name = "USER_COURSE")

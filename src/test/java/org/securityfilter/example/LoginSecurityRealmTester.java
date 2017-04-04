@@ -42,6 +42,15 @@ public class LoginSecurityRealmTester {
     }
 
     @Test
+    public void getUserByEmailTest(){
+        LoginSecurityRealm lsr = new LoginSecurityRealm();
+        Integer userId = persistUser();
+        User user = lsr.getUserByEmail(giveUser().getEmail());
+        assertThat(user).isNotNull();
+        assertThat(user.getEmail()).isEqualToIgnoringCase(giveUser().getEmail());
+    }
+
+    @Test
     public void booleanAuthenticateTest() {
         LoginSecurityRealm lsr = new LoginSecurityRealm();
         Integer userId = persistUser();
