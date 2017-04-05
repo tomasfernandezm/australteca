@@ -30,7 +30,7 @@
             <input type="text" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
           </div>
           <div class="form-group">
-            <label for "password">Password</label>
+            <label for="password">Password</label>
             <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
           </div>
           <input type="Submit" class="btn btn-default btn-xs btn-outline-primary"  value="Iniciar sesion">
@@ -68,12 +68,12 @@
     <input type="Submit" value="Unirme">
 </form>
 
-
+commenttt
 -->
 
 <form id="<%=MyConstants.REGISTER_FORM_ID%>" action="registerConfirmation.jsp" method="POST">
-    <div class="container">
-      <div class="row centered-form ">
+    <div class="container-fluid">
+      <div class="row centered-form  ">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -103,7 +103,7 @@
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
                       <input type="password" name="password" pattern=".{0}|.{8,}" id="password" class="form-control input-sm"
-                             placeholder="Password"  required title="Mínimo 8 caracteres"/>
+                             placeholder="Contrasena"  required title="Mínimo 8 caracteres"/>
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6">

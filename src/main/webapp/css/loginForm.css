@@ -2,6 +2,8 @@
 .navbar-inverse{
 	background-color: #666666;
 	border-radius: 0px;
+    margin-bottom: 100px;
+
 	
 	}
 	
@@ -75,3 +77,4 @@ fieldset[disabled] .btn-sample.active {
   color: #FFFFFF; 
   background-color: #0C0E75; 
 }
+
