@@ -35,7 +35,7 @@ public class AbstractDAOTester {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+
         }
         return genericEntity;
     }

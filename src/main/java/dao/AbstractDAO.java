@@ -23,10 +23,8 @@ public abstract class AbstractDAO<T> {
             result = (Integer) session.save(t);
             tx.commit();
         }catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
+            if (tx != null) tx.rollback();
             e.printStackTrace();
-        }finally {
-            session.close();
         }
         return result;
     }
@@ -37,14 +35,12 @@ public abstract class AbstractDAO<T> {
         Transaction tx = null;
         try{
             tx = session.beginTransaction();
-            T t = (T) session.get(genericClass, id);
+            T t = session.get(genericClass, id);
             session.delete(t); // if null throws IllegalArgumentException
             tx.commit();
         }catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
+            if (tx != null) tx.rollback();
             e.printStackTrace();
-        }finally {
-            session.close();
         }
     }
 
@@ -54,18 +50,16 @@ public abstract class AbstractDAO<T> {
         T result = null;
         try{
             tx = session.beginTransaction();
-            result = (T) session.get(genericClass, id);
+            result = session.get(genericClass, id);
             tx.commit();
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
-        }finally {
-            session.close();
         }
         return result;
     }
 
-    private void update(T toUpdate){
+    protected void update(T toUpdate){
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = null;
@@ -76,8 +70,6 @@ public abstract class AbstractDAO<T> {
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
-        }finally {
-            session.close();
         }
     }
 
@@ -92,8 +84,6 @@ public abstract class AbstractDAO<T> {
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
-        }finally {
-            session.close();
         }
 
         return t;
