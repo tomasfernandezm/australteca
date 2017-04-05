@@ -15,26 +15,10 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
     @Override
     public boolean booleanAuthenticate(String username, String password) {
         User user = getUserByEmail(username);
-        if(user != null && user.getEmail().equals(username) &&
-                user.getPassword().equals(password)) return true;
-        return false;
-    }
 
-/*    private User getUser(@NotNull Integer userID){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction tx =  null;
-        User user = null;
-        try{
-            tx = session.beginTransaction();
-            user = session.get(User.class, userID);
-        }catch (HibernateException e){
-            if (tx!=null) tx.rollback();
-            e.printStackTrace();
-        }finally {
-            session.close();
-        }
-        return user;
-    }*/
+        return user != null && user.getEmail().equals(username) &&
+                user.getPassword().equals(password);
+    }
 
     public User getUserByEmail(@NotNull String email){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
