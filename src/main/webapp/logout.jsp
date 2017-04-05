@@ -11,9 +11,6 @@
 
     <body>
         <% session.invalidate(); %>
-    <h2>La sesion se ha cerrado</h2>
-    <h4>En 5 segundos seras redirigido a la paginal principal</h4>
-
     </body>
 
 </html>

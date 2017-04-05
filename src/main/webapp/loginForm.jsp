@@ -10,6 +10,7 @@
 
 <body>
 
+<div class="principal">
 <nav class="navbar navbar-inverse container-fluid" role="navigation">
   <div>
     <div class="navbar-header "> 
@@ -20,14 +21,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-    	<a class="navbar-brand"><%=MyConstants.MY_HOME_TITLE%></a> 
+    	<a class="navbar-brand"><img class="logo" src="images/logo.png"></a>
     </div>
     
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <form class="navbar-form navbar-right" id="<%=Constants.LOGIN_FORM_ID%>" action="<%=response.encodeURL(Constants.LOGIN_FORM_ACTION)%>" method="POST">
           <div class="form-group">
             <label id="email"for="email">Email</label>
-            <input type="text" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
+            <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -131,10 +132,18 @@ commenttt
         </div>
       </div>
     </div>
-
-
-
 </form>
+</div>
+
+
+<footer class="footPage">
+  <div class="container">
+    <p> Todos los derechos reservados </ p>
+  </div>
+</footer>
+
+
+
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -16,5 +16,7 @@
 
 <%@include file="/mainMenu/mainMenu.jsp" %>
 
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

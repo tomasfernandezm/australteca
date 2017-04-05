@@ -5,12 +5,7 @@
   Time: 10:11
   To change this template use File | Settings | File Templates.
 --%>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title><%=MyConstants.MY_HOME_TITLE%></title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/loginForm.css" rel="stylesheet" type="text/css">
-</head>
+
 <!--
 <p>
 
@@ -23,7 +18,7 @@
 
     ]<p>
   -->
-<body>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -42,6 +37,5 @@
         </div>
     </nav>
 
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-</body>
+
