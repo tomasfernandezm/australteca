@@ -25,6 +25,8 @@ public abstract class AbstractDAO<T> {
         }catch (HibernateException e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
+        }finally {
+            session.close();
         }
         return result;
     }
@@ -41,6 +43,8 @@ public abstract class AbstractDAO<T> {
         }catch (HibernateException e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
+        }finally {
+            session.close();
         }
     }
 
@@ -55,6 +59,8 @@ public abstract class AbstractDAO<T> {
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
+        }finally {
+            session.close();
         }
         return result;
     }
@@ -70,6 +76,8 @@ public abstract class AbstractDAO<T> {
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
+        }finally {
+            session.close();
         }
     }
 
@@ -84,8 +92,9 @@ public abstract class AbstractDAO<T> {
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
+        }finally {
+            session.close();
         }
-
         return t;
     }
 }
