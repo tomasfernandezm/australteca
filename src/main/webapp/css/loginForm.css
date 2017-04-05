@@ -1,6 +1,6 @@
 
 .navbar-inverse{
-	background-color: #0c0e75;
+	background-color: #666666;
 	border-radius: 0px;
 	
 	}
@@ -12,6 +12,11 @@ form.navbar-form label {
 	font-family: Helvetica, sans-serif;
 	
 	}
+
+.navbar-brand {
+    font-family: SignPainter;
+    font-size: xx-large;
+}
 	
 	
 form.navbar-form input {
