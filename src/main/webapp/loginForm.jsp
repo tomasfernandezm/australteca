@@ -73,7 +73,7 @@
 
 <form id="<%=MyConstants.REGISTER_FORM_ID%>" action="registerConfirmation.jsp" method="POST">
     <div class="container">
-      <div class="row centered-form">
+      <div class="row centered-form ">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
           <div class="panel panel-default">
             <div class="panel-heading">
