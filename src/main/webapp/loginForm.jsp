@@ -8,7 +8,7 @@
 <link href="css/loginForm.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body background="images/campus2.png">
 
 <div class="principal">
 <nav class="navbar navbar-inverse container-fluid" role="navigation">
