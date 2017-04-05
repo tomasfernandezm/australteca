@@ -1,4 +1,4 @@
-package manager;
+package dao;
 
 import javax.persistence.*;
 

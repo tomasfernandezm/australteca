@@ -1,4 +1,4 @@
-package manager;
+package dao;
 
 import com.sun.istack.internal.NotNull;
 import org.hibernate.HibernateException;
@@ -7,7 +7,6 @@ import org.hibernate.Transaction;
 import org.junit.Test;
 import util.HibernateUtil;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by tomi on 29/03/17.
  */
-public class AbstractManagerTester {
+public class AbstractDAOTester {
 
     private GenericEntity giveEntity(){
         return new GenericEntity("Pepito", "Rodriguez", 16);
@@ -43,7 +42,7 @@ public class AbstractManagerTester {
 
     @Test
     public void addToDatabaseTest(){
-        EntityManager entityManager = new EntityManager();
+        EntityDAO entityManager = new EntityDAO();
         Integer entityID = entityManager.addToDatabase(giveEntity());
 
         GenericEntity genericEntity = getEntity(entityID);
@@ -55,7 +54,7 @@ public class AbstractManagerTester {
 
     @Test
     public void deleteFromDatabaseTest(){
-        EntityManager abstractManager = new EntityManager();
+        EntityDAO abstractManager = new EntityDAO();
         Integer entityID = abstractManager.addToDatabase(giveEntity());
         abstractManager.deleteFromDatabase(GenericEntity.class, entityID);
         try {
@@ -70,7 +69,7 @@ public class AbstractManagerTester {
 
     @Test
     public void listEntitiesTest(){
-        EntityManager abstractManager = new EntityManager();
+        EntityDAO abstractManager = new EntityDAO();
         abstractManager.addToDatabase(giveEntity());
         abstractManager.addToDatabase(giveOtherEntity());
 
@@ -81,7 +80,7 @@ public class AbstractManagerTester {
         assertThat(genericEntityList.get(1).getFirstName().equals("Mengano")).isTrue();
     }
 
-    private class EntityManager extends AbstractManager<GenericEntity> {
+    private class EntityDAO extends AbstractDAO<GenericEntity> {
 
     }
 }

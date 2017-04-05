@@ -8,15 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>manager.UserManager confirmation</title>
+    <title>dao.UserDAO confirmation</title>
 </head>
 <body>
 
 <h1><%=MyConstants.MY_HOME_TITLE%></h1>
 
-<%@page import="manager.UserManager"%>
+<%@page import="dao.UserDAO"%>
 <%@ page import="org.securityfilter.example.MyConstants" %>
-<%@ page import="manager.UserManager" %>
 <%@ page import="entity.User" %>
 <jsp:useBean id="obj" class="entity.User"/>
 <jsp:setProperty property="*" name="obj"/>
@@ -30,7 +29,7 @@
         String passwordC = request.getParameter("passwordC");
         String career = request.getParameter("career");
 
-        int status = new UserManager().add(new User(name, lname, email, career, password, false, false));
+        int status = new UserDAO().addToDatabase(new User(name, lname, email, career, password, false, false));
     %>
 <% if (status > 0) { %>
 <p> Te has registrado correctamente!</p>

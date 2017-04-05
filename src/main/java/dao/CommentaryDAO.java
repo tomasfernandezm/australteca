@@ -1,4 +1,4 @@
-package manager;
+package dao;
 
 import com.sun.istack.internal.NotNull;
 import entity.Commentary;
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by tomi on 29/03/17.
  */
-public class CommentaryManager extends AbstractManager<Commentary> {
+public class CommentaryDAO extends AbstractDAO<Commentary> {
 
     public void delete(@NotNull Integer commentaryID){
         deleteFromDatabase(Commentary.class, commentaryID);

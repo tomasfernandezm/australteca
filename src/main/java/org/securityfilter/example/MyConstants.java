@@ -5,7 +5,7 @@ package org.securityfilter.example;
  */
 public interface MyConstants extends Constants {
 
-    public static final String REGISTER_TITLE = COMMON_TITLE_BASE + "manager.UserManager Page";
+    public static final String REGISTER_TITLE = COMMON_TITLE_BASE + "dao.UserDAO Page";
     public static final String REGISTER_FORM_ID = "registerForm";
     public static final String REGISTER_FORM_ACTION = "registerConfirmation";
     public static final String REGISTER_NAME = "registerName";

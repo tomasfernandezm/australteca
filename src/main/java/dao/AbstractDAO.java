@@ -1,4 +1,4 @@
-package manager;
+package dao;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * Created by tomi on 29/03/17.
  */
-public abstract class AbstractManager<T> {
+public abstract class AbstractDAO<T> {
 
-    Integer addToDatabase(T t){
+    public Integer addToDatabase(T t){
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = null;
@@ -31,7 +31,7 @@ public abstract class AbstractManager<T> {
         return result;
     }
 
-    void deleteFromDatabase(Class<T> genericClass, Integer id) throws IllegalArgumentException{
+    protected void deleteFromDatabase(Class<T> genericClass, Integer id) throws IllegalArgumentException{
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = null;
@@ -65,7 +65,7 @@ public abstract class AbstractManager<T> {
         return result;
     }
 
-    <R> void update(T toUpdate){
+    private void update(T toUpdate){
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = null;
@@ -81,7 +81,7 @@ public abstract class AbstractManager<T> {
         }
     }
 
-    List<T> listEntities(Class<T> genericClass){
+    protected List<T> listEntities(Class<T> genericClass){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = null;
         List<T> t = new ArrayList<T>();

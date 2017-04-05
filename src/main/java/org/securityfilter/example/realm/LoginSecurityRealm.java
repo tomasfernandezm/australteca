@@ -18,6 +18,7 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
 
         return user != null && user.getEmail().equals(username) &&
                 user.getPassword().equals(password);
+
     }
 
     public User getUserByEmail(@NotNull String email){
