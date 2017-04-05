@@ -13,24 +13,9 @@
 <body>
 
 <h1><%=MyConstants.MY_HOME_TITLE%></h1>
-
-<%@page import="dao.UserDAO"%>
 <%@ page import="org.securityfilter.example.MyConstants" %>
-<%@ page import="entity.User" %>
-<jsp:useBean id="obj" class="entity.User"/>
-<jsp:setProperty property="*" name="obj"/>
 
-<%
-
-        String name = request.getParameter("name");
-        String lname = request.getParameter("lastname");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String passwordC = request.getParameter("passwordC");
-        String career = request.getParameter("career");
-
-        int status = new UserDAO().addToDatabase(new User(name, lname, email, career, password, false, false));
-    %>
+<% int status = (Integer) (request.getAttribute("status")); %>
 <% if (status > 0) { %>
 <p> Te has registrado correctamente!</p>
 <a href="loginForm.jsp">Iniciar sesión</a>
