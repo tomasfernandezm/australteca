@@ -9,10 +9,12 @@
 <html>
 <head>
     <title>Title</title>
+    <title><%=MyConstants.MY_HOME_TITLE%></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/loginForm.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-    <h1><%=MyConstants.MY_HOME_TITLE%></h1>
     <%@include file="/mainMenu/mainMenu.jsp" %>
 
 

@@ -9,11 +9,12 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>Home</title>
+    <title><%=MyConstants.MY_HOME_TITLE%></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/loginForm.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<h1><%=MyConstants.MY_HOME_TITLE%></h1>
 <%@include file="/mainMenu/mainMenu.jsp" %>
 
 </body>
