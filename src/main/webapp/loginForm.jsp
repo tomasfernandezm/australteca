@@ -33,7 +33,7 @@
             <label for "password">Password</label>
             <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
           </div>
-          <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
+          <input type="Submit" class="btn btn-default btn-xs btn-outline-primary"  value="Iniciar sesion">
         </form>
     </div>
   </div>
