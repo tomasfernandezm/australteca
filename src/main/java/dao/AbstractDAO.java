@@ -15,7 +15,7 @@ public abstract class AbstractDAO<T> {
 
     public Integer addToDatabase(T t){
 
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         Integer result = null;
         try{
@@ -26,14 +26,14 @@ public abstract class AbstractDAO<T> {
             if (tx != null) tx.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+
         }
         return result;
     }
 
     protected void deleteFromDatabase(Class<T> genericClass, Integer id) throws IllegalArgumentException{
 
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         try{
             tx = session.beginTransaction();
@@ -44,12 +44,12 @@ public abstract class AbstractDAO<T> {
             if (tx != null) tx.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+
         }
     }
 
     protected T get(Class<T> genericClass, Integer id){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         T result = null;
         try{
@@ -60,14 +60,14 @@ public abstract class AbstractDAO<T> {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+
         }
         return result;
     }
 
     protected void update(T toUpdate){
 
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         try{
             tx = session.beginTransaction();
@@ -77,12 +77,12 @@ public abstract class AbstractDAO<T> {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+
         }
     }
 
     protected List<T> listEntities(Class<T> genericClass){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         List<T> t = new ArrayList<T>();
         try{
@@ -93,7 +93,7 @@ public abstract class AbstractDAO<T> {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+
         }
         return t;
     }
