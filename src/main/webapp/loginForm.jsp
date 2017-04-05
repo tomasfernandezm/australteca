@@ -30,7 +30,11 @@
             <input type="text" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
           </div>
           <div class="form-group">
+<<<<<<< HEAD
             <label for="password">Password</label>
+=======
+            
+>>>>>>> f80d9b6e93311efa3a4fc7626ef9f415a6737440
             <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
           </div>
           <input type="Submit" class="btn btn-default btn-xs btn-outline-primary"  value="Iniciar sesion">
@@ -40,9 +44,9 @@
 </nav>
 
 
-<!--
 
-<form id="<%=MyConstants.REGISTER_FORM_ID%>" action="registerConfirmation.jsp" method="POST">
+
+<form id="<%=MyConstants.REGISTER_FORM_ID%>" action="/register" method="post">
   <div>
   Name:
   <input type="text" name= "name" required/>
@@ -59,6 +63,7 @@
   <div> Password confirmation:
     <input type="password" name="passwordC" pattern=".{0}|.{8,}"   required title="Mínimo 8 caracteres"/>
   </div>
+<<<<<<< HEAD
     <div>
       <select name="career">
         <option value="Ingenieria informatica" selected>Ingenieria informatica</option>
@@ -130,10 +135,16 @@ commenttt
         </div>
       </div>
     </div>
+=======
+  <div>
+    <select name="career">
+      <option value="Ingenieria informatica" selected>Ingenieria informatica</option>
+      <option value="Ingenieria indutrial">Ingenieria indutrial</option>
+    </select>
+  </div>
+  <input type="Submit" value="Unirme">
+>>>>>>> f80d9b6e93311efa3a4fc7626ef9f415a6737440
 </form>
-
-
-
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
