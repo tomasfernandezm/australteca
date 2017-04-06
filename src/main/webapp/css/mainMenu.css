@@ -1,0 +1,40 @@
+
+
+
+html, body {
+    height: 100%;
+}
+
+.navbar-inverse{
+    background-color: #666666;
+    border-radius: 0px;
+    margin-bottom: 100px;
+}
+
+
+.navbar .navbar-brand {
+    padding-top: 1px;
+}
+
+
+
+
+form.navbar-form input {
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    background-color: white;
+    margin-top: 5px;
+}
+
+.principal{
+    height: 100%;
+}
+
+.footPage {
+    background-color: #666666;
+    min-height: 50px;
+    width: 100%;
+    color: white;
+    text-align: left;
+}
+

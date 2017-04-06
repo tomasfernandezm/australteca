@@ -10,8 +10,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <title><%=MyConstants.MY_HOME_TITLE%></title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/loginForm.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 

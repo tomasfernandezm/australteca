@@ -22,7 +22,7 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand"><%=MyConstants.MY_HOME_TITLE%></a>
+                <a class="navbar-brand"><img class="logo" src="/images/logo.png"></a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="<%=response.encodeURL("/mainMenu/home.jsp")%>">Inicio</a></li>
