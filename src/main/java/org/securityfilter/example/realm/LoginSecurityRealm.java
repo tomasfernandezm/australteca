@@ -26,12 +26,14 @@ public class LoginSecurityRealm extends TrivialSecurityRealm{
         String hql = "from User user where user.email = :email";
         session.beginTransaction();
         Query query = session.createQuery(hql).setParameter("email", email);
-        return (User) query.getSingleResult();
+        User user = (User) query.getSingleResult();
+        session.getTransaction().commit();
+        return user;
     }
 
     @Override
     public boolean isUserInRole(String username, String role) {
         User user = getUserByEmail(username);
-        return user != null && user.getId().equals(Integer.parseInt(username)) && user.getRole().equals(role);
+        return user != null && user.getEmail().equals(username) && user.getRole().equals(role);
     }
 }

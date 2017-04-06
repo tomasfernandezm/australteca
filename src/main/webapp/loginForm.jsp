@@ -73,7 +73,7 @@
 commenttt
 -->
 
-<form id="<%=MyConstants.REGISTER_FORM_ID%>" action="registerConfirmation.jsp" method="POST">
+<form id="<%=MyConstants.REGISTER_FORM_ID%>" action="/register" method="POST">
     <div class="container-fluid">
       <div class="row centered-form  ">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -138,7 +138,7 @@ commenttt
 
 <footer class="footPage">
   <div class="container">
-    <p> Todos los derechos reservados </ p>
+    <p> Todos los derechos reservados </p>
   </div>
 </footer>
 

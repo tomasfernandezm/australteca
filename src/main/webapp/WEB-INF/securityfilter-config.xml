@@ -13,7 +13,11 @@
    <security-constraint>
       <web-resource-collection>
          <web-resource-name>Secure Page</web-resource-name>
-         <url-pattern>/securePage.jsp</url-pattern>
+         <url-pattern>/mainMenu/home.jsp</url-pattern>
+         <url-pattern>/mainMenu/mainMenu.jsp</url-pattern>
+         <url-pattern>/mainMenu/discussions.jsp</url-pattern>
+         <url-pattern>/mainMenu/subject.jsp</url-pattern>
+         <url-pattern>/mainMenu/work.jsp</url-pattern>
       </web-resource-collection>
       <auth-constraint>
           <!-- Role del usuario, sirve para identificar al usuario y para determinar
@@ -37,7 +41,7 @@
       <form-login-config>
          <form-login-page>/loginForm.jsp</form-login-page>
          <form-error-page>/loginError.jsp</form-error-page>
-         <form-default-page>/index.jsp</form-default-page>
+         <form-default-page>/mainMenu/home.jsp</form-default-page>
       </form-login-config>
    </login-config>
 
