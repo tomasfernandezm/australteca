@@ -15,7 +15,7 @@ public class ProfessorDAOTester {
 
     private Subject persistAndGiveSubject(Professor professor){
         SubjectDAO subjectDAO = new SubjectDAO();
-        Integer subjectID = subjectDAO.addToDatabase(new Subject("Ingles", professor));
+        Integer subjectID = subjectDAO.addToDatabase(new Subject("Ingles"));
         return subjectDAO.get(Subject.class, subjectID);
     }
 

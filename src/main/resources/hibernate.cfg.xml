@@ -29,6 +29,9 @@
 
         <property name="hibernate.current_session_context_class">thread</property>
 
+        <property name="hibernate.search.default.directory_provider">filesystem</property>
+        <property name="hibernate.search.default.indexBase">db/indexes</property>
+
         <mapping class="entity.User"/>
         <mapping class="entity.Commentary"/>
         <mapping class="entity.Subject"/>

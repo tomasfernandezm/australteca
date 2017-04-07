@@ -27,16 +27,34 @@ public class ListSubjectServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Integer userId = (Integer) req.getAttribute("userID");
-        Set<Subject> subjectSet;
-        if(userId == null){
-            List<Subject> subjectList = new SubjectDAO().listSubjects();
-            subjectSet = new HashSet<>(subjectList);
+        String userEmail = (String) req.getAttribute("userEmail");
+        List<SubjectWrapper> subjectWrapperList = new ArrayList<>();
+        List<Subject> subjectList = new SubjectDAO().listSubjects();
+
+        if(userEmail.equals("")){
+            for(Subject s: subjectList){
+                subjectWrapperList.add(new SubjectWrapper(s, false));
+            }
         }else{
-            User user = new UserDAO().getUser(userId);
-            subjectSet = user.getSubjects();
+            User user = new UserDAO().getUserByEmail(userEmail);
+            Set<Subject> userSubjects = user.getSubjects();
+            for(Subject s: subjectList){
+                if(userSubjects.contains(s)) subjectWrapperList.add(new SubjectWrapper(s, true));
+                else subjectWrapperList.add(new SubjectWrapper(s, false));
+            }
         }
-        req.setAttribute("subjects", subjectSet);
+        req.setAttribute("subjects", subjectWrapperList);
         req.getRequestDispatcher("a donde lo querramos mandar").forward(req, resp);
+    }
+
+    private class SubjectWrapper{
+
+        Subject subject;
+        boolean favorite;
+
+        SubjectWrapper(Subject subject, boolean favorite) {
+            this.subject = subject;
+            this.favorite = favorite;
+        }
     }
 }

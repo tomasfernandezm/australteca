@@ -1,7 +1,11 @@
 package entity;
 
+import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
+import org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory;
+import org.apache.lucene.analysis.standard.StandardTokenizerFactory;
 import org.hibernate.search.annotations.*;
 import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Parameter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,10 +17,19 @@ import java.util.List;
 
 @Entity @Indexed
 @Table(name = "SUBJECT")
+@AnalyzerDef(name = "subjectAnalyzer",
+        tokenizer = @TokenizerDef(factory = StandardTokenizerFactory.class),
+        filters = {
+                @TokenFilterDef(factory = LowerCaseFilterFactory.class),
+                @TokenFilterDef(factory = SnowballPorterFilterFactory.class, params = {
+                        @Parameter(name = "language", value = "English")
+                })
+        })
 public class Subject {
 
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "SUBJECT_ID")
+    @DocumentId
     private int id;
 
     @OneToMany
@@ -30,6 +43,7 @@ public class Subject {
 
     @Field(index= Index.YES, analyze=Analyze.YES, store=Store.NO)
     @Column (name = "SUBJECT_NAME")
+    @Analyzer(definition = "subjectAnalyzer")
     private String subjectName;
 
     @IndexedEmbedded
@@ -45,9 +59,8 @@ public class Subject {
     public Subject() {
     }
 
-    public Subject(String subjectName, Professor professor) {
+    public Subject(String subjectName) {
         this.subjectName = subjectName;
-        professors.add(professor);
     }
 
     public String getSubjectName() {
