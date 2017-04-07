@@ -1,5 +1,8 @@
 package entity;
 
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +11,7 @@ import java.util.List;
  * Created by tomi on 29/03/17.
  */
 
-@Entity
+@Entity @Indexed
 @Table(name = "SUBJECT")
 public class Subject {
 
@@ -25,9 +28,11 @@ public class Subject {
     @Column (name = "SUBJECT_AMOUNT_OF_SCORES")
     private double amountOfScores;
 
+    @Field(index= Index.YES, analyze=Analyze.YES, store=Store.NO)
     @Column (name = "SUBJECT_NAME")
     private String subjectName;
 
+    @IndexedEmbedded
     @ManyToMany
     private final List<Professor> professors = new ArrayList<Professor>();
 

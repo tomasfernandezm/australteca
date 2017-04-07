@@ -40,11 +40,10 @@ public abstract class AbstractDAO<T> {
             T t = session.get(genericClass, id);
             session.delete(t); // if null throws IllegalArgumentException
             tx.commit();
-        }catch (HibernateException e) {
+        }catch (HibernateException | IllegalArgumentException e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
-        }finally {
-
+            throw e;
         }
     }
 

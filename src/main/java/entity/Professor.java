@@ -1,6 +1,7 @@
 package entity;
 
 import com.sun.istack.internal.NotNull;
+import org.hibernate.search.annotations.Field;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,9 +19,11 @@ public class Professor {
     @Column(name = "PROFESSOR_ID")
     private int id;
 
+    @Field
     @Column(name = "PROFESSOR_FNAME")
     private String firstName;
 
+    @Field
     @Column(name = "PROFESSOR_LNAME")
     private String lastName;
 

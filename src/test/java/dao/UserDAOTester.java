@@ -55,9 +55,9 @@ public class UserDAOTester {
         CommentaryDAO commentaryDAO = new CommentaryDAO();
         List<Commentary> list = commentaryDAO.listCommentaries();
 
-        assertThat(list.get(0).getCommentary()).contains("aaaaa");
-        assertThat(list.get(1).getCommentary()).contains("bbbbb");
-        assertThat(list.get(2).getCommentary()).contains("ccccc");
+        for(Commentary c: user.getCommentaries()){
+            assertThat(list).contains(c);
+        }
     }
 
     @Test
@@ -88,7 +88,7 @@ public class UserDAOTester {
         UserDAO userDAO = new UserDAO();
 
         Integer userID = userDAO.addToDatabase(giveUser());
-        User user = userDAO.get(User.class, userID);
+        User user = userDAO.getUser(userID);
 
         Professor professor = persistAndGiveProfessor();
         Subject subject = persistAndGiveSubject(professor);

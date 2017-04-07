@@ -24,37 +24,21 @@ public class AbstractDAOTester {
         return new GenericEntity("Mengano", "Sotano", 20);
     }
 
-    private GenericEntity getEntity(@NotNull Integer entityID){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction tx =  null;
-        GenericEntity genericEntity = null;
-        try{
-            tx = session.beginTransaction();
-            genericEntity = session.get(GenericEntity.class, entityID);
-        }catch (HibernateException e){
-            if (tx!=null) tx.rollback();
-            e.printStackTrace();
-        }finally {
-
-        }
-        return genericEntity;
-    }
-
     @Test
     public void addToDatabaseTest(){
-        EntityDAO entityManager = new EntityDAO();
+        GenericEntityDAO entityManager = new GenericEntityDAO();
         Integer entityID = entityManager.addToDatabase(giveEntity());
 
-        GenericEntity genericEntity = getEntity(entityID);
+        GenericEntity genericEntity = entityManager.get(GenericEntity.class, entityID);
         assertThat(genericEntity).isNotNull();
 
-        GenericEntity nullGenericEntity = getEntity(entityID + 1);
+        GenericEntity nullGenericEntity = entityManager.get(GenericEntity.class, entityID + 1);
         assertThat(nullGenericEntity).isNull();
     }
 
     @Test
     public void deleteFromDatabaseTest(){
-        EntityDAO abstractManager = new EntityDAO();
+        GenericEntityDAO abstractManager = new GenericEntityDAO();
         Integer entityID = abstractManager.addToDatabase(giveEntity());
         abstractManager.deleteFromDatabase(GenericEntity.class, entityID);
         try {
@@ -63,13 +47,13 @@ public class AbstractDAOTester {
             assertThat(e).isExactlyInstanceOf(IllegalArgumentException.class);
         }
 
-        GenericEntity genericEntity = getEntity(entityID);
+        GenericEntity genericEntity = abstractManager.getGenericEntity(entityID);
         assertThat(genericEntity).isNull();
     }
 
     @Test
-    public void listEntitiesTest(){
-        EntityDAO abstractManager = new EntityDAO();
+    public void listEntitiesTest() {
+        GenericEntityDAO abstractManager = new GenericEntityDAO();
         abstractManager.addToDatabase(giveEntity());
         abstractManager.addToDatabase(giveOtherEntity());
 
@@ -78,9 +62,5 @@ public class AbstractDAOTester {
         assertThat(genericEntityList).hasSize(2);
         assertThat(genericEntityList.get(0).getFirstName().equals("Pepito")).isTrue();
         assertThat(genericEntityList.get(1).getFirstName().equals("Mengano")).isTrue();
-    }
-
-    private class EntityDAO extends AbstractDAO<GenericEntity> {
-
     }
 }
