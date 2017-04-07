@@ -12,6 +12,7 @@
     <title><%=MyConstants.MY_HOME_TITLE%></title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
+    <link href="/css/star.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
 </head>
 <body>
@@ -21,6 +22,19 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <h2>Nombre Materia</h2>
+            <span class="starRating">
+              <input id="rating5" type="radio" name="rating" value="5">
+              <label for="rating5">5</label>
+              <input id="rating4" type="radio" name="rating" value="4">
+              <label for="rating4">4</label>
+              <input id="rating3" type="radio" name="rating" value="3">
+              <label for="rating3">3</label>
+              <input id="rating2" type="radio" name="rating" value="2">
+              <label for="rating2">2</label>
+              <input id="rating1" type="radio" name="rating" value="1">
+              <label for="rating1">1</label>
+            </span>
             <div class="panel with-nav-tabs panel-default">
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">

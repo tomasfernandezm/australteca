@@ -40,38 +40,9 @@
   </div>
 </nav>
 
-<!--
 
 
-<form id="<%=MyConstants.REGISTER_FORM_ID%>" action="/register" method="post">
-  <div>
-  Name:
-  <input type="text" name= "name" required/>
-  Lastname:
-  <input type="text" name= "lastname" required/>
-  <div/>
-  <div> Email:
-    <input type="email" name= "email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar"
-                           placeholder="ejemplo@ing.austral.edu.ar" required/>
-  </div>
-  <div> Password:
-    <input type="password" name="password" pattern=".{0}|.{8,}"   required title="Mínimo 8 caracteres"/>
-  </div>
-  <div> Password confirmation:
-    <input type="password" name="passwordC" pattern=".{0}|.{8,}"   required title="Mínimo 8 caracteres"/>
-  </div>
-<<<<<<< HEAD
-    <div>
-      <select name="career">
-        <option value="Ingenieria informatica" selected>Ingenieria informatica</option>
-        <option value="Ingenieria indutrial">Ingenieria indutrial</option>
-      </select>
-    </div>
-    <input type="Submit" value="Unirme">
-</form>
 
-commenttt
--->
 
 <form id="<%=MyConstants.REGISTER_FORM_ID%>" action="/register" method="POST">
     <div class="container-fluid">

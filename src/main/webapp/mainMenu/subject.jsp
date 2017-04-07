@@ -13,6 +13,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
     <link href="/css/subject.css" rel="stylesheet" type="text/css">
+    <link href="/css/modalBox.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -22,7 +23,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Materias</div>
+                    <div class="panel-heading">
+                        Materias <button class="btn btn-default btn-xs pull-right" id="myBtn">Agregar materia</button>
+                    </div>
                     <div class="panel-body">
                         <div class="container">
                             <div class="row">
@@ -41,42 +44,57 @@
                             </div>
                         </div>
                     </div>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Raiting</th>
-                            <th>Favorita</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Analisis 1</td>
-                            <td>2.3/5</td>
-                            <td>(icono)</td>
-                        </tr>
-                        <tr>
-                            <td>Fisica</td>
-                            <td>4.5/5</td>
-                            <td>icono</td>
-                        </tr>
-                        <tr>
-                            <td>Teologia</td>
-                            <td>0.2/5</td>
-                            <td>icono</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div class="pre-scrollable" data-offset="50">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Raiting</th>
+                                <th>Favorita</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Analisis 1</td>
+                                <td>2.3/5</td>
+                                <td>(icono)</td>
+                            </tr>
+                            <tr>
+                                <td>Fisica</td>
+                                <td>4.5/5</td>
+                                <td>icono</td>
+                            </tr>
+                            <tr>
+                                <td>Teologia</td>
+                                <td>0.2/5</td>
+                                <td>icono</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form>
+                <div class="form-group">
+                    <h3>Materia nueva</h3>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <label id="subjectName">Nombre:</label>
+                        <input class="input-group" type="text" name="newSubject">
+                    </div>
+                </div>
+                <input type="Submit" class="btn btn-default"  value="Agregar">
+            </form>
+        </div>
+    </div>
 
-
-
-
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script script type="text/javascript" src="/js/modalBox.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
 
 
