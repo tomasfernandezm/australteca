@@ -18,6 +18,7 @@
          <url-pattern>/mainMenu/discussions.jsp</url-pattern>
          <url-pattern>/mainMenu/subject.jsp</url-pattern>
          <url-pattern>/mainMenu/work.jsp</url-pattern>
+         <url-pattern>/mainMenu/subjectExample.jsp</url-pattern>
       </web-resource-collection>
       <auth-constraint>
           <!-- Role del usuario, sirve para identificar al usuario y para determinar

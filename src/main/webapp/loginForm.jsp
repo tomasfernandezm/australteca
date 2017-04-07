@@ -8,7 +8,7 @@
 <link href="css/loginForm.css" rel="stylesheet" type="text/css">
 </head>
 
-<body background="images/campus2.png">
+<body>
 
 <div class="principal">
 <nav class="navbar navbar-inverse container-fluid" role="navigation">
@@ -79,7 +79,7 @@ commenttt
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Registrate <small>Es gratis!</small></h3>
+              <h3 class="panel-title">Registrate <small>Es gratis! Y siempre lo sera!</small></h3>
             </div>
             <div class="panel-body">
               <form role="form">
@@ -124,7 +124,7 @@ commenttt
                   </select>
                 </div>
 
-                <input type="submit" value="Unirme!" class="btn btn-info btn-block">
+                <input type="submit" value="Unirme!" class="form-control btn btn-info btn-block">
 
               </form>
             </div>
@@ -133,6 +133,12 @@ commenttt
       </div>
     </div>
 </form>
+
+  <div class="lema">
+    <h2>Una comunidad para compartir lo que conoces.</h2>
+    <h2>Y buscar lo que no sabes.</h2>
+
+  </div>
 </div>
 
 
@@ -143,6 +149,7 @@ commenttt
 </footer>
 
 
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
