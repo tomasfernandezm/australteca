@@ -26,7 +26,8 @@ public class AddSubjectServlet extends HttpServlet{
 
         Integer status = subjectDAO.addToDatabase(new Subject(subjectName));
 
-        req.setAttribute("operationSuccesfull", true);
+        if(status != null) req.setAttribute("operationSuccesfull", true);
+        else req.setAttribute("operationSuccesfull", false);
         req.getRequestDispatcher("a donde lo querramos mandar").forward(req, resp);
     }
 }
