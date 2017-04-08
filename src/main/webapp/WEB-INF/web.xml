@@ -41,15 +41,37 @@
 
 
    <servlet>
-      <servlet-name>RegisterServlet</servlet-name>
+      <servlet-name>UserRegisterServlet</servlet-name>
       <description>for registration only</description>
       <servlet-class>servlet.UserRegisterServlet</servlet-class>
    </servlet>
 
    <servlet-mapping>
-      <servlet-name>RegisterServlet</servlet-name>
+      <servlet-name>UserRegisterServlet</servlet-name>
       <url-pattern>/register</url-pattern>
    </servlet-mapping>
+
+   <servlet>
+      <servlet-name>AddSubjectServlet</servlet-name>
+       <description> adds subject to database</description>
+       <servlet-class>servlet.AddSubjectServlet</servlet-class>
+   </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddSubjectServlet</servlet-name>
+        <url-pattern>/addSubject</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListSubjectServlet</servlet-name>
+        <description> gives a List of subject according to certain parameters</description>
+        <servlet-class>servlet.ListSubjectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListSubjectServlet</servlet-name>
+        <url-pattern>/listSubjects</url-pattern>
+    </servlet-mapping>
 
 
    <!-- make the session time-out after one minute -->

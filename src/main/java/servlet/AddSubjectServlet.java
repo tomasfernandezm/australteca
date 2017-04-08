@@ -21,7 +21,7 @@ public class AddSubjectServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String subjectName = (String) req.getAttribute("subjectName");
+        String subjectName = req.getParameter("subjectName");
         SubjectDAO subjectDAO = new SubjectDAO();
 
         Integer status = subjectDAO.addToDatabase(new Subject(subjectName));
