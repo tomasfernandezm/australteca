@@ -13,7 +13,7 @@ import java.io.IOException;
  * Created by tomi on 05/04/17.
  */
 
-public class RegisterServlet extends HttpServlet {
+public class UserRegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

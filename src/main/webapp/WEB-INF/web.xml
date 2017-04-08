@@ -43,7 +43,7 @@
    <servlet>
       <servlet-name>RegisterServlet</servlet-name>
       <description>for registration only</description>
-      <servlet-class>servlet.RegisterServlet</servlet-class>
+      <servlet-class>servlet.UserRegisterServlet</servlet-class>
    </servlet>
 
    <servlet-mapping>
