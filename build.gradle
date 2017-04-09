@@ -26,4 +26,6 @@ dependencies {
     compile group: 'org.assertj', name: 'assertj-core', version: '3.6.2'
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-search-orm
     compile group: 'org.hibernate', name: 'hibernate-search-orm', version: '5.7.0.Final'
+    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-api
+    compile group: 'org.apache.tomcat', name: 'tomcat-api', version: '8.5.13'
 }

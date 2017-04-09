@@ -12,6 +12,7 @@ import java.io.IOException;
 /**
  * Created by tomi on 08/04/17.
  */
+
 public class AddSubjectServlet extends HttpServlet{
 
     @Override
@@ -28,6 +29,6 @@ public class AddSubjectServlet extends HttpServlet{
 
         if(status != null) req.setAttribute("operationSuccesfull", true);
         else req.setAttribute("operationSuccesfull", false);
-        req.getRequestDispatcher("a donde lo querramos mandar").forward(req, resp);
+        req.getRequestDispatcher("/subject.jsp").forward(req, resp);
     }
 }
