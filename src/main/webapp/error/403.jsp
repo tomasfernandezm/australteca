@@ -5,7 +5,6 @@
 </head>
 <body>
 <h1>SecurityFilter Example Application: Forbidden</h1>
-<%@include file="/menuSF.jsp" %>
 Error 403: You are not authorized to view the requested resource.
 </body>
 </html>

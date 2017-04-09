@@ -29,6 +29,6 @@ public class AddSubjectServlet extends HttpServlet{
 
         if(status != null) req.setAttribute("operationSuccesfull", true);
         else req.setAttribute("operationSuccesfull", false);
-        req.getRequestDispatcher("/subject.jsp").forward(req, resp);
+        req.getRequestDispatcher("/mainMenu/subject.jsp").forward(req, resp);
     }
 }

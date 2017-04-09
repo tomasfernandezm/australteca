@@ -8,7 +8,6 @@
 
     <body>
         <h1>SecurityFilter Example Application: Login Error Page</h1>
-        <%@include file="/menuSF.jsp" %>
         Bad username/password combination, please <a href="<%=response.encodeURL("loginForm.jsp")%>">try again</a>.
     </body>
 

@@ -8,7 +8,6 @@
 
     <body>
         <h1>SecurityFilter Example Application: Forbidden Secure Page</h1>
-        <%@include file="/menuSF.jsp" %>
         <p>
         Welcome <%=request.getRemoteUser()%>, you are viewing a secure page.
         But something went wrong because you aren't authorized to see it!
