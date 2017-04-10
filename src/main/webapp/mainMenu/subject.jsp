@@ -48,36 +48,19 @@
                     </div>
                     <div class="pre-scrollable" data-offset="50">
                         <table class="table">
-                            <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Raiting</th>
-                                <th>Favorita</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Analisis 1</td>
-                                <td>2.3/5</td>
-                                <td>(icono)</td>
-                            </tr>
-                            <tr>
-                                <td>Fisica</td>
-                                <td>4.5/5</td>
-                                <td>icono</td>
-                            </tr>
-                            <tr>
-                                <td>Teologia</td>
-                                <td>0.2/5</td>
-                                <td>icono</td>
-                            </tr>
-                            </tbody>
+                            <% List subjectWrapperList = (List)request.getAttribute("subjectWrappers");%>
+                            <c:forEach items="${subjectWrapperList}" var="subject">
+                                <tr>
+                                    <td><c:out value="${subject.getSubject}"/></td>
+                                    <td><c:out value="${subject.getFavorite}"/></td>
+                                </tr>
+                            </c:forEach>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-        <% List<ListSubjectServlet.SubjectWrapper> subjectWrapperList = (List<ListSubjectServlet.SubjectWrapper>)request.getAttribute("subjectWrappers");%>
+
     </div>
 
     <div id="myModal" class="modal">

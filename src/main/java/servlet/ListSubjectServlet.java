@@ -44,7 +44,7 @@ public class ListSubjectServlet extends HttpServlet{
             }
         }
         req.setAttribute("subjectWrappers", subjectWrapperList);
-        req.getRequestDispatcher("a donde lo querramos mandar").forward(req, resp);
+        req.getRequestDispatcher("/mainMenu/subject.jsp").forward(req, resp);
     }
 
     public class SubjectWrapper{
@@ -55,6 +55,14 @@ public class ListSubjectServlet extends HttpServlet{
         SubjectWrapper(Subject subject, boolean favorite) {
             this.subject = subject;
             this.favorite = favorite;
+        }
+
+        public Subject getSubject() {
+            return subject;
+        }
+
+        public boolean isFavorite() {
+            return favorite;
         }
     }
 }
