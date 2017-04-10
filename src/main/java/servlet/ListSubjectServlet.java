@@ -43,11 +43,11 @@ public class ListSubjectServlet extends HttpServlet{
                 else subjectWrapperList.add(new SubjectWrapper(s, false));
             }
         }
-        req.setAttribute("subjects", subjectWrapperList);
+        req.setAttribute("subjectWrappers", subjectWrapperList);
         req.getRequestDispatcher("a donde lo querramos mandar").forward(req, resp);
     }
 
-    private class SubjectWrapper{
+    public class SubjectWrapper{
 
         Subject subject;
         boolean favorite;

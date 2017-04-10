@@ -1,4 +1,8 @@
 Cosas que hay que hacer:
-1-chequear mail
-2-Empezar materia ABM
-3-baja y modificacion de usuario
+1-listar materias
+2-B y modificaciom de materia
+3-baja y modificacion de usuario (serv y ui)
+4- ver materia, generar automaticamente jsp para cada materia
+5-dropdown  para el 3
+6-homepage (listar materias, ofertas y discusiones abiertas del usuario)
+7-

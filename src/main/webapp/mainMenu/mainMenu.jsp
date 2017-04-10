@@ -19,7 +19,15 @@
                 <li><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<%=response.encodeURL("/logout.jsp")%>">Cerrar Sesion</a></li>
+                <div class="dropdown">
+                    <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Settings</a></li>
+                        <li><a href=<%response.encodeURL("logout.jsp");%>>Log out</a></li>
+                    </ul>
+                </div>
             </ul>
         </div>
     </nav>

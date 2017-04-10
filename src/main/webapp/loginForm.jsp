@@ -36,7 +36,7 @@
           </div>
           <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
         </form>
-      <% if(!(boolean) session.getAttribute("loginSucceded")){%>
+      <% if(session.getAttribute("loginSucceded") != null && !(boolean) session.getAttribute("loginSucceded")){%>
         <!-- hacer algo -->
         <% }%>
         <% session.removeAttribute("loginSucceded"); %>
@@ -114,6 +114,7 @@
     <h2>Y buscar lo que no sabes.</h2>
 
   </div>
+
 </div>
 
 

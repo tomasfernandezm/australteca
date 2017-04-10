@@ -1,4 +1,6 @@
-<%@ page import="org.securityfilter.example.MyConstants" %><%--
+<%@ page import="org.securityfilter.example.MyConstants" %>
+<%@ page import="servlet.ListSubjectServlet" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 29/3/17
@@ -75,6 +77,7 @@
                 </div>
             </div>
         </div>
+        <% List<ListSubjectServlet.SubjectWrapper> subjectWrapperList = (List<ListSubjectServlet.SubjectWrapper>)request.getAttribute("subjectWrappers");%>
     </div>
 
     <div id="myModal" class="modal">
@@ -103,8 +106,8 @@
     </div>
 
     <script script type="text/javascript" src="/js/modalBox.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
 
 
