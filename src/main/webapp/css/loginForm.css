@@ -52,18 +52,9 @@ form.navbar-form input {
     margin-top: 5px;
    	}
 	
-	
-.btn-sample { 
-  color: #0C0E75; 
-  background-color: #FFFFFF; 
-  border-color: #FFFFFF; 
-}
- 
-
- 
-.btn-sample .badge { 
-  color: #FFFFFF; 
-  background-color: #0C0E75; 
+input.btn:hover{
+    background-color: #666666;
+    color: white;
 }
 
 .principal{

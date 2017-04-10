@@ -80,21 +80,21 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form action="/WEB-INF/addSubject">
+            <form action="/WEB-INF/addSubject" method="post">
                 <div class="form-group">
                     <h3>Materia nueva</h3>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <label id="subjectName">Nombre:</label>
                         <input class="input-group" type="text" name="subjectName">
                     </div>
-                    <% int status = (Integer) (request.getAttribute("status")); %>
-                    <% if (status > 0) { %>
-                    <p> Materia agregada!</p>
-                    <% } else { %>
-                    <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
-                    <% } %>
                 </div>
-                <input type="Submit" class="btn btn-default"  value="Agregar">
+                <input type="Submit" name="addSubject" class="btn btn-default"  value="Agregar">
+                <% int status = (Integer) (request.getAttribute("status")); %>
+                <% if (status > 0) { %>
+                <p> Materia agregada!</p>
+                <% } else { %>
+                <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
+                <% } %>
             </form>
         </div>
     </div>

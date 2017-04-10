@@ -17,7 +17,6 @@
                 <li><a href="<%=response.encodeURL("/mainMenu/subject.jsp")%>">Materias</a></li>
                 <li><a href="<%=response.encodeURL("/mainMenu/work.jsp")%>">Trabajo</a></li>
                 <li><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
-
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="<%=response.encodeURL("/logout.jsp")%>">Cerrar Sesion</a></li>

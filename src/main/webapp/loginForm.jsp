@@ -34,7 +34,7 @@
             <label for="password">Password</label>
             <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
           </div>
-          <input type="Submit" class="btn btn-default btn-xs btn-outline-primary"  value="Iniciar sesion">
+          <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
         </form>
     </div>
   </div>
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="form-group">
-                  <select class="select" name="career">
+                  <select class="select form-control" name="career">
                     <option value="Ingenieria informatica" selected>Ingenieria informatica</option>
                     <li class="divider"></li>
                     <option value="Ingenieria indutrial">Ingenieria indutrial</option>
