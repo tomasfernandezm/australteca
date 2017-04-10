@@ -36,6 +36,10 @@
           </div>
           <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
         </form>
+      <% if(!(boolean) session.getAttribute("loginSucceded")){%>
+        <!-- hacer algo -->
+        <% }%>
+        <% session.removeAttribute("loginSucceded"); %>
     </div>
   </div>
 </nav>
