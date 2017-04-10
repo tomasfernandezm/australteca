@@ -80,7 +80,7 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form action="/WEB-INF/addSubject" method="post">
+            <form action="/addSubject" method="post">
                 <div class="form-group">
                     <h3>Materia nueva</h3>
                     <div class="col-xs-6 col-sm-6 col-md-6">
@@ -89,12 +89,15 @@
                     </div>
                 </div>
                 <input type="Submit" name="addSubject" class="btn btn-default"  value="Agregar">
-                <% int status = (Integer) (request.getAttribute("status")); %>
-                <% if (status > 0) { %>
+
+                <!-- tendría que ser relegado a un servlet -->
+                <% if (request.getParameter("addSubject") != null){%>
+                <% if ((boolean) request.getAttribute("operationSuccesfull")) { %>
                 <p> Materia agregada!</p>
                 <% } else { %>
                 <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
-                <% } %>
+                <% }
+                }%>
             </form>
         </div>
     </div>
