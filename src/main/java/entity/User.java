@@ -11,6 +11,13 @@ import java.util.*;
 @Table(name = "USER")
 public class User {
 
+    @Transient
+    private String ADMINISTRATOR = "admin";
+    @Transient
+    private String MODERATOR = "moderator";
+    @Transient
+    private String STANDARD = "user";
+
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "USER_ID")
     private Integer id;
@@ -55,33 +62,33 @@ public class User {
     }
 
     public void makeAdmin(){
-        role = EntityConstants.ADMINISTRATOR;
+        role = ADMINISTRATOR;
     }
 
     public void makeModerator(){
-        role = EntityConstants.MODERATOR;
+        role = MODERATOR;
     }
 
     public void makeStandard(){
-        role = EntityConstants.STANDARD;
+        role = STANDARD;
     }
 
     public boolean isStandard(){
-        return role.equals(EntityConstants.STANDARD);
+        return role.equals(STANDARD);
     }
 
     public boolean isModerator(){
-        return role.equals(EntityConstants.MODERATOR);
+        return role.equals(MODERATOR);
     }
 
     public boolean isAdmin(){
-        return role.equals(EntityConstants.ADMINISTRATOR);
+        return role.equals(ADMINISTRATOR);
     }
 
     private void assignRole(boolean admin, boolean moderator){
-        if(admin) role = EntityConstants.ADMINISTRATOR;
-        else if(moderator) role = EntityConstants.MODERATOR;
-        else role = EntityConstants.STANDARD;
+        if(admin) role = ADMINISTRATOR;
+        else if(moderator) role = MODERATOR;
+        else role = STANDARD;
     }
 
     public Integer getId() {

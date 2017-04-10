@@ -16,8 +16,12 @@ html, body {
     padding-top: 1px;
 }
 
-
-
+div.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+}
 
 form.navbar-form input {
     border: 1px solid #FFFFFF;

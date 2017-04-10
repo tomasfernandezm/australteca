@@ -19,13 +19,13 @@
                 <li><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <div class="dropdown">
-                    <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= request.getRemoteUser() %> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Settings</a></li>
-                        <li><a href=<%response.encodeURL("logout.jsp");%>>Log out</a></li>
+                        <li><a href="<%= response.encodeURL("/mainMenu/userSettings.jsp")%>">Ajustes</a></li>
+                        <li><a href="<%= response.encodeURL("/logout.jsp")%>">Sign out</a></li>
                     </ul>
                 </div>
             </ul>

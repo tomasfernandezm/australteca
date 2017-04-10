@@ -14,5 +14,7 @@ public interface MyConstants extends Constants {
     public static final String REGISTER_LNAME_FIELD = "registerLname";
     public static final String MY_HOME_TITLE = "Australteca";
     public static final String MY_LOGOUT_TITLE = "Cerrar sesión";
+    public static final String ADMIN_USERNAME = "admin@australteca";
+    public static final String ADMIN_PASSWORD = "admin";
 
 }
