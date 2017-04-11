@@ -41,11 +41,13 @@
 
                 <!-- tendría que ser relegado a un servlet -->
                 <% if (request.getParameter("addSubject") != null){%>
+
                 <% if ((boolean) request.getAttribute("operationSuccesfull")) { %>
                 <p> Materia agregada!</p>
                 <% } else { %>
                 <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
                 <% }
+                response.sendRedirect("/listSubjects");
                 }%>
             </form>
         </div>
