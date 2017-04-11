@@ -19,6 +19,9 @@
 <%@include file="/mainMenu/mainMenu.jsp" %>
 
 
+
+
+<% if (request.isUserInRole("user")) { %>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -55,6 +58,7 @@
         </div>
     </div>
 </div>
+<% } %>
 
 
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>

@@ -25,6 +25,32 @@
 
     <%@include file="/mainMenu/mainMenu.jsp" %>
 
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="/addSubject" method="post">
+                <div class="form-group">
+                    <h3>Materia nueva</h3>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <label id="subjectName">Nombre:</label>
+                        <input class="input-group" type="text" name="subjectName" required>
+                    </div>
+                </div>
+                <input type="Submit" name="addSubject" class="btn btn-default"  value="Agregar">
+
+                <!-- tendría que ser relegado a un servlet -->
+                <% if (request.getParameter("addSubject") != null){%>
+                <% if ((boolean) request.getAttribute("operationSuccesfull")) { %>
+                <p> Materia agregada!</p>
+                <% } else { %>
+                <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
+                <% }
+                }%>
+            </form>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -52,6 +78,10 @@
                     </div>
                     <div class="pre-scrollable" data-offset="50">
                         <table class="table">
+                            <thead>
+                            <td>Nombre</td>
+                            <td>Favorita</td>
+                            </thead>
                             <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                             <c:forEach items="${subjectWrapperList}" var="subject">
                                 <tr>
@@ -67,30 +97,7 @@
 
     </div>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form action="/addSubject" method="post">
-                <div class="form-group">
-                    <h3>Materia nueva</h3>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                        <label id="subjectName">Nombre:</label>
-                        <input class="input-group" type="text" name="subjectName">
-                    </div>
-                </div>
-                <input type="Submit" name="addSubject" class="btn btn-default"  value="Agregar">
 
-                <!-- tendría que ser relegado a un servlet -->
-                <% if (request.getParameter("addSubject") != null){%>
-                <% if ((boolean) request.getAttribute("operationSuccesfull")) { %>
-                <p> Materia agregada!</p>
-                <% } else { %>
-                <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
-                <% }
-                }%>
-            </form>
-        </div>
-    </div>
 
     <script script type="text/javascript" src="/js/modalBox.js"></script>
     <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
