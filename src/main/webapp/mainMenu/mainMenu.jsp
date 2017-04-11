@@ -14,7 +14,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="<%=response.encodeURL("/mainMenu/home.jsp")%>">Inicio</a></li>
-                <li><a href="<%=response.encodeURL("/mainMenu/subject.jsp")%>">Materias</a></li>
+                <li><a href="<%=response.encodeURL("/listSubjects")%>">Materias</a></li>
                 <li><a href="<%=response.encodeURL("/mainMenu/work.jsp")%>">Trabajo</a></li>
                 <li><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
             </ul>

@@ -3,7 +3,6 @@ package org.securityfilter.example;
 import com.sun.istack.internal.NotNull;
 
 import dao.UserDAO;
-import entity.EntityConstants;
 import entity.User;
 
 import org.junit.Test;
@@ -48,7 +47,7 @@ public class LoginSecurityRealmTester {
         Integer userId = new UserDAO().addToDatabase(giveUser());
         boolean validate = lsr.isUserInRole(giveUser().getEmail(), "notThisRole");
         assertThat(!validate).isTrue();
-        validate = lsr.isUserInRole(giveUser().getEmail(), EntityConstants.STANDARD);
+        validate = lsr.isUserInRole(giveUser().getEmail(), "user");
         assertThat(validate).isTrue();
     }
 }

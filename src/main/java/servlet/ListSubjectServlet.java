@@ -20,14 +20,11 @@ import java.util.Set;
  */
 public class ListSubjectServlet extends HttpServlet{
 
+    String userEmail;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String userEmail = (String) req.getAttribute("userEmail");
+        userEmail = req.getRemoteUser();
         List<SubjectWrapper> subjectWrapperList = new ArrayList<>();
         List<Subject> subjectList = new SubjectDAO().listSubjects();
 
@@ -45,6 +42,11 @@ public class ListSubjectServlet extends HttpServlet{
         }
         req.setAttribute("subjectWrappers", subjectWrapperList);
         req.getRequestDispatcher("/mainMenu/subject.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
     }
 
     public class SubjectWrapper{

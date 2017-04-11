@@ -1,6 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="org.securityfilter.example.MyConstants" %>
 <%@ page import="servlet.ListSubjectServlet" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 29/3/17
@@ -8,6 +10,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -16,6 +19,7 @@
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
     <link href="/css/subject.css" rel="stylesheet" type="text/css">
     <link href="/css/modalBox.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 
@@ -48,11 +52,11 @@
                     </div>
                     <div class="pre-scrollable" data-offset="50">
                         <table class="table">
-                            <% List subjectWrapperList = (List)request.getAttribute("subjectWrappers");%>
+                            <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                             <c:forEach items="${subjectWrapperList}" var="subject">
                                 <tr>
-                                    <td><c:out value="${subject.getSubject}"/></td>
-                                    <td><c:out value="${subject.getFavorite}"/></td>
+                                    <td><c:out value="${subject.subject.subjectName}"/></td>
+                                    <td><c:out value="${subject.favorite}"/></td>
                                 </tr>
                             </c:forEach>
                         </table>
