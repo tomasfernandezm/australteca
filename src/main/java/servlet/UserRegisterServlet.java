@@ -15,6 +15,8 @@ import java.io.IOException;
 
 public class UserRegisterServlet extends HttpServlet {
 
+    public static final String NAME_PARAM = "name";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -23,7 +25,7 @@ public class UserRegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
 
-        String name = request.getParameter("name");
+        String name = request.getParameter(NAME_PARAM);
         String lname = request.getParameter("lastname");
         String email = request.getParameter("email");
         String password = request.getParameter("password");

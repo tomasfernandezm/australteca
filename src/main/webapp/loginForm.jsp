@@ -1,5 +1,7 @@
 <%@ page import="org.securityfilter.example.Constants"%>
 <%@ page import="org.securityfilter.example.MyConstants" %>
+<%@ page import="servlet.UserRegisterServlet" %>
+<%@ page import="static servlet.UserRegisterServlet.NAME_PARAM" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -61,7 +63,7 @@
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="text" name= "name" class="form-control input-sm" placeholder="Nombre" required/>
+                      <input type="text" name= "<%=NAME_PARAM%>" class="form-control input-sm" placeholder="Nombre" required/>
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
