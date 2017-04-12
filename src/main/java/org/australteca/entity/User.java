@@ -1,5 +1,7 @@
 package org.australteca.entity;
 
+import org.australteca.Constants;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -11,12 +13,6 @@ import java.util.*;
 @Table(name = "USER")
 public class User {
 
-    @Transient
-    private String ADMINISTRATOR = "admin";
-    @Transient
-    private String MODERATOR = "moderator";
-    @Transient
-    private String STANDARD = "user";
 
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "USER_ID")
@@ -62,33 +58,33 @@ public class User {
     }
 
     public void makeAdmin(){
-        role = ADMINISTRATOR;
+        role = Constants.ADMINISTRATOR;
     }
 
     public void makeModerator(){
-        role = MODERATOR;
+        role = Constants.MODERATOR;
     }
 
     public void makeStandard(){
-        role = STANDARD;
+        role = Constants.STANDARD;
     }
 
     public boolean isStandard(){
-        return role.equals(STANDARD);
+        return role.equals(Constants.STANDARD);
     }
 
     public boolean isModerator(){
-        return role.equals(MODERATOR);
+        return role.equals(Constants.MODERATOR);
     }
 
     public boolean isAdmin(){
-        return role.equals(ADMINISTRATOR);
+        return role.equals(Constants.ADMINISTRATOR);
     }
 
     private void assignRole(boolean admin, boolean moderator){
-        if(admin) role = ADMINISTRATOR;
-        else if(moderator) role = MODERATOR;
-        else role = STANDARD;
+        if(admin) role = Constants.ADMINISTRATOR;
+        else if(moderator) role = Constants.MODERATOR;
+        else role = Constants.STANDARD;
     }
 
     public Integer getId() {

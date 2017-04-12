@@ -5,4 +5,5 @@ Cosas que hay que hacer:
 4- ver materia, generar automaticamente jsp para cada materia
 5-dropdown  para el 3 OK
 6-homepage (listar materias, ofertas y discusiones abiertas del usuario)
-7-
+7- terminar userSettings
+8- terminar rediseño de servlets

@@ -1,4 +1,8 @@
-<%--
+<%@ page import="org.australteca.Constants" %>
+<%@ page import="static org.australteca.Constants.STATUS" %>
+<%@ page import="static org.australteca.Constants.NAME_PARAM" %>
+<%@ page import="static org.australteca.Constants.LAST_NAME_PARAM" %>
+<%@ page import="static org.australteca.Constants.*" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 10/4/17
@@ -40,43 +44,37 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" name="name">
+                        <input class="form-control" type="text" name="<%= NAME_PARAM%>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Apellido:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" name="lastName">
+                        <input class="form-control" type="text" name="<%= LAST_NAME_PARAM%>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Email:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="email">
+                        <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=EMAIL_PARAM%>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Password:</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" name="<%=PASSWORD_PARAM%>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">New Password:</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" name="<%= PASSWORD_CONFIRMATION_PARAM%>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Confirmar contrasena nueva:</label>
+                    <label class="col-md-3 control-label">Carrera:</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Cambiar carrera:</label>
-                    <div class="col-md-8">
-                        <select class="select form-control" name="career">
+                        <select class="select form-control" name="<%=CAREER_PARAM%>">
                             <option value="Ingenieria informatica" selected>Ingenieria informatica</option>
                             <li class="divider"></li>
                             <option value="Ingenieria indutrial">Ingenieria indutrial</option>
@@ -94,6 +92,11 @@
 
             </form>
         </div>
+        <% Integer status = (Integer) request.getAttribute(STATUS);%>
+        <% if(status != null && status == 0) {
+            // mostrar mensaje
+            response.sendRedirect("/logout.jsp");
+        }%>
     </div>
 </div>
 

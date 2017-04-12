@@ -1,12 +1,12 @@
-package org.australteca.servlet;
+package org.australteca.servlet.command;
 
 import org.australteca.dao.SubjectDAO;
 import org.australteca.dao.UserDAO;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
+import org.australteca.servlet.ListSubjectServlet;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -15,12 +15,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by tomi on 06/04/17.
+ * Created by tomi on 12/04/17.
  */
-public class ListSubjectServlet extends HttpServlet{
+public class ListSubjectCommand implements Command {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String userEmail = req.getRemoteUser();
         List<SubjectWrapper> subjectWrapperList = new ArrayList<>();
         List<Subject> subjectList = new SubjectDAO().listSubjects();
@@ -42,8 +42,8 @@ public class ListSubjectServlet extends HttpServlet{
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+    public Command create() {
+        return null;
     }
 
     public class SubjectWrapper{

@@ -1,6 +1,8 @@
 <%@ page import="org.australteca.Constants"%>
-<%@ page import="org.australteca.servlet.UserRegisterServlet" %>
-<%@ page import="static org.australteca.servlet.UserRegisterServlet.NAME_PARAM" %>
+<%@ page import="static org.australteca.Constants.LOGIN_FORM_ACTION" %>
+<%@ page import="static org.australteca.Constants.LOGIN_FORM_ID" %>
+<%@ page import="static org.australteca.Constants.NAME_PARAM" %>
+<%@ page import="static org.australteca.Constants.*" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -26,7 +28,7 @@
     </div>
     
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <form class="navbar-form navbar-right" id="<%=Constants.LOGIN_FORM_ID%>" action="<%=response.encodeURL(Constants.LOGIN_FORM_ACTION)%>" method="POST">
+        <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
           <div class="form-group">
             <label id="email"for="email">Email</label>
             <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
@@ -67,36 +69,36 @@
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="text" name= "lastname" class="form-control input-sm" placeholder="Apellido" required/>
+                      <input type="text" name= "<%=LAST_NAME_PARAM%>" class="form-control input-sm" placeholder="Apellido" required/>
                     </div>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <input type="email" name= "email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar"
+                  <input type="email" name= "<%=EMAIL_PARAM%>" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar"
                          placeholder="Email: ejemplo@ing.austral.edu.ar" class="form-control input-sm" required/>
                 </div>
 
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="password" name="password" pattern=".{0}|.{8,}" id="password" class="form-control input-sm"
+                      <input type="password" name="<%= PASSWORD_PARAM%>" pattern=".{0}|.{8,}" id="password" class="form-control input-sm"
                              placeholder="Contrasena"  required title="Mínimo 8 caracteres"/>
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="password" name="passwordC" pattern=".{0}|.{8,}" class="form-control input-sm"
+                      <input type="password" name="<%= PASSWORD_CONFIRMATION_PARAM%>" pattern=".{0}|.{8,}" class="form-control input-sm"
                              placeholder="Confirmar contrasena"  required title="Mínimo 8 caracteres"/>
                     </div>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <select class="select form-control" name="career">
-                    <option value="Ingenieria informatica" selected>Ingenieria informatica</option>
+                  <select class="select form-control" name="<%=CAREER_PARAM%>">
+                    <option value="<%=INGENIERIA_INF_VALUE%>" selected>Ingenieria informatica</option>
                     <li class="divider"></li>
-                    <option value="Ingenieria indutrial">Ingenieria indutrial</option>
+                    <option value="<%= INGENIERIA_IND_VALUE%>">Ingenieria indutrial</option>
                   </select>
                 </div>
 

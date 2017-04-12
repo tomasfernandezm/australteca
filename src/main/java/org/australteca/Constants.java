@@ -63,37 +63,51 @@ package org.australteca;
  */
 public interface Constants {
 
-   // shared constants
-   public static final String COMMON_TITLE_BASE = "SecurityFilter Example Application: ";
-
-   // home page constants
-   public static final String HOME_TITLE = COMMON_TITLE_BASE + "Home";
-   public static final String HOME_FORM_ID = "homeForm";
-   public static final String HOME_POST_FIELD = "postMe";
-
-   // login form constants
-   public static final String LOGIN_TITLE = COMMON_TITLE_BASE + "Login Page";
-   public static final String LOGIN_FORM_ID = "loginForm";
-   public static final String LOGIN_FORM_ACTION = "j_security_check";
-   public static final String LOGIN_USERNAME_FIELD = "j_username";
-   public static final String LOGIN_PASSWORD_FIELD = "j_password";
-   public static final String LOGIN_REMEMBERME_FIELD = "j_rememberme";
-
-   // secure page constants
-   public static final String SECURE_TITLE = COMMON_TITLE_BASE + "Secure Page";
 
 
-   // logout page constants
-   public static final String LOGOUT_TITLE = COMMON_TITLE_BASE + "Logout";
-   String REGISTER_TITLE = COMMON_TITLE_BASE + "UserDAO Page";
-   String REGISTER_FORM_ID = "registerForm";
-   String REGISTER_FORM_ACTION = "registerConfirmation";
-   String REGISTER_NAME = "registerName";
-   String REGISTER_NAME_FIELD = "registerName";
-   String REGISTER_LNAME = "registerLname";
-   String REGISTER_LNAME_FIELD = "registerLname";
-   String MY_HOME_TITLE = "Australteca";
-   String MY_LOGOUT_TITLE = "Cerrar sesión";
-   String ADMIN_USERNAME = "admin@australteca";
-   String ADMIN_PASSWORD = "admin";
+    /* ~~~~~~~~~~~ SecurityFilter Login Constants ~~~~~~~~~~~~~~~~~~~~ */
+    String LOGIN_FORM_ID = "loginForm";
+
+    String LOGIN_FORM_ACTION = "j_security_check";
+    String LOGIN_USERNAME_FIELD = "j_username";
+    String LOGIN_PASSWORD_FIELD = "j_password";
+    String LOGIN_REMEMBERME_FIELD = "j_rememberme";
+
+    /* ~~~~~~~~~~~ User Constants ~~~~~~~~~~~ */
+
+    String ADMINISTRATOR = "admin";
+    String MODERATOR = "moderator";
+    String STANDARD = "user";
+
+    /* ~~~~~~~~~~~ Servlet Feedback Constants ~~~~~~~~~~~~~~~~~ */
+
+    String STATUS = "status";
+
+    /* ~~~~~~~~~~~ JSP View Constants ~~~~~~~~~~~~ */
+
+    String MY_HOME_TITLE = "Australteca";
+
+    /* ~~~~~~~~~~~ Register Constants ~~~~~~~~~~~~ */
+    String REGISTER_FORM_ID = "registerForm";
+    String REGISTER_FORM_ACTION = "registerConfirmation";
+
+    /* ~~~~~~~~~~~ User Servlet Parameters ~~~~~~~~~~~~~~~*/
+    String NAME_PARAM = "name";
+    String LAST_NAME_PARAM = "lastname";
+    String EMAIL_PARAM = "email";
+    String PASSWORD_PARAM = "password";
+    String PASSWORD_CONFIRMATION_PARAM = "passwordC";
+    String INGENIERIA_INF_VALUE = "Ingenieria informatica";
+    String INGENIERIA_IND_VALUE = "Ingenieria industrial";
+    String CAREER_PARAM = "career";
+    String USER_ID_PARAM = "id";
+
+    /* ~~~~~~~~~~~ Subject Servlet Parameters ~~~~~~~~~~~~~ */
+    String SUBJECT_NAME_PARAM = "subjectName";
+
+    String OPERATION_SUCCESFUL_PARAM = "operationSuccessful";
+
+    /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
+    String ADMIN_USERNAME = "admin@australteca";
+    String ADMIN_PASSWORD = "admin";
 }

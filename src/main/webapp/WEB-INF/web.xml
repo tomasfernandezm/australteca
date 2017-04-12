@@ -29,7 +29,7 @@
          <param-name>loginSubmitPattern</param-name>
          <param-value>/logMeIn</param-value>
          <description>
-            As an example a login form can define "logMeIn" as it action in place of the standard
+            As an example a login form can define "logMeIn" ascommandtion in place of the standard
             "j_security_check" which is a special flag user by app servers for container managed security.
          </description>
       </init-param>

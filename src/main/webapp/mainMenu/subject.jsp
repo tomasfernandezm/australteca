@@ -3,6 +3,7 @@
 <%@ page import="org.australteca.servlet.ListSubjectServlet" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.australteca.Constants" %>
+<%@ page import="javax.security.auth.login.Configuration" %>
 <%--
   Created by IntelliJ IDEA.
   User: tomasforman
@@ -35,15 +36,15 @@
                     <h3>Materia nueva</h3>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <label id="subjectName">Nombre:</label>
-                        <input class="input-group" type="text" name="subjectName" required>
+                        <input class="input-group" type="text" name="<%=Constants.SUBJECT_NAME_PARAM%>" required>
                     </div>
                 </div>
                 <input type="Submit" name="addSubject" class="btn btn-default"  value="Agregar">
 
-                <!-- tendría que ser relegado a org.australteca.servletvlet -->
+                <!-- hay que emprolijarlo -->
                 <% if (request.getParameter("addSubject") != null){%>
 
-                <% if ((boolean) request.getAttribute("operationSuccesfull")) { %>
+                <% if ((boolean) request.getAttribute(Constants.OPERATION_SUCCESFUL_PARAM)) { %>
                 <p> Materia agregada!</p>
                 <% } else { %>
                 <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
@@ -102,7 +103,7 @@
 
 
 
-    <script script type="text/javascript" src="/js/modalBox.js"></script>
+    <script type="text/javascript" src="/js/modalBox.js"></script>
     <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
