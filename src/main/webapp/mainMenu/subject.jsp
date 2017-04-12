@@ -68,10 +68,10 @@
                                         <div class="input-group stylish-input-group">
                                             <input type="text" class="form-control" >
                                             <span class="input-group-addon">
-                                    <button type="submit">
-                                        <span>Buscar</span>
-                                    </button>
-                                </span>
+                                                <button type="submit">
+                                                    <span>Buscar</span>
+                                                </button>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
