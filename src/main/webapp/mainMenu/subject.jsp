@@ -1,7 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="org.securityfilter.example.MyConstants" %>
-<%@ page import="servlet.ListSubjectServlet" %>
+
+<%@ page import="org.australteca.servlet.ListSubjectServlet" %>
 <%@ page import="java.util.List" %>
+<%@ page import="org.australteca.Constants" %>
 <%--
   Created by IntelliJ IDEA.
   User: tomasforman
@@ -14,7 +15,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title><%=MyConstants.MY_HOME_TITLE%></title>
+    <title><%=Constants.MY_HOME_TITLE%></title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
     <link href="/css/subject.css" rel="stylesheet" type="text/css">
@@ -39,7 +40,7 @@
                 </div>
                 <input type="Submit" name="addSubject" class="btn btn-default"  value="Agregar">
 
-                <!-- tendría que ser relegado a un servlet -->
+                <!-- tendría que ser relegado a org.australteca.servletvlet -->
                 <% if (request.getParameter("addSubject") != null){%>
 
                 <% if ((boolean) request.getAttribute("operationSuccesfull")) { %>

@@ -46,7 +46,7 @@
    <servlet>
       <servlet-name>UserRegisterServlet</servlet-name>
       <!--<description>for registration only</description>-->
-      <servlet-class>servlet.UserRegisterServlet</servlet-class>
+      <servlet-class>org.australteca.servlet.UserRegisterServlet</servlet-class>
    </servlet>
 
    <servlet-mapping>
@@ -57,7 +57,7 @@
    <servlet>
       <servlet-name>AddSubjectServlet</servlet-name>
        <!--<description> adds subject to database</description>-->
-       <servlet-class>servlet.AddSubjectServlet</servlet-class>
+       <servlet-class>org.australteca.servlet.AddSubjectServlet</servlet-class>
    </servlet>
 
     <servlet-mapping>
@@ -68,7 +68,7 @@
     <servlet>
         <servlet-name>ListSubjectServlet</servlet-name>
         <!--<description> gives a List of subject according to certain parameters</description>-->
-        <servlet-class>servlet.ListSubjectServlet</servlet-class>
+        <servlet-class>org.australteca.servlet.ListSubjectServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

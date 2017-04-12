@@ -46,8 +46,8 @@
       </form-login-config>
    </login-config>
 
-   <realm className="org.securityfilter.example.realm.LoginSecurityRealm">
-      <realm-param name="exampleProperty" value="it works!" /> <!-- Ni idea que es esto-->
+   <realm className="org.australteca.realm.LoginSecurityRealm">
+      
    </realm>
 
 </securityfilter-config>

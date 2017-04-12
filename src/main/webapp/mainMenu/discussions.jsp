@@ -1,4 +1,5 @@
-<%@ page import="org.securityfilter.example.MyConstants" %><%--
+
+<%@ page import="org.australteca.Constants" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 1/4/17
@@ -8,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%=MyConstants.MY_HOME_TITLE%></title>
+    <title><%=Constants.MY_HOME_TITLE%></title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
 </head>

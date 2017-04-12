@@ -1,4 +1,4 @@
-<%@ page import="org.securityfilter.example.MyConstants" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 29/3/17

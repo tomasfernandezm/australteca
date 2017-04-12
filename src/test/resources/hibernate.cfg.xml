@@ -29,11 +29,11 @@
         <property name="hibernate.search.default.indexBase">db/indexes</property>
 
         <property name="hibernate.current_session_context_class">thread</property>
-        <mapping class="entity.User"/>
-        <mapping class="entity.Commentary"/>
-        <mapping class="entity.Subject"/>
-        <mapping class="entity.Professor"/>
-        <mapping class="dao.GenericEntity"/>
+        <mapping class="org.australteca.entity.User"/>
+        <mapping class="org.australteca.entity.Commentary"/>
+        <mapping class="org.australteca.entity.Subject"/>
+        <mapping class="org.australteca.entity.Professor"/>
+        <mapping class="org.australteca.dao.GenericEntity"/>
 
     </session-factory>
 </hibernate-configuration>

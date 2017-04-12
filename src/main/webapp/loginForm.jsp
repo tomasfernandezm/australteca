@@ -1,11 +1,10 @@
-<%@ page import="org.securityfilter.example.Constants"%>
-<%@ page import="org.securityfilter.example.MyConstants" %>
-<%@ page import="servlet.UserRegisterServlet" %>
-<%@ page import="static servlet.UserRegisterServlet.NAME_PARAM" %>
+<%@ page import="org.australteca.Constants"%>
+<%@ page import="org.australteca.servlet.UserRegisterServlet" %>
+<%@ page import="static org.australteca.servlet.UserRegisterServlet.NAME_PARAM" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title><%=MyConstants.MY_HOME_TITLE%></title>
+<title><%=Constants.MY_HOME_TITLE%></title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/loginForm.css" rel="stylesheet" type="text/css">
 </head>
@@ -50,7 +49,7 @@
 
 
 
-<form id="<%=MyConstants.REGISTER_FORM_ID%>" action="/register" method="POST">
+<form id="<%=Constants.REGISTER_FORM_ID%>" action="/register" method="POST">
     <div class="container-fluid">
       <div class="row centered-form  ">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">

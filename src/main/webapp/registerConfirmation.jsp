@@ -8,12 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>dao.UserDAO confirmation</title>
+    <title>org.australteca.dao.UserDAO confirmation</title>
 </head>
 <body>
 
-<h1><%=MyConstants.MY_HOME_TITLE%></h1>
-<%@ page import="org.securityfilter.example.MyConstants" %>
+<h1><%=Constants.MY_HOME_TITLE%></h1>
+
+<%@ page import="org.australteca.Constants" %>
 
 <% int status = (Integer) (request.getAttribute("status")); %>
 <% if (status > 0) { %>

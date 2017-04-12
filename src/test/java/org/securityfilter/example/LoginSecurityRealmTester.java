@@ -2,12 +2,12 @@ package org.securityfilter.example;
 
 import com.sun.istack.internal.NotNull;
 
-import dao.UserDAO;
-import entity.User;
+import org.australteca.dao.UserDAO;
+import org.australteca.entity.User;
 
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.*;
-import org.securityfilter.example.realm.LoginSecurityRealm;
+import org.australteca.realm.LoginSecurityRealm;
 
 
 
