@@ -20,7 +20,8 @@ div.btn-group, .btn-group-vertical {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    padding: 10px;
+    margin-top: 7px;
+    margin-right: 5px;
 }
 
 form.navbar-form input {
@@ -42,3 +43,47 @@ form.navbar-form input {
     text-align: left;
 }
 
+.dropdown-menu{
+    background-color: white;
+
+}
+
+.btn-group, .btn{
+    background-color: #666666;
+    color: white;
+    border-color: transparent;
+}
+
+.btn-group, .btn:hover{
+    background-color: #666666;
+    color: #adadad;
+    border-color: transparent;
+}
+
+.btn-group, .btn:active{
+    background-color: #666666;
+    color: #adadad;
+    border-color: transparent;
+}
+
+.dropdown-toggle{
+    background-color: #666666;
+    color: #adadad;
+    border-color: transparent;
+
+}
+
+.active-home, .activeHome2:hover{
+    background-color: black;
+}
+
+
+.active-discussions, .activeDiscussions2:hover{
+    background-color: black;
+}
+.active-subject, .activeSubject2:hover{
+    background-color: black;
+}
+.active-work, .activeWork2:hover{
+    background-color: black;
+}

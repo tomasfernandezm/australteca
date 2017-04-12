@@ -13,13 +13,14 @@
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <div class="active-work">
+        <%@include file="/mainMenu/mainMenu.jsp" %>
+    </div>
 
-<%@include file="/mainMenu/mainMenu.jsp" %>
 
+    <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
-
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
 
 </body>
 </html>

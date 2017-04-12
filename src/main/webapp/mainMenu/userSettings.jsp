@@ -18,59 +18,70 @@
 
 
 <div class="container">
-    <h1>Edit Profile</h1>
+    <h1>Editar perfil</h1>
     <hr>
     <div class="row">
         <!-- left column -->
         <div class="col-md-3">
             <div class="text-center">
                 <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                <h6>Upload a different photo...</h6>
-
-                <input type="file" class="form-control">
+                <span class="btn btn-default btn-sm btn-file">
+                    <span class="fileupload-new">Seleccionar foto</span>
+                    <input type="file" id="fileinpunt" name="image">
+                </span>
             </div>
         </div>
 
         <!-- edit form column -->
         <div class="col-md-9 personal-info">
 
-            <h3>Personal info</h3>
+            <h3>Informacion personal</h3>
 
             <form class="form-horizontal" role="form">
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">First name:</label>
+                    <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" value="Jane">
+                        <input class="form-control" type="text" name="name">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">Last name:</label>
+                    <label class="col-lg-3 control-label">Apellido:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" value="Bishop">
+                        <input class="form-control" type="text" name="lastName">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">Company:</label>
+                    <label class="col-lg-3 control-label">Email:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" value="">
+                        <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="email">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Username:</label>
+                    <label class="col-md-3 control-label">Contrasena vieja:</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" value="janeuser">
+                        <input class="form-control" type="password">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Password:</label>
+                    <label class="col-md-3 control-label">Contrasena Nueva:</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password" value="11111122333">
+                        <input class="form-control" type="password">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Confirm password:</label>
+                    <label class="col-md-3 control-label">Confirmar contrasena nueva:</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password" value="11111122333">
+                        <input class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Cambiar carrera:</label>
+                    <div class="col-md-8">
+                        <select class="select form-control" name="career">
+                            <option value="Ingenieria informatica" selected>Ingenieria informatica</option>
+                            <li class="divider"></li>
+                            <option value="Ingenieria indutrial">Ingenieria indutrial</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -81,6 +92,7 @@
                         <input type="reset" class="btn btn-default" value="Cancel">
                     </div>
                 </div>
+
             </form>
         </div>
     </div>

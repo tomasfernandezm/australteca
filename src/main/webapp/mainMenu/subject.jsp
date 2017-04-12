@@ -22,9 +22,9 @@
 
 </head>
 <body>
-
-    <%@include file="/mainMenu/mainMenu.jsp" %>
-
+    <div class="active-subject">
+        <%@include file="/mainMenu/mainMenu.jsp" %>
+    </div>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
