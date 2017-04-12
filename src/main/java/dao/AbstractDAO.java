@@ -31,7 +31,7 @@ public abstract class AbstractDAO<T> {
         return result;
     }
 
-    protected void deleteFromDatabase(Class<T> genericClass, Integer id) throws IllegalArgumentException{
+    void deleteFromDatabase(Class<T> genericClass, Integer id) throws IllegalArgumentException{
 
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
@@ -47,7 +47,7 @@ public abstract class AbstractDAO<T> {
         }
     }
 
-    protected T get(Class<T> genericClass, Integer id){
+    T get(Class<T> genericClass, Integer id){
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         T result = null;
@@ -64,7 +64,7 @@ public abstract class AbstractDAO<T> {
         return result;
     }
 
-    protected void update(T toUpdate){
+    public void update(T toUpdate){
 
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
@@ -80,7 +80,7 @@ public abstract class AbstractDAO<T> {
         }
     }
 
-    protected List<T> listEntities(Class<T> genericClass){
+    List<T> listEntities(Class<T> genericClass){
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         List<T> t = new ArrayList<T>();

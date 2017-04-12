@@ -25,10 +25,9 @@
         <div class="col-md-3">
             <div class="text-center">
                 <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                <span class="btn btn-default btn-sm btn-file">
-                    <span class="fileupload-new">Seleccionar foto</span>
-                    <input type="file" id="fileinpunt" name="image">
-                </span>
+                <label class="btn btn-default btn-file">
+                    Browse <input type="file" style="display: none;">
+                </label>
             </div>
         </div>
 
@@ -57,13 +56,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Contrasena vieja:</label>
+                    <label class="col-md-3 control-label">Password:</label>
                     <div class="col-md-8">
                         <input class="form-control" type="password">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Contrasena Nueva:</label>
+                    <label class="col-md-3 control-label">New Password:</label>
                     <div class="col-md-8">
                         <input class="form-control" type="password">
                     </div>
