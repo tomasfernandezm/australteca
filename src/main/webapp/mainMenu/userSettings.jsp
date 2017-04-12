@@ -33,7 +33,7 @@
         </div>
 
         <!-- edit form column -->
-        <div class="col-md-9 personal-info">
+        <div class="col-md-6 personal-info">
 
             <h3>Informacion personal</h3>
 
