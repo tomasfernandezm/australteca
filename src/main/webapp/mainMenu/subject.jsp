@@ -89,7 +89,8 @@
                             <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                             <c:forEach items="${subjectWrapperList}" var="subject">
                                 <tr>
-                                    <td><c:out value="${subject.subject.subjectName}"/></td>
+                                    <td><a href="/mainMenu/subjectExample.jsp?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subject.subjectName}">
+                                        <c:out value="${subject.subject.subjectName}"/></a></td>
                                     <td><c:out value="${subject.favorite}"/></td>
                                 </tr>
                             </c:forEach>
@@ -98,9 +99,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 
 
     <script type="text/javascript" src="/js/modalBox.js"></script>

@@ -104,8 +104,10 @@ public interface Constants {
 
     /* ~~~~~~~~~~~ Subject Servlet Parameters ~~~~~~~~~~~~~ */
     String SUBJECT_NAME_PARAM = "subjectName";
-
     String OPERATION_SUCCESFUL_PARAM = "operationSuccessful";
+    String SUBJECT_COMMENTARY_LIST = "subjectCommentaryList";
+    String SUBJECT_PROFESSOR_LIST = "subjectProfessorList";
+    String SUBJECT_FILES_LIST = "subjectFilesList";
 
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";

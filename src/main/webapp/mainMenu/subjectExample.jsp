@@ -1,5 +1,6 @@
-<%@ page import="org.australteca.realm.MyConstants" %>
-<%@ page import="org.australteca.Constants" %><%--
+
+<%@ page import="org.australteca.Constants" %>
+<%@ page import="static org.australteca.Constants.SUBJECT_NAME_PARAM" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 6/4/17
@@ -26,7 +27,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2>Nombre Materia</h2>
+            <h2><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
             <span class="starRating">
               <input id="rating5" type="radio" name="rating" value="5">
               <label for="rating5">5</label>
