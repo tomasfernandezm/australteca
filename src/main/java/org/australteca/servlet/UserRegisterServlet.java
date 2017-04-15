@@ -38,7 +38,7 @@ public class UserRegisterServlet extends HttpServlet {
 
         resp.setContentType("text/html");
 
-        request.getSession().setAttribute(STATUS, status);
+        request.setAttribute(STATUS, status);
         request.getRequestDispatcher("/registerConfirmation.jsp").forward(request, resp);
     }
 }

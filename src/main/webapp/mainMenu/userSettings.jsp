@@ -40,7 +40,7 @@
 
             <h3>Informacion personal</h3>
 
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" action="/userModification" method="post" role="form">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
@@ -84,9 +84,9 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
-                        <input type="button" class="btn btn-primary" value="Save Changes">
-                        <input type="reset" class="btn btn-default" value="Cancel">
-                        <input type="button" class="btn btn-default" value="Cancel">
+                        <input type="submit" class="btn btn-primary" value="Save Changes">
+                        <input type="reset" class="btn btn-default" value="Reset">
+                        <input type="cancel" class="btn btn-default" value="Cancel">
                     </div>
                 </div>
 

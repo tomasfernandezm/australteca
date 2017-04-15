@@ -108,6 +108,7 @@ public interface Constants {
     String SUBJECT_COMMENTARY_LIST = "subjectCommentaryList";
     String SUBJECT_PROFESSOR_LIST = "subjectProfessorList";
     String SUBJECT_FILES_LIST = "subjectFilesList";
+    String SUBJECT_SCORE = "subjectScore";
 
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";

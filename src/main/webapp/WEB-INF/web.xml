@@ -74,8 +74,38 @@
     </servlet>
 
     <servlet-mapping>
+        <servlet-name>UserModificationServlet</servlet-name>
+        <url-pattern>/userModification</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubjectServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.SubjectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubjectServlet</servlet-name>
+        <url-pattern>/subject</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserModificationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.UserModificationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
         <servlet-name>ListSubjectServlet</servlet-name>
         <url-pattern>/listSubjects</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PostSubjectServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.PostSubjectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PostSubjectServlet</servlet-name>
+        <url-pattern>/postSubject</url-pattern>
     </servlet-mapping>
 
 

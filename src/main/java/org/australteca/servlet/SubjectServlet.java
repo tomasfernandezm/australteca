@@ -19,12 +19,14 @@ public class SubjectServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        doPost(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        SubjectEnums subjectEnums = (SubjectEnums) req.getAttribute("command");
+        CommandFactory commandFactory = CommandFactory.getINSTANCE();
+        SubjectEnums subjectEnums = SubjectEnums.valueOf(req.getParameter("command"));
+        commandFactory.giveCommand(subjectEnums).execute(req, resp);
     }
 }

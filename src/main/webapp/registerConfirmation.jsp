@@ -16,8 +16,9 @@
 <h1><%=Constants.MY_HOME_TITLE%></h1>
 
 <%@ page import="org.australteca.Constants" %>
+<%@ page import="static org.australteca.Constants.STATUS" %>
 
-<% int status = (Integer) (request.getAttribute("<%=Constants.STATUS%>")); %>
+<% int status = (Integer) request.getAttribute(STATUS);%>
 <% if (status > 0) { %>
 <p> Te has registrado correctamente!</p>
 <a href="loginForm.jsp">Iniciar sesión</a>

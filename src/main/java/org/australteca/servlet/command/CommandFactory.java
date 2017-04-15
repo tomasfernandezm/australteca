@@ -8,28 +8,26 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.EnumMap;
 import java.util.Map;
 
+import static org.australteca.servlet.enums.SubjectEnums.*;
+
 /**
  * Created by tomi on 12/04/17.
  */
 public class CommandFactory{
 
-    public CommandFactory(){
+    private static CommandFactory INSTANCE = new CommandFactory();
+    private Map<SubjectEnums, Command> map = new EnumMap<>(SubjectEnums.class);
 
+    private CommandFactory(){
+        map.put(ADD_SUBJECT, new AddSubjectCommand());
+        map.put(LIST_SUBJECT, new ListSubjectCommand());
     }
 
-    public Command getCommand(SubjectEnums enums){
+    public static CommandFactory getINSTANCE(){
+        return INSTANCE;
+    }
 
-        Command command = null;
-        // me gustaría hacerlo con un mapa
-        switch (enums){
-            case ADD_SUBJECT:
-                command = new AddSubjectCommand();
-                break;
-            case LIST_SUBJECT:
-                command = new ListSubjectCommand();
-                break;
-        }
-
-        return command;
+    public Command giveCommand(SubjectEnums enums){
+        return map.get(enums).create();
     }
 }

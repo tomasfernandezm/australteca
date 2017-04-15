@@ -4,6 +4,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.australteca.Constants" %>
 <%@ page import="javax.security.auth.login.Configuration" %>
+<%@ page import="org.australteca.servlet.enums.SubjectEnums" %>
 <%--
   Created by IntelliJ IDEA.
   User: tomasforman
@@ -32,7 +33,7 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form action="/addSubject" method="post">
+            <form action="/subject?command=<%=SubjectEnums.ADD_SUBJECT%>" method="post">
                 <div class="form-group">
                     <div class="modal-header">
                     <h3>Materia nueva</h3>
@@ -93,7 +94,7 @@
                             <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                             <c:forEach items="${subjectWrapperList}" var="subject">
                                 <tr>
-                                    <td><a href="/mainMenu/subjectExample.jsp?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subject.subjectName}">
+                                    <td><a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subject.subjectName}">
                                         <c:out value="${subject.subject.subjectName}"/></a></td>
                                     <td><c:out value="${subject.favorite}"/></td>
                                 </tr>

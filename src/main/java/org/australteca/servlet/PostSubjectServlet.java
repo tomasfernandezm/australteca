@@ -18,7 +18,7 @@ public class PostSubjectServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        doPost(req, resp);
     }
 
     @Override
@@ -34,6 +34,8 @@ public class PostSubjectServlet extends HttpServlet {
         req.setAttribute(SUBJECT_PROFESSOR_LIST, subject.getProfessors());
         // req.setAttribute(SUBJECT_FILES_LIST, subject.getFiles());
 
+        req.setAttribute(SUBJECT_NAME_PARAM, subjectName);
+        req.setAttribute(SUBJECT_SCORE, subject.getScore());
         req.getRequestDispatcher("/mainMenu/subjectExample.jsp").forward(req, resp);
 
     }
