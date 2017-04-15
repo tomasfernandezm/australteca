@@ -1,9 +1,11 @@
 Cosas que hay que hacer:
-1-listar materias OK
-2-B y modificaciom de materia
-3-baja y modificacion de usuario (serv y ui) A MEDIAS
-4- ver materia, generar automaticamente jsp para cada materia
-5-dropdown  para el 3 OK
-6-homepage (listar materias, ofertas y discusiones abiertas del usuario)
-7- terminar userSettings
-8- terminar rediseño de servlets
+
+
+1-baja y modificación de materia (front y back)
+2-baja de usuario (front y back)
+3-homepage (listar materias, ofertas y discusiones abiertas del usuario) (front y back)
+4- foto de userSettings
+5- terminar de conceptualizar userSettings (front y back)
+6- terminar rediseño de servlets
+7- emprolijar la base de datos (leer docs de hibernate)
+8- emprolijar todo el código (back y front)
