@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE securityfilter-config PUBLIC
     "-//SecurityFilter.org//DTD Security Filter Configuration 2.0//EN"
@@ -22,7 +22,7 @@
       </web-resource-collection>
       <auth-constraint>
           <!-- Role del usuario, sirve para identificar al usuario y para determinar
-          si el tipo de usuario puede estar en estas páginas, a medida que hagamos más, habrá que ir agregando -->
+          si el tipo de usuario puede estar en estas pÃ¡ginas, a medida que hagamos mÃ¡s, habrÃ¡ que ir agregando -->
           <role-name>user</role-name>
       </auth-constraint>
    </security-constraint>

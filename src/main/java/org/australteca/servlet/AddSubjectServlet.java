@@ -30,6 +30,6 @@ public class AddSubjectServlet extends HttpServlet{
 
         if(status != null) req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, true);
         else req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, false);
-        req.getRequestDispatcher("/mainMenu/subject.jsp").forward(req, resp);
+        req.getRequestDispatcher("/mainMenu/subjects.jsp").forward(req, resp);
     }
 }

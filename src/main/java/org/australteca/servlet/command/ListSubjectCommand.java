@@ -38,7 +38,7 @@ public class ListSubjectCommand implements Command {
             }
         }
         req.setAttribute("subjectWrappers", subjectWrapperList);
-        req.getRequestDispatcher("/mainMenu/subject.jsp").forward(req, resp);
+        req.getRequestDispatcher("/mainMenu/subjects.jsp").forward(req, resp);
     }
 
     @Override
