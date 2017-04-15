@@ -40,7 +40,7 @@ public class UserModificationServlet extends HttpServlet{
         user.setPassword(password);
         user.setCourse(career);
 
-        userDAO.update(user);
+        userDAO.merge(user);
 
         req.setAttribute(STATUS, 0);
         req.getRequestDispatcher("/mainMenu/userSettings.jsp").forward(req, resp);

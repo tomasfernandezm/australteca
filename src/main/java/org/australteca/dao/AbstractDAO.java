@@ -64,13 +64,13 @@ public abstract class AbstractDAO<T> {
         return result;
     }
 
-    public void update(T toUpdate){
+    public void merge(T toUpdate){
 
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         try{
             tx = session.beginTransaction();
-            session.update(toUpdate);
+            session.merge(toUpdate);
             tx.commit();
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();

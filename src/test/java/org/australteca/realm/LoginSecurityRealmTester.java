@@ -1,4 +1,4 @@
-package org.securityfilter.example;
+package org.australteca.realm;
 
 import com.sun.istack.internal.NotNull;
 
@@ -7,8 +7,6 @@ import org.australteca.entity.User;
 
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.*;
-import org.australteca.realm.LoginSecurityRealm;
-
 
 
 /**

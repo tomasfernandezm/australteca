@@ -51,7 +51,7 @@ public class UserDAOTester {
         user.getCommentaries().add(new Commentary("bbbbb", user,subject));
         user.getCommentaries().add(new Commentary("ccccc", user,subject));
 
-        userDAO.update(user);
+        userDAO.merge(user);
         CommentaryDAO commentaryDAO = new CommentaryDAO();
         List<Commentary> list = commentaryDAO.listCommentaries();
 
@@ -74,7 +74,7 @@ public class UserDAOTester {
         user.getCommentaries().add(new Commentary("bbbbb", user,subject));
         user.getCommentaries().add(new Commentary("ccccc", user,subject));
 
-        userDAO.update(user);
+        userDAO.merge(user);
 
         CommentaryDAO commentaryDAO = new CommentaryDAO();
         userDAO.delete(user.getId());
@@ -94,7 +94,7 @@ public class UserDAOTester {
         Subject subject = persistAndGiveSubject(professor);
 
         user.getSubjects().add(subject);
-        userDAO.update(user);
+        userDAO.merge(user);
         List<Subject> list = (new SubjectDAO()).listSubjects();
         assertThat(list).hasSize(1);
     }
