@@ -40,11 +40,11 @@
 
             <h3>Informacion personal</h3>
 
-            <form class="form-horizontal" action="/userModification" method="post" role="form">
+            <forxm class="form-horizontal" action="/userModification" method="post" role="form">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" name="<%= NAME_PARAM%>">
+                        <input class="form-control" type="text" name="<%= NAME_PARAM%>" placeholder="nombre">
                     </div>
                 </div>
                 <div class="form-group">
@@ -84,13 +84,18 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
-                        <input type="submit" class="btn btn-primary" value="Save Changes">
+                        <input type="submit" class="btn btn-primary" value="Guardar">
                         <input type="reset" class="btn btn-default" value="Reset">
-                        <input type="cancel" class="btn btn-default" value="Cancel">
                     </div>
                 </div>
+            </forxm>
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                    <input type="button" class="btn btn-danger btn-block" name="<deleteAccount>" value="Eliminar cuenta">
+                </div>
+            </div>
 
-            </form>
         </div>
         <% Integer status = (Integer) request.getAttribute(STATUS);%>
         <% if(status != null && status == 0) {

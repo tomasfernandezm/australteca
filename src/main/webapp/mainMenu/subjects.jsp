@@ -73,7 +73,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <% if (request.isUserInRole("user")) { %>
-                        <button type="button" class="plusbutton btn btn-default btn-xs" id="myBtn"><i class="glyphicon glyphicon-plus"></i></button>
+                        <button type="button" class="standardButton btn btn-default btn-xs" id="myBtn"><i class="glyphicon glyphicon-plus"></i></button>
                         <% } %>
                         <div class="pull-right">
 							<span class="clickable filter" data-toggle="tooltip" data-container="body">
@@ -90,6 +90,9 @@
                             <thead>
                             <td>Nombre</td>
                             <td>Favorita</td>
+                            <% if (request.isUserInRole("user")) { %>
+                            <td>Eliminar</td>
+                            <% } %>
                             </thead>
                             <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                             <c:forEach items="${subjectWrapperList}" var="subject">
@@ -97,6 +100,9 @@
                                     <td><a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subject.subjectName}">
                                         <c:out value="${subject.subject.subjectName}"/></a></td>
                                     <td><c:out value="${subject.favorite}"/></td>
+                                    <% if (request.isUserInRole("user")) { %>
+                                    <td><button type="button" class="standardButton btn btn-default btn-xs" name="delete%>" value="deleteParam"><i class="glyphicon glyphicon-trash"></i></button></td>
+                                    <% } %>
                                 </tr>
                             </c:forEach>
                         </table>

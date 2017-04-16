@@ -48,25 +48,25 @@ form.navbar-form input {
 
 }
 
-.btn-group, .btn{
+.settings-btn{
     background-color: #666666;
     color: white;
     border-color: transparent;
 }
 
-.btn-group, .btn:hover{
+.settings-btn:hover{
     background-color: #666666;
     color: #adadad;
     border-color: transparent;
 }
 
-.btn-group, .btn:active{
+.settings-btn:active{
     background-color: #666666;
     color: #adadad;
     border-color: transparent;
 }
 
-.dropdown-toggle{
+dropdown-toggle{
     background-color: #666666;
     color: #adadad;
     border-color: transparent;

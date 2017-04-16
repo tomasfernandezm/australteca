@@ -115,7 +115,6 @@
   <div class="lema">
     <h2>Una comunidad para compartir lo que conoces.</h2>
     <h2>Y buscar lo que no sabes.</h2>
-
   </div>
 
 </div>

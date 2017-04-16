@@ -20,7 +20,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-default dropdown-toggle settings-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <%= request.getRemoteUser() %> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">

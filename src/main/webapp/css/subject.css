@@ -11,14 +11,16 @@
     display: none;
 }
 
-.plusbutton{
+.standardButton{
     background-color: transparent;
+    border-color: transparent;
     color: #666666;
 }
 
 
-.plusbutton:hover{
+.standardButton:hover{
     background-color: transparent;
+    border-color: transparent;
     color: black;
 }
 
