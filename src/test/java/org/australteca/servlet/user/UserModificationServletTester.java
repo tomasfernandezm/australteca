@@ -1,8 +1,9 @@
-package org.australteca.servlet;
+package org.australteca.servlet.user;
 
 import org.australteca.Constants;
 import org.australteca.dao.UserDAO;
 import org.australteca.entity.User;
+import org.australteca.servlet.user.UserModificationServlet;
 import org.junit.Test;
 import org.mockito.Mockito;
 

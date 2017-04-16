@@ -11,12 +11,7 @@ import java.util.*;
 
 @Entity
 @Table(name = "USER")
-public class User {
-
-
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "USER_ID")
-    private Integer id;
+public class User extends AbstractEntity{
 
     @Column(name = "USER_FNAME")
     private String firstName;
@@ -40,7 +35,10 @@ public class User {
     private final Set<Subject> subjects = new HashSet<>();
 
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    /* CascadeType.ALL -> al añadir un comentario a un usuario y persistirlo, también se persiste el comentario */
+    /* orphanRemoval = true -> si saco un comentario de la Collection, se borra el link en la tabla y también se
+    borra el comentario */
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "author")
     private final Set<Commentary> commentaries = new HashSet<>();
 
     public User() {
@@ -85,10 +83,6 @@ public class User {
         if(admin) role = Constants.ADMINISTRATOR;
         else if(moderator) role = Constants.MODERATOR;
         else role = Constants.STANDARD;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public String getFirstName() {

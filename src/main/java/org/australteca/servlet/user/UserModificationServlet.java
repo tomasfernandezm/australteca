@@ -1,4 +1,4 @@
-package org.australteca.servlet;
+package org.australteca.servlet.user;
 
 import org.australteca.Constants;
 import org.australteca.dao.UserDAO;

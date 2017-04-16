@@ -11,6 +11,8 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         version="2.5">
 
+    <!-- ~~~~~~~~~~~~~~~~~~~ Security Filter Configuration ~~~~~~~~~~~~~~~~~~~~~~ -->
+
    <display-name>SecurityFilter Example Application</display-name>
 
    <filter>
@@ -45,10 +47,16 @@
    </filter-mapping>
 
 
+    <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~ User Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <!-- ~~~~~~~~~ User Registration ~~~~~~~~~~~~ -->
+
    <servlet>
       <servlet-name>UserRegisterServlet</servlet-name>
       <!--<description>for registration only</description>-->
-      <servlet-class>org.australteca.servlet.UserRegisterServlet</servlet-class>
+      <servlet-class>org.australteca.servlet.user.UserRegisterServlet</servlet-class>
    </servlet>
 
    <servlet-mapping>
@@ -56,21 +64,24 @@
       <url-pattern>/register</url-pattern>
    </servlet-mapping>
 
-   <servlet>
-      <servlet-name>AddSubjectServlet</servlet-name>
-       <!--<description> adds subject to database</description>-->
-       <servlet-class>org.australteca.servlet.AddSubjectServlet</servlet-class>
-   </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AddSubjectServlet</servlet-name>
-        <url-pattern>/addSubject</url-pattern>
-    </servlet-mapping>
+    <!-- ~~~~~~~~~ User Delete ~~~~~~~~~~~~ -->
 
     <servlet>
-        <servlet-name>ListSubjectServlet</servlet-name>
-        <!--<description> gives a List of subject according to certain parameters</description>-->
-        <servlet-class>org.australteca.servlet.ListSubjectServlet</servlet-class>
+        <servlet-name>UserDeleteServlet</servlet-name>
+        <!--<description>for registration only</description>-->
+        <servlet-class>org.australteca.servlet.user.UserDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserDeleteServlet</servlet-name>
+        <url-pattern>/userDelete</url-pattern>
+    </servlet-mapping>
+
+    <!-- ~~~~~~~~~ User Modification ~~~~~~~~~~~~ -->
+
+    <servlet>
+        <servlet-name>UserModificationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.user.UserModificationServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -78,19 +89,39 @@
         <url-pattern>/userModification</url-pattern>
     </servlet-mapping>
 
+    <!-- ~~~~~~~~~~~~~~~~~~~~~ Subject Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <!-- ~~~~~~~~~ Subject Delete ~~~~~~~~~~~~ -->
     <servlet>
-        <servlet-name>SubjectServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.SubjectServlet</servlet-class>
+        <servlet-name>SubjectDeleteServlet</servlet-name>
+        <!--<description>for registration only</description>-->
+        <servlet-class>org.australteca.servlet.subject.SubjectDeleteServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>SubjectServlet</servlet-name>
-        <url-pattern>/subject</url-pattern>
+        <servlet-name>SubjectDeleteServlet</servlet-name>
+        <url-pattern>/subjectDelete</url-pattern>
     </servlet-mapping>
 
+    <!-- ~~~~~~~~~ Subject Add ~~~~~~~~~~~~ -->
+
     <servlet>
-        <servlet-name>UserModificationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.UserModificationServlet</servlet-class>
+      <servlet-name>AddSubjectServlet</servlet-name>
+       <!--<description> adds subject to database</description>-->
+       <servlet-class>org.australteca.servlet.subject.SubjectAddServlet</servlet-class>
+   </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddSubjectServlet</servlet-name>
+        <url-pattern>/addSubject</url-pattern>
+    </servlet-mapping>
+
+    <!-- ~~~~~~~~~ Subject List ~~~~~~~~~~~~ -->
+
+    <servlet>
+        <servlet-name>ListSubjectServlet</servlet-name>
+        <!--<description> gives a List of subject according to certain parameters</description>-->
+        <servlet-class>org.australteca.servlet.subject.SubjectListServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -98,9 +129,23 @@
         <url-pattern>/listSubjects</url-pattern>
     </servlet-mapping>
 
+    <!-- ~~~~~~~~~ Command Pattern Subject ~~~~~~~~~~~~ -->
+
+    <servlet>
+        <servlet-name>SubjectServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubjectServlet</servlet-name>
+        <url-pattern>/subject</url-pattern>
+    </servlet-mapping>
+
+    <!-- ~~~~~~~~~ Subject View ~~~~~~~~~~~~ -->
+
     <servlet>
         <servlet-name>PostSubjectServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.PostSubjectServlet</servlet-class>
+        <servlet-class>org.australteca.servlet.subject.SubjectPostServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -109,14 +154,21 @@
     </servlet-mapping>
 
 
+    <!-- ~~~~~~~~~~~~~~~~ Session Configuration ~~~~~~~~~~~~~~~~~~~~ -->
+
    <!-- make the session time-out after one minute -->
    <session-config>
       <session-timeout>30</session-timeout>
    </session-config>
 
+
+    <!-- ~~~~~~~~~~~~~~~ Welcome File List ~~~~~~~~~~~~~~~~~~~~~~-->
+
    <welcome-file-list>
       <welcome-file>loginForm.jsp</welcome-file>
    </welcome-file-list>
+
+    <!-- ~~~~~~~~~~~~~~~ Error Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
    <!-- SecurityFilter works with custom error pages -->
    <error-page>

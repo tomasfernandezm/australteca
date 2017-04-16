@@ -1,4 +1,4 @@
-package org.australteca.dao;
+package org.australteca.entity;
 
 import javax.persistence.*;
 
@@ -8,11 +8,7 @@ import javax.persistence.*;
 
 @Table(name = "ENTITY")
 @Entity
-public class GenericEntity {
-
-    @Id @GeneratedValue
-    @Column(name = "ENTITY_ID")
-    private int id;
+public class GenericEntity extends SuperEntity{
 
     @Column(name = "ENTITY_FNAME")
     private String firstName;
@@ -27,6 +23,7 @@ public class GenericEntity {
     }
 
     public GenericEntity(String firstName, String lastName, int age) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;

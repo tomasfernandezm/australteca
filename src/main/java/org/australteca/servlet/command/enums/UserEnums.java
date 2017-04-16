@@ -1,4 +1,4 @@
-package org.australteca.servlet.enums;
+package org.australteca.servlet.command.enums;
 
 /**
  * Created by tomi on 12/04/17.

@@ -9,11 +9,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "COMMENTARY")
-public class Commentary {
-
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "COMMENTARY_ID")
-    private int id;
+public class Commentary extends AbstractEntity{
 
     @Temporal(TemporalType.DATE)
     @Column (name = "COMMENTARY_CREATION_DATE")
@@ -26,10 +22,10 @@ public class Commentary {
     @Column (name = "COMMENTARY_COMMENTARY")
     private String commentary;
 
-    @OneToOne
+    @ManyToOne
     private User author;
 
-    @OneToOne
+    @ManyToOne
     private Subject subject;
 
     public Commentary() {
@@ -65,9 +61,5 @@ public class Commentary {
 
     public void setCommentary(String commentary) {
         this.commentary = commentary;
-    }
-
-    public int getId() {
-        return id;
     }
 }

@@ -25,12 +25,7 @@ import java.util.List;
                         @Parameter(name = "language", value = "English")
                 })
         })
-public class Subject {
-
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "SUBJECT_ID")
-    @DocumentId
-    private int id;
+public class Subject extends AbstractEntity{
 
     @OneToMany
     private final List<Commentary> commentaryList = new ArrayList<Commentary>();
@@ -42,7 +37,7 @@ public class Subject {
     private double amountOfScores;
 
     @Field(index= Index.YES, analyze=Analyze.YES, store=Store.NO)
-    @Column (name = "SUBJECT_NAME")
+    @Column (name = "SUBJECT_NAME", unique = true)
     @Analyzer(definition = "subjectAnalyzer")
     private String subjectName;
 

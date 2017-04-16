@@ -1,4 +1,4 @@
-package org.australteca.servlet;
+package org.australteca.servlet.subject;
 
 import org.australteca.dao.SubjectDAO;
 import org.australteca.entity.Subject;
@@ -14,7 +14,7 @@ import static org.australteca.Constants.*;
 /**
  * Created by tomi on 13/04/17.
  */
-public class PostSubjectServlet extends HttpServlet {
+public class SubjectPostServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

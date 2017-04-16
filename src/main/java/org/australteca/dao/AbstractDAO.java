@@ -1,5 +1,6 @@
 package org.australteca.dao;
 
+import org.australteca.entity.EntityInterface;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * Created by tomi on 29/03/17.
  */
-public abstract class AbstractDAO<T> {
+public abstract class AbstractDAO<T extends EntityInterface>{
 
     public Integer addToDatabase(T t){
 

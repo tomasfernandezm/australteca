@@ -1,6 +1,7 @@
 package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
+import org.australteca.entity.GenericEntity;
 
 import java.util.List;
 

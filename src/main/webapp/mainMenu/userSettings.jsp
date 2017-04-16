@@ -40,7 +40,7 @@
 
             <h3>Informacion personal</h3>
 
-            <forxm class="form-horizontal" action="/userModification" method="post" role="form">
+            <form class="form-horizontal" action="/userModification" method="post" role="form">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
@@ -88,11 +88,13 @@
                         <input type="reset" class="btn btn-default" value="Reset">
                     </div>
                 </div>
-            </forxm>
+            </form>
             <div class="form-group">
                 <label class="col-md-3 control-label"></label>
                 <div class="col-md-8">
-                    <input type="button" class="btn btn-danger btn-block" name="<deleteAccount>" value="Eliminar cuenta">
+                    <form action="/userDelete" method="post">
+                        <input type="submit" class="btn btn-danger btn-block" value="Eliminar cuenta">
+                    </form>
                 </div>
             </div>
 

@@ -1,4 +1,4 @@
-package org.australteca.servlet;
+package org.australteca.servlet.subject;
 
 import org.australteca.dao.SubjectDAO;
 import org.australteca.dao.UserDAO;
@@ -17,7 +17,7 @@ import java.util.Set;
 /**
  * Created by tomi on 06/04/17.
  */
-public class ListSubjectServlet extends HttpServlet{
+public class SubjectListServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

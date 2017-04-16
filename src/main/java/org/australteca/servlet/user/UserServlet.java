@@ -1,8 +1,4 @@
-package org.australteca.servlet;
-
-import org.australteca.servlet.command.Command;
-import org.australteca.servlet.command.CommandFactory;
-import org.australteca.servlet.enums.SubjectEnums;
+package org.australteca.servlet.user;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,20 +9,15 @@ import java.io.IOException;
 /**
  * Created by tomi on 12/04/17.
  */
-public class SubjectServlet extends HttpServlet {
-
-
+public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp);
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        CommandFactory commandFactory = CommandFactory.getINSTANCE();
-        SubjectEnums subjectEnums = SubjectEnums.valueOf(req.getParameter("command"));
-        commandFactory.giveCommand(subjectEnums).execute(req, resp);
+        super.doPost(req, resp);
     }
 }

@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page import="org.australteca.servlet.ListSubjectServlet" %>
+<%@ page import="org.australteca.servlet.subject.SubjectListServlet" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.australteca.Constants" %>
 <%@ page import="javax.security.auth.login.Configuration" %>
-<%@ page import="org.australteca.servlet.enums.SubjectEnums" %>
+<%@ page import="org.australteca.servlet.command.enums.SubjectEnums" %>
 <%--
   Created by IntelliJ IDEA.
   User: tomasforman
@@ -33,7 +33,7 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form action="/subject?command=<%=SubjectEnums.ADD_SUBJECT%>" method="post">
+            <form action="/addSubject" method="post">
                 <div class="form-group">
                     <div class="modal-header">
                     <h3>Materia nueva</h3>
@@ -95,13 +95,18 @@
                             <% } %>
                             </thead>
                             <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
-                            <c:forEach items="${subjectWrapperList}" var="subject">
+                            <c:forEach items="${subjectWrapperList}" var="subjectWrapper">
                                 <tr>
-                                    <td><a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subject.subjectName}">
-                                        <c:out value="${subject.subject.subjectName}"/></a></td>
-                                    <td><c:out value="${subject.favorite}"/></td>
+                                    <td><a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
+                                        <c:out value="${subjectWrapper.subject.subjectName}"/></a></td>
+                                    <td><c:out value="${subjectWrapper.favorite}"/></td>
                                     <% if (request.isUserInRole("user")) { %>
-                                    <td><button type="button" class="standardButton btn btn-default btn-xs" name="delete%>" value="deleteParam"><i class="glyphicon glyphicon-trash"></i></button></td>
+                                    <td>
+                                        <form action="/subjectDelete" method="post">
+                                            <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />">
+                                            <input type="submit" class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></input>
+                                        </form>
+                                    </td>
                                     <% } %>
                                 </tr>
                             </c:forEach>

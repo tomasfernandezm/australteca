@@ -33,7 +33,7 @@
         <mapping class="org.australteca.entity.Commentary"/>
         <mapping class="org.australteca.entity.Subject"/>
         <mapping class="org.australteca.entity.Professor"/>
-        <mapping class="org.australteca.dao.GenericEntity"/>
+        <mapping class="org.australteca.entity.GenericEntity"/>
 
     </session-factory>
 </hibernate-configuration>

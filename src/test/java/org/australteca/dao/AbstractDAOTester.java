@@ -1,5 +1,6 @@
 package org.australteca.dao;
 
+import org.australteca.entity.GenericEntity;
 import org.junit.Test;
 
 import java.util.List;

@@ -13,11 +13,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "PROFESSOR")
-public class Professor {
-
-    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "PROFESSOR_ID")
-    private int id;
+public class Professor extends AbstractEntity{
 
     @Field
     @Column(name = "PROFESSOR_FNAME")
@@ -68,10 +64,6 @@ public class Professor {
 
     public List<Subject> getSubjects() {
         return subjects;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public void addSubject(@NotNull Subject subject){

@@ -1,6 +1,4 @@
-package org.australteca.servlet.enums;
-
-import java.util.EnumMap;
+package org.australteca.servlet.command.enums;
 
 /**
  * Created by tomi on 12/04/17.
