@@ -13,37 +13,29 @@ import java.io.IOException;
 import static org.australteca.Constants.*;
 
 /**
- * Created by tomi on 11/04/17.
+ * Created by tomi on 16/04/17.
  */
-public class UserModificationServlet extends HttpServlet{
+public class UserPostServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        doPost(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String name = req.getParameter(NAME_PARAM);
-        String lname = req.getParameter(LAST_NAME_PARAM);
-        String email = req.getParameter(EMAIL_PARAM);
-        String password = req.getParameter(PASSWORD_PARAM);
-        String passwordC = req.getParameter(PASSWORD_CONFIRMATION_PARAM);
-        String career = req.getParameter(CAREER_PARAM);
-
+        String email = req.getRemoteUser();
         UserDAO userDAO = new UserDAO();
-        User user = userDAO.getUserByEmail(req.getRemoteUser());
 
-        user.setFirstName(name);
-        user.setLastName(lname);
-        user.setEmail(email);
-        user.setPassword(password);
-        user.setCourse(career);
+        User user = userDAO.getUserByEmail(email);
 
-        userDAO.merge(user);
+        req.setAttribute(NAME_PARAM, user.getFirstName());
+        req.setAttribute(LAST_NAME_PARAM, user.getLastName());
+        req.setAttribute(EMAIL_PARAM, user.getEmail());
+        req.setAttribute(CAREER_PARAM, user.getCourse());
+        req.setAttribute(ROLE_PARAM, user.getRole());
 
-        req.setAttribute(STATUS, 0);
         req.getRequestDispatcher("/mainMenu/userSettings.jsp").forward(req, resp);
     }
 }

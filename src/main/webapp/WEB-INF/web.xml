@@ -89,6 +89,16 @@
         <url-pattern>/userModification</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UserPostServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.user.UserPostServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserPostServlet</servlet-name>
+        <url-pattern>/userPost</url-pattern>
+    </servlet-mapping>
+
     <!-- ~~~~~~~~~~~~~~~~~~~~~ Subject Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <!-- ~~~~~~~~~ Subject Delete ~~~~~~~~~~~~ -->

@@ -24,7 +24,7 @@
                         <%= request.getRemoteUser() %> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="<%= response.encodeURL("/mainMenu/userSettings.jsp")%>">Ajustes</a></li>
+                        <li><a href="<%= response.encodeURL("/userPost")%>">Ajustes</a></li>
                         <li><a href="<%= response.encodeURL("/logout.jsp")%>">Sign out</a></li>
                     </ul>
                 </div>
