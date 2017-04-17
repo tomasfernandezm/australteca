@@ -102,6 +102,14 @@ public interface Constants {
     String CAREER_PARAM = "career";
     String USER_ID_PARAM = "id";
     String ROLE_PARAM = "role";
+    String USER_COMMENTARY_LIST = "userCommentaryList";
+    String USER_SUBJECT_LIST = "userSubjectList";
+    String USER_DISCUSSION_LIST = "userDiscussionList";
+
+    /* ~~~~~~~~~~~ Professor Servlet Parameters ~~~~~~~~~~~ */
+
+    String PROFESSOR_NAME_PARAM = "professorName";
+    String PROFESSOR_ID_PARAM = "professorID";
 
     /* ~~~~~~~~~~~ Subject Servlet Parameters ~~~~~~~~~~~~~ */
     String SUBJECT_NAME_PARAM = "subjectName";

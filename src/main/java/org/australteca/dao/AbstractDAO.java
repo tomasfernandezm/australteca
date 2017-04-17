@@ -26,8 +26,6 @@ public abstract class AbstractDAO<T extends EntityInterface>{
         }catch (HibernateException e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
-        }finally {
-
         }
         return result;
     }
@@ -59,8 +57,6 @@ public abstract class AbstractDAO<T extends EntityInterface>{
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
-        }finally {
-
         }
         return result;
     }
@@ -76,8 +72,6 @@ public abstract class AbstractDAO<T extends EntityInterface>{
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
-        }finally {
-
         }
     }
 
@@ -92,8 +86,6 @@ public abstract class AbstractDAO<T extends EntityInterface>{
         }catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();
-        }finally {
-
         }
         return t;
     }

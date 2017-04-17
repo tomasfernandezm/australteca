@@ -1,11 +1,9 @@
 Cosas que hay que hacer:
 
 
-1-baja y modificación de materia (front y back)
-2-baja de usuario (front y back)
-3-homepage (listar materias, ofertas y discusiones abiertas del usuario) (front y back)
+1- baja y modificación de materia (front y back)
+3- homepage (listar materias, ofertas y discusiones abiertas del usuario) (front y back)
 4- foto de userSettings
-5- terminar de conceptualizar userSettings (front y back)
-6- terminar rediseño de servlets
-7- emprolijar la base de datos (leer docs de hibernate)
+6- terminar rediseño de servlets (despúes de la primera entrega)
+7- emprolijar la base de datos (leer tipos de fetch)
 8- emprolijar todo el código (back y front)

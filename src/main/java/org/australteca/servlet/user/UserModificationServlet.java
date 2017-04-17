@@ -32,18 +32,25 @@ public class UserModificationServlet extends HttpServlet{
         String passwordC = req.getParameter(PASSWORD_CONFIRMATION_PARAM);
         String career = req.getParameter(CAREER_PARAM);
 
-        UserDAO userDAO = new UserDAO();
-        User user = userDAO.getUserByEmail(req.getRemoteUser());
+        Integer status;
+        if((password == null && passwordC != null) || (password != null && passwordC == null)){
+            status = 1;
+        }else if(password != null && passwordC != null && !password.equals(passwordC)){
+            status = 2;
+        }else {
+            UserDAO userDAO = new UserDAO();
+            User user = userDAO.getUserByEmail(req.getRemoteUser());
 
-        user.setFirstName(name);
-        user.setLastName(lname);
-        user.setEmail(email);
-        user.setPassword(password);
-        user.setCourse(career);
+            if(name != null) user.setFirstName(name);
+            if(lname != null) user.setLastName(lname);
+            if(email != null)user.setEmail(email);
+            if(password != null)user.setPassword(password);
+            if(career!= null)user.setCourse(career);
 
-        userDAO.merge(user);
-
-        req.setAttribute(STATUS, 0);
+            userDAO.merge(user);
+            status = 0;
+        }
+        req.setAttribute(STATUS, status);
         req.getRequestDispatcher("/mainMenu/userSettings.jsp").forward(req, resp);
     }
 }
