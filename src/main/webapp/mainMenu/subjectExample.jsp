@@ -1,6 +1,8 @@
 
 <%@ page import="org.australteca.Constants" %>
-<%@ page import="static org.australteca.Constants.SUBJECT_NAME_PARAM" %><%--
+<%@ page import="static org.australteca.Constants.SUBJECT_NAME_PARAM" %>
+<%@ page import="static org.australteca.Constants.NAME_PARAM" %>
+<%@ page import="static org.australteca.Constants.LAST_NAME_PARAM" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 6/4/17
@@ -15,7 +17,8 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
     <link href="/css/star.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
+    <link href="/css/modalBox.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 <%@include file="/mainMenu/mainMenu.jsp" %>
@@ -23,7 +26,7 @@
 
 
 
-<% if (request.isUserInRole("user")) { %>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -50,8 +53,14 @@
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="tab1default">Default 1</div>
-                        <div class="tab-pane fade" id="tab2default">Default 2</div>
+                        <div class="tab-pane fade in active" id="tab1default">
+                            <button type="button" id="myBtn" class="btn btn-primary center-block">Agregar apunte</button>
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+                            <% if (request.isUserInRole("user")) { %>
+                            <button type="button" id="myBtn2"class="btn btn-primary center-block">Agregar profesor</button>
+                            <% } %>
+                        </div>
                         <div class="tab-pane fade" id="tab3default">Default 3</div>
                         <div class="tab-pane fade" id="tab4default">Default 4</div>
                     </div>
@@ -60,11 +69,100 @@
         </div>
     </div>
 </div>
-<% } %>
 
 
+<!-- modal box for notes-->
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="agregar" action="agregar" method="POST">
+            <div class="container-fluid">
+                <div class="row centered-form  ">
+                    <div >
+                        <div class="panel panel-default">
+                            <div class="modal-header">
+                                Agregar apunte
+                            </div>
+                            <div class="panel-body">
+                                <form role="form">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name= "name" class="form-control input-sm" placeholder="Nombre" required/>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <label class="btn btn-success btn-file form-control">
+                                                Buscar <input type="file" style="display: none;">
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <select class="select form-control" name="agregar">
+                                            <option value="agregar" selected>Teoria</option>
+                                            <li class="divider"></li>
+                                            <option value="agregar" selected>Guia</option>
+                                            <li class="divider"></li>
+                                            <option value="agregar" selected>Guia resuelta</option>
+                                            <li class="divider"></li>
+                                            <option value="agregar" selected>Parcial</option>
+                                            <li class="divider"></li>
+                                            <option value="agregar" selected>Final</option>
+                                            <li class="divider"></li>
+                                            <option value="agregar" selected>Resumen</option>
+                                            <li class="divider"></li>
+                                        </select>
+                                    </div>
+                                    <div class="form-group text-center">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Compartir!" class="form-control btn btn-info btn-block">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- modal box for professor -->
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="agregar2" action="agregar" method="POST">
+            <div class="container-fluid">
+                <div class="row centered-form  ">
+                    <div >
+                        <div class="panel panel-default">
+                            <div class="modal-header">
+                                Agregar profesor
+                            </div>
+                            <div class="panel-body">
+                                <!-- form -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="/js/modalBox.js"></script>
+<script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-
 
 </body>
 </html>
