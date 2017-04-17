@@ -44,19 +44,19 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" name="<%= NAME_PARAM%>" placeholder="nombre">
+                        <input class="form-control" type="text" name="<%= NAME_PARAM%>" placeholder="<%=request.getAttribute(NAME_PARAM)%>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Apellido:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" name="<%= LAST_NAME_PARAM%>">
+                        <input class="form-control" type="text" name="<%= LAST_NAME_PARAM%>" placeholder="<%=request.getAttribute(LAST_NAME_PARAM)%>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Email:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=EMAIL_PARAM%>">
+                        <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=EMAIL_PARAM%>" placeholder="<%=request.getAttribute(EMAIL_PARAM)%>">
                     </div>
                 </div>
                 <div class="form-group">

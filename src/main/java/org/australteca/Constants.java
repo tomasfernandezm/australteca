@@ -101,6 +101,7 @@ public interface Constants {
     String INGENIERIA_IND_VALUE = "Ingenieria industrial";
     String CAREER_PARAM = "career";
     String USER_ID_PARAM = "id";
+    String ROLE_PARAM = "role";
 
     /* ~~~~~~~~~~~ Subject Servlet Parameters ~~~~~~~~~~~~~ */
     String SUBJECT_NAME_PARAM = "subjectName";
