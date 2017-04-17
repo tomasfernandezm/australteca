@@ -61,9 +61,17 @@ form.navbar-form input {
 }
 
 .settings-btn:active{
-    background-color: #666666;
-    color: #adadad;
-    border-color: transparent;
+    background-color: #666666 !important;
+    color: #adadad !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.settings-btn:focus{
+    background-color: #666666 !important;
+    color: #adadad !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
 }
 
 dropdown-toggle{
