@@ -12,9 +12,9 @@ import java.util.List;
 /**
  * Created by tomi on 29/03/17.
  */
-public abstract class AbstractDAO<T extends EntityInterface>{
+public abstract class AbstractDao<T extends EntityInterface> implements Dao<T>{
 
-    public Integer addToDatabase(T t){
+    public Integer add(T t){
 
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
@@ -30,7 +30,7 @@ public abstract class AbstractDAO<T extends EntityInterface>{
         return result;
     }
 
-    void deleteFromDatabase(Class<T> genericClass, Integer id) throws IllegalArgumentException{
+    public void delete(Class<T> genericClass, Integer id) throws IllegalArgumentException{
 
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
@@ -46,7 +46,7 @@ public abstract class AbstractDAO<T extends EntityInterface>{
         }
     }
 
-    T get(Class<T> genericClass, Integer id){
+    public T get(Class<T> genericClass, Integer id){
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         T result = null;
@@ -75,7 +75,7 @@ public abstract class AbstractDAO<T extends EntityInterface>{
         }
     }
 
-    List<T> listEntities(Class<T> genericClass){
+    public List<T> list(Class<T> genericClass){
         Session session = HibernateUtil.getCurrentSession();
         Transaction tx = null;
         List<T> t = new ArrayList<T>();

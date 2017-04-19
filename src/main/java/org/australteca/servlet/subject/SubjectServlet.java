@@ -1,7 +1,8 @@
 package org.australteca.servlet.subject;
 
-import org.australteca.servlet.command.CommandFactory;
+import org.australteca.servlet.command.factory.CommandFactory;
 import org.australteca.servlet.command.enums.SubjectEnums;
+import org.australteca.servlet.command.factory.SubjectCommandFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +25,8 @@ public class SubjectServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        CommandFactory commandFactory = CommandFactory.getINSTANCE();
+        CommandFactory subjectCommandFactory = SubjectCommandFactory.getCommandFactory();
         SubjectEnums subjectEnums = SubjectEnums.valueOf(req.getParameter("command"));
-        commandFactory.giveCommand(subjectEnums).execute(req, resp);
+        subjectCommandFactory.giveCommand(subjectEnums).execute(req, resp);
     }
 }

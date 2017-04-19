@@ -8,17 +8,17 @@ import java.util.List;
 /**
  * Created by tomi on 29/03/17.
  */
-public class ProfessorDAO extends AbstractDAO<Professor> {
+public class ProfessorDao extends AbstractDao<Professor> {
 
     public void delete(@NotNull Integer professorID){
-        deleteFromDatabase(Professor.class, professorID);
+        delete(Professor.class, professorID);
     }
 
-    public List<Professor> listProfessors() {
-        return listEntities(Professor.class);
+    public List<Professor> list() {
+        return list(Professor.class);
     }
 
-    public Professor getProfessor(@NotNull Integer professorID){
+    public Professor get(@NotNull Integer professorID){
         return get(Professor.class, professorID);
     }
 }

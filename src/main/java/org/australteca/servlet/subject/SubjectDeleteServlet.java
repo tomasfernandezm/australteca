@@ -1,7 +1,7 @@
 package org.australteca.servlet.subject;
 
 import org.australteca.Constants;
-import org.australteca.dao.SubjectDAO;
+import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Subject;
 
 import javax.servlet.ServletException;
@@ -24,7 +24,7 @@ public class SubjectDeleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String subjectName = req.getParameter(Constants.SUBJECT_NAME_PARAM);
-        SubjectDAO subjectDAO = new SubjectDAO();
+        SubjectDao subjectDAO = new SubjectDao();
 
         Subject subject = subjectDAO.getByName(subjectName);
         Integer subjectID = subject.getId();
@@ -32,6 +32,6 @@ public class SubjectDeleteServlet extends HttpServlet {
         subjectDAO.delete(subjectID);
 
         req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, true);
-        resp.sendRedirect("/listSubjects");
+        resp.sendRedirect("/list");
     }
 }

@@ -8,17 +8,17 @@ import java.util.List;
 /**
  * Created by tomi on 29/03/17.
  */
-public class CommentaryDAO extends AbstractDAO<Commentary> {
+public class CommentaryDao extends AbstractDao<Commentary> {
 
     public void delete(@NotNull Integer commentaryID){
-        deleteFromDatabase(Commentary.class, commentaryID);
+        super.delete(Commentary.class, commentaryID);
     }
 
-    public Commentary getCommentary(@NotNull Integer id){
+    public Commentary get(@NotNull Integer id){
         return super.get(Commentary.class, id);
     }
 
-    public List<Commentary> listCommentaries() {
-        return listEntities(Commentary.class);
+    public List<Commentary> list() {
+        return list(Commentary.class);
     }
 }

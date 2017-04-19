@@ -2,7 +2,6 @@ package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
 import org.australteca.entity.Subject;
-import org.australteca.entity.User;
 import org.australteca.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -15,14 +14,14 @@ import java.util.List;
 /**
  * Created by tomi on 29/03/17.
  */
-public class SubjectDAO extends AbstractDAO<Subject> {
+public class SubjectDao extends AbstractDao<Subject> {
 
     public void delete(@NotNull Integer subjectID){
-        deleteFromDatabase(Subject.class, subjectID);
+        delete(Subject.class, subjectID);
     }
 
-    public List<Subject> listSubjects() {
-        return listEntities(Subject.class);
+    public List<Subject> list() {
+        return list(Subject.class);
     }
 
     public Subject get(@NotNull final Integer id) {

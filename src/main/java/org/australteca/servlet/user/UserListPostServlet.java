@@ -1,7 +1,6 @@
 package org.australteca.servlet.user;
 
-import org.australteca.Constants;
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 
 import javax.servlet.ServletException;
@@ -28,7 +27,7 @@ public class UserListPostServlet extends HttpServlet {
 
         String email = req.getRemoteUser();
 
-        UserDAO userDAO = new UserDAO();
+        UserDao userDAO = new UserDao();
         User user = userDAO.getUserByEmail(email);
 
         req.setAttribute(USER_COMMENTARY_LIST, user.getCommentaries());

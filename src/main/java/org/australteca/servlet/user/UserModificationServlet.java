@@ -1,7 +1,6 @@
 package org.australteca.servlet.user;
 
-import org.australteca.Constants;
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 
 import javax.servlet.ServletException;
@@ -38,7 +37,7 @@ public class UserModificationServlet extends HttpServlet{
         }else if(password != null && passwordC != null && !password.equals(passwordC)){
             status = 2;
         }else {
-            UserDAO userDAO = new UserDAO();
+            UserDao userDAO = new UserDao();
             User user = userDAO.getUserByEmail(req.getRemoteUser());
 
             if(name != null) user.setFirstName(name);

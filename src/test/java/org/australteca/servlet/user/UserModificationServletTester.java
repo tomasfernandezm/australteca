@@ -1,9 +1,8 @@
 package org.australteca.servlet.user;
 
 import org.australteca.Constants;
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
-import org.australteca.servlet.user.UserModificationServlet;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -34,8 +33,8 @@ public class UserModificationServletTester extends Mockito{
         when(request.getParameter(Constants.CAREER_PARAM)).thenReturn(INGENIERIA_IND_VALUE);
         when(request.getRemoteUser()).thenReturn("email");
 
-        UserDAO userDAO = new UserDAO();
-        userDAO.addToDatabase(new User("name", "lastName", "email", INGENIERIA_INF_VALUE, "password", false, false));
+        UserDao userDAO = new UserDao();
+        userDAO.add(new User("name", "lastName", "email", INGENIERIA_INF_VALUE, "password", false, false));
 
         try {
             new UserModificationServlet().doPost(request, response);

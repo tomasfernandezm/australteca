@@ -1,7 +1,7 @@
 package org.australteca.servlet.subject;
 
 import org.australteca.Constants;
-import org.australteca.dao.SubjectDAO;
+import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Subject;
 
 import javax.servlet.ServletException;
@@ -24,9 +24,9 @@ public class SubjectAddServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String subjectName = req.getParameter(Constants.SUBJECT_NAME_PARAM);
-        SubjectDAO subjectDAO = new SubjectDAO();
+        SubjectDao subjectDAO = new SubjectDao();
 
-        Integer status = subjectDAO.addToDatabase(new Subject(subjectName));
+        Integer status = subjectDAO.add(new Subject(subjectName));
 
         if(status != null) req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, true);
         else req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, false);

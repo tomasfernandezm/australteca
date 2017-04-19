@@ -25,23 +25,23 @@ public class UserDAOTester {
     }
 
     private Subject persistAndGiveSubject(Professor professor){
-        SubjectDAO subjectDAO = new SubjectDAO();
-        Integer subjectID = subjectDAO.addToDatabase(new Subject("Ingles"));
+        SubjectDao subjectDAO = new SubjectDao();
+        Integer subjectID = subjectDAO.add(new Subject("Ingles"));
         return subjectDAO.get(Subject.class, subjectID);
     }
 
     private Professor persistAndGiveProfessor(){
-        ProfessorDAO professorDAO = new ProfessorDAO();
-        Integer professorID = professorDAO.addToDatabase(new Professor("Pepito",
+        ProfessorDao professorDAO = new ProfessorDao();
+        Integer professorID = professorDAO.add(new Professor("Pepito",
                 "Gimenez", "licenciado"));
         return professorDAO.get(Professor.class, professorID);
     }
 
     @Test
     public void addCommentaryTest(){
-        UserDAO userDAO = new UserDAO();
+        UserDao userDAO = new UserDao();
 
-        Integer userID = userDAO.addToDatabase(giveUser());
+        Integer userID = userDAO.add(giveUser());
         User user = userDAO.get(User.class, userID);
 
         Professor professor = persistAndGiveProfessor();
@@ -52,8 +52,8 @@ public class UserDAOTester {
         user.getCommentaries().add(new Commentary("ccccc", user,subject));
 
         userDAO.merge(user);
-        CommentaryDAO commentaryDAO = new CommentaryDAO();
-        List<Commentary> list = commentaryDAO.listCommentaries();
+        CommentaryDao commentaryDAO = new CommentaryDao();
+        List<Commentary> list = commentaryDAO.list();
 
         for(Commentary c: user.getCommentaries()){
             assertThat(list).contains(c);
@@ -62,9 +62,9 @@ public class UserDAOTester {
 
     @Test
     public void deleteAllCommentariesOnUserdelete(){
-        UserDAO userDAO = new UserDAO();
+        UserDao userDAO = new UserDao();
 
-        Integer userID = userDAO.addToDatabase(giveUser());
+        Integer userID = userDAO.add(giveUser());
         User user = userDAO.get(User.class, userID);
 
         Professor professor = persistAndGiveProfessor();
@@ -76,26 +76,26 @@ public class UserDAOTester {
 
         userDAO.merge(user);
 
-        CommentaryDAO commentaryDAO = new CommentaryDAO();
+        CommentaryDao commentaryDAO = new CommentaryDao();
         userDAO.delete(user.getId());
 
-        List<Commentary> list = commentaryDAO.listCommentaries();
+        List<Commentary> list = commentaryDAO.list();
         assertThat(list).hasSize(0);
     }
 
     @Test
     public void addSubjectTest(){
-        UserDAO userDAO = new UserDAO();
+        UserDao userDAO = new UserDao();
 
-        Integer userID = userDAO.addToDatabase(giveUser());
-        User user = userDAO.getUser(userID);
+        Integer userID = userDAO.add(giveUser());
+        User user = userDAO.get(userID);
 
         Professor professor = persistAndGiveProfessor();
         Subject subject = persistAndGiveSubject(professor);
 
         user.getSubjects().add(subject);
         userDAO.merge(user);
-        List<Subject> list = (new SubjectDAO()).listSubjects();
+        List<Subject> list = (new SubjectDao()).list();
         assertThat(list).hasSize(1);
     }
 

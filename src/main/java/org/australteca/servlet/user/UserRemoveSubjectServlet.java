@@ -1,7 +1,7 @@
 package org.australteca.servlet.user;
 
-import org.australteca.dao.SubjectDAO;
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.SubjectDao;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 
@@ -29,8 +29,8 @@ public class UserRemoveSubjectServlet extends HttpServlet {
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
         String email = req.getRemoteUser();
 
-        UserDAO userDAO = new UserDAO();
-        SubjectDAO subjectDAO = new SubjectDAO();
+        UserDao userDAO = new UserDao();
+        SubjectDao subjectDAO = new SubjectDao();
 
         User user = userDAO.getUserByEmail(email);
         Subject subject = subjectDAO.getByName(subjectName);
