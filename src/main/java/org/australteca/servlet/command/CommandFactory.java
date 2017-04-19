@@ -13,6 +13,7 @@ import static org.australteca.servlet.command.enums.SubjectEnums.*;
 public class CommandFactory{
 
     private static CommandFactory INSTANCE = new CommandFactory();
+
     private Map<SubjectEnums, Command> map = new EnumMap<>(SubjectEnums.class);
 
     private CommandFactory(){
