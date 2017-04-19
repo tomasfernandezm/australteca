@@ -14,7 +14,10 @@ html, body {
 
 .navbar .navbar-brand {
     padding-top: 1px;
+    border-bottom-color: #666666;
+    border-color: #666666;
 }
+
 
 div.btn-group, .btn-group-vertical {
     position: relative;

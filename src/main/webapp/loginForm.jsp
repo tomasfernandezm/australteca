@@ -6,6 +6,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale1.0">
   <title><%=Constants.MY_HOME_TITLE%></title>
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/loginForm.css" rel="stylesheet" type="text/css">
@@ -14,38 +15,37 @@
 <body>
 
 <div class="principal">
-<nav class="navbar navbar-inverse container-fluid" role="navigation">
-  <div>
-    <div class="navbar-header "> 
-         <button type="button" class="navbar-toggle" data-toggle="collapse"
-                data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Desplegar navegacion</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-    	<a class="navbar-brand"><img class="logo" src="images/logo.png"></a>
-    </div>
-    
+  <nav class="navbar navbar-inverse container-fluid" role="navigation">
+
+      <div class="navbar-header ">
+           <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Desplegar navegacion</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img class="logo" src="images/logo.png"></a>
+      </div>
+
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
-          <div class="form-group">
-            <label id="email"for="email">Email</label>
-            <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
-          </div>
-          <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
-        </form>
-      <% if(session.getAttribute("loginSucceded") != null && !(boolean) session.getAttribute("loginSucceded")){%>
-        <!-- hacer algo -->
-        <% }%>
-        <% session.removeAttribute("loginSucceded"); %>
+          <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
+            <div class="form-group">
+              <label id="email"for="email">Email</label>
+              <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
+            </div>
+            <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
+          </form>
+        <% if(session.getAttribute("loginSucceded") != null && !(boolean) session.getAttribute("loginSucceded")){%>
+          <!-- hacer algo -->
+          <% }%>
+          <% session.removeAttribute("loginSucceded"); %>
     </div>
-  </div>
-</nav>
+  </nav>
 
 
 

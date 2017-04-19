@@ -7,29 +7,41 @@
 --%>
 
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand"><img class="logo" src="/images/logo.png"></a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="activeHome2"><a href="<%=response.encodeURL("/mainMenu/home.jsp")%>">Inicio</a></li>
-                <li class="activeSubject2"><a href="<%=response.encodeURL("/listSubjects")%>">Materias</a></li>
-                <li class="activeWork2"><a href="<%=response.encodeURL("/mainMenu/work.jsp")%>">Trabajo</a></li>
-                <li class="activeDiscussions2"><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle settings-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <%= request.getRemoteUser() %> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="<%= response.encodeURL("/userPost")%>">Ajustes</a></li>
-                        <li><a href="<%= response.encodeURL("/logout.jsp")%>">Sign out</a></li>
-                    </ul>
-                </div>
-            </ul>
+    <nav class="navbar navbar-inverse container-fluid" role="navigation">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Desplegar navegacion</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-header">
+
+            <a class="navbar-brand"><img class="logo" src="/images/logo.png"></a>
         </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+
+
+                <ul class="nav navbar-nav">
+                    <li class="activeHome2"><a href="<%=response.encodeURL("/mainMenu/home.jsp")%>">Inicio</a></li>
+                    <li class="activeSubject2"><a href="<%=response.encodeURL("/listSubjects")%>">Materias</a></li>
+                    <li class="activeWork2"><a href="<%=response.encodeURL("/mainMenu/work.jsp")%>">Trabajo</a></li>
+                    <li class="activeDiscussions2"><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle settings-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <%= request.getRemoteUser() %> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="<%= response.encodeURL("/userPost")%>">Ajustes</a></li>
+                            <li><a href="<%= response.encodeURL("/logout.jsp")%>">Sign out</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
     </nav>
 
 

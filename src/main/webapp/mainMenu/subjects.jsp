@@ -17,6 +17,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
     <title><%=Constants.MY_HOME_TITLE%></title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
@@ -103,8 +104,7 @@
                                     <% if (request.isUserInRole("user")) { %>
                                     <td>
                                         <form action="/subjectDelete" method="post">
-                                            <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />">
-                                            <input type="submit" class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></input>
+                                            <input type="submit" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />"class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></input>
                                         </form>
                                     </td>
                                     <% } %>
