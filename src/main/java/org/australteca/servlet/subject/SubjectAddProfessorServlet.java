@@ -1,14 +1,10 @@
 package org.australteca.servlet.subject;
 
-import org.australteca.Constants;
-import org.australteca.dao.ProfessorDAO;
-import org.australteca.dao.SubjectDAO;
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.ProfessorDao;
+import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Professor;
 import org.australteca.entity.Subject;
-import org.australteca.entity.User;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,10 +30,10 @@ public class SubjectAddProfessorServlet extends HttpServlet {
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
         Integer professorID = Integer.parseInt(req.getParameter(PROFESSOR_ID_PARAM));
 
-        SubjectDAO subjectDAO = new SubjectDAO();
-        ProfessorDAO professorDAO = new ProfessorDAO();
+        SubjectDao subjectDAO = new SubjectDao();
+        ProfessorDao professorDAO = new ProfessorDao();
 
-        Professor professor = professorDAO.getProfessor(professorID);
+        Professor professor = professorDAO.get(professorID);
         Subject subject = subjectDAO.getByName(subjectName);
 
         professor.getSubjects().add(subject);

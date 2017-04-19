@@ -60,7 +60,7 @@
                 <% } else { %>
                 <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
                 <% }
-                response.sendRedirect("/listSubjects");
+                response.sendRedirect("/list");
                 }%>
             </form>
         </div>

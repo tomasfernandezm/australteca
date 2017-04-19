@@ -1,6 +1,6 @@
 package org.australteca.search;
 
-import org.australteca.dao.SubjectDAO;
+import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Subject;
 import org.junit.Test;
 
@@ -13,16 +13,16 @@ import static org.assertj.core.api.Assertions.*;
 public class SubjectSearcherTester {
 
     private void persistSubjects(){
-        SubjectDAO subjectDAO = new SubjectDAO();
-        subjectDAO.addToDatabase(new Subject("Analisis Matematico 1"));
-        subjectDAO.addToDatabase(new Subject("Analisis Matematico 2"));
-        subjectDAO.addToDatabase(new Subject("Analisis Matematico 3"));
-        subjectDAO.addToDatabase(new Subject("Analisis Matematico 4"));
-        subjectDAO.addToDatabase(new Subject("Algebra 3"));
-        subjectDAO.addToDatabase(new Subject("Algoritmos y Bases "));
-        subjectDAO.addToDatabase(new Subject("Algoritmos y Estructuras"));
-        subjectDAO.addToDatabase(new Subject("Algas y microorganismos"));
-        subjectDAO.addToDatabase(new Subject("Bases"));
+        SubjectDao subjectDAO = new SubjectDao();
+        subjectDAO.add(new Subject("Analisis Matematico 1"));
+        subjectDAO.add(new Subject("Analisis Matematico 2"));
+        subjectDAO.add(new Subject("Analisis Matematico 3"));
+        subjectDAO.add(new Subject("Analisis Matematico 4"));
+        subjectDAO.add(new Subject("Algebra 3"));
+        subjectDAO.add(new Subject("Algoritmos y Bases "));
+        subjectDAO.add(new Subject("Algoritmos y Estructuras"));
+        subjectDAO.add(new Subject("Algas y microorganismos"));
+        subjectDAO.add(new Subject("Bases"));
     }
 
 

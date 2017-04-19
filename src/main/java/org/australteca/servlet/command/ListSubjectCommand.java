@@ -1,7 +1,7 @@
 package org.australteca.servlet.command;
 
-import org.australteca.dao.SubjectDAO;
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.SubjectDao;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 
@@ -22,14 +22,14 @@ public class ListSubjectCommand implements Command {
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String userEmail = req.getRemoteUser();
         List<SubjectWrapper> subjectWrapperList = new ArrayList<>();
-        List<Subject> subjectList = new SubjectDAO().listSubjects();
+        List<Subject> subjectList = new SubjectDao().list();
 
         if(userEmail.equals("")){
             for(Subject s: subjectList){
                 subjectWrapperList.add(new SubjectWrapper(s, false));
             }
         }else{
-            User user = new UserDAO().getUserByEmail(userEmail);
+            User user = new UserDao().getUserByEmail(userEmail);
             Set<Subject> userSubjects = user.getSubjects();
             for(Subject s: subjectList){
                 if(userSubjects.contains(s)) subjectWrapperList.add(new SubjectWrapper(s, true));

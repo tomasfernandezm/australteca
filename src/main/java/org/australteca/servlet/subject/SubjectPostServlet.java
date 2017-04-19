@@ -1,6 +1,6 @@
 package org.australteca.servlet.subject;
 
-import org.australteca.dao.SubjectDAO;
+import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Subject;
 
 import javax.servlet.ServletException;
@@ -26,7 +26,7 @@ public class SubjectPostServlet extends HttpServlet {
 
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
 
-        SubjectDAO subjectDAO = new SubjectDAO();
+        SubjectDao subjectDAO = new SubjectDao();
 
         Subject subject = subjectDAO.getByName(subjectName);
 

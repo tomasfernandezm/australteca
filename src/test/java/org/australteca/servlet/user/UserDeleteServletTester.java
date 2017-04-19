@@ -1,6 +1,6 @@
 package org.australteca.servlet.user;
 
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -24,11 +24,11 @@ public class UserDeleteServletTester extends Mockito {
 
         when(request.getRemoteUser()).thenReturn("email");
 
-        UserDAO userDAO = new UserDAO();
-        Integer id = userDAO.addToDatabase(new User("P", "G", "email", "ing", "aaaaa", false, false));
+        UserDao userDAO = new UserDao();
+        Integer id = userDAO.add(new User("P", "G", "email", "ing", "aaaaa", false, false));
 
         assertThat(userDAO.getUserByEmail("email")).isNotNull();
-        assertThat(userDAO.getUser(id)).isNotNull();
+        assertThat(userDAO.get(id)).isNotNull();
 
         try {
             new UserDeleteServlet().doPost(request, response);
@@ -36,7 +36,7 @@ public class UserDeleteServletTester extends Mockito {
             System.out.println(e.getMessage()); // request does not have RequestDispatcher
         }
 
-        assertThat(userDAO.getUser(id)).isNull();
+        assertThat(userDAO.get(id)).isNull();
         assertThat(userDAO.getUserByEmail("email")).isNull();
     }
 }

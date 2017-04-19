@@ -1,6 +1,6 @@
 package org.australteca.servlet.user;
 
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 
 import javax.servlet.ServletException;
@@ -32,7 +32,7 @@ public class UserRegisterServlet extends HttpServlet {
         String passwordC = request.getParameter(PASSWORD_CONFIRMATION_PARAM);
         String career = request.getParameter(CAREER_PARAM);
 
-        Integer status = new UserDAO().addToDatabase(new User(name, lname, email, career, password, false, false));
+        Integer status = new UserDao().add(new User(name, lname, email, career, password, false, false));
 
         if(status == null) status = -1;
 

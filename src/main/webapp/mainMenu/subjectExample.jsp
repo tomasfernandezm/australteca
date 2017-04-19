@@ -76,7 +76,7 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <form id="agregar" action="agregar" method="POST">
+        <form id="agregar" action="agregar" method="POST" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row centered-form  ">
                     <div >
@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <label class="btn btn-success btn-file form-control">
-                                                Buscar <input type="file" style="display: none;">
+                                                Buscar <input type="file" style="display: none;" name="fileName">
                                             </label>
                                         </div>
                                     </div>

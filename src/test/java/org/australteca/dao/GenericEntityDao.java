@@ -8,14 +8,14 @@ import java.util.List;
 /**
  * Created by tomi on 07/04/17.
  */
-public class GenericEntityDAO extends AbstractDAO<GenericEntity>{
+public class GenericEntityDao extends AbstractDao<GenericEntity> {
 
     public void delete(@NotNull Integer professorID){
-        deleteFromDatabase(GenericEntity.class, professorID);
+        delete(GenericEntity.class, professorID);
     }
 
     public List<GenericEntity> listGenericEntities() {
-        return listEntities(GenericEntity.class);
+        return list(GenericEntity.class);
     }
 
     public GenericEntity getGenericEntity(@NotNull Integer professorID){

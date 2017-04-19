@@ -15,18 +15,18 @@ import java.util.List;
 /**
  * Created by tomasforman on 28/3/17.
  */
-public class UserDAO extends AbstractDAO<User> {
+public class UserDao extends AbstractDao<User> {
 
     public void delete(@NotNull Integer userID) {
-        deleteFromDatabase(User.class, userID);
+        delete(User.class, userID);
 
     }
 
-    public List<User> listUsers() {
-        return listEntities(User.class);
+    public List<User> list() {
+        return list(User.class);
     }
 
-    public User getUser(@NotNull Integer userID){
+    public User get(@NotNull Integer userID){
         return get(User.class, userID);
     }
 

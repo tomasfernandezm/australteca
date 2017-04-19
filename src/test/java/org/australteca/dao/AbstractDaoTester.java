@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by tomi on 29/03/17.
  */
-public class AbstractDAOTester {
+public class AbstractDaoTester {
 
     private GenericEntity giveEntity(){
         return new GenericEntity("Pepito", "Rodriguez", 16);
@@ -22,8 +22,8 @@ public class AbstractDAOTester {
 
     @Test
     public void addToDatabaseTest(){
-        GenericEntityDAO entityManager = new GenericEntityDAO();
-        Integer entityID = entityManager.addToDatabase(giveEntity());
+        GenericEntityDao entityManager = new GenericEntityDao();
+        Integer entityID = entityManager.add(giveEntity());
 
         GenericEntity genericEntity = entityManager.get(GenericEntity.class, entityID);
         assertThat(genericEntity).isNotNull();
@@ -34,11 +34,11 @@ public class AbstractDAOTester {
 
     @Test
     public void deleteFromDatabaseTest(){
-        GenericEntityDAO abstractManager = new GenericEntityDAO();
-        Integer entityID = abstractManager.addToDatabase(giveEntity());
-        abstractManager.deleteFromDatabase(GenericEntity.class, entityID);
+        GenericEntityDao abstractManager = new GenericEntityDao();
+        Integer entityID = abstractManager.add(giveEntity());
+        abstractManager.delete(GenericEntity.class, entityID);
         try {
-            abstractManager.deleteFromDatabase(GenericEntity.class, entityID + 1);
+            abstractManager.delete(GenericEntity.class, entityID + 1);
         }catch (Exception e){
             assertThat(e).isExactlyInstanceOf(IllegalArgumentException.class);
         }
@@ -49,11 +49,11 @@ public class AbstractDAOTester {
 
     @Test
     public void listEntitiesTest() {
-        GenericEntityDAO abstractManager = new GenericEntityDAO();
-        abstractManager.addToDatabase(giveEntity());
-        abstractManager.addToDatabase(giveOtherEntity());
+        GenericEntityDao abstractManager = new GenericEntityDao();
+        abstractManager.add(giveEntity());
+        abstractManager.add(giveOtherEntity());
 
-        List<GenericEntity> genericEntityList = abstractManager.listEntities(GenericEntity.class);
+        List<GenericEntity> genericEntityList = abstractManager.list(GenericEntity.class);
 
         assertThat(genericEntityList).hasSize(2);
         assertThat(genericEntityList.get(0).getFirstName().equals("Pepito")).isTrue();

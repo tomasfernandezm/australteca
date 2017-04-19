@@ -1,9 +1,8 @@
 package org.australteca.servlet.user;
 
 import org.australteca.Constants;
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
-import org.australteca.servlet.user.UserRegisterServlet;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -39,7 +38,7 @@ public class UserRegisterServletTester extends Mockito{
             System.out.println(e.getMessage()); // request does not have RequestDispatcher
         }
 
-        UserDAO userDAO = new UserDAO();
+        UserDao userDAO = new UserDao();
         User user = userDAO.getUserByEmail("email");
 
         assertThat(user.getFirstName()).isEqualTo("name");

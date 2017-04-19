@@ -36,6 +36,7 @@
         <mapping class="org.australteca.entity.Commentary"/>
         <mapping class="org.australteca.entity.Subject"/>
         <mapping class="org.australteca.entity.Professor"/>
+        <mapping class="org.australteca.entity.Note" />
 
     </session-factory>
 </hibernate-configuration>

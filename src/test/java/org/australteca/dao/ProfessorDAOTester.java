@@ -14,14 +14,14 @@ import java.util.List;
 public class ProfessorDAOTester {
 
     private Subject persistAndGiveSubject(Professor professor){
-        SubjectDAO subjectDAO = new SubjectDAO();
-        Integer subjectID = subjectDAO.addToDatabase(new Subject("Ingles"));
+        SubjectDao subjectDAO = new SubjectDao();
+        Integer subjectID = subjectDAO.add(new Subject("Ingles"));
         return subjectDAO.get(Subject.class, subjectID);
     }
 
     private Professor persistAndGiveProfessor(){
-        ProfessorDAO professorDAO = new ProfessorDAO();
-        Integer professorID = professorDAO.addToDatabase(new Professor("Pepito",
+        ProfessorDao professorDAO = new ProfessorDao();
+        Integer professorID = professorDAO.add(new Professor("Pepito",
                 "Gimenez", "licenciado"));
         return professorDAO.get(Professor.class, professorID);
     }
@@ -33,10 +33,10 @@ public class ProfessorDAOTester {
         Professor professor = persistAndGiveProfessor();
         Subject subject = persistAndGiveSubject(professor);
 
-        ProfessorDAO professorDAO = new ProfessorDAO();
+        ProfessorDao professorDAO = new ProfessorDao();
         professor.addSubject(subject);
 
-        List<Professor> list = professorDAO.listProfessors();
+        List<Professor> list = professorDAO.list();
 
         assertThat(list.get(0).getSubjects().get(0).getSubjectName()).isEqualTo(subject.getSubjectName());
     }

@@ -2,7 +2,7 @@ package org.australteca.realm;
 
 import com.sun.istack.internal.NotNull;
 import org.australteca.Constants;
-import org.australteca.dao.UserDAO;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 import org.securityfilter.realm.SimpleSecurityRealmBase;
 
@@ -19,7 +19,7 @@ public class LoginSecurityRealm extends SimpleSecurityRealmBase {
     }
 
     public User getUserByEmail(@NotNull String email){
-        return new UserDAO().getUserByEmail(email);
+        return new UserDao().getUserByEmail(email);
     }
 
     @Override
