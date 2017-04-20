@@ -16,7 +16,6 @@
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
     <link href="/css/home.css" rel="stylesheet" type="text/css">
 
-    <% ;%>
 </head>
 <body>
     <div class="active-home">
@@ -26,67 +25,73 @@
     <div class="container">
         <div class="col-sm-12">
 
-            <div class="bs-calltoaction bs-calltoaction-default">
+            <div class="bs-calltoaction bs-calltoaction-subjects">
                 <div class="row">
-                    <div class="col-md-9 cta-contents">
+                    <div class="panel-heading">
                         <h1 class="cta-title">Mis materias</h1>
                     </div>
-                    <div class="col-md-8">
-                        <a href="#" class="btn btn-lg btn-block btn-primary">Go for It!</a>
-                    </div>
-                    <div class="col">
-                        <a href="#" class="btn btn-lg btn-block btn-primary">Go for It!</a>
-                    </div>
-                    <div class="col">
-                        <a href="#" class="btn btn-lg btn-block btn-primary">Go for It!</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bs-calltoaction bs-calltoaction-primary">
-                <div class="row">
-                    <div class="col-md-9 cta-contents">
-                        <h1 class="cta-title">Mis discuciones</h1>
-                        <div class="cta-desc">
-                            <p>Describe the action here.</p>
-                            <p>Describe the action here.</p>
-                            <p>Describe the action here.</p>
+                    <div class="panel-body">
+                        <!--Este bloque de codigo va dentro del foreach-->
+                        <div class="col col-md-4">
+                            <a href="#" class="btn btn-lg btn-block btn-primary">Analisis 4</a>
+                        </div>
+                        <!--fin del bloque-->
+                        <div class="col col-md-4">
+                            <a href="#" class="btn btn-lg btn-block btn-primary">Fisica</a>
+                        </div>
+                        <div class="col col-md-4">
+                            <a href="#" class="btn btn-lg btn-block btn-primary">Laboratorio 1</a>
+                        </div>
+                        <div class="col col-md-4">
+                            <a href="#" class="btn btn-lg btn-block btn-primary">Teologia</a>
                         </div>
                     </div>
-                    <div class="col-md-3 cta-button">
-                        <a href="#" class="btn btn-lg btn-block btn-primary">Go for It!</a>
+                </div>
+            </div>
+
+            <div class="bs-calltoaction bs-calltoaction-discussions">
+                <div class="row">
+                    <div class="panel-heading">
+                        <h1 class="cta-title">Mis Discuciones</h1>
+                    </div>
+                    <div class="panel-body">
+
+
                     </div>
                 </div>
             </div>
 
-            <div class="bs-calltoaction bs-calltoaction-info">
+            <div class="bs-calltoaction bs-calltoaction-work">
                 <div class="row">
-                    <div class="col-md-9 cta-contents">
+                    <div class="panel-heading">
                         <h1 class="cta-title">Mis trabajos</h1>
-                        <div class="cta-desc">
-                            <p>Describe the action here.</p>
-                            <p>Describe the action here.</p>
-                            <p>Describe the action here.</p>
-                        </div>
                     </div>
-                    <div class="col-md-3 cta-button">
-                        <a href="#" class="btn btn-lg btn-block btn-info">Go for It!</a>
+                    <div class="panel-body">
+
+
                     </div>
                 </div>
             </div>
 
-            <div class="bs-calltoaction bs-calltoaction-success">
+            <div class="bs-calltoaction bs-calltoaction-statistics">
                 <div class="row">
-                    <div class="col-md-9 cta-contents">
+                    <div class="panel-heading">
                         <h1 class="cta-title">Estadisticas</h1>
-                        <div class="cta-desc">
-                            <p>Describe the action here.</p>
-                            <p>Describe the action here.</p>
-                            <p>Describe the action here.</p>
-                        </div>
                     </div>
-                    <div class="col-md-3 cta-button">
-                        <a href="#" class="btn btn-lg btn-block btn-info">Go for It!</a>
+                    <div class="panel-body">
+                        <div class="col col-md-4">
+                            <h4>Archivos compartidos</h4>
+                            <div class="circle-file">
+                                <p>12</p>
+                            </div>
+                        </div>
+                        <div class="col col-md-4">
+                            <p>Discuciones empezadas</p>
+                        </div>
+                        <div class="col col-md-4">
+                            <p>Archivos descargados</p>
+                        </div>
+
                     </div>
                 </div>
             </div>

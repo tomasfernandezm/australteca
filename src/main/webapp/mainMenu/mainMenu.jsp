@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                     <li class="activeHome2"><a href="<%=response.encodeURL("/mainMenu/home.jsp")%>">Inicio</a></li>
-                    <li class="activeSubject2"><a href="<%=response.encodeURL("/list")%>">Materias</a></li>
+                    <li class="activeSubject2"><a href="<%=response.encodeURL("/listSubjects")%>">Materias</a></li>
                     <li class="activeWork2"><a href="<%=response.encodeURL("/mainMenu/work.jsp")%>">Trabajo</a></li>
                     <li class="activeDiscussions2"><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
             </ul>

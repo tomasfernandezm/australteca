@@ -1,3 +1,7 @@
+.container{
+    padding-bottom: 50px;
+}
+
 .bs-calltoaction{
     position: relative;
     width:auto;
@@ -61,28 +65,28 @@
 
 
 
-.bs-calltoaction.bs-calltoaction-default{
+.bs-calltoaction.bs-calltoaction-subjects{
     color: whitesmoke;
     background-color: #15A6FF;
-    border-color: #ccc;
+    border-color: transparent;
 }
 
-.bs-calltoaction.bs-calltoaction-primary{
-    color: #fff;
-    background-color: #03E8C4;
-    border-color: #2e6da4;
+.bs-calltoaction.bs-calltoaction-discussions{
+    color: whitesmoke;
+    background-color: #FF9751;
+    border-color: transparent;
 }
 
-.bs-calltoaction.bs-calltoaction-info{
+.bs-calltoaction.bs-calltoaction-work{
     color: #fff;
-    background-color: #04ABE8;
-    border-color: #46b8da;
+    background-color: #BC8BE8;
+    border-color: transparent;
 }
 
-.bs-calltoaction.bs-calltoaction-success{
-    color: #fff;
-    background-color: #15A6FF;
-    border-color: #46b8da;
+.bs-calltoaction.bs-calltoaction-statistics{
+    color: black;
+    background-color: white;
+    border-color: #444444;
 }
 
 
@@ -94,4 +98,27 @@
 .bs-calltoaction.bs-calltoaction-warning .cta-button .btn,
 .bs-calltoaction.bs-calltoaction-danger .cta-button .btn{
     border-color:#fff;
+}
+
+.panel-body .col{
+    margin-bottom: 15px;
+}
+
+.circle-file{
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+    background-color: crimson;
+    border-color: crimson;
+    height: 100px;
+    margin: 0 auto -40px;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.circle-file p{
+    padding-top: 20px;
+    color:white;
+    font-size: 40px;
 }

@@ -61,7 +61,7 @@
                 <% } else { %>
                 <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
                 <% }
-                response.sendRedirect("/list");
+                response.sendRedirect("/listSubjects");
                 }%>
             </form>
         </div>
@@ -104,7 +104,7 @@
                                     <% if (request.isUserInRole("user")) { %>
                                     <td>
                                         <form action="/subjectDelete" method="post">
-                                            <input type="submit" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />"class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></input>
+                                            <button type="submit" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />"class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
                                         </form>
                                     </td>
                                     <% } %>
