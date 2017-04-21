@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page import="org.australteca.Constants" %>
 <%@ page import="static org.australteca.Constants.SUBJECT_NAME_PARAM" %>
@@ -57,6 +58,13 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1default">
                             <button type="button" id="myBtn" class="btn btn-primary center-block">Agregar apunte</button>
+                            <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
+                            <c:set var="noteList" value='${requestScope[notesListParam]}' />
+                            <c:forEach items="${noteList}" var="note">
+                                <div class="col col-md-4">
+                                    <a href="#"><c:out value="${note.name}"/></a>
+                                </div>
+                            </c:forEach>
                         </div>
                         <div class="tab-pane fade" id="tab2default">
                             <% if (request.isUserInRole("user")) { %>

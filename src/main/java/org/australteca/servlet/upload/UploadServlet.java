@@ -91,6 +91,6 @@ public class UploadServlet extends HttpServlet {
         subject.getNoteList().add(note);
         subjectDao.merge(subject);
 
-        req.getRequestDispatcher("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName).forward(req, resp);
+        resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
     }
 }
