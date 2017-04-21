@@ -36,7 +36,7 @@ public class UserRemoveSubjectServlet extends HttpServlet {
         Subject subject = subjectDAO.getByName(subjectName);
 
         user.getSubjects().remove(subject);
-        subject.getSubscribedUsers().remove(user);
+        subject.getUserList().remove(user);
 
         userDAO.merge(user);
         subjectDAO.merge(subject);

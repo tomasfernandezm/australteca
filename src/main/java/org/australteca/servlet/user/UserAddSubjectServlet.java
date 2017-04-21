@@ -36,7 +36,7 @@ public class UserAddSubjectServlet extends HttpServlet{
         Subject subject = subjectDAO.getByName(subjectName);
 
         user.getSubjects().add(subject);
-        subject.getSubscribedUsers().add(user);
+        subject.getUserList().add(user);
 
         userDAO.merge(user);
         subjectDAO.merge(subject);

@@ -63,11 +63,9 @@ package org.australteca;
  */
 public interface Constants {
 
-
-
     /* ~~~~~~~~~~~ SecurityFilter Login Constants ~~~~~~~~~~~~~~~~~~~~ */
-    String LOGIN_FORM_ID = "loginForm";
 
+    String LOGIN_FORM_ID = "loginForm";
     String LOGIN_FORM_ACTION = "j_security_check";
     String LOGIN_USERNAME_FIELD = "j_username";
     String LOGIN_PASSWORD_FIELD = "j_password";
@@ -92,6 +90,7 @@ public interface Constants {
     String REGISTER_FORM_ACTION = "registerConfirmation";
 
     /* ~~~~~~~~~~~ User Servlet Parameters ~~~~~~~~~~~~~~~*/
+
     String NAME_PARAM = "name";
     String LAST_NAME_PARAM = "lastname";
     String EMAIL_PARAM = "email";
@@ -112,12 +111,18 @@ public interface Constants {
     String PROFESSOR_ID_PARAM = "professorID";
 
     /* ~~~~~~~~~~~ Subject Servlet Parameters ~~~~~~~~~~~~~ */
+
     String SUBJECT_NAME_PARAM = "subjectName";
     String OPERATION_SUCCESFUL_PARAM = "operationSuccessful";
     String SUBJECT_COMMENTARY_LIST = "subjectCommentaryList";
     String SUBJECT_PROFESSOR_LIST = "subjectProfessorList";
-    String SUBJECT_FILES_LIST = "subjectFilesList";
+    String SUBJECT_NOTES_LIST = "subjectFilesList";
     String SUBJECT_SCORE = "subjectScore";
+
+    /* ~~~~~~~~~~~ Upload Servlet Parameters ~~~~~~~~~~~~~~~ */
+
+    String NOTE_NAME_PARAM = "noteName";
+    String NOTE_TYPE_PARAM = "noteType";
 
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";

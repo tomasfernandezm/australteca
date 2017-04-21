@@ -2,7 +2,8 @@
 <%@ page import="org.australteca.Constants" %>
 <%@ page import="static org.australteca.Constants.SUBJECT_NAME_PARAM" %>
 <%@ page import="static org.australteca.Constants.NAME_PARAM" %>
-<%@ page import="static org.australteca.Constants.LAST_NAME_PARAM" %><%--
+<%@ page import="static org.australteca.Constants.LAST_NAME_PARAM" %>
+<%@ page import="static org.australteca.Constants.*" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 6/4/17
@@ -77,7 +78,7 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <form id="agregar" action="agregar" method="POST" enctype="multipart/form-data">
+        <form id="agregar" action="/upload" method="POST" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row centered-form  ">
                     <div >
@@ -90,7 +91,8 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name= "name" class="form-control input-sm" placeholder="Nombre" required/>
+                                                <input type="text" name= "<%=NOTE_NAME_PARAM%>" class="form-control input-sm" placeholder="Nombre" required/>
+                                                <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="<%=request.getAttribute(SUBJECT_NAME_PARAM)%>"/>
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
@@ -102,7 +104,7 @@
 
 
                                     <div class="form-group">
-                                        <select class="select form-control" name="agregar">
+                                        <select class="select form-control" name="<%=NOTE_TYPE_PARAM%>">
                                             <option value="agregar" selected>Teoria</option>
                                             <li class="divider"></li>
                                             <option value="agregar" selected>Guia</option>

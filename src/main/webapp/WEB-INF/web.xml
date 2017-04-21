@@ -49,6 +49,16 @@
 
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.upload.UploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+
     <!-- ~~~~~~~~~~~~~~~~~~~~~ User Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <!-- ~~~~~~~~~ User Registration ~~~~~~~~~~~~ -->

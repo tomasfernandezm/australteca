@@ -1,8 +1,6 @@
 package org.australteca.entity;
 
 import javax.persistence.*;
-import java.io.File;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -10,30 +8,47 @@ import java.util.Date;
  */
 
 @Entity
+@Table(name = "NOTE")
 public class Note implements EntityInterface{
 
+    @Column(name = "NOTE_ID")
     @Id @GeneratedValue
     private int id;
+
+    @Column(name = "NOTE_NAME")
     private String name;
+
+    @Column(name = "NOTE_TYPE")
     private String type;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "NOTE_DATE")
     private Date date;
+
+    @Column(name = "NOTE_SCORE")
     private float score;
 
     @Lob
-    private byte[] file;
+    @Column(name = "NOTE_DATA")
+    private byte[] data;
+
+    @Column(name = "NOTE_NUMBER_OF_DOWNLOADS")
     private int downloads;
 
     @ManyToOne
     private User author;
 
+    @ManyToOne
+    private Subject subject;
+
     public Note(){
 
     }
 
-    public Note(String name, String type, byte[] file, User author) {
+    public Note(String name, String type, byte[] data, User author) {
         this.name = name;
         this.type = type;
-        this.file = file;
+        this.data = data;
         this.author = author;
         date = new Date();
         score = 0;
@@ -80,12 +95,12 @@ public class Note implements EntityInterface{
         this.score = score;
     }
 
-    public byte[] getFile() {
-        return file;
+    public byte[] getData() {
+        return data;
     }
 
-    public void setFile(byte[] file) {
-        this.file = file;
+    public void setData(byte[] data) {
+        this.data = data;
     }
 
     public int getDownloads() {

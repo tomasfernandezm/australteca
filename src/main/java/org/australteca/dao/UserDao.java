@@ -31,7 +31,7 @@ public class UserDao extends AbstractDao<User> {
     }
 
     public User getUserByEmail(@NotNull String email){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getCurrentSession();
         String hql = "from User user where user.email = :email";
         Transaction tx = null;
         User user = null;
