@@ -1,5 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page import="org.australteca.Constants" %><%--
+<%@ page import="org.australteca.Constants" %>
+<%@ page import="static org.australteca.Constants.USER_SUBJECT_LIST" %>
+<%@ page import="static org.australteca.Constants.USER_SUBJECT_LIST" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 29/3/17
@@ -31,6 +34,13 @@
                         <h1 class="cta-title">Mis materias</h1>
                     </div>
                     <div class="panel-body">
+                        <c:set var="subjectListParam" value="<%=USER_SUBJECT_LIST%>"/>
+                        <c:set var="subjectList" value='${requestScope[subjectListParam]}' />
+                        <c:forEach items="${subjectList}" var="subject">
+                            <div class="col col-md-4">
+                                <a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subjectName}" class="btn btn-lg btn-block btn-primary"><c:out value="${subject.subjectName}"/></a>
+                            </div>
+                        </c:forEach>
                         <!--Este bloque de codigo va dentro del foreach-->
                         <div class="col col-md-4">
                             <a href="#" class="btn btn-lg btn-block btn-primary">Analisis 4</a>

@@ -33,6 +33,6 @@ public class UserListPostServlet extends HttpServlet {
         req.setAttribute(USER_COMMENTARY_LIST, user.getCommentaries());
         req.setAttribute(USER_SUBJECT_LIST, user.getSubjects());
 
-        req.getRequestDispatcher("A donde lo queramos mandar").forward(req, resp);
+        req.getRequestDispatcher("/mainMenu/home.jsp").forward(req, resp);
     }
 }
