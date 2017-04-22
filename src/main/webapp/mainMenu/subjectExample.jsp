@@ -65,6 +65,34 @@
                                     <a href="#"><c:out value="${note.name}"/></a>
                                 </div>
                             </c:forEach>
+                            <div class="pre-scrollable" data-offset="50">
+                                <table class="table"  id="dev-table">
+                                    <thead>
+                                        <td>Nombre</td>
+                                        <td>Tipo</td>
+                                        <td>Año</td>
+                                        <td>Descargas</td>
+                                        <td>Puntaje</td>
+                                        <td>Subiro por</td>
+                                        <% if (request.isUserInRole("user")) { %>
+                                            <td>Eliminar</td>
+                                        <% } %>
+                                    </thead>
+
+                              <!--      PONER BIEN EL FOR
+                              < //c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
+                                    < //c:forEach items="${subjectWrapperList}" var="subjectWrapper">  -->
+                                        <tr>
+                                            <td>unidad1</td>
+                                            <td>Resumen</td>
+                                            <td>2017</td>
+                                            <td>236</td>
+                                            <td>4.8</td>
+                                            <td><%=request.getAttribute(NAME_PARAM)%></td>
+                                        </tr>
+                                    <//c:forEach>
+                                </table>
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="tab2default">
                             <% if (request.isUserInRole("user")) { %>

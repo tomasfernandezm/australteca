@@ -32,11 +32,11 @@
           <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
             <div class="form-group">
               <label id="email"for="email">Email</label>
-              <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>">
+              <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>" required>
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>">
+              <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>" required>
             </div>
             <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
           </form>
