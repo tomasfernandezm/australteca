@@ -100,7 +100,15 @@
                                 <tr>
                                     <td><a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
                                         <c:out value="${subjectWrapper.subject.subjectName}"/></a></td>
-                                    <td><c:out value="${subjectWrapper.favorite}"/></td>
+                                    <td>
+                                        <c:if test="${subjectWrapper.favorite}">
+                                            <button type="submit" name="favoriteTrue" class="btn btn-default favoriteTrue"><i class="glyphicon glyphicon-star"></i></button>
+                                        </c:if>
+                                        <c:if test="${!subjectWrapper.favorite}">
+                                            <button type="submit" name="favoriteFalse" class="btn btn-default favoriteFalse"><i class="glyphicon glyphicon-star-empty"></i></button>
+                                        </c:if>
+                                    </td>
+
                                     <% if (request.isUserInRole("user")) { %>
                                     <td>
                                         <form action="/subjectDelete" method="post">
