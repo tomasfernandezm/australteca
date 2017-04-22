@@ -58,13 +58,13 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1default">
                             <button type="button" id="myBtn" class="btn btn-primary center-block">Agregar apunte</button>
-                            <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
+                            <%--<c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
                             <c:set var="noteList" value='${requestScope[notesListParam]}' />
                             <c:forEach items="${noteList}" var="note">
                                 <div class="col col-md-4">
                                     <a href="#"><c:out value="${note.name}"/></a>
                                 </div>
-                            </c:forEach>
+                            </c:forEach>--%>
                             <div class="pre-scrollable" data-offset="50">
                                 <table class="table"  id="dev-table">
                                     <thead>
@@ -73,24 +73,24 @@
                                         <td>Año</td>
                                         <td>Descargas</td>
                                         <td>Puntaje</td>
-                                        <td>Subiro por</td>
+                                        <td>Subido por</td>
                                         <% if (request.isUserInRole("user")) { %>
                                             <td>Eliminar</td>
                                         <% } %>
                                     </thead>
 
-                              <!--      PONER BIEN EL FOR
-                              < //c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
-                                    < //c:forEach items="${subjectWrapperList}" var="subjectWrapper">  -->
+                                    <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
+                                    <c:set var="noteList" value='${requestScope[notesListParam]}' />
+                                    <c:forEach items="${noteList}" var="note">
                                         <tr>
-                                            <td>unidad1</td>
-                                            <td>Resumen</td>
-                                            <td>2017</td>
-                                            <td>236</td>
-                                            <td>4.8</td>
-                                            <td><%=request.getAttribute(NAME_PARAM)%></td>
+                                            <td><c:out value="${note.name}"/></td>
+                                            <td><c:out value="${note.type}"/></td>
+                                            <td><c:out value="${note.date}"/></td>
+                                            <td><c:out value="${note.downloads}"/></td>
+                                            <td><c:out value="${note.score}"/></td>
+                                            <td><c:out value="${note.author.email}"/></td>
                                         </tr>
-                                    <//c:forEach>
+                                    </c:forEach>
                                 </table>
                             </div>
                         </div>
@@ -141,17 +141,17 @@
 
                                     <div class="form-group">
                                         <select class="select form-control" name="<%=NOTE_TYPE_PARAM%>">
-                                            <option value="agregar" selected>Teoria</option>
+                                            <option value="<%=NOTE_TYPE_TEORIA%>" selected>Teoria</option>
                                             <li class="divider"></li>
-                                            <option value="agregar" selected>Guia</option>
+                                            <option value="<%=NOTE_TYPE_GUIA%>" selected>Guia</option>
                                             <li class="divider"></li>
-                                            <option value="agregar" selected>Guia resuelta</option>
+                                            <option value="<%=NOTE_TYPE_GUIA_RESUELTA%>" selected>Guia resuelta</option>
                                             <li class="divider"></li>
-                                            <option value="agregar" selected>Parcial</option>
+                                            <option value="<%=NOTE_TYPE_PARCIAL%>" selected>Parcial</option>
                                             <li class="divider"></li>
-                                            <option value="agregar" selected>Final</option>
+                                            <option value="<%=NOTE_TYPE_FINAL%>" selected>Final</option>
                                             <li class="divider"></li>
-                                            <option value="agregar" selected>Resumen</option>
+                                            <option value="<%=NOTE_TYPE_RESUMEN%>" selected>Resumen</option>
                                             <li class="divider"></li>
                                         </select>
                                     </div>

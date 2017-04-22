@@ -5,6 +5,9 @@
 <%@ page import="org.australteca.Constants" %>
 <%@ page import="javax.security.auth.login.Configuration" %>
 <%@ page import="org.australteca.servlet.command.enums.SubjectEnums" %>
+<%@ page import="static org.australteca.Constants.REMOVE_FAVORITE" %>
+<%@ page import="static org.australteca.Constants.MAKE_FAVORITE" %>
+<%@ page import="static org.australteca.Constants.*" %>
 <%--
   Created by IntelliJ IDEA.
   User: tomasforman
@@ -44,7 +47,7 @@
                             <label id="subjectName">Nombre:</label>
                         </div>
                         <div class="col-sm-2">
-                            <input class="input-group" type="text" name="<%=Constants.SUBJECT_NAME_PARAM%>" required>
+                            <input class="input-group" type="text" name="<%=SUBJECT_NAME_PARAM%>" required>
                         </div>
                         <div class="pull-right">
                         <input type="Submit" name="addSubject" class="btn btn-primary"  value="Agregar">
@@ -56,7 +59,7 @@
                 <!-- hay que emprolijarlo -->
                 <% if (request.getParameter("addSubject") != null){%>
 
-                <% if ((boolean) request.getAttribute(Constants.OPERATION_SUCCESFUL_PARAM)) { %>
+                <% if ((boolean) request.getAttribute(OPERATION_SUCCESFUL_PARAM)) { %>
                 <p> Materia agregada!</p>
                 <% } else { %>
                 <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
@@ -98,21 +101,24 @@
                             <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                             <c:forEach items="${subjectWrapperList}" var="subjectWrapper">
                                 <tr>
-                                    <td><a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
+                                    <td><a href="${pageContext.request.contextPath}/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
                                         <c:out value="${subjectWrapper.subject.subjectName}"/></a></td>
                                     <td>
+                                        <form action="/manageUserSubjects" method="post">
+                                            <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="${subjectWrapper.subject.subjectName}">
                                         <c:if test="${subjectWrapper.favorite}">
-                                            <button type="submit" name="favoriteTrue" class="btn btn-default favoriteTrue"><i class="glyphicon glyphicon-star"></i></button>
+                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=MAKE_FAVORITE%>" class="btn btn-default favoriteTrue"><i class="glyphicon glyphicon-star"></i></button>
                                         </c:if>
                                         <c:if test="${!subjectWrapper.favorite}">
-                                            <button type="submit" name="favoriteFalse" class="btn btn-default favoriteFalse"><i class="glyphicon glyphicon-star-empty"></i></button>
+                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=REMOVE_FAVORITE%>" class="btn btn-default favoriteFalse"><i class="glyphicon glyphicon-star-empty"></i></button>
                                         </c:if>
+                                        </form>
                                     </td>
 
                                     <% if (request.isUserInRole("user")) { %>
                                     <td>
                                         <form action="/subjectDelete" method="post">
-                                            <button type="submit" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />"class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
+                                            <button type="submit" name="<%=SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />" class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
                                         </form>
                                     </td>
                                     <% } %>

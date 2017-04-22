@@ -50,6 +50,16 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>UserSubjectManagerServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.user.UserSubjectManagerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserSubjectManagerServlet</servlet-name>
+        <url-pattern>/manageUserSubjects</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>org.australteca.servlet.upload.UploadServlet</servlet-class>
     </servlet>

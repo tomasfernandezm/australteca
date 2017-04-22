@@ -105,6 +105,12 @@ public interface Constants {
     String USER_SUBJECT_LIST = "userSubjectList";
     String USER_DISCUSSION_LIST = "userDiscussionList";
 
+    /*~~~~~~~~~~~~~ User - Subject Servlet Parameters ~~~~~~~~~~ */
+
+    String FAVORITE_PARAM = "favorite";
+    String MAKE_FAVORITE = "makeFavorite";
+    String REMOVE_FAVORITE = "removeFavorite";
+
     /* ~~~~~~~~~~~ Professor Servlet Parameters ~~~~~~~~~~~ */
 
     String PROFESSOR_NAME_PARAM = "professorName";
@@ -124,6 +130,14 @@ public interface Constants {
     String NOTE_NAME_PARAM = "noteName";
     String NOTE_TYPE_PARAM = "noteType";
 
+    /* ~~~~~~~~~~~ Note Types ~~~~~~~~~~~~~~~~~~~ */
+
+    String NOTE_TYPE_TEORIA = "Teoria";
+    String NOTE_TYPE_GUIA = "Guía";
+    String NOTE_TYPE_GUIA_RESUELTA = "Guía Resuelta";
+    String NOTE_TYPE_PARCIAL = "Parcial";
+    String NOTE_TYPE_FINAL = "Final";
+    String NOTE_TYPE_RESUMEN = "Resumen";
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";
