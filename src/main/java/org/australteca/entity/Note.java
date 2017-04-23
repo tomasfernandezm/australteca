@@ -1,5 +1,7 @@
 package org.australteca.entity;
 
+import org.hibernate.annotations.Fetch;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;

@@ -29,9 +29,6 @@
 
         <property name="hibernate.current_session_context_class">thread</property>
 
-        <property name="hibernate.org.australteca.search.default.directory_provider">filesystem</property>
-        <property name="hibernate.org.australteca.search.default.indexBase">db/indexes</property>
-
         <mapping class="org.australteca.entity.User"/>
         <mapping class="org.australteca.entity.Commentary"/>
         <mapping class="org.australteca.entity.Subject"/>

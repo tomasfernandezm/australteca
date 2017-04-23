@@ -107,10 +107,10 @@
                                         <form action="/manageUserSubjects" method="post">
                                             <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="${subjectWrapper.subject.subjectName}">
                                         <c:if test="${subjectWrapper.favorite}">
-                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=MAKE_FAVORITE%>" class="btn btn-default favoriteTrue"><i class="glyphicon glyphicon-star"></i></button>
+                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=REMOVE_FAVORITE%>" class="btn btn-default favoriteTrue"><i class="glyphicon glyphicon-star"></i></button>
                                         </c:if>
                                         <c:if test="${!subjectWrapper.favorite}">
-                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=REMOVE_FAVORITE%>" class="btn btn-default favoriteFalse"><i class="glyphicon glyphicon-star-empty"></i></button>
+                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=MAKE_FAVORITE%>" class="btn btn-default favoriteFalse"><i class="glyphicon glyphicon-star-empty"></i></button>
                                         </c:if>
                                         </form>
                                     </td>

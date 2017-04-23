@@ -50,6 +50,16 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>UserListPostServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.user.UserListPostServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UserListPostServlet</servlet-name>
+        <url-pattern>/userListPost</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>UserSubjectManagerServlet</servlet-name>
         <servlet-class>org.australteca.servlet.user.UserSubjectManagerServlet</servlet-class>
     </servlet>
@@ -61,7 +71,7 @@
 
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.upload.UploadServlet</servlet-class>
+        <servlet-class>org.australteca.servlet.filetransfer.UploadServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

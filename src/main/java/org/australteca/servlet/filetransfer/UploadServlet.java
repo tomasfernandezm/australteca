@@ -1,4 +1,4 @@
-package org.australteca.servlet.upload;
+package org.australteca.servlet.filetransfer;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemStream;

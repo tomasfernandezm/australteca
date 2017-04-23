@@ -111,7 +111,7 @@ public interface Constants {
     String MAKE_FAVORITE = "makeFavorite";
     String REMOVE_FAVORITE = "removeFavorite";
 
-    /* ~~~~~~~~~~~ Professor Servlet Parameters ~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~ Professor - Servlet Parameters ~~~~~~~~~~~ */
 
     String PROFESSOR_NAME_PARAM = "professorName";
     String PROFESSOR_ID_PARAM = "professorID";
@@ -125,10 +125,12 @@ public interface Constants {
     String SUBJECT_NOTES_LIST = "subjectFilesList";
     String SUBJECT_SCORE = "subjectScore";
 
-    /* ~~~~~~~~~~~ Upload Servlet Parameters ~~~~~~~~~~~~~~~ */
+    /* ~~~~~~~~~~~ Upload - Download Servlet Parameters ~~~~~~~~~~~~~~~ */
 
     String NOTE_NAME_PARAM = "noteName";
     String NOTE_TYPE_PARAM = "noteType";
+    String NOTE_ID_PARAM = "noteID";
+    String NOTE_FORMAT_PARAM = "noteFormat";
 
     /* ~~~~~~~~~~~ Note Types ~~~~~~~~~~~~~~~~~~~ */
 
@@ -138,6 +140,7 @@ public interface Constants {
     String NOTE_TYPE_PARCIAL = "Parcial";
     String NOTE_TYPE_FINAL = "Final";
     String NOTE_TYPE_RESUMEN = "Resumen";
+
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";

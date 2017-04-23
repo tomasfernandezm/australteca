@@ -41,20 +41,6 @@
                                 <a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subjectName}" class="btn btn-lg btn-block btn-primary"><c:out value="${subject.subjectName}"/></a>
                             </div>
                         </c:forEach>
-                        <!--Este bloque de codigo va dentro del foreach-->
-                        <div class="col col-md-4">
-                            <a href="#" class="btn btn-lg btn-block btn-primary">Analisis 4</a>
-                        </div>
-                        <!--fin del bloque-->
-                        <div class="col col-md-4">
-                            <a href="#" class="btn btn-lg btn-block btn-primary">Fisica</a>
-                        </div>
-                        <div class="col col-md-4">
-                            <a href="#" class="btn btn-lg btn-block btn-primary">Laboratorio 1</a>
-                        </div>
-                        <div class="col col-md-4">
-                            <a href="#" class="btn btn-lg btn-block btn-primary">Teologia</a>
-                        </div>
                     </div>
                 </div>
             </div>

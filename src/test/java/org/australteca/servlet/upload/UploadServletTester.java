@@ -1,10 +1,10 @@
 package org.australteca.servlet.upload;
 
-import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
+import org.australteca.servlet.filetransfer.UploadServlet;
 import org.junit.Test;
 import org.mockito.Mockito;
 

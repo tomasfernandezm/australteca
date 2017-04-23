@@ -1,4 +1,4 @@
-package org.australteca.servlet.upload;
+package org.australteca.servlet.filetransfer;
 
 /**
  * Created by tomi on 20/04/17.
