@@ -16,7 +16,7 @@
             jdbc:hsqldb:mem:TestDB
         </property>
 
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
         <property name="hibernate.connection.username">
             sa
@@ -24,11 +24,8 @@
         <property name="hibernate.connection.password">
 
         </property>
-
-        <property name="hibernate.search.default.directory_provider">filesystem</property>
-        <property name="hibernate.search.default.indexBase">db/indexes</property>
-
         <property name="hibernate.current_session_context_class">thread</property>
+
         <mapping class="org.australteca.entity.User"/>
         <mapping class="org.australteca.entity.Commentary"/>
         <mapping class="org.australteca.entity.Subject"/>

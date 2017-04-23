@@ -34,10 +34,10 @@ public class User extends AbstractEntity{
     @ManyToMany(fetch = FetchType.EAGER)
     private final Set<Subject> subjects = new HashSet<>();
 
-
     /* CascadeType.ALL -> al añadir un comentario a un usuario y persistirlo, también se persiste el comentario */
     /* orphanRemoval = true -> si saco un comentario de la Collection, se borra el link en la tabla y también se
     borra el comentario */
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "author")
     private final Set<Commentary> commentaries = new HashSet<>();
 

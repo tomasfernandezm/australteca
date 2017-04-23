@@ -40,16 +40,16 @@ public class UserModificationServlet extends HttpServlet{
             UserDao userDAO = new UserDao();
             User user = userDAO.getUserByEmail(req.getRemoteUser());
 
-            if(name != null) user.setFirstName(name);
-            if(lname != null) user.setLastName(lname);
-            if(email != null)user.setEmail(email);
-            if(password != null)user.setPassword(password);
-            if(career!= null)user.setCourse(career);
+            if(!name.equals("")) user.setFirstName(name);
+            if(!lname.equals("")) user.setLastName(lname);
+            if(!email.equals(""))user.setEmail(email);
+            if(!password.equals(""))user.setPassword(password);
+            if(!career.equals(""))user.setCourse(career);
 
             userDAO.merge(user);
             status = 0;
         }
         req.setAttribute(STATUS, status);
-        req.getRequestDispatcher("/mainMenu/userSettings.jsp").forward(req, resp);
+        resp.sendRedirect("/userPost");
     }
 }

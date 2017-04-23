@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static org.australteca.Constants.SUBJECT_NAME_PARAM;
+
 /**
  * Created by tomi on 16/04/17.
  */
@@ -23,7 +25,7 @@ public class SubjectDeleteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String subjectName = req.getParameter(Constants.SUBJECT_NAME_PARAM);
+        String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
         SubjectDao subjectDAO = new SubjectDao();
 
         Subject subject = subjectDAO.getByName(subjectName);
@@ -32,6 +34,6 @@ public class SubjectDeleteServlet extends HttpServlet {
         subjectDAO.delete(subjectID);
 
         req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, true);
-        resp.sendRedirect("/listSubjects");
+        resp.sendRedirect("/listSubjects"); //arreglar
     }
 }

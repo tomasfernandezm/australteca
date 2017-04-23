@@ -3,6 +3,7 @@ package org.australteca.dao;
 import com.sun.istack.internal.NotNull;
 import org.australteca.entity.Note;
 import org.australteca.entity.Subject;
+import org.australteca.entity.User;
 import org.australteca.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -18,6 +19,9 @@ import java.util.List;
 public class SubjectDao extends AbstractDao<Subject> {
 
     public void delete(@NotNull Integer subjectID){
+        Subject subject = get(subjectID);
+        removeAllUsers(subject);
+        merge(subject);
         delete(Subject.class, subjectID);
     }
 
@@ -46,20 +50,13 @@ public class SubjectDao extends AbstractDao<Subject> {
         return subject;
     }
 
-    public Subject getByNameWithNotes(@NotNull String name){
-        Session session = HibernateUtil.getCurrentSession();
-        String hql = "from Subject s join fetch s.noteList where s.noteList = :name";
-        Transaction tx = null;
-        Subject subject = null;
-        try{
-            tx = session.beginTransaction();
-            Query query = session.createQuery(hql).setParameter("name", name);
-            subject = (Subject) query.getSingleResult();
-            tx.commit();
-        }catch (NoResultException e){
-            if(tx != null) tx.rollback();
-            e.printStackTrace();
+    private boolean hasUsers(@NotNull Subject subject){
+        return subject.getUserList().size() == 0;
+    }
+
+    private void removeAllUsers(@NotNull Subject subject){
+        if(!subject.getUserList().isEmpty()){
+            for(User u: subject.getUserList()) u.getSubjects().remove(subject);
         }
-        return subject;
     }
 }

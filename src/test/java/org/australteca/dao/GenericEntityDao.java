@@ -14,11 +14,11 @@ public class GenericEntityDao extends AbstractDao<GenericEntity> {
         delete(GenericEntity.class, professorID);
     }
 
-    public List<GenericEntity> listGenericEntities() {
+    public List<GenericEntity> list() {
         return list(GenericEntity.class);
     }
 
-    public GenericEntity getGenericEntity(@NotNull Integer professorID){
+    public GenericEntity get(@NotNull Integer professorID){
         return get(GenericEntity.class, professorID);
     }
 }

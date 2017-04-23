@@ -43,7 +43,7 @@ public class AbstractDaoTester {
             assertThat(e).isExactlyInstanceOf(IllegalArgumentException.class);
         }
 
-        GenericEntity genericEntity = abstractManager.getGenericEntity(entityID);
+        GenericEntity genericEntity = abstractManager.get(entityID);
         assertThat(genericEntity).isNull();
     }
 
