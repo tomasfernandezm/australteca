@@ -1,8 +1,9 @@
 Cosas que hay que hacer:
 
 
-1- baja y modificación de materia (front y back)
-3- homepage (listar materias, ofertas y discusiones abiertas del usuario) (front y back)
+1-Mostrar que se carga archivo
+2-boton descargar y hacer la descarga
+3-Ver si se puede mostrar ruta
 4- foto de userSettings
 6- terminar rediseño de servlets (despúes de la primera entrega)
 7- emprolijar la base de datos (leer tipos de fetch)

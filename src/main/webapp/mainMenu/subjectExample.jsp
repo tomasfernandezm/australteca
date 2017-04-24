@@ -14,6 +14,7 @@
 
 <html>
 <head>
+    <meta http-equiv="content-language" content="es">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale1.0">
     <title><%=Constants.MY_HOME_TITLE%></title>
@@ -75,8 +76,9 @@
                                         <td>Puntaje</td>
                                         <td>Subido por</td>
                                         <% if (request.isUserInRole("user")) { %>
-                                            <td>Eliminar</td>
+                                            <td></td>
                                         <% } %>
+                                        <td></td>
                                     </thead>
 
                                     <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
@@ -89,6 +91,10 @@
                                             <td><c:out value="${note.downloads}"/></td>
                                             <td><c:out value="${note.score}"/></td>
                                             <td><c:out value="${note.author.email}"/></td>
+                                            <% if (request.isUserInRole("user")) { %>
+                                            <td><button type="submit" class="btn"><i class="glyphicon glyphicon-trash"></i></button> </td>
+                                            <% } %>
+                                            <td><button type="submit" class="btn"><i class="glyphicon glyphicon-download"></i></button> </td>
                                         </tr>
                                     </c:forEach>
                                 </table>
