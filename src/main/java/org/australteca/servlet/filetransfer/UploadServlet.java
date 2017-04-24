@@ -43,6 +43,7 @@ public class UploadServlet extends HttpServlet {
         String name = req.getParameter(NOTE_NAME_PARAM);
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
         String type = req.getParameter(NOTE_TYPE_PARAM);
+        String format = req.getParameter(NOTE_FORMAT_PARAM);
 
 
         try{
@@ -83,7 +84,7 @@ public class UploadServlet extends HttpServlet {
 
         UserDao userDao = new UserDao();
         User user = userDao.getUserByEmail(req.getRemoteUser());
-        Note note = new Note(name, type, data, user);
+        Note note = new Note(name, type, data, user, format);
 
         SubjectDao subjectDao = new SubjectDao();
         //Subject subject = subjectDao.getByNameWithNotes(subjectName);

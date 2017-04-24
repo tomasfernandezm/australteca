@@ -80,6 +80,7 @@ public interface Constants {
     /* ~~~~~~~~~~~ Servlet Feedback Constants ~~~~~~~~~~~~~~~~~ */
 
     String STATUS = "status";
+    String CALLER = "caller";
 
     /* ~~~~~~~~~~~ JSP View Constants ~~~~~~~~~~~~ */
 

@@ -12,17 +12,15 @@ import java.util.Date;
 
 @Entity
 @Table(name = "NOTE")
-public class Note implements EntityInterface{
-
-    @Column(name = "NOTE_ID")
-    @Id @GeneratedValue
-    private int id;
+public class Note extends AbstractEntity{
 
     @Column(name = "NOTE_NAME")
     private String name;
 
     @Column(name = "NOTE_TYPE")
     private String type;
+
+    private String format;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "NOTE_DATE")
@@ -48,7 +46,8 @@ public class Note implements EntityInterface{
 
     }
 
-    public Note(String name, String type, byte[] data, User author) {
+    public Note(String name, String type, byte[] data, User author, String format) {
+        this.format = format;
         this.name = name;
         this.type = type;
         this.data = data;
@@ -58,12 +57,12 @@ public class Note implements EntityInterface{
         downloads = 0;
     }
 
-    public int getId() {
-        return id;
+    public String getFormat() {
+        return format;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setFormat(String format) {
+        this.format = format;
     }
 
     public String getName() {

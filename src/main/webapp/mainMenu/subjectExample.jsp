@@ -83,6 +83,7 @@
 
                                     <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
                                     <c:set var="noteList" value='${requestScope[notesListParam]}' />
+                                    <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
                                     <c:forEach items="${noteList}" var="note">
                                         <tr>
                                             <td><c:out value="${note.name}"/></td>
@@ -92,9 +93,19 @@
                                             <td><c:out value="${note.score}"/></td>
                                             <td><c:out value="${note.author.email}"/></td>
                                             <% if (request.isUserInRole("user")) { %>
-                                            <td><button type="submit" class="btn"><i class="glyphicon glyphicon-trash"></i></button> </td>
+                                            <form action="/noteDelete" method="post">
+                                                <td><input type="submit" class="btn"><i class="glyphicon glyphicon-trash"></i></td>
+                                                <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
+                                                <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="<%=request.getAttribute(SUBJECT_NAME_PARAM)%>"/>
+
+                                            </form>
                                             <% } %>
+                                            <form action="/noteDownload" method="post">
                                             <td><button type="submit" class="btn"><i class="glyphicon glyphicon-download"></i></button> </td>
+                                                <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
+                                                <input type="hidden" name="<%=Constants.NOTE_NAME_PARAM%>" value="${note.name}">
+                                                <input type="hidden" name="<%=Constants.NOTE_FORMAT_PARAM%>" value="${note.format}">
+                                            </form>
                                         </tr>
                                     </c:forEach>
                                 </table>
@@ -135,6 +146,7 @@
                                             <div class="form-group">
                                                 <input type="text" name= "<%=NOTE_NAME_PARAM%>" class="form-control input-sm" placeholder="Nombre" required/>
                                                 <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="<%=request.getAttribute(SUBJECT_NAME_PARAM)%>"/>
+                                                <input type="hidden" name="<%=NOTE_FORMAT_PARAM%>" value="txt">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">

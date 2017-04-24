@@ -50,6 +50,26 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>NoteDeleteServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectNoteDelete</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>NoteDeleteServlet</servlet-name>
+        <url-pattern>/noteDelete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NoteDownloadServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.filetransfer.DownloadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>NoteDownloadServlet</servlet-name>
+        <url-pattern>/noteDownload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>UserListPostServlet</servlet-name>
         <servlet-class>org.australteca.servlet.user.UserListPostServlet</servlet-class>
     </servlet>
