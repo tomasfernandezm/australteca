@@ -22,6 +22,8 @@
     <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
     <link href="/css/star.css" rel="stylesheet" type="text/css">
     <link href="/css/modalBox.css" rel="stylesheet" type="text/css">
+    <link href="/css/subjectExample.css" rel="stylesheet" type="text/css">
+    <link href="/css/comment.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -57,6 +59,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
+                        <!---------------- Notes ----------------->
                         <div class="tab-pane fade in active" id="tab1default">
                             <button type="button" id="myBtn" class="btn btn-primary center-block">Agregar apunte</button>
                             <%--<c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
@@ -71,7 +74,7 @@
                                     <thead>
                                         <td>Nombre</td>
                                         <td>Tipo</td>
-                                        <td>Año</td>
+                                        <td>A&ntilde;o</td>
                                         <td>Descargas</td>
                                         <td>Puntaje</td>
                                         <td>Subido por</td>
@@ -94,14 +97,14 @@
                                             <td><c:out value="${note.author.email}"/></td>
                                             <% if (request.isUserInRole("user")) { %>
                                             <form action="/noteDelete" method="post">
-                                                <td><input type="submit" class="btn"><i class="glyphicon glyphicon-trash"></i></td>
+                                                <td><button type="submit" class="btn trashButton"><i class="glyphicon glyphicon-trash"></i></td>
                                                 <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
                                                 <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="<%=request.getAttribute(SUBJECT_NAME_PARAM)%>"/>
 
                                             </form>
                                             <% } %>
                                             <form action="/noteDownload" method="post">
-                                            <td><button type="submit" class="btn"><i class="glyphicon glyphicon-download"></i></button> </td>
+                                            <td><button type="submit" class="btn downloadButton"><i class="glyphicon glyphicon-download"></i></button> </td>
                                                 <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
                                                 <input type="hidden" name="<%=Constants.NOTE_NAME_PARAM%>" value="${note.name}">
                                                 <input type="hidden" name="<%=Constants.NOTE_FORMAT_PARAM%>" value="${note.format}">
@@ -111,13 +114,35 @@
                                 </table>
                             </div>
                         </div>
+
+                        <!----------- PROFESSOR ----------->
                         <div class="tab-pane fade" id="tab2default">
                             <% if (request.isUserInRole("user")) { %>
                             <button type="button" id="myBtn2"class="btn btn-primary center-block">Agregar profesor</button>
                             <% } %>
                         </div>
-                        <div class="tab-pane fade" id="tab3default">Default 3</div>
-                        <div class="tab-pane fade" id="tab4default">Default 4</div>
+
+
+                        <!------------ Comments ------------>
+                        <div class="tab-pane fade" id="tab3default">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-11 col-md-8">
+                                        <div class="widget-area no-padding blank">
+                                            <div class="status-upload">
+                                                <form>
+                                                    <textarea placeholder="Que estas pensando?" ></textarea>
+                                                    <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
+                                                </form>
+                                            </div><!-- Status Upload  -->
+                                        </div><!-- Widget Area -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
             </div>

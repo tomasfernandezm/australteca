@@ -35,7 +35,7 @@
               <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>" required>
             </div>
             <div class="form-group">
-              <label for="password">Password</label>
+              <label for="password">Contrase&ntilde;a</label>
               <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>" required>
             </div>
             <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
@@ -83,13 +83,13 @@
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
                       <input type="password" name="<%= PASSWORD_PARAM%>" pattern=".{0}|.{8,}" id="password" class="form-control input-sm"
-                             placeholder="Contrasena"  required title="Mínimo 8 caracteres"/>
+                             placeholder="Contrase&ntilde;a"  required title="Mínimo 8 caracteres"/>
                     </div>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
                       <input type="password" name="<%= PASSWORD_CONFIRMATION_PARAM%>" pattern=".{0}|.{8,}" class="form-control input-sm"
-                             placeholder="Confirmar contrasena"  required title="Mínimo 8 caracteres"/>
+                             placeholder="Confirmar contrase&ntilde;a"  required title="Mínimo 8 caracteres"/>
                     </div>
                   </div>
                 </div>

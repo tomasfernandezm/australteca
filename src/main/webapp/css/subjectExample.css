@@ -1,0 +1,28 @@
+.trashButton{
+    background-color: transparent;
+    border-color: transparent;
+    color: #666666;
+    font-size: medium;
+}
+
+
+.trashButton:hover{
+    background-color: transparent;
+    border-color: transparent;
+    color: red;
+}
+
+
+.downloadButton{
+    background-color: transparent;
+    border-color: transparent;
+    color: #666666;
+    font-size: medium;
+}
+
+
+.downloadButton:hover{
+    background-color: transparent;
+    border-color: transparent;
+    color: green;
+}
