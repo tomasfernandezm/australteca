@@ -39,8 +39,8 @@ public class DownloadServlet extends HttpServlet{
         byte[] filedata = note.getData();
 
         //      set the header information in the response.
-        resp.setHeader("Content-Disposition", "attachment; filename=\"" + name + "\";");
-        resp.setContentType("application/" + format);
+        resp.setHeader("Content-Disposition", "attachment; filename=\"" + name + "."+format+"\";");
+        resp.setContentType("application/octet-stream");
         ByteArrayInputStream byteStream = new ByteArrayInputStream(filedata);
 
         // input stream con un buffer incorporado

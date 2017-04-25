@@ -40,10 +40,11 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         byte[] data = null;
-        String name = req.getParameter(NOTE_NAME_PARAM);
-        String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
-        String type = req.getParameter(NOTE_TYPE_PARAM);
-        String format = req.getParameter(NOTE_FORMAT_PARAM);
+        String name = null;
+        String subjectName = null;
+        String type = null;
+        String format = null;
+
 
 
         try{
@@ -68,9 +69,16 @@ public class UploadServlet extends HttpServlet {
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             for(FileItem item: items){
                 if(item.isFormField()){
-                    if(item.getFieldName().equals(NOTE_NAME_PARAM)) name = item.getString();
+                    if(item.getFieldName().equals(NOTE_NAME_PARAM)){
+                        name = item.getString();
+                      //  name = checkExtension(name, format);
+                    }
                     else if(item.getFieldName().equals(NOTE_TYPE_PARAM)) type = item.getString();
                     else if(item.getFieldName().equals(SUBJECT_NAME_PARAM)) subjectName = item.getString();
+                    else if (item.getFieldName().equals(NOTE_FORMAT_PARAM)){
+                        format = item.getString();
+                      //  name = checkExtension(name, format);
+                    }
                 }else{
                     outputStream.write(item.get());
                 }
@@ -93,5 +101,10 @@ public class UploadServlet extends HttpServlet {
         subjectDao.merge(subject);
 
         resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
+    }
+
+    private String checkExtension(String name, String extension){
+        if(name != null && extension != null) return name + "." + extension;
+        else return name;
     }
 }

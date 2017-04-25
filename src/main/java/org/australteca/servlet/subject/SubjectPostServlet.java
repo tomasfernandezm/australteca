@@ -32,7 +32,7 @@ public class SubjectPostServlet extends HttpServlet {
 
         req.setAttribute(SUBJECT_COMMENTARY_LIST, subject.getCommentaryList());
         req.setAttribute(SUBJECT_PROFESSOR_LIST, subject.getProfessors());
-         req.setAttribute(SUBJECT_NOTES_LIST, subject.getNoteList());
+        req.setAttribute(SUBJECT_NOTES_LIST, subject.getNoteList());
 
         req.setAttribute(SUBJECT_NAME_PARAM, subjectName);
         req.setAttribute(SUBJECT_SCORE, subject.getScore());
