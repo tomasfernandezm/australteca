@@ -113,6 +113,10 @@ public class Note extends AbstractEntity{
         this.downloads = downloads;
     }
 
+    public void increaseDownloads(){
+        downloads++;
+    }
+
     public User getAuthor() {
         return author;
     }

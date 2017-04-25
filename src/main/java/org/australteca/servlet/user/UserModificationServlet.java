@@ -49,7 +49,10 @@ public class UserModificationServlet extends HttpServlet{
             userDAO.merge(user);
             status = 0;
         }
-        req.setAttribute(STATUS, status);
-        resp.sendRedirect("/userPost");
+        if(status == 0) resp.sendRedirect("/logout.jsp");
+        else {
+            req.setAttribute(STATUS, status);
+            req.getRequestDispatcher("/userPost").forward(req, resp);
+        }
     }
 }

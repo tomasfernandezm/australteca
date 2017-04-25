@@ -5,5 +5,5 @@ package org.australteca.servlet.command.enums;
  */
 public enum  UserEnums {
 
-    ADD_USER, EDIT_USER, REMOVE_USER
+    ADD_USER, EDIT_USER, REMOVE_USER, ADD_SUBJECT_TO_USER
 }

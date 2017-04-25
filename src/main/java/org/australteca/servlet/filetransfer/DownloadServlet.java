@@ -36,7 +36,9 @@ public class DownloadServlet extends HttpServlet{
 
         NoteDao noteDao = new NoteDao();
         Note note = noteDao.get(id);
+        note.increaseDownloads();
         byte[] filedata = note.getData();
+        noteDao.merge(note);
 
         //      set the header information in the response.
         resp.setHeader("Content-Disposition", "attachment; filename=\"" + name + "."+format+"\";");
