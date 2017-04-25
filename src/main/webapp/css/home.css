@@ -77,6 +77,18 @@
     border-color: transparent;
 }
 
+.discussionBox{
+    color: whitesmoke;
+    background-color: #e07c4e;
+    border-radius: 5px;
+
+}
+
+.btn-discussion{
+    background-color: #FF9751;
+    border-color: white;
+}
+
 .bs-calltoaction.bs-calltoaction-work{
     color: #fff;
     background-color: #BC8BE8;
@@ -92,11 +104,10 @@
 
 
 
-.bs-calltoaction.bs-calltoaction-primary .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-info .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-success .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-warning .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-danger .cta-button .btn{
+.bs-calltoaction.bs-calltoaction-subjects .cta-button .btn,
+.bs-calltoaction.bs-calltoaction-discussions .cta-button .btn,
+.bs-calltoaction.bs-calltoaction-work .cta-button .btn,
+.bs-calltoaction.bs-calltoaction-statistics .cta-button .btn{
     border-color:#fff;
 }
 

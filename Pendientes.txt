@@ -8,3 +8,5 @@ Cosas que hay que hacer:
 6- terminar rediseño de servlets (despúes de la primera entrega)
 7- emprolijar la base de datos (leer tipos de fetch)
 8- emprolijar todo el código (back y front)
+9-Cantidad de descargas
+10-Formato de descarga de archivos

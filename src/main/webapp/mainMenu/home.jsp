@@ -28,6 +28,7 @@
     <div class="container">
         <div class="col-sm-12">
 
+            <!---------------- subjects ------------->
             <div class="bs-calltoaction bs-calltoaction-subjects">
                 <div class="row">
                     <div class="panel-heading">
@@ -45,18 +46,28 @@
                 </div>
             </div>
 
+            <!------------ Discussions ----------->
             <div class="bs-calltoaction bs-calltoaction-discussions">
                 <div class="row">
                     <div class="panel-heading">
                         <h1 class="cta-title">Mis Discuciones</h1>
                     </div>
                     <div class="panel-body">
-
-
+                        <div class="col col-md-4 discussionBox">
+                            <div class="panel-heading">
+                                <h3>Ejercicio con matrices</h3>
+                            </div>
+                            <div class="panel-body">
+                                <h6>Materia: Algebra 1</h6>
+                                <h6>Respuestas: 7</h6>
+                                <button type="submit" class="btn btn-discussion pull-right"><i>Ver mas</i> </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!--------------- Work --------------->
             <div class="bs-calltoaction bs-calltoaction-work">
                 <div class="row">
                     <div class="panel-heading">
@@ -69,10 +80,12 @@
                 </div>
             </div>
 
+
+            <!------------- Activity------------>
             <div class="bs-calltoaction bs-calltoaction-statistics">
                 <div class="row">
                     <div class="panel-heading">
-                        <h1 class="cta-title">Estadisticas</h1>
+                        <h1 class="cta-title">Mi actividad</h1>
                     </div>
                     <div class="panel-body">
                         <div class="col col-md-4">

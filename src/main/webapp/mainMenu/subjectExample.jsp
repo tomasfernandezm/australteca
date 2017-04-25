@@ -30,25 +30,36 @@
 <%@include file="/mainMenu/mainMenu.jsp" %>
 
 
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <h2><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
+            </div>
+            <div class="col-md-1">
+                <h2><%= request.getAttribute(SUBJECT_SCORE)%></h2>
+            </div>
+            <div class="col-md-2">
+                <span class="starRating">
+                  <input id="rating5" type="radio" name="rating" value="5">
+                  <label for="rating5">5</label>
+                  <input id="rating4" type="radio" name="rating" value="4">
+                  <label for="rating4">4</label>
+                  <input id="rating3" type="radio" name="rating" value="3">
+                  <label for="rating3">3</label>
+                  <input id="rating2" type="radio" name="rating" value="2">
+                  <label for="rating2">2</label>
+                  <input id="rating1" type="radio" name="rating" value="1">
+                  <label for="rating1">1</label>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
-            <span class="starRating">
-              <input id="rating5" type="radio" name="rating" value="5">
-              <label for="rating5">5</label>
-              <input id="rating4" type="radio" name="rating" value="4">
-              <label for="rating4">4</label>
-              <input id="rating3" type="radio" name="rating" value="3">
-              <label for="rating3">3</label>
-              <input id="rating2" type="radio" name="rating" value="2">
-              <label for="rating2">2</label>
-              <input id="rating1" type="radio" name="rating" value="1">
-              <label for="rating1">1</label>
-            </span>
             <div class="panel with-nav-tabs panel-default">
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">
