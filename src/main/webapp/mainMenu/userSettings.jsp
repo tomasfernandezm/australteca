@@ -31,7 +31,7 @@
             <div class="text-center">
                 <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
                 <label class="btn btn-default btn-file">
-                    Browse <input type="file" style="display: none;">
+                    Cambiar <input type="file" style="display: none;">
                 </label>
             </div>
         </div>
@@ -61,13 +61,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Password:</label>
+                    <label class="col-md-3 control-label">Nueva contrase&ntilde;a:</label>
                     <div class="col-md-8">
                         <input class="form-control" type="password" name="<%=PASSWORD_PARAM%>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">New Password:</label>
+                    <label class="col-md-3 control-label">Confirmar contrase&ntilde;a:</label>
                     <div class="col-md-8">
                         <input class="form-control" type="password" name="<%= PASSWORD_CONFIRMATION_PARAM%>">
                     </div>

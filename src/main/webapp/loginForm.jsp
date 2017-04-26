@@ -41,7 +41,14 @@
             <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
           </form>
         <% if(session.getAttribute("loginSucceded") != null && !(boolean) session.getAttribute("loginSucceded")){%>
-          <!-- hacer algo -->
+
+            <div class="col-md-3 col-sm-2 alert alert-danger msg-incorrect-login ">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+              <span class="glyphicon glyphicon-exclamation-sign"></span>
+              Email o contrase&ntilde;a incorrectos
+            </div>
           <% }%>
           <% session.removeAttribute("loginSucceded"); %>
     </div>

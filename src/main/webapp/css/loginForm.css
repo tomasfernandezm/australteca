@@ -70,3 +70,13 @@ input.btn:hover{
     text-align: left;
   }
 
+.msg-incorrect-login{
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
