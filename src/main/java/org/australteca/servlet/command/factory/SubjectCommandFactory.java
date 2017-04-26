@@ -1,6 +1,6 @@
 package org.australteca.servlet.command.factory;
 
-import org.australteca.servlet.command.AddSubjectCommand;
+import org.australteca.servlet.command.subject.AddSubjectCommand;
 import org.australteca.servlet.command.enums.SubjectEnums;
 
 /**

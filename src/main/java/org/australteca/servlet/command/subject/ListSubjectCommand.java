@@ -1,13 +1,13 @@
-package org.australteca.servlet.command;
+package org.australteca.servlet.command.subject;
 
 import org.australteca.dao.SubjectDao;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
+import org.australteca.servlet.command.Command;
+import org.australteca.servlet.httpcontext.HttpContext;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +19,8 @@ import java.util.Set;
 public class ListSubjectCommand implements Command {
 
     @Override
-    public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        String userEmail = req.getRemoteUser();
+    public void execute(HttpContext context) throws IOException, ServletException {
+        String userEmail = context.getServletRequest().getRemoteUser();
         List<SubjectWrapper> subjectWrapperList = new ArrayList<>();
         List<Subject> subjectList = new SubjectDao().list();
 
@@ -36,13 +36,13 @@ public class ListSubjectCommand implements Command {
                 else subjectWrapperList.add(new SubjectWrapper(s, false));
             }
         }
-        req.setAttribute("subjectWrappers", subjectWrapperList);
-        req.getRequestDispatcher("/mainMenu/subjects.jsp").forward(req, resp);
+        context.getServletRequest().setAttribute("subjectWrappers", subjectWrapperList);
+        context.forwardRequest("/mainMenu/subjects.jsp");
     }
 
     @Override
     public Command create() {
-        return null;
+        return new ListSubjectCommand();
     }
 
     public class SubjectWrapper{
