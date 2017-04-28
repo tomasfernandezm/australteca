@@ -1,7 +1,7 @@
 package org.australteca.servlet.command.subject;
 
 import org.australteca.servlet.command.Command;
-import org.australteca.servlet.context.http.HttpServletContext;
+import org.australteca.servlet.command.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import java.io.IOException;

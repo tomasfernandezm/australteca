@@ -1,4 +1,4 @@
-package org.australteca.servlet.context.upload;
+package org.australteca.servlet.command.context.upload;
 
 import org.apache.commons.fileupload.FileItem;
 

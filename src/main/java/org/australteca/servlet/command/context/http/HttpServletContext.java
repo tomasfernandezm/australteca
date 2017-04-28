@@ -1,4 +1,4 @@
-package org.australteca.servlet.context.http;
+package org.australteca.servlet.command.context.http;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

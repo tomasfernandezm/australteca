@@ -4,7 +4,7 @@ import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Subject;
 import org.australteca.servlet.command.Command;
-import org.australteca.servlet.context.http.HttpServletContext;
+import org.australteca.servlet.command.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import java.io.IOException;

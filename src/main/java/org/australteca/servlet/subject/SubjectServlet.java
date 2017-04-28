@@ -3,7 +3,7 @@ package org.australteca.servlet.subject;
 import org.australteca.servlet.command.factory.CommandFactory;
 import org.australteca.servlet.command.enums.SubjectEnums;
 import org.australteca.servlet.command.factory.SubjectCommandFactory;
-import org.australteca.servlet.context.http.HttpServletContext;
+import org.australteca.servlet.command.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

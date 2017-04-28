@@ -3,7 +3,7 @@ package org.australteca.servlet.command.user;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 import org.australteca.servlet.command.Command;
-import org.australteca.servlet.context.http.HttpServletContext;
+import org.australteca.servlet.command.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
