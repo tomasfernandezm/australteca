@@ -5,14 +5,12 @@ import org.australteca.dao.UserDao;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 import org.australteca.servlet.command.Command;
-import org.australteca.servlet.httpcontext.HttpContext;
+import org.australteca.servlet.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
 
-import static org.australteca.Constants.FAVORITE_PARAM;
-import static org.australteca.Constants.MAKE_FAVORITE;
-import static org.australteca.Constants.SUBJECT_NAME_PARAM;
+import static org.australteca.Constants.*;
 
 /**
  * Created by tomi on 26/04/17.
@@ -20,7 +18,7 @@ import static org.australteca.Constants.SUBJECT_NAME_PARAM;
 public class ModifyUserSubjectCommand implements Command{
 
     @Override
-    public void execute(HttpContext context) throws IOException, ServletException {
+    public void execute(HttpServletContext context) throws IOException, ServletException {
         String status = context.getServletRequest().getParameter(FAVORITE_PARAM);
         String subjectName = context.getServletRequest().getParameter(SUBJECT_NAME_PARAM);
 

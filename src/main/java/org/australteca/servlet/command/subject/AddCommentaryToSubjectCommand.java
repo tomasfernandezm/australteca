@@ -7,9 +7,9 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 
 /**
- * Created by tomi on 26/04/17.
+ * Created by tomi on 28/04/17.
  */
-public class AddProfessorToSubjectCommand implements Command{
+public class AddCommentaryToSubjectCommand implements Command {
 
     @Override
     public void execute(HttpServletContext context) throws IOException, ServletException {
@@ -20,6 +20,6 @@ public class AddProfessorToSubjectCommand implements Command{
 
     @Override
     public Command create() {
-        return new AddProfessorToSubjectCommand();
+        return new AddCommentaryToSubjectCommand();
     }
 }

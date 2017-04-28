@@ -78,15 +78,12 @@ public class UploadServlet extends HttpServlet {
                         //  name = checkExtension(name, format);
                     } else if (item.getFieldName().equals(NOTE_TYPE_PARAM)) type = item.getString();
                     else if (item.getFieldName().equals(SUBJECT_NAME_PARAM)) subjectName = item.getString();
-                    else if (item.getFieldName().equals(NOTE_FORMAT_PARAM)) {
-                        format = item.getString();
-                        //  name = checkExtension(name, format);
-                    }
                 } else {
                     /**
                      * should be relegated to same object as above
                      */
                     format = item.getContentType();
+                    if(format != null) format = "."+format.substring(format.lastIndexOf("/")+1);
                     outputStream.write(item.get());
                 }
             }

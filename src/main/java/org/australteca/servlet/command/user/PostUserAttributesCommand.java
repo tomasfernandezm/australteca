@@ -3,7 +3,7 @@ package org.australteca.servlet.command.user;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 import org.australteca.servlet.command.Command;
-import org.australteca.servlet.httpcontext.HttpContext;
+import org.australteca.servlet.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import static org.australteca.Constants.USER_SUBJECT_LIST;
 public class PostUserAttributesCommand implements Command{
 
     @Override
-    public void execute(HttpContext context) throws IOException, ServletException {
+    public void execute(HttpServletContext context) throws IOException, ServletException {
         String email = context.getServletRequest().getRemoteUser();
 
         UserDao userDAO = new UserDao();

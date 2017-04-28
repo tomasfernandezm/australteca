@@ -4,8 +4,7 @@ import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Subject;
 import org.australteca.servlet.command.Command;
-import org.australteca.servlet.command.factory.CommandFactory;
-import org.australteca.servlet.httpcontext.HttpContext;
+import org.australteca.servlet.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -18,7 +17,7 @@ import static org.australteca.Constants.SUBJECT_NAME_PARAM;
 public class DeleteSubjectCommand implements Command{
 
     @Override
-    public void execute(HttpContext context) throws IOException, ServletException {
+    public void execute(HttpServletContext context) throws IOException, ServletException {
         String subjectName = context.getServletRequest().getParameter(SUBJECT_NAME_PARAM);
         SubjectDao subjectDAO = new SubjectDao();
 

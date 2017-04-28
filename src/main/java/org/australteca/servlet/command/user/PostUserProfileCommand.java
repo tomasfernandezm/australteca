@@ -3,13 +3,12 @@ package org.australteca.servlet.command.user;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 import org.australteca.servlet.command.Command;
-import org.australteca.servlet.httpcontext.HttpContext;
+import org.australteca.servlet.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
 
 import static org.australteca.Constants.*;
-import static org.australteca.Constants.ROLE_PARAM;
 
 /**
  * Created by tomi on 26/04/17.
@@ -17,7 +16,7 @@ import static org.australteca.Constants.ROLE_PARAM;
 public class PostUserProfileCommand implements Command {
 
     @Override
-    public void execute(HttpContext context) throws IOException, ServletException {
+    public void execute(HttpServletContext context) throws IOException, ServletException {
         String email = context.getServletRequest().getRemoteUser();
         UserDao userDAO = new UserDao();
 

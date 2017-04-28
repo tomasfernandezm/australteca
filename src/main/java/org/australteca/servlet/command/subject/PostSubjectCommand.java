@@ -3,14 +3,12 @@ package org.australteca.servlet.command.subject;
 import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Subject;
 import org.australteca.servlet.command.Command;
-import org.australteca.servlet.httpcontext.HttpContext;
+import org.australteca.servlet.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
 
 import static org.australteca.Constants.*;
-import static org.australteca.Constants.SUBJECT_NAME_PARAM;
-import static org.australteca.Constants.SUBJECT_SCORE;
 
 /**
  * Created by tomi on 26/04/17.
@@ -18,7 +16,7 @@ import static org.australteca.Constants.SUBJECT_SCORE;
 public class PostSubjectCommand implements Command {
 
     @Override
-    public void execute(HttpContext context) throws IOException, ServletException {
+    public void execute(HttpServletContext context) throws IOException, ServletException {
         String subjectName = context..getParameter(SUBJECT_NAME_PARAM);
 
         SubjectDao subjectDAO = new SubjectDao();

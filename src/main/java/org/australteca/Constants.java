@@ -71,6 +71,10 @@ public interface Constants {
     String LOGIN_PASSWORD_FIELD = "j_password";
     String LOGIN_REMEMBERME_FIELD = "j_rememberme";
 
+    /* ~~~~~~~~~~~ Servlet Constants ~~~~~~~~~~~~~~~~ */
+
+    String COMMAND_TYPE = "commandType";
+
     /* ~~~~~~~~~~~ User Constants ~~~~~~~~~~~ */
 
     String ADMINISTRATOR = "admin";

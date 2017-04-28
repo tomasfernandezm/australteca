@@ -1,10 +1,8 @@
 package org.australteca.servlet.command;
 
-import org.australteca.servlet.httpcontext.HttpContext;
+import org.australteca.servlet.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -13,7 +11,7 @@ import java.io.IOException;
 
 public interface Command {
 
-    void execute(HttpContext context) throws IOException, ServletException;
+    void execute(HttpServletContext context) throws IOException, ServletException;
 
     Command create();
 }
