@@ -141,8 +141,9 @@
                                     <div class="col-lg-11 col-md-8">
                                         <div class="widget-area no-padding blank">
                                             <div class="status-upload">
-                                                <form>
-                                                    <textarea placeholder="Que estas pensando?" ></textarea>
+                                                <form id="commentForm" action="/subjectAddCommentary" method="post">
+                                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
+                                                    <textarea name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Que estas pensando?" ></textarea>
                                                     <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
                                                 </form>
                                             </div><!-- Status Upload  -->

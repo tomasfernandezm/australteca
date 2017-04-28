@@ -36,7 +36,7 @@ public class Subject extends AbstractEntity{
     @ManyToMany
     private final List<Professor> professors = new ArrayList<>();
 
-    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "subject")
     private final List<Commentary> commentaries = new ArrayList<>();
 
     @ManyToMany

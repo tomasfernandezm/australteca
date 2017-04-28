@@ -50,6 +50,16 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>SubjectAddCommentaryServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectAddCommentaryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubjectAddCommentaryServlet</servlet-name>
+        <url-pattern>/subjectAddCommentary</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>NoteDeleteServlet</servlet-name>
         <servlet-class>org.australteca.servlet.subject.SubjectNoteDelete</servlet-class>
     </servlet>

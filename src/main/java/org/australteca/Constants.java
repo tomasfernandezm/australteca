@@ -116,6 +116,10 @@ public interface Constants {
     String MAKE_FAVORITE = "makeFavorite";
     String REMOVE_FAVORITE = "removeFavorite";
 
+    /* ~~~~~~~~~~~~ Subject - Commentary Servlet Parameters ~~~~~~~ */
+
+    String COMMENTARY = "commentaryText";
+
     /* ~~~~~~~~~~~ Professor - Servlet Parameters ~~~~~~~~~~~ */
 
     String PROFESSOR_NAME_PARAM = "professorName";
