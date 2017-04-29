@@ -34,9 +34,9 @@
     </div>
 
 
-    <div id="myModal" class="modal">
+    <div id="addSubjectBox" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span onclick="closeModal(document.getElementById('addSubjectBox'))" class="close">&times;</span>
             <form action="/addSubject" method="post">
                 <div class="form-group">
                     <div class="modal-header">
@@ -54,15 +54,12 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- hay que emprolijarlo -->
                 <% if (request.getParameter("addSubject") != null){%>
 
                 <% if ((boolean) request.getAttribute(OPERATION_SUCCESFUL_PARAM)) { %>
-                <p> Materia agregada!</p>
+                    <p> Materia agregada!</p>
                 <% } else { %>
-                <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
+                    <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
                 <% }
                 response.sendRedirect("/listSubjects");
                 }%>
@@ -77,7 +74,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <% if (request.isUserInRole("user")) { %>
-                        <button type="button" class="standardButton btn btn-default btn-xs" id="myBtn"><i class="glyphicon glyphicon-plus"></i></button>
+                        <button type="button" class="standardButton btn btn-default btn-xs" onclick="modalBox(document.getElementById('addSubjectBox'))">
+                            <i class="glyphicon glyphicon-plus"></i></button>
                         <% } %>
                         <div class="pull-right">
 							<span class="clickable filter" data-toggle="tooltip" data-container="body">
@@ -102,7 +100,8 @@
                             <c:forEach items="${subjectWrapperList}" var="subjectWrapper">
                                 <tr>
                                     <td><a href="${pageContext.request.contextPath}/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
-                                        <c:out value="${subjectWrapper.subject.subjectName}"/></a></td>
+                                        <c:out value="${subjectWrapper.subject.subjectName}"/></a>
+                                    </td>
                                     <td>
                                         <form action="/manageUserSubjects" method="post">
                                             <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="${subjectWrapper.subject.subjectName}">
@@ -130,6 +129,8 @@
             </div>
         </div>
     </div>
+
+
 
 
     <script type="text/javascript" src="/js/modalBox.js"></script>

@@ -72,7 +72,7 @@
                     <div class="tab-content">
                         <!---------------- Notes ----------------->
                         <div class="tab-pane fade in active" id="tab1default">
-                            <button type="button" id="myBtn" class="btn btn-primary center-block">Agregar apunte</button>
+                            <button type="button" onclick="modalBox(document.getElementById('noteModal'))" id="addNoteBtn" class="btn btn-primary center-block">Agregar apunte</button>
                             <%--<c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
                             <c:set var="noteList" value='${requestScope[notesListParam]}' />
                             <c:forEach items="${noteList}" var="note">
@@ -129,7 +129,7 @@
                         <!----------- PROFESSOR ----------->
                         <div class="tab-pane fade" id="tab2default">
                             <% if (request.isUserInRole("user")) { %>
-                            <button type="button" id="myBtn2"class="btn btn-primary center-block">Agregar profesor</button>
+                            <button type="button" onclick="modalBox(document.getElementById('professorModal'))" id="addProfessor"class="btn btn-primary center-block">Agregar profesor</button>
                             <% } %>
                         </div>
 
@@ -164,9 +164,9 @@
 
 <!-- modal box for notes-->
 
-<div id="myModal" class="modal">
+<div id="noteModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span onclick="closeModal(document.getElementById('noteModal'))" class="close">&times;</span>
         <form id="agregar" action="/upload" method="POST" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row centered-form  ">
@@ -229,9 +229,9 @@
 
 <!-- modal box for professor -->
 
-<div id="myModal" class="modal">
+<div id="professorModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span onclick="closeModal(document.getElementById('professorModal'))" class="close">&times;</span>
         <form id="agregar2" action="agregar" method="POST">
             <div class="container-fluid">
                 <div class="row centered-form  ">
@@ -250,7 +250,6 @@
         </form>
     </div>
 </div>
-
 
 
 <script type="text/javascript" src="/js/modalBox.js"></script>
