@@ -33,6 +33,7 @@
         <%@include file="/mainMenu/mainMenu.jsp" %>
     </div>
 
+    <!--------- Add subject modal box ---------->
 
     <div id="addSubjectBox" class="modal">
         <div class="modal-content">
@@ -67,6 +68,9 @@
         </div>
     </div>
 
+
+    <!------- List of subjects -------->
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -87,7 +91,6 @@
                     <div class="panel-body">
                         <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Buscar" />
                     </div>
-                    <div class="pre-scrollable" data-offset="50">
                         <table class="table"  id="dev-table">
                             <thead>
                             <td>Nombre</td>
@@ -124,7 +127,6 @@
                                 </tr>
                             </c:forEach>
                         </table>
-                    </div>
                 </div>
             </div>
         </div>

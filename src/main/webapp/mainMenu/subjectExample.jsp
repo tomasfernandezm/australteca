@@ -23,6 +23,7 @@
     <link href="/css/star.css" rel="stylesheet" type="text/css">
     <link href="/css/modalBox.css" rel="stylesheet" type="text/css">
     <link href="/css/subjectExample.css" rel="stylesheet" type="text/css">
+    <link href="/css/writeBox.css" rel="stylesheet" type="text/css">
     <link href="/css/comment.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -138,14 +139,45 @@
                         <div class="tab-pane fade" id="tab3default">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-11 col-md-8">
+                                    <div class="col-lg-11 col-md-11 col-sm-11">
                                         <div class="widget-area no-padding blank">
                                             <div class="status-upload">
+                                                <!----- writting box ------->
                                                 <form id="commentForm" action="/subjectAddCommentary" method="post">
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
                                                     <textarea name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Que estas pensando?" ></textarea>
                                                     <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
                                                 </form>
+                                                <div class="col-xs-12"><hr></div>
+                                                <!------- List of comments ------->
+                                                <section class="comment-list">
+                                                    <!------- Start foreach------->
+                                                    <article class="row">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+                                                            <figure class="thumbnail">
+                                                                <img class="img-responsive" src="/images/avatar.jpg" />
+                                                                <figcaption class="text-center">username</figcaption>
+                                                            </figure>
+                                                        </div>
+                                                        <div class="col-md-9 col-sm-9">
+                                                            <div class="panel panel-default arrow left">
+                                                                <div class="panel-body">
+                                                                    <header class="text-left">
+                                                                        <div class="comment-user"><i class="glyphicon glyphicon-user"></i> That Guy</div>
+                                                                        <time class="comment-date" datetime="16-12-2014 01:05"><i class="glyphicon glyphicon-time"></i> timeago script</time>
+                                                                    </header>
+                                                                    <div class="comment-post">
+                                                                        <p>
+                                                                            Comentario.....
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <!-------- finish -------->
+                                                </section>
+
                                             </div><!-- Status Upload  -->
                                         </div><!-- Widget Area -->
                                     </div>
