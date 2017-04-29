@@ -98,3 +98,6 @@ dropdown-toggle{
 .active-work, .activeWork2:hover{
     background-color: black;
 }
+.active-work, .activeModerators2:hover{
+    background-color: black;
+}

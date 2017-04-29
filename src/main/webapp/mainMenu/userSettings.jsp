@@ -29,10 +29,15 @@
         <!-- left column -->
         <div class="col-md-3">
             <div class="text-center">
-                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                <label class="btn btn-default btn-file">
-                    Cambiar <input type="file" style="display: none;">
-                </label>
+                <object data="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" type="image/jpeg">
+                <img src="/userPostPhoto" class="avatar img-circle" alt="avatar">
+                </object>
+                <form action="/uploadPhoto" method="post" enctype="multipart/form-data">
+                    <label class="btn btn-default btn-file">
+                        Subir Foto <input type="file" style="display: none;" name="photo">
+                    </label>
+                    <input type="submit" class="btn btn-primary" value="Guardar">
+                </form>
             </div>
         </div>
 

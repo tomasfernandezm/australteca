@@ -18,7 +18,7 @@ import static org.australteca.Constants.*;
 /**
  * Created by tomi on 21/04/17.
  */
-public class UploadServletTester extends Mockito {
+public class NoteUploadServletTester extends Mockito {
 
     @Test
     public void testServlet() throws IOException, ServletException{
@@ -38,7 +38,7 @@ public class UploadServletTester extends Mockito {
         SubjectDao subjectDao = new SubjectDao();
         subjectDao.add(new Subject("subject"));
 
-        new UploadServlet().doPost(request, response);
+        new NoteUploadServlet().doPost(request, response);
 
     }
 }

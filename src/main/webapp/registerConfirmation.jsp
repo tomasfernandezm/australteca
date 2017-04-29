@@ -27,7 +27,7 @@
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div class="box">
                 <%int status = (Integer) request.getAttribute(STATUS);%>
-                <%if (status > 0) { %>
+                <%if (status == 0) { %>
                 <div class="box-icon-correct">
                     <i class="glyphicon glyphicon-ok"></i>
                 </div>
@@ -41,9 +41,16 @@
                     <i class="glyphicon glyphicon-remove"></i>
                 </div>
                 <div class="info">
+                    <%if (status == 1){ %>
+                    <h4 class="text-center">Ups! algo ocurrio!</h4>
+                    <p>Las contraseñas no coinciden</p>
+                    <p>Intentalo de nuevo</p>
+                    <a href="loginForm.jsp" class="btn">Volver</a>
+                    <%}else{ %>
                     <h4 class="text-center">Ups! algo ocurrio!</h4>
                     <p>Intentalo de nuevo</p>
                     <a href="loginForm.jsp" class="btn">Volver</a>
+                    <%}%>
                 </div>
                 <%} %>
             </div>

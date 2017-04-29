@@ -5,6 +5,8 @@ import org.australteca.Constants;
 import javax.persistence.*;
 import java.util.*;
 
+import static org.australteca.Constants.*;
+
 /**
  * Created by tomi on 22/03/17.
  */
@@ -18,6 +20,10 @@ public class User extends AbstractEntity{
 
     @Column(name = "USER_LNAME")
     private String lastName;
+
+    @Embedded
+    @Column(name = "USER_PHOTO")
+    private Photo photo;
 
     @Column(name = "USER_EMAIL", unique = true, nullable = false)
     private String email;
@@ -56,31 +62,31 @@ public class User extends AbstractEntity{
     }
 
     public void makeAdmin(){
-        role = Constants.ADMINISTRATOR;
+        role = ADMINISTRATOR;
     }
 
     public void makeModerator(){
-        role = Constants.MODERATOR;
+        role = MODERATOR;
     }
 
     public void makeStandard(){
-        role = Constants.STANDARD;
+        role = STANDARD;
     }
 
     public boolean isStandard(){
-        return role.equals(Constants.STANDARD);
+        return role.equals(STANDARD);
     }
 
     public boolean isModerator(){
-        return role.equals(Constants.MODERATOR);
+        return role.equals(MODERATOR);
     }
 
     public boolean isAdmin(){
-        return role.equals(Constants.ADMINISTRATOR);
+        return role.equals(ADMINISTRATOR);
     }
 
-    private void assignRole(boolean admin, boolean moderator){
-        if(admin) role = Constants.ADMINISTRATOR;
+    private void assignRole(boolean moderator, boolean admin){
+        if(admin) role = ADMINISTRATOR;
         else if(moderator) role = Constants.MODERATOR;
         else role = Constants.STANDARD;
     }
@@ -136,4 +142,13 @@ public class User extends AbstractEntity{
     public Set<Commentary> getCommentaries() {
         return commentaries;
     }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] data, String contentType, String ext){
+        photo = new Photo(data, contentType, ext);
+    }
+
 }

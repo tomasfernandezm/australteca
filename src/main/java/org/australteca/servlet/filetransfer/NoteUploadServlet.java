@@ -29,7 +29,7 @@ import static org.australteca.Constants.*;
 /**
  * Created by tomi on 19/04/17.
  */
-public class UploadServlet extends HttpServlet {
+public class NoteUploadServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -108,10 +108,5 @@ public class UploadServlet extends HttpServlet {
         subjectDao.merge(subject);
 
         resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
-    }
-
-    private String checkExtension(String name, String extension){
-        if(name != null && extension != null) return name + "." + extension;
-        else return name;
     }
 }

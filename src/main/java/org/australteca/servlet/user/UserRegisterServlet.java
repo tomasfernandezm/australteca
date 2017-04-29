@@ -1,5 +1,6 @@
 package org.australteca.servlet.user;
 
+import org.australteca.Constants;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 
@@ -31,13 +32,20 @@ public class UserRegisterServlet extends HttpServlet {
         String password = request.getParameter(PASSWORD_PARAM);
         String passwordC = request.getParameter(PASSWORD_CONFIRMATION_PARAM);
         String career = request.getParameter(CAREER_PARAM);
+        Integer status = 0;
 
-        Integer status = new UserDao().add(new User(name, lname, email, career, password, false, false));
+        if(!password.equals(passwordC)){
+            status = 1;
+        }else {
+            Integer userID;
 
-        if(status == null) status = -1;
-
-        resp.setContentType("text/html");
-
+            if(email.equals(Constants.ADMIN_USERNAME_1) || email.equals(Constants.ADMIN_USERNAME_2)){
+                userID = new UserDao().add(new User(name, lname, email, career, password, false, true));
+            }else {
+                userID = new UserDao().add(new User(name, lname, email, career, password, false, false));
+            }
+            if(userID == null) status = 2;
+        }
         request.setAttribute(STATUS, status);
         request.getRequestDispatcher("/registerConfirmation.jsp").forward(request, resp);
     }

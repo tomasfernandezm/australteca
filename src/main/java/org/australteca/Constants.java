@@ -133,6 +133,7 @@ public interface Constants {
     String SUBJECT_PROFESSOR_LIST = "subjectProfessorList";
     String SUBJECT_NOTES_LIST = "subjectFilesList";
     String SUBJECT_SCORE = "subjectScore";
+    String SUBJECT_SCORE_PARAM = "subjectScoreParam";
 
     /* ~~~~~~~~~~~ Upload - Download Servlet Parameters ~~~~~~~~~~~~~~~ */
 
@@ -153,4 +154,7 @@ public interface Constants {
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";
+
+    String ADMIN_USERNAME_1 = "tomas.martinez@ing.austral.edu.ar";
+    String ADMIN_USERNAME_2 = "tomas.forman@ing,austral.edu.ar";
 }

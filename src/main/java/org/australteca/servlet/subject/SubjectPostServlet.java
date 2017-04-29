@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import static org.australteca.Constants.*;
 
@@ -27,7 +28,6 @@ public class SubjectPostServlet extends HttpServlet {
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
 
         SubjectDao subjectDAO = new SubjectDao();
-
         Subject subject = subjectDAO.getByName(subjectName);
 
         req.setAttribute(SUBJECT_COMMENTARY_LIST, subject.getCommentaryList());
@@ -35,7 +35,7 @@ public class SubjectPostServlet extends HttpServlet {
         req.setAttribute(SUBJECT_NOTES_LIST, subject.getNoteList());
 
         req.setAttribute(SUBJECT_NAME_PARAM, subjectName);
-        req.setAttribute(SUBJECT_SCORE, subject.getScore());
+        req.setAttribute(SUBJECT_SCORE, new DecimalFormat("#.##").format(subject.getScore()));
         req.getRequestDispatcher("/mainMenu/subjectExample.jsp").forward(req, resp);
 
     }

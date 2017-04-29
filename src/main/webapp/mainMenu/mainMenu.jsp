@@ -25,6 +25,9 @@
                     <li class="activeSubject2"><a href="<%=response.encodeURL("/listSubjects")%>">Materias</a></li>
                     <li class="activeWork2"><a href="<%=response.encodeURL("/mainMenu/work.jsp")%>">Trabajo</a></li>
                     <li class="activeDiscussions2"><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
+                <%if(request.isUserInRole(Constants.ADMINISTRATOR)){%>
+                    <li class="activeModerators2"><a href="#">Moderadores</a></li>
+                <%}%>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <div class="btn-group">

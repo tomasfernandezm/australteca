@@ -42,15 +42,15 @@
             </div>
             <div class="col-md-2">
                 <span class="starRating">
-                  <input id="rating5" type="radio" name="rating" value="5">
+                  <input id="rating5" type="radio" name="rating" value="5" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=5&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
                   <label for="rating5">5</label>
-                  <input id="rating4" type="radio" name="rating" value="4">
+                  <input id="rating4" type="radio" name="rating" value="4" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=4&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
                   <label for="rating4">4</label>
-                  <input id="rating3" type="radio" name="rating" value="3">
+                  <input id="rating3" type="radio" name="rating" value="3" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=3&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
                   <label for="rating3">3</label>
-                  <input id="rating2" type="radio" name="rating" value="2">
+                  <input id="rating2" type="radio" name="rating" value="2" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=2&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
                   <label for="rating2">2</label>
-                  <input id="rating1" type="radio" name="rating" value="1">
+                  <input id="rating1" type="radio" name="rating" value="1" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=1&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
                   <label for="rating1">1</label>
                 </span>
             </div>
@@ -151,30 +151,34 @@
                                                 <div class="col-xs-12"><hr></div>
                                                 <!------- List of comments ------->
                                                 <section class="comment-list">
-                                                    <!------- Start foreach------->
+                                                    <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
+                                                    <c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />
+                                                    <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
+                                                    <c:forEach items="${commentaryList}" var="commentary">
                                                     <article class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
                                                                 <img class="img-responsive" src="/images/avatar.jpg" />
-                                                                <figcaption class="text-center">username</figcaption>
+                                                                <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>
                                                         <div class="col-md-9 col-sm-9">
                                                             <div class="panel panel-default arrow left">
                                                                 <div class="panel-body">
                                                                     <header class="text-left">
-                                                                        <div class="comment-user"><i class="glyphicon glyphicon-user"></i> That Guy</div>
+                                                                        <!--<div class="comment-user"><i class="glyphicon glyphicon-user"></i> That Guy</div>-->
                                                                         <time class="comment-date" datetime="16-12-2014 01:05"><i class="glyphicon glyphicon-time"></i> timeago script</time>
                                                                     </header>
                                                                     <div class="comment-post">
                                                                         <p>
-                                                                            Comentario.....
+                                                                            <c:out value="${commentary.commentary}" />
                                                                         </p>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </article>
+                                                    </c:forEach>
                                                     <!-------- finish -------->
                                                 </section>
 

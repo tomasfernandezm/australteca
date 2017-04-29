@@ -60,6 +60,36 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>SubjectChangeRatingServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubjectChangeRatingServlet</servlet-name>
+        <url-pattern>/rateSubject</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserPostPhotoServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.user.UserPostPhotoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserPostPhotoServlet</servlet-name>
+        <url-pattern>/userPostPhoto</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UploadPhotoServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.filetransfer.PhotoUploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadPhotoServlet</servlet-name>
+        <url-pattern>/uploadPhoto</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>NoteDeleteServlet</servlet-name>
         <servlet-class>org.australteca.servlet.subject.SubjectNoteDelete</servlet-class>
     </servlet>
@@ -101,7 +131,7 @@
 
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.filetransfer.UploadServlet</servlet-class>
+        <servlet-class>org.australteca.servlet.filetransfer.NoteUploadServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
