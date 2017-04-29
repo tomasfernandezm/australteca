@@ -71,6 +71,10 @@ public interface Constants {
     String LOGIN_PASSWORD_FIELD = "j_password";
     String LOGIN_REMEMBERME_FIELD = "j_rememberme";
 
+    /* ~~~~~~~~~~~ Servlet Constants ~~~~~~~~~~~~~~~~ */
+
+    String COMMAND_TYPE = "commandType";
+
     /* ~~~~~~~~~~~ User Constants ~~~~~~~~~~~ */
 
     String ADMINISTRATOR = "admin";
@@ -111,6 +115,10 @@ public interface Constants {
     String FAVORITE_PARAM = "favorite";
     String MAKE_FAVORITE = "makeFavorite";
     String REMOVE_FAVORITE = "removeFavorite";
+
+    /* ~~~~~~~~~~~~ Subject - Commentary Servlet Parameters ~~~~~~~ */
+
+    String COMMENTARY = "commentaryText";
 
     /* ~~~~~~~~~~~ Professor - Servlet Parameters ~~~~~~~~~~~ */
 

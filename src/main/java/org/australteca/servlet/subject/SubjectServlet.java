@@ -3,6 +3,7 @@ package org.australteca.servlet.subject;
 import org.australteca.servlet.command.factory.CommandFactory;
 import org.australteca.servlet.command.enums.SubjectEnums;
 import org.australteca.servlet.command.factory.SubjectCommandFactory;
+import org.australteca.servlet.command.context.http.HttpServletContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +28,6 @@ public class SubjectServlet extends HttpServlet {
 
         CommandFactory subjectCommandFactory = SubjectCommandFactory.getCommandFactory();
         SubjectEnums subjectEnums = SubjectEnums.valueOf(req.getParameter("command"));
-        subjectCommandFactory.giveCommand(subjectEnums).execute(req, resp);
+        subjectCommandFactory.giveCommand(subjectEnums).execute(new HttpServletContext(req, resp));
     }
 }
