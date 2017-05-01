@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
         </button>
         <div class="navbar-header">
-            <a class="navbar-brand"><img class="logo" src="/images/logo.png"></a>
+            <a href="<%=response.encodeURL("/userListPost")%>" class="navbar-brand"><img class="logo" src="/images/logo.png"></a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">

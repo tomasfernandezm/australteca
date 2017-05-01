@@ -33,14 +33,17 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-4">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <h2><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
             </div>
-            <div class="col-md-1">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                <button type="submit" data-toggle="tooltip" title="Hooray!" class="btn btn-success">Aplicar a moderador</button></div>
+            <div class="pull-right">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
                 <h2><%= request.getAttribute(SUBJECT_SCORE)%></h2>
             </div>
-            <div class="col-md-2">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-8">
                 <span class="starRating">
                   <input id="rating5" type="radio" name="rating" value="5" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=5&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
                   <label for="rating5">5</label>
@@ -53,6 +56,7 @@
                   <input id="rating1" type="radio" name="rating" value="1" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=1&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
                   <label for="rating1">1</label>
                 </span>
+            </div>
             </div>
         </div>
     </div>
@@ -194,6 +198,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -271,14 +276,45 @@
         <span onclick="closeModal(document.getElementById('professorModal'))" class="close">&times;</span>
         <form id="agregar2" action="agregar" method="POST">
             <div class="container-fluid">
-                <div class="row centered-form  ">
+                <div class="row">
                     <div >
                         <div class="panel panel-default">
                             <div class="modal-header">
                                 Agregar profesor
                             </div>
                             <div class="panel-body">
-                                <!-- form -->
+                                <form class="form-horizontal"  method="post" role="form">
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">Nombre:</label>
+                                        <div class="col-lg-8">
+                                            <input class="form-control" type="text" name="<%= NAME_PARAM%>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">Apellido:</label>
+                                        <div class="col-lg-8">
+                                            <input class="form-control" type="text" name="<%= LAST_NAME_PARAM%>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label">Email:</label>
+                                        <div class="col-lg-8">
+                                            <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=EMAIL_PARAM%>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Titulo:</label>
+                                        <div class="col-md-8">
+                                            <input class="form-control" type="text" name="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label"></label>
+                                        <div class="col-md-8 col-md-offset-10">
+                                            <input type="submit" class="btn btn-primary" value="Agregar">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -292,6 +328,8 @@
 <script type="text/javascript" src="/js/modalBox.js"></script>
 <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/tootip.js"></script>
+
 
 </body>
 </html>
