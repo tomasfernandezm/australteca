@@ -47,7 +47,7 @@ public class User extends AbstractEntity{
     /* orphanRemoval = true -> si saco un comentario de la Collection, se borra el link en la tabla y también se
     borra el comentario */
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "author")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private final Set<Commentary> commentaries = new HashSet<>();
 
     public User() {

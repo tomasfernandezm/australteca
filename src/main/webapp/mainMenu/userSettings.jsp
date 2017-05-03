@@ -31,6 +31,7 @@
             <div class="text-center">
                 <!--<object data="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" type="image/jpeg">-->
                 <img src="/userPostPhoto" class="avatar img-circle" alt="avatar">
+
                 <!--</object>-->
                 <form action="/uploadPhoto" method="post" enctype="multipart/form-data">
                     <label class="btn btn-default btn-file">

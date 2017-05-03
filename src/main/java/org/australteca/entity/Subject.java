@@ -18,9 +18,6 @@ import java.util.Set;
 @Table(name = "SUBJECT")
 public class Subject extends AbstractEntity{
 
-    @OneToMany
-    private final List<Commentary> commentaryList = new ArrayList<Commentary>();
-
     @Column (name = "SUBJECT_SCORE")
     private double score;
 
@@ -61,7 +58,7 @@ public class Subject extends AbstractEntity{
     }
 
     public List<Commentary> getCommentaryList() {
-        return commentaryList;
+        return commentaries;
     }
 
     public double getScore() {

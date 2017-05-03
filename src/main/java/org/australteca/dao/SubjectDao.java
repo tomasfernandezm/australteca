@@ -1,6 +1,7 @@
 package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
+import org.australteca.entity.Commentary;
 import org.australteca.entity.Note;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
@@ -21,6 +22,8 @@ public class SubjectDao extends AbstractDao<Subject> {
     public void delete(@NotNull Integer subjectID){
         Subject subject = get(subjectID);
         removeAllUsers(subject);
+        removeAllCommentariesFromUsers(subject);
+        subject.getCommentaryList().clear();
         merge(subject);
         delete(Subject.class, subjectID);
     }
@@ -62,6 +65,16 @@ public class SubjectDao extends AbstractDao<Subject> {
                     u.getSubjectScores().remove(subject.getSubjectName());
                 }
             }
+        }
+    }
+    private void removeAllCommentariesFromUsers(@NotNull Subject subject){
+        if(!subject.getCommentaryList().isEmpty()){
+            for(Commentary c: subject.getCommentaryList()){
+                User u = c.getAuthor();
+                u.getCommentaries().remove(c);
+
+            }
+            subject.getCommentaryList().clear();
         }
     }
 }
