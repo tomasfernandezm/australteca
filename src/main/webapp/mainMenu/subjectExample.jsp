@@ -37,8 +37,6 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <h2><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
-                <button type="submit" data-toggle="tooltip" title="Hooray!" class="btn btn-success">Aplicar a moderador</button></div>
             <div class="pull-right">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
                 <h2><%= request.getAttribute(SUBJECT_SCORE)%></h2>
@@ -71,6 +69,7 @@
                         <li class="active"><a href="#tab1default" data-toggle="tab">Apuntes</a></li>
                         <li><a href="#tab2default" data-toggle="tab">Profesores</a></li>
                         <li><a href="#tab3default" data-toggle="tab">Comentarios</a></li>
+                        <button type="submit"  class="btn btn-success pull-right">Aplicar a moderador</button>
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -89,6 +88,7 @@
                                 <table class="table"  id="dev-table">
                                     <thead>
                                         <td>Nombre</td>
+                                        <td></td>
                                         <td>Tipo</td>
                                         <td>A&ntilde;o</td>
                                         <td>Descargas</td>
@@ -97,7 +97,7 @@
                                         <% if (request.isUserInRole("user")) { %>
                                             <td></td>
                                         <% } %>
-                                        <td></td>
+
                                     </thead>
 
                                     <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
@@ -106,6 +106,12 @@
                                     <c:forEach items="${noteList}" var="note">
                                         <tr>
                                             <td><c:out value="${note.name}"/></td>
+                                            <form action="/noteDownload" method="post">
+                                                <td><button type="submit" class="btn downloadButton"><i class="glyphicon glyphicon-download"></i></button> </td>
+                                                <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
+                                                <input type="hidden" name="<%=Constants.NOTE_NAME_PARAM%>" value="${note.name}">
+                                                <input type="hidden" name="<%=Constants.NOTE_FORMAT_PARAM%>" value="${note.format}">
+                                            </form>
                                             <td><c:out value="${note.type}"/></td>
                                             <td><c:out value="${note.date}"/></td>
                                             <td><c:out value="${note.downloads}"/></td>
@@ -119,12 +125,7 @@
 
                                             </form>
                                             <% } %>
-                                            <form action="/noteDownload" method="post">
-                                            <td><button type="submit" class="btn downloadButton"><i class="glyphicon glyphicon-download"></i></button> </td>
-                                                <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
-                                                <input type="hidden" name="<%=Constants.NOTE_NAME_PARAM%>" value="${note.name}">
-                                                <input type="hidden" name="<%=Constants.NOTE_FORMAT_PARAM%>" value="${note.format}">
-                                            </form>
+
                                         </tr>
                                     </c:forEach>
                                 </table>
@@ -229,9 +230,13 @@
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <label class="btn btn-success btn-file form-control">
-                                                Buscar <input type="file" style="display: none;" name="fileName">
+                                                Buscar <input type="file" id="filePreview" style="display: none;" name="fileName">
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="filePreview">
+
+                                        <img id="imagePreview" src="/images/file.svg" alt="filePreview" class="fileImg">
                                     </div>
 
 
@@ -329,6 +334,9 @@
 <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/tootip.js"></script>
+<script type="text/javascript" src="/js/timeAgo.js"></script>
+<script type="text/javascript" src="/js/filePreview.js"></script>
+
 
 
 </body>
