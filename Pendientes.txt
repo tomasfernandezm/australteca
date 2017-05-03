@@ -26,3 +26,12 @@ BONUS
 1-Estadisticas del usuario
 2-Estadisticas para administradores
 
+4- foto de userSettings
+8- emprolijar todo el código (back y front)
+9-Cantidad de descargas
+10-Formato de descarga de archivos
+
+1-Mostrar que se carga archivo
+6- terminar rediseño de servlets (despúes de la primera entrega)
+7- emprolijar la base de datos (leer tipos de fetch)
+
