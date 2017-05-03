@@ -92,7 +92,6 @@
                                         <td>Tipo</td>
                                         <td>A&ntilde;o</td>
                                         <td>Descargas</td>
-                                        <td>Puntaje</td>
                                         <td>Subido por</td>
                                         <% if (request.isUserInRole("user")) { %>
                                             <td></td>
@@ -115,8 +114,7 @@
                                             <td><c:out value="${note.type}"/></td>
                                             <td><c:out value="${note.date}"/></td>
                                             <td><c:out value="${note.downloads}"/></td>
-                                            <td><c:out value="${note.score}"/></td>
-                                            <td><c:out value="${note.author.email}"/></td>
+                                            <td><c:out value="${note.author.firstName} ${note.author.lastName}"/></td>
                                             <% if (request.isUserInRole("user")) { %>
                                             <form action="/noteDelete" method="post">
                                                 <td><button type="submit" class="btn trashButton"><i class="glyphicon glyphicon-trash"></i></td>

@@ -41,7 +41,7 @@ public class DownloadServlet extends HttpServlet{
         noteDao.merge(note);
 
         //      set the header information in the response.
-        resp.setHeader("Content-Disposition", "attachment; filename=\"" + name + "."+format+"\";");
+        resp.setHeader("Content-Disposition", "attachment; filename=\"" + name +format+"\";");
         resp.setContentType("application/octet-stream");
         ByteArrayInputStream byteStream = new ByteArrayInputStream(filedata);
 
