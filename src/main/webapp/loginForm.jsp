@@ -124,6 +124,7 @@
     <h2>Y buscar lo que no sabes.</h2>
   </div>
 
+
 </div>
 
 
@@ -134,8 +135,8 @@
 </footer>
 
 
-<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
 
+<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>

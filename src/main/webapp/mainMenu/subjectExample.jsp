@@ -74,16 +74,9 @@
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
-                        <!---------------- Notes ----------------->
+                        <!---------------- Notes tab ----------------->
                         <div class="tab-pane fade in active" id="tab1default">
                             <button type="button" onclick="modalBox(document.getElementById('noteModal'))" id="addNoteBtn" class="btn btn-primary center-block">Agregar apunte</button>
-                            <%--<c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
-                            <c:set var="noteList" value='${requestScope[notesListParam]}' />
-                            <c:forEach items="${noteList}" var="note">
-                                <div class="col col-md-4">
-                                    <a href="#"><c:out value="${note.name}"/></a>
-                                </div>
-                            </c:forEach>--%>
                             <div class="pre-scrollable" data-offset="50">
                                 <table class="table"  id="dev-table">
                                     <thead>
@@ -96,7 +89,6 @@
                                         <% if (request.isUserInRole("user")) { %>
                                             <td></td>
                                         <% } %>
-
                                     </thead>
 
                                     <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
@@ -130,15 +122,18 @@
                             </div>
                         </div>
 
-                        <!----------- PROFESSOR ----------->
+                        <!----------- PROFESSOR tab ----------->
                         <div class="tab-pane fade" id="tab2default">
                             <% if (request.isUserInRole("user")) { %>
-                            <button type="button" onclick="modalBox(document.getElementById('professorModal'))" id="addProfessor"class="btn btn-primary center-block">Agregar profesor</button>
+                                <div class="btn-group">
+                                    <button type="button" onclick="modalBox(document.getElementById('loadProfessorModal'))" id="loadProfessor"class="btn btn-primary">Cargar profesor</button>
+                                    <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Agregar profesor</button>
+                                </div>
                             <% } %>
                         </div>
 
 
-                        <!------------ Comments ------------>
+                        <!------------ Comments tab ------------>
                         <div class="tab-pane fade" id="tab3default">
                             <div class="container">
                                 <div class="row">
@@ -169,9 +164,10 @@
                                                             <div class="panel panel-default arrow left">
                                                                 <div class="panel-body">
                                                                     <header class="text-left">
-                                                                        <!--<div class="comment-user"><i class="glyphicon glyphicon-user"></i> That Guy</div>-->
+                                                                        <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}" /></div>
                                                                         <time class="comment-date" datetime="16-12-2014 01:05"><i class="glyphicon glyphicon-time"></i> timeago script</time>
                                                                     </header>
+                                                                    <button type="submit" class="btn pull-right"><i class="glyphicon glyphicon-remove"></i></button>
                                                                     <div class="comment-post">
                                                                         <p>
                                                                             <c:out value="${commentary.commentary}" />
@@ -272,18 +268,18 @@
 
 
 
-<!-- modal box for professor -->
+<!-- modal box for load professor -->
 
-<div id="professorModal" class="modal">
+<div id="loadProfessorModal" class="modal">
     <div class="modal-content">
-        <span onclick="closeModal(document.getElementById('professorModal'))" class="close">&times;</span>
+        <span onclick="closeModal(document.getElementById('loadProfessorModal'))" class="close">&times;</span>
         <form id="agregar2" action="agregar" method="POST">
             <div class="container-fluid">
                 <div class="row">
-                    <div >
+                    <div>
                         <div class="panel panel-default">
                             <div class="modal-header">
-                                Agregar profesor
+                                Cargar profesor
                             </div>
                             <div class="panel-body">
                                 <form class="form-horizontal"  method="post" role="form">
@@ -326,6 +322,60 @@
         </form>
     </div>
 </div>
+
+
+<!-- modal box add professor -->
+
+<div id="addProfessorModal" class="modal">
+    <div class="modal-content">
+        <span onclick="closeModal(document.getElementById('addProfessorModal'))" class="close">&times;</span>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="modal-header">
+                    Profesores
+                </div>
+                <div class="modal-body">
+
+                    <table class="table">
+                        <thead>
+                        <td>Nombre</td>
+                        </thead>
+                        <!-------- lista de profesores que se pueden agregar --------->
+                        <!--
+                        <%--
+                       <c:set var="professorWrapperList" value='${requestScope["professorWrappers"]}' />
+                        <c:forEach items="${subjectWrapperList}" var="subjectWrapper">
+                            <tr>
+                                <td><a href="${pageContext.request.contextPath}/postSubject?<%=PROFESSOR_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
+                                    <c:out value="${subjectWrapper.subject.subjectName}"/></a>
+                                </td>
+                                <td>
+                                    <form action="/manageUserSubjects" method="post">
+                                        <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="${subjectWrapper.subject.subjectName}">
+                                        <c:if test="${subjectWrapper.favorite}">
+                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=REMOVE_FAVORITE%>" class="btn btn-default favoriteTrue"><i class="glyphicon glyphicon-star"></i></button>
+                                        </c:if>
+                                        <c:if test="${!subjectWrapper.favorite}">
+                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=MAKE_FAVORITE%>" class="btn btn-default favoriteFalse"><i class="glyphicon glyphicon-star-empty"></i></button>
+                                        </c:if>
+                                    </form>
+                                </td>
+
+                            </tr>
+                        </c:forEach>
+                        --%>
+                    -->
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <script type="text/javascript" src="/js/modalBox.js"></script>
