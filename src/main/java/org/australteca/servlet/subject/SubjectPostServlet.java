@@ -36,7 +36,7 @@ public class SubjectPostServlet extends HttpServlet {
         SubjectDao subjectDAO = new SubjectDao();
         Subject subject = subjectDAO.getByName(subjectName);
 
-        Integer userScore = user.getSubjectScores().getOrDefault(SUBJECT_USER_SCORE, 0);
+        Integer userScore = user.getSubjectScores().getOrDefault(subjectName, 0);
         req.setAttribute(SUBJECT_USER_SCORE, userScore);
 
         req.setAttribute(SUBJECT_COMMENTARY_LIST, subject.getCommentaryList());

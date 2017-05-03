@@ -34,7 +34,7 @@ public class SubjectChangeRatingServlet extends HttpServlet {
         UserDao userDao = new UserDao();
         User user = userDao.getUserByEmail(email);
 
-        Integer other = user.getSubjectScores().put(SUBJECT_NAME_PARAM, rating);
+        Integer other = user.getSubjectScores().put(subjectName, rating);
         if(other == null) other = 0;
 
         SubjectDao subjectDao = new SubjectDao();

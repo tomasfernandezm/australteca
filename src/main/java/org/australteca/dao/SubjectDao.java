@@ -56,7 +56,12 @@ public class SubjectDao extends AbstractDao<Subject> {
 
     private void removeAllUsers(@NotNull Subject subject){
         if(!subject.getUserList().isEmpty()){
-            for(User u: subject.getUserList()) u.getSubjects().remove(subject);
+            for(User u: subject.getUserList()) {
+                u.getSubjects().remove(subject);
+                if(u.getSubjectScores().containsKey(subject.getSubjectName())){
+                    u.getSubjectScores().remove(subject.getSubjectName());
+                }
+            }
         }
     }
 }
