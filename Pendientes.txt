@@ -9,3 +9,20 @@ Cosas que hay que hacer:
 1-Mostrar que se carga archivo
 6- terminar rediseño de servlets (despúes de la primera entrega)
 7- emprolijar la base de datos (leer tipos de fetch)
+
+1- Mostrar que se carga archivo
+2- boton descargar y hacer la descarga
+3- Ver si se puede mostrar ruta
+4- foto de userSettings
+6- Ir para atrar cuando te desloggeas / eliminas cuenta.
+7-
+8- cambiar posicion boton decarga archivos
+9- Cantidad de descargas (probar)
+10- Boton moderador (mandar mail)
+11- Timeago
+12- lema dinamico
+
+BONUS
+1-Estadisticas del usuario
+2-Estadisticas para administradores
+

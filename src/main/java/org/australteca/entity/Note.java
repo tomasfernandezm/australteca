@@ -30,7 +30,7 @@ public class Note extends AbstractEntity{
     private float score;
 
     @Lob
-    @Column(name = "NOTE_DATA")
+    @Column(name = "NOTE_DATA", length = 1024*1024*5)
     private byte[] data;
 
     @Column(name = "NOTE_NUMBER_OF_DOWNLOADS")
