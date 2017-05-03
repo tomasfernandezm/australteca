@@ -2,7 +2,9 @@ package org.australteca.servlet.subject;
 
 import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.Subject;
+import org.australteca.entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,10 +30,23 @@ public class SubjectChangeRatingServlet extends HttpServlet {
         String subjectName = req.getParameter(Constants.SUBJECT_NAME_PARAM);
         Integer rating = Integer.parseInt(req.getParameter(Constants.SUBJECT_SCORE_PARAM));
 
+        String email = req.getRemoteUser();
+        UserDao userDao = new UserDao();
+        User user = userDao.getUserByEmail(email);
+
+        Integer other = user.getSubjectScores().put(SUBJECT_NAME_PARAM, rating);
+        if(other == null) other = 0;
+
         SubjectDao subjectDao = new SubjectDao();
         Subject subject = subjectDao.getByName(subjectName);
-
-        subject.addToScore(rating);
+        if(other != 0) {
+            double oldTotalScore = subject.getScore() * subject.getAmountOfScores();
+            double totalScore = oldTotalScore - other + rating;
+            double score = totalScore / subject.getAmountOfScores();
+            subject.setScore(score);
+        }else{
+            subject.addToScore(rating);
+        }
         subjectDao.merge(subject);
 
         resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);

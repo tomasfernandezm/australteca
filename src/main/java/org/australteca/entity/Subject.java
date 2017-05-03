@@ -78,6 +78,10 @@ public class Subject extends AbstractEntity{
         score = score/amountOfScores;
     }
 
+    public void setScore(double score) {
+        this.score = score;
+    }
+
     public List<Professor> getProfessors() {
         return professors;
     }

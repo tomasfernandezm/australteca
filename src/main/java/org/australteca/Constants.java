@@ -134,6 +134,7 @@ public interface Constants {
     String SUBJECT_NOTES_LIST = "subjectFilesList";
     String SUBJECT_SCORE = "subjectScore";
     String SUBJECT_SCORE_PARAM = "subjectScoreParam";
+    String SUBJECT_USER_SCORE = "subjectUserScore";
 
     /* ~~~~~~~~~~~ Upload - Download Servlet Parameters ~~~~~~~~~~~~~~~ */
 

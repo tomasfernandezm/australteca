@@ -37,8 +37,11 @@ public class User extends AbstractEntity{
     @Column(name = "USER_ROLE")
     private String role;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     private final Set<Subject> subjects = new HashSet<>();
+
+    @ElementCollection
+    private final Map<String, Integer> subjectScores = new HashMap<>();
 
     /* CascadeType.ALL -> al añadir un comentario a un usuario y persistirlo, también se persiste el comentario */
     /* orphanRemoval = true -> si saco un comentario de la Collection, se borra el link en la tabla y también se
@@ -59,6 +62,10 @@ public class User extends AbstractEntity{
         this.course = course;
         this.password = password;
         assignRole(moderator, admin);
+    }
+
+    public Map<String, Integer> getSubjectScores() {
+        return subjectScores;
     }
 
     public void makeAdmin(){

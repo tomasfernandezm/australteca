@@ -1,7 +1,9 @@
 package org.australteca.servlet.subject;
 
 import org.australteca.dao.SubjectDao;
+import org.australteca.dao.UserDao;
 import org.australteca.entity.Subject;
+import org.australteca.entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,9 +28,16 @@ public class SubjectPostServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
+        String email = req.getRemoteUser();
+
+        UserDao userDao = new UserDao();
+        User user = userDao.getUserByEmail(email);
 
         SubjectDao subjectDAO = new SubjectDao();
         Subject subject = subjectDAO.getByName(subjectName);
+
+        Integer userScore = user.getSubjectScores().getOrDefault(SUBJECT_USER_SCORE, 0);
+        req.setAttribute(SUBJECT_USER_SCORE, userScore);
 
         req.setAttribute(SUBJECT_COMMENTARY_LIST, subject.getCommentaryList());
         req.setAttribute(SUBJECT_PROFESSOR_LIST, subject.getProfessors());
