@@ -1,5 +1,6 @@
 package org.australteca.servlet.subject;
 
+import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
 import org.australteca.dao.UserDao;
@@ -48,6 +49,8 @@ public class SubjectChangeRatingServlet extends HttpServlet {
             subject.addToScore(rating);
         }
         subjectDao.merge(subject);
+
+        resp.getWriter().write((new Gson()).toJson(subject.getScore()));
 
         resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
     }
