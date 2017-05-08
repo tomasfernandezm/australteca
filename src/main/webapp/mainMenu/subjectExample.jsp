@@ -38,7 +38,7 @@
                 <h2><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
             </div>
             <div class="pull-right">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+            <div id= "subject_score" class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
                 <h2><%= request.getAttribute(SUBJECT_SCORE)%></h2>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-8">
