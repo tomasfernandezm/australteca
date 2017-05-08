@@ -125,7 +125,7 @@
                         <!----------- PROFESSOR tab ----------->
                         <div class="tab-pane fade" id="tab2default">
                             <% if (request.isUserInRole("user")) { %>
-                                <div class="btn-group">
+                                <div class="btn-group btn-professor">
                                     <button type="button" onclick="modalBox(document.getElementById('loadProfessorModal'))" id="loadProfessor"class="btn btn-primary">Cargar profesor</button>
                                     <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Agregar profesor</button>
                                 </div>
@@ -342,23 +342,23 @@
                         <thead>
                         <td>Nombre</td>
                         </thead>
-                        <!-------- lista de profesores que se pueden agregar --------->
+                        <!-------- lista de profesores que se pueden agregar (cambie los nombres pero chequea) --------->
                         <!--
                         <%--
                        <c:set var="professorWrapperList" value='${requestScope["professorWrappers"]}' />
-                        <c:forEach items="${subjectWrapperList}" var="subjectWrapper">
+                        <c:forEach items="${professorWrapperList}" var="professorWrapper">
                             <tr>
-                                <td><a href="${pageContext.request.contextPath}/postSubject?<%=PROFESSOR_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
-                                    <c:out value="${subjectWrapper.subject.subjectName}"/></a>
+                                <td><a href="${pageContext.request.contextPath}/postSubject?<%=PROFESSOR_NAME_PARAM%>=${professorWrapper.professor.firstName}">
+                                    <c:out value="${professorWrapper.professor.firstName}"/></a>
                                 </td>
                                 <td>
                                     <form action="/manageUserSubjects" method="post">
-                                        <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="${subjectWrapper.subject.subjectName}">
-                                        <c:if test="${subjectWrapper.favorite}">
-                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=REMOVE_FAVORITE%>" class="btn btn-default favoriteTrue"><i class="glyphicon glyphicon-star"></i></button>
+                                        <input type="hidden" name="<%=PROFESSOR_NAME_PARAM%>" value="${professorWrapper.professor.firstName}">
+                                        <c:if test="${professorWrapper.favorite}">
+                                            <button type="submit" name="<%=ADD_PARAM%>" value="<%=REMOVE_PROFESSOR%>" class="btn btn-default favoriteTrue">Agregar</i></button>
                                         </c:if>
-                                        <c:if test="${!subjectWrapper.favorite}">
-                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=MAKE_FAVORITE%>" class="btn btn-default favoriteFalse"><i class="glyphicon glyphicon-star-empty"></i></button>
+                                        <c:if test="${!professorWrapper.favorite}">
+                                            <button type="submit" name="<%=DELETE_PARAM%>" value="<%=ADD_PROFESSOR%>" class="btn btn-default favoriteFalse">Eliminar</button>
                                         </c:if>
                                     </form>
                                 </td>
@@ -378,12 +378,12 @@
 
 
 
-<script type="text/javascript" src="/js/modalBox.js"></script>
-<script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/tootip.js"></script>
-<script type="text/javascript" src="/js/timeAgo.js"></script>
-<script type="text/javascript" src="/js/filePreview.js"></script>
+<script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/tootip.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/timeAgo.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/filePreview.js"/>"></script>
 
 
 
