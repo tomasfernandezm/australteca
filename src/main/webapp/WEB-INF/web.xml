@@ -50,6 +50,17 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>SubjectChangeRatingAjax</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingAjax</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubjectChangeRatingAjax</servlet-name>
+        <url-pattern>/subjectChangeRatingAjax</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
         <servlet-name>SubjectAddCommentaryServlet</servlet-name>
         <servlet-class>org.australteca.servlet.subject.SubjectAddCommentaryServlet</servlet-class>
     </servlet>

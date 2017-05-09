@@ -43,7 +43,7 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-8">
                 <span class="starRating">
-                  <input id="rating5" type="radio" name="rating" value="5" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=5&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
+                  <input id="rating5" type="radio" name="rating" value="5" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
                   <label for="rating5">5</label>
                   <input id="rating4" type="radio" name="rating" value="4" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=4&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
                   <label for="rating4">4</label>
@@ -384,8 +384,7 @@
 <script type="text/javascript" src="<c:url value="/js/tootip.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/timeAgo.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/filePreview.js"/>"></script>
-
-
+<script type="text/javascript" src="<c:url value="/js/subjectExample.js"/>"></script>
 
 </body>
 </html>

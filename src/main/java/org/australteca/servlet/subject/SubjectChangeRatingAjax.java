@@ -1,6 +1,6 @@
 package org.australteca.servlet.subject;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
 import org.australteca.dao.UserDao;
@@ -16,9 +16,9 @@ import java.io.IOException;
 import static org.australteca.Constants.SUBJECT_NAME_PARAM;
 
 /**
- * Created by tomi on 29/04/17.
+ * Created by tomi on 08/05/17.
  */
-public class SubjectChangeRatingServlet extends HttpServlet {
+public class SubjectChangeRatingAjax extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,8 +28,11 @@ public class SubjectChangeRatingServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
-        String subjectName = req.getParameter(Constants.SUBJECT_NAME_PARAM);
-        Integer rating = Integer.parseInt(req.getParameter(Constants.SUBJECT_SCORE_PARAM));
+        String subjectName = req.getParameter("subject");
+        String ratingString = req.getParameter("rating");
+        Integer rating;
+        if(ratingString != null) rating = Integer.parseInt(ratingString);
+        else rating = 0;
 
         String email = req.getRemoteUser();
         UserDao userDao = new UserDao();
@@ -50,6 +53,7 @@ public class SubjectChangeRatingServlet extends HttpServlet {
         }
         subjectDao.merge(subject);
 
-        resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
+        resp.setContentType("application/json");
+        resp.getWriter().write((new Gson()).toJson(subject.getScore()));
     }
 }

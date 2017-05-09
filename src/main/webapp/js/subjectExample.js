@@ -2,19 +2,19 @@
  * Created by tomi on 03/05/17.
  */
 
-$('#rating5').click(function () {
+function changeRating(subjectName) {
     $.ajax({
         type:'post',
-        url:'/rateSubject',
+        url:'/subjectChangeRatingAjax',
         dataType: 'JSON',
-        data: {
-            rating: JSON.stringify($('input[name="rating]').val())
-        },
-        success: function(){
-            $.getJSON("GET", "/rateSubject", function (data) {
-                document.getElementById("subject_score").innerHTML=
-                    this.responseText;
-            })
+        data:{
+                rating: $('input[name=rating]').val(),
+                subject: subjectName
+            },
+
+        success: function(jsonObject){
+            var response = JSON.parse(jsonObject);
+            document.getElementById("subject_score").innerHTML = response;
         }
-    });
-});
+    })
+}
