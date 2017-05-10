@@ -13,8 +13,7 @@ function changeRating(subjectName) {
             },
 
         success: function(jsonObject){
-            var response = JSON.parse(jsonObject);
-            document.getElementById("subject_score").innerHTML = response;
+            document.getElementById("subject_score").innerHTML = JSON.parse(jsonObject);
         }
     })
 }

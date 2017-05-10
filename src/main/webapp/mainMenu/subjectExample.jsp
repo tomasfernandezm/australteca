@@ -45,13 +45,13 @@
                 <span class="starRating">
                   <input id="rating5" type="radio" name="rating" value="5" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
                   <label for="rating5">5</label>
-                  <input id="rating4" type="radio" name="rating" value="4" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=4&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
+                  <input id="rating4" type="radio" name="rating" value="4" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
                   <label for="rating4">4</label>
-                  <input id="rating3" type="radio" name="rating" value="3" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=3&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
+                  <input id="rating3" type="radio" name="rating" value="3" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
                   <label for="rating3">3</label>
-                  <input id="rating2" type="radio" name="rating" value="2" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=2&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
+                  <input id="rating2" type="radio" name="rating" value="2" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
                   <label for="rating2">2</label>
-                  <input id="rating1" type="radio" name="rating" value="1" onclick="location.href='/rateSubject?<%=SUBJECT_SCORE_PARAM%>=1&<%=SUBJECT_NAME_PARAM%>=<%=request.getAttribute(SUBJECT_NAME_PARAM)%>'">
+                  <input id="rating1" type="radio" name="rating" value="1" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
                   <label for="rating1">1</label>
                 </span>
             </div>
