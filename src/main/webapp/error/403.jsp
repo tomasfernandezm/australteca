@@ -4,7 +4,7 @@
     <title>SecurityFilter Example Application: Forbidden</title>
 </head>
 <body>
-<h1>SecurityFilter Example Application: Forbidden</h1>
+<h1>Security Filter: Forbidden</h1>
 Error 403: You are not authorized to view the requested resource.
 </body>
 </html>

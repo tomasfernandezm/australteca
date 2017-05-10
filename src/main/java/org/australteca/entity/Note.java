@@ -3,8 +3,12 @@ package org.australteca.entity;
 import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * Created by tomi on 19/04/17.
@@ -123,5 +127,11 @@ public class Note extends AbstractEntity{
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public String getFormatDate() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        return dateFormat.format(date);
     }
 }

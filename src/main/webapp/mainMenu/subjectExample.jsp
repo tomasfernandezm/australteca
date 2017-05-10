@@ -83,7 +83,7 @@
                                         <td>Nombre</td>
                                         <td></td>
                                         <td>Tipo</td>
-                                        <td>A&ntilde;o</td>
+                                        <td>Fecha</td>
                                         <td>Descargas</td>
                                         <td>Subido por</td>
                                         <% if (request.isUserInRole("user")) { %>
@@ -104,7 +104,7 @@
                                                 <input type="hidden" name="<%=Constants.NOTE_FORMAT_PARAM%>" value="${note.format}">
                                             </form>
                                             <td><c:out value="${note.type}"/></td>
-                                            <td><c:out value="${note.date}"/></td>
+                                            <td><abbr class="timeago" title="<c:out value="${note.getFormatDate()}"/>"></abbr></td>
                                             <td><c:out value="${note.downloads}"/></td>
                                             <td><c:out value="${note.author.firstName} ${note.author.lastName}"/></td>
                                             <% if (request.isUserInRole("user")) { %>
@@ -382,9 +382,11 @@
 <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/tootip.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/js/timeAgo.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery-timeago.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/filePreview.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/subjectExample.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/timeago.js"/>"></script>
+
 
 </body>
 </html>
