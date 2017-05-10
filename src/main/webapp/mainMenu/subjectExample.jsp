@@ -43,15 +43,15 @@
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-8">
                 <span class="starRating">
-                  <input id="rating5" type="radio" name="rating" value="5" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
+                  <input id="rating5" type="radio" name="rating" value="5" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>',this.value)>
                   <label for="rating5">5</label>
-                  <input id="rating4" type="radio" name="rating" value="4" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
+                  <input id="rating4" type="radio" name="rating" value="4" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>',this.value)>
                   <label for="rating4">4</label>
-                  <input id="rating3" type="radio" name="rating" value="3" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
+                  <input id="rating3" type="radio" name="rating" value="3" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>',this.value)>
                   <label for="rating3">3</label>
-                  <input id="rating2" type="radio" name="rating" value="2" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
+                  <input id="rating2" type="radio" name="rating" value="2" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>',this.value)>
                   <label for="rating2">2</label>
-                  <input id="rating1" type="radio" name="rating" value="1" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>
+                  <input id="rating1" type="radio" name="rating" value="1" onclick=changeRating('<%=request.getAttribute(SUBJECT_NAME_PARAM)%>',this.value)>
                   <label for="rating1">1</label>
                 </span>
             </div>
