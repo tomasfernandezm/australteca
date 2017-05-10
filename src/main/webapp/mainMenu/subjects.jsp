@@ -77,7 +77,7 @@
                 <h1>Materias</h1>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <% if (request.isUserInRole("user")) { %>
+                        <% if (request.isUserInRole("admin")) { %>
                         <button type="button" class="standardButton btn btn-default btn-xs" onclick="modalBox(document.getElementById('addSubjectBox'))">
                             <i class="glyphicon glyphicon-plus"></i></button>
                         <% } %>
@@ -95,7 +95,7 @@
                             <thead>
                             <td>Nombre</td>
                             <td>Favorita</td>
-                            <% if (request.isUserInRole("user")) { %>
+                            <% if (request.isUserInRole("admin")) { %>
                             <td>Eliminar</td>
                             <% } %>
                             </thead>
@@ -117,7 +117,7 @@
                                         </form>
                                     </td>
 
-                                    <% if (request.isUserInRole("user")) { %>
+                                    <% if (request.isUserInRole("admin")) { %>
                                     <td>
                                         <form action="/subjectDelete" method="post">
                                             <button type="submit" name="<%=SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />" class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
