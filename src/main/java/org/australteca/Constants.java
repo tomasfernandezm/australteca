@@ -109,6 +109,7 @@ public interface Constants {
     String USER_COMMENTARY_LIST = "userCommentaryList";
     String USER_SUBJECT_LIST = "userSubjectList";
     String USER_DISCUSSION_LIST = "userDiscussionList";
+    String USER_EMAIL_PARAM = "userEmail";
 
     /*~~~~~~~~~~~~~ User - Subject Servlet Parameters ~~~~~~~~~~ */
 
@@ -119,6 +120,11 @@ public interface Constants {
     /* ~~~~~~~~~~~~ Subject - Commentary Servlet Parameters ~~~~~~~ */
 
     String COMMENTARY = "commentaryText";
+
+    /* ~~~~~~~~~~~~ Subject_Moderator Relationship Servlet Parameters ~~~~~~~~ */
+
+    String ACCEPTED_LIST = "acceptedList";
+    String WAITING_LIST = "waitingList";
 
     /* ~~~~~~~~~~~ Professor - Servlet Parameters ~~~~~~~~~~~ */
 

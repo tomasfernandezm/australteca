@@ -1,14 +1,9 @@
 package org.australteca.entity;
 
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.search.annotations.*;
-import org.hibernate.search.annotations.Index;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by tomi on 29/03/17.
@@ -24,12 +19,9 @@ public class Subject extends AbstractEntity{
     @Column (name = "SUBJECT_AMOUNT_OF_SCORES")
     private double amountOfScores;
 
-    @Field(index= Index.YES, analyze=Analyze.YES, store=Store.NO)
     @Column (name = "SUBJECT_NAME", unique = true)
-    @Analyzer(definition = "subjectAnalyzer")
     private String subjectName;
 
-    @IndexedEmbedded
     @ManyToMany
     private final List<Professor> professors = new ArrayList<>();
 
@@ -41,6 +33,9 @@ public class Subject extends AbstractEntity{
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "subject")
     private final List<Note> noteList = new ArrayList<>();
+
+    @OneToMany
+    private final List<SubjectModeratorRelationship> moderatorRelationshipList = new ArrayList<>();
 
     public Subject() {
     }
@@ -85,5 +80,9 @@ public class Subject extends AbstractEntity{
 
     public List<User> getUserList() {
         return userList;
+    }
+
+    public List<SubjectModeratorRelationship> getModeratorRelationshipList() {
+        return moderatorRelationshipList;
     }
 }

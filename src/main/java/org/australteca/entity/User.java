@@ -50,6 +50,9 @@ public class User extends AbstractEntity{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private final Set<Commentary> commentaries = new HashSet<>();
 
+    @OneToMany
+    private final List<SubjectModeratorRelationship> subjectModeratorRelationships = new ArrayList<>();
+
     public User() {
     }
 
@@ -158,4 +161,7 @@ public class User extends AbstractEntity{
         photo = new Photo(data, contentType, ext);
     }
 
+    public List<SubjectModeratorRelationship> getSubjectModeratorRelationships() {
+        return subjectModeratorRelationships;
+    }
 }

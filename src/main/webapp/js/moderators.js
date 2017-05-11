@@ -20,3 +20,39 @@ $(document).ready(function () {
 
     }).change();
 });
+
+function elminateAplication(subjectName, userEmail){
+    $.ajax({
+        type:'post',
+        url:'/mandaloAalgúnLado',
+        dataType: 'JSON',
+        data:{
+            subjectName: subjectName,
+            userEmail: userEmail
+        }
+    })
+}
+
+function acceptAplication(subjectName, userEmail){
+    $.ajax({
+        type:'post',
+        url:'/mandaloAalgúnLado',
+        dataType: 'JSON',
+        data:{
+            subjectName: subjectName,
+            userEmail: userEmail
+        }
+    })
+}
+
+function denyAplication(subjectName, userEmail){
+    $.ajax({
+        type:'post',
+        url:'/mandaloAalgúnLado',
+        dataType: 'JSON',
+        data:{
+            subjectName: subjectName,
+            userEmail: userEmail
+        }
+    })
+}

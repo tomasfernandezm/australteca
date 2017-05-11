@@ -49,8 +49,8 @@
                                 <tr>
                                     <td>tomas.forman@ing.austral.edu.ar</td>
                                     <td>Fisica 2</td>
-                                    <td><button type="submit" class="btn btn-success">Aceptar</button> </td>
-                                    <td><button type="submit" class="btn btn-danger">Rechazar</button> </td>
+                                    <td><button type="submit" class="btn btn-success" onclick=acceptAplication()>Aceptar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick=denyAplication()>Rechazar</button> </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -66,7 +66,7 @@
                                 <tr>
                                     <td>nicolas.madeo@ing.austral.edu.ar</td>
                                     <td>Analisis 4</td>
-                                    <td><button type="submit" class="btn btn-danger">Eliminar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick=elminateAplication()>Eliminar</button> </td>
                                 </tr>
                                 </tbody>
                             </table>

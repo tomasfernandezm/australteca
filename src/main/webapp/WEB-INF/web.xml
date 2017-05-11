@@ -50,6 +50,26 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>AddPostulantServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.moderator.AddPostulantServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddPostulantServlet</servlet-name>
+        <url-pattern>/addPostulant</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RemovePostulantServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.moderator.DeletePostulantServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RemovePostulantServlet</servlet-name>
+        <url-pattern>/deletePostulant</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>SubjectChangeRatingAjax</servlet-name>
         <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingAjax</servlet-class>
     </servlet>

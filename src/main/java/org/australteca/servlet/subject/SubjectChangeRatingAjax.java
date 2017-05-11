@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import static org.australteca.Constants.SUBJECT_NAME_PARAM;
 
@@ -54,6 +55,6 @@ public class SubjectChangeRatingAjax extends HttpServlet{
         subjectDao.merge(subject);
 
         resp.setContentType("application/json");
-        resp.getWriter().write((new Gson()).toJson(subject.getScore()));
+        resp.getWriter().write((new Gson()).toJson(new DecimalFormat("#.##").format(subject.getScore())));
     }
 }
