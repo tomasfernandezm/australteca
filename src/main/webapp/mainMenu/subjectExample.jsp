@@ -109,7 +109,7 @@
                                             <td><c:out value="${note.author.firstName} ${note.author.lastName}"/></td>
                                             <% if (request.isUserInRole("user")) { %>
                                             <form action="/noteDelete" method="post">
-                                                <td><button type="submit" class="btn trashButton"><i class="glyphicon glyphicon-trash"></i></td>
+                                                <td><button type="submit" class="btn trashButton"><i class="glyphicon glyphicon-trash"></i></button></td>
                                                 <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
                                                 <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="<%=request.getAttribute(SUBJECT_NAME_PARAM)%>"/>
 
@@ -124,7 +124,7 @@
 
                         <!----------- PROFESSOR tab ----------->
                         <div class="tab-pane fade" id="tab2default">
-                            <% if (request.isUserInRole("user")) { %>
+                            <% if (request.isUserInRole("admin")) { %>
                                 <div class="btn-group btn-professor">
                                     <button type="button" onclick="modalBox(document.getElementById('loadProfessorModal'))" id="loadProfessor"class="btn btn-primary">Cargar profesor</button>
                                     <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Agregar profesor</button>
@@ -156,7 +156,9 @@
                                                     <article class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
-                                                                <img class="img-responsive" src="/images/avatar.jpg" />
+
+                                                                <img src="/userPostPhoto" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="img-responsive avatar img-circle" alt="avatar">
+
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>
@@ -164,17 +166,17 @@
                                                             <div class="panel panel-default arrow left">
                                                                 <div class="panel-body">
                                                                     <header class="text-left">
-                                                                        <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}" /></div>
-                                                                        <time class="comment-date" datetime="16-12-2014 01:05"><i class="glyphicon glyphicon-time"></i> timeago script</time>
+                                                                        <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>
+                                                                        <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
                                                                     </header>
                                                                     <button type="submit" class="btn pull-right"><i class="glyphicon glyphicon-remove"></i></button>
                                                                     <div class="comment-post">
                                                                         <p>
-                                                                            <c:out value="${commentary.commentary}" />
+                                                                            <c:out value="${commentary.commentary}"/>
                                                                         </p>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div>>
                                                         </div>
                                                     </article>
                                                     </c:forEach>

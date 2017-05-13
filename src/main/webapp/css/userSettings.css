@@ -6,3 +6,10 @@
     -moz-border-radius: 150px;
     margin-bottom: 10px;
 }
+
+img:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    background-image: url(/images/avatar.jpg);
+}

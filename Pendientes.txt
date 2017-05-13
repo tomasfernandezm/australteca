@@ -1,18 +1,46 @@
 Cosas que hay que hacer:
 
-6- Ir para atrar cuando te desloggeas / eliminas cuenta.
-10- Boton moderador (mandar mail)
-11- Timeago
-12- lema dinamico
-13- user ajax y JSON para score de subjectExample
+1- Ir para atrar cuando te desloggeas / eliminas cuenta.
+2- lema dinamico
+
+    Comentarios (SubjectExample.jsp)
+    1-timeago
+    2-borrar comentario
+    3-cargar foto
+    4-agregar comentario, no irse del tab 'comment'
+    5-arreglar mobile
+
+    Moderadores
+    1-hacer todos los servlets
+    2-aceptar moderador, postularse, eliminar post y mod
+    3-poder saber si un user se postulo
+
+
+
+    Raiting
+    1-arreglar para todos, anda chrome
+    2- darle style (anda mal)
+
+
+    userSettings
+    1-boton guardar elimina foto cargada
+    2-unificar subir  y guardar foto
+
+
+    Materias
+    1-Se borran archivos cuando se corta la base (no pasa con la foto de archivo)
+
+
 
 BONUS
 1-Estadisticas del usuario
 2-Estadisticas para administradores
+3-Favorito materia cambiar a ajax
+
 
 POSIBLE
 1-Mostrar que se carga archivo
 6- terminar rediseño de servlets (despúes de la primera entrega)
 7- emprolijar la base de datos (leer tipos de fetch)
-3- Ver si se puede mostrar ruta
+
 
