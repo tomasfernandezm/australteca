@@ -40,6 +40,6 @@ public class AddPostulantServlet extends HttpServlet{
         SubjectModeratorRelationshipDao sbmrDAO = new SubjectModeratorRelationshipDao();
         sbmrDAO.add(subjectModeratorRelationship);
 
-        resp.sendRedirect("/mainMenu/moderators.jsp");
+        //resp.sendRedirect("/mainMenu/moderators.jsp");
     }
 }

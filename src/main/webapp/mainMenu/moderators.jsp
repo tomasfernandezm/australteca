@@ -1,4 +1,6 @@
-<%@ page import="org.australteca.Constants" %><%--
+<%@ page import="org.australteca.Constants" %>
+<%@ page import="static org.australteca.Constants.ACCEPTED_LIST" %>
+<%@ page import="static org.australteca.Constants.WAITING_LIST" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 9/5/17
@@ -46,12 +48,16 @@
                                 <td>Materia</td>
                             </thead>
                             <tbody>
+                            <c:set var="waitingListParam" value="<%=WAITING_LIST%>"/>
+                            <c:set var="waitingList" value='${requestScope[waitingListParam]}' />
+                            <c:forEach items="${waitingList}" var="postulation">
                                 <tr>
-                                    <td>tomas.forman@ing.austral.edu.ar</td>
-                                    <td>Fisica 2</td>
-                                    <td><button type="submit" class="btn btn-success" onclick=acceptAplication()>Aceptar</button> </td>
-                                    <td><button type="submit" class="btn btn-danger" onclick=denyAplication()>Rechazar</button> </td>
+                                    <td><c:out value="${postulation.user.firstName}" /></td>
+                                    <td><c:out value="${postulation.subject.subjectName}"/></td>
+                                    <td><button type="submit" class="btn btn-success" onclick=acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}')>Aceptar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick=denyAplication('${postulation.user.email}','${postulation.subject.subjectName}')>Rechazar</button> </td>
                                 </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                         </div>
@@ -63,11 +69,15 @@
                                 <td>Materia</td>
                                 </thead>
                                 <tbody>
+                                    <c:set var="acceptedListParam" value="<%=ACCEPTED_LIST%>"/>
+                                    <c:set var="acceptedList" value='${requestScope[acceptedListParam]}' />
+                                    <c:forEach items="${acceptedList}" var="moderator">
                                 <tr>
-                                    <td>nicolas.madeo@ing.austral.edu.ar</td>
-                                    <td>Analisis 4</td>
-                                    <td><button type="submit" class="btn btn-danger" onclick=elminateAplication()>Eliminar</button> </td>
+                                    <td><c:out value="${moderator.user.firstName}" /></td>
+                                    <td><c:out value="${moderator.subject.subjectName}"/></td>
+                                    <td><button type="submit" class="btn btn-danger" onclick=eliminateAplication('${moderator.user.email}','${moderator.subject.subjectName}')>Eliminar</button> </td>
                                 </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>

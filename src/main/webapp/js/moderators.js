@@ -21,10 +21,10 @@ $(document).ready(function () {
     }).change();
 });
 
-function elminateAplication(subjectName, userEmail){
+function eliminateAplication(userEmail, subjectName){
     $.ajax({
         type:'post',
-        url:'/mandaloAalgúnLado',
+        url:'/deletePostulant',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
@@ -33,10 +33,10 @@ function elminateAplication(subjectName, userEmail){
     })
 }
 
-function acceptAplication(subjectName, userEmail){
+function acceptAplication(userEmail, subjectName){
     $.ajax({
         type:'post',
-        url:'/mandaloAalgúnLado',
+        url:'/acceptPostulation',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
@@ -45,10 +45,10 @@ function acceptAplication(subjectName, userEmail){
     })
 }
 
-function denyAplication(subjectName, userEmail){
+function denyAplication(userEmail, subjectName){
     $.ajax({
         type:'post',
-        url:'/mandaloAalgúnLado',
+        url:'/denyPostulation',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
