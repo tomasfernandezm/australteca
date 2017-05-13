@@ -56,3 +56,10 @@
 .comment-list .comment-post {
     margin-top: 6px;
 }
+
+
+.thumbnail{
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: bold;
+}
