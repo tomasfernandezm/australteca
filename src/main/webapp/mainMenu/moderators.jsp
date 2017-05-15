@@ -41,8 +41,8 @@
                             </div>
                         </div>
 
-                        <div id="postulant-table">
-                        <table class="table">
+                        <div id="postulant-table-div">
+                        <table class="table" id="postulant-table">
                             <thead>
                                 <td>Email</td>
                                 <td>Materia</td>
@@ -50,12 +50,12 @@
                             <tbody>
                             <c:set var="waitingListParam" value="<%=WAITING_LIST%>"/>
                             <c:set var="waitingList" value='${requestScope[waitingListParam]}' />
-                            <c:forEach items="${waitingList}" var="postulation">
+                            <c:forEach items="${waitingList}" var="postulation" varStatus="loop">
                                 <tr>
                                     <td><c:out value="${postulation.user.firstName}" /></td>
                                     <td><c:out value="${postulation.subject.subjectName}"/></td>
-                                    <td><button type="submit" class="btn btn-success" onclick=acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}')>Aceptar</button> </td>
-                                    <td><button type="submit" class="btn btn-danger" onclick=denyAplication('${postulation.user.email}','${postulation.subject.subjectName}')>Rechazar</button> </td>
+                                    <td><button type="submit" class="btn btn-success" onclick=acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}',${loop.count})>Aceptar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick=eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}')>Rechazar</button> </td>
                                 </tr>
                             </c:forEach>
                             </tbody>

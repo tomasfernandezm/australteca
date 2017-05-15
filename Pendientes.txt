@@ -11,21 +11,12 @@ Cosas que hay que hacer:
     5-arreglar mobile
 
     Moderadores
-    1-hacer todos los servlets
-    2-aceptar moderador, postularse, eliminar post y mod
-    3-poder saber si un user se postulo
-
-
+    1-poder saber si un user se postulo
+    2-agregarle timeago
 
     Raiting
-    1-arreglar para todos, anda chrome
+    1- arreglar para todos, anda chrome
     2- darle style (anda mal)
-
-
-    userSettings
-    1-boton guardar elimina foto cargada
-    2-unificar subir  y guardar foto
-
 
     Materias
     1-Se borran archivos cuando se corta la base (no pasa con la foto de archivo)

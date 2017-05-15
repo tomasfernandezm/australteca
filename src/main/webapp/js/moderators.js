@@ -33,7 +33,7 @@ function eliminateAplication(userEmail, subjectName){
     })
 }
 
-function acceptAplication(userEmail, subjectName){
+function acceptAplication(userEmail, subjectName, rowID){
     $.ajax({
         type:'post',
         url:'/acceptPostulation',
@@ -41,6 +41,9 @@ function acceptAplication(userEmail, subjectName){
         data:{
             subjectName: subjectName,
             userEmail: userEmail
+        },
+        success: function(response){
+            $('#table2 tbody tr:nth-child(rowID)').remove();
         }
     })
 }
