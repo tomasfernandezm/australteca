@@ -1,12 +1,6 @@
 package org.australteca.entity;
 
 import com.sun.istack.internal.NotNull;
-<<<<<<< HEAD
-//import org.hibernate.search.annotations.Field;
-=======
-
->>>>>>> 2cae45e772248c9da9e35e5888dc675b89c595bb
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +12,6 @@ import java.util.List;
 @Entity
 @Table(name = "PROFESSOR")
 public class Professor extends AbstractEntity{
-    
-    @Column(name = "PROFESSOR_FNAME")
-    private String firstName;
 
     @Column(name = "PROFESSOR_FNAME")
     private String firstName;
