@@ -17,3 +17,5 @@ function changeRating(subjectName, button_value) {
         }
     })
 }
+
+

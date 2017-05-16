@@ -1,7 +1,7 @@
 package org.australteca.entity;
 
 import com.sun.istack.internal.NotNull;
-import org.hibernate.search.annotations.Field;
+//import org.hibernate.search.annotations.Field;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,11 +15,11 @@ import java.util.List;
 @Table(name = "PROFESSOR")
 public class Professor extends AbstractEntity{
 
-    @Field
+    //@Field
     @Column(name = "PROFESSOR_FNAME")
     private String firstName;
 
-    @Field
+    //@Field
     @Column(name = "PROFESSOR_LNAME")
     private String lastName;
 
