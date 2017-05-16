@@ -69,7 +69,7 @@
                         <li class="active"><a href="#tab1default" data-toggle="tab">Apuntes</a></li>
                         <li><a href="#tab2default" data-toggle="tab">Profesores</a></li>
                         <li><a href="#tab3default" data-toggle="tab">Comentarios</a></li>
-                        <button type="submit"  class="btn btn-success pull-right">Aplicar a moderador</button>
+                        <button type="submit"  class="btn btn-success pull-right" onclick=addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')>Aplicar a moderador</button>
                     </ul>
                 </div>
                 <div class="panel-body">

@@ -10,7 +10,7 @@ function changeRating(subjectName, button_value) {
         data:{
                 rating: button_value,
                 subject: subjectName
-            },
+        },
 
         success: function(jsonObject){
             document.getElementById("subject_score").innerHTML = JSON.parse(jsonObject);
@@ -18,4 +18,15 @@ function changeRating(subjectName, button_value) {
     })
 }
 
+function addModeratorPostulation(userEmail, subjectName){
+    $.ajax({
+        type:'post',
+        url: '/addPostulant',
+        dataType: 'JSON',
+        data:{
+            subjectName: subjectName,
+            userEmail: userEmail
+        }
+    })
+}
 

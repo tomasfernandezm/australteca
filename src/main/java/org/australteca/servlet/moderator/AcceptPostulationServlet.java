@@ -33,6 +33,7 @@ public class AcceptPostulationServlet extends HttpServlet {
 
         smrDao.merge(smr);
 
-        resp.sendRedirect("/mainMenu/moderators.jsp");
+        resp.setContentType("application/json");
+
     }
 }

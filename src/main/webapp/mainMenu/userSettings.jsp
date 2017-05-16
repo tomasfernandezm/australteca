@@ -35,9 +35,8 @@
             <!--    </object> -->
                 <form action="/uploadPhoto" method="post" enctype="multipart/form-data">
                     <label class="btn btn-default btn-file">
-                        Subir Foto <input type="file" style="display: none;" name="photo">
+                        Subir Foto <input id="fileField" type="file" style="display: none;" name="photo">
                     </label>
-                    <input type="submit" class="btn btn-primary" value="Guardar">
                 </form>
             </div>
         </div>
@@ -117,5 +116,6 @@
 
 <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/userSettings.js"></script>
 </body>
 </html>

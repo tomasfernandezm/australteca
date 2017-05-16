@@ -49,6 +49,38 @@
 
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
+    <!-- ~~~~~~~~~~ Moderator ~~~~~~~~~~~~~~~~ -->
+
+    <servlet>
+        <servlet-name>PostPostulationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.moderator.PostPostulantsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PostPostulationServlet</servlet-name>
+        <url-pattern>/postModerators</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DenyPostulationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.moderator.DenyPostulationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DenyPostulationServlet</servlet-name>
+        <url-pattern>/denyPostulation</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AcceptPostulationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.moderator.AcceptPostulationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AcceptPostulationServlet</servlet-name>
+        <url-pattern>/acceptPostulation</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>AddPostulantServlet</servlet-name>
         <servlet-class>org.australteca.servlet.moderator.AddPostulantServlet</servlet-class>
@@ -60,45 +92,15 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>RemovePostulantServlet</servlet-name>
+        <servlet-name>DeletePostulantServlet</servlet-name>
         <servlet-class>org.australteca.servlet.moderator.DeletePostulantServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>RemovePostulantServlet</servlet-name>
+        <servlet-name>DeletePostulantServlet</servlet-name>
         <url-pattern>/deletePostulant</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>SubjectChangeRatingAjax</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingAjax</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>SubjectChangeRatingAjax</servlet-name>
-        <url-pattern>/subjectChangeRatingAjax</url-pattern>
-    </servlet-mapping>
-
-
-    <servlet>
-        <servlet-name>SubjectAddCommentaryServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectAddCommentaryServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>SubjectAddCommentaryServlet</servlet-name>
-        <url-pattern>/subjectAddCommentary</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>SubjectChangeRatingServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>SubjectChangeRatingServlet</servlet-name>
-        <url-pattern>/rateSubject</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>UserPostPhotoServlet</servlet-name>
@@ -144,12 +146,12 @@
         <servlet-name>UserListPostServlet</servlet-name>
         <servlet-class>org.australteca.servlet.user.UserListPostServlet</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>UserListPostServlet</servlet-name>
         <url-pattern>/userListPost</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>UserSubjectManagerServlet</servlet-name>
         <servlet-class>org.australteca.servlet.user.UserSubjectManagerServlet</servlet-class>
@@ -185,16 +187,16 @@
 
     <!-- ~~~~~~~~~ User Registration ~~~~~~~~~~~~ -->
 
-   <servlet>
-      <servlet-name>UserRegisterServlet</servlet-name>
-      <!--<description>for registration only</description>-->
-      <servlet-class>org.australteca.servlet.user.UserRegisterServlet</servlet-class>
-   </servlet>
+    <servlet>
+        <servlet-name>UserRegisterServlet</servlet-name>
+        <!--<description>for registration only</description>-->
+        <servlet-class>org.australteca.servlet.user.UserRegisterServlet</servlet-class>
+    </servlet>
 
-   <servlet-mapping>
-      <servlet-name>UserRegisterServlet</servlet-name>
-      <url-pattern>/register</url-pattern>
-   </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserRegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
 
     <!-- ~~~~~~~~~ User Delete ~~~~~~~~~~~~ -->
 
@@ -233,6 +235,36 @@
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~ Subject Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+    <servlet>
+        <servlet-name>SubjectChangeRatingAjax</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingAjax</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubjectChangeRatingAjax</servlet-name>
+        <url-pattern>/subjectChangeRatingAjax</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SubjectAddCommentaryServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectAddCommentaryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubjectAddCommentaryServlet</servlet-name>
+        <url-pattern>/subjectAddCommentary</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubjectChangeRatingServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubjectChangeRatingServlet</servlet-name>
+        <url-pattern>/rateSubject</url-pattern>
+    </servlet-mapping>
     <!-- ~~~~~~~~~ Subject Delete ~~~~~~~~~~~~ -->
     <servlet>
         <servlet-name>SubjectDeleteServlet</servlet-name>
@@ -248,10 +280,10 @@
     <!-- ~~~~~~~~~ Subject Add ~~~~~~~~~~~~ -->
 
     <servlet>
-      <servlet-name>AddSubjectServlet</servlet-name>
-       <!--<description> adds subject to database</description>-->
-       <servlet-class>org.australteca.servlet.subject.SubjectAddServlet</servlet-class>
-   </servlet>
+        <servlet-name>AddSubjectServlet</servlet-name>
+        <!--<description> adds subject to database</description>-->
+        <servlet-class>org.australteca.servlet.subject.SubjectAddServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>AddSubjectServlet</servlet-name>
