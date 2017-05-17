@@ -147,6 +147,7 @@
                                                     <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
                                                 </form>
                                                 <div class="col-xs-12"><hr></div>
+
                                                 <!------- List of comments ------->
                                                 <section class="comment-list">
                                                     <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
@@ -169,14 +170,16 @@
                                                                         <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>
                                                                         <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
                                                                     </header>
+                                                                  <%--  <c:if test="${commentary.author.email.equals(request.getRemoteUser())}">
                                                                     <button type="submit" class="btn pull-right"><i class="glyphicon glyphicon-remove"></i></button>
+                                                                    </c:if> --%>
                                                                     <div class="comment-post">
                                                                         <p>
                                                                             <c:out value="${commentary.commentary}"/>
                                                                         </p>
                                                                     </div>
                                                                 </div>
-                                                            </div>>
+                                                            </div>
                                                         </div>
                                                     </article>
                                                     </c:forEach>
@@ -275,7 +278,6 @@
 <div id="loadProfessorModal" class="modal">
     <div class="modal-content">
         <span onclick="closeModal(document.getElementById('loadProfessorModal'))" class="close">&times;</span>
-        <form id="agregar2" action="agregar" method="POST">
             <div class="container-fluid">
                 <div class="row">
                     <div>
@@ -284,29 +286,30 @@
                                 Cargar profesor
                             </div>
                             <div class="panel-body">
-                                <form class="form-horizontal"  method="post" role="form">
+                                <form action="/loadProfessor" class="form-horizontal"  method="POST" role="form">
+                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Nombre:</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="text" name="<%= NAME_PARAM%>">
+                                            <input class="form-control" type="text" name="<%=PROFESSOR_NAME_PARAM%>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Apellido:</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="text" name="<%= LAST_NAME_PARAM%>">
+                                            <input class="form-control" type="text" name="<%=PROFESSOR_LAST_NAME_PARAM%>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Email:</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=EMAIL_PARAM%>">
+                                            <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=PROFESSOR_EMAIL_PARAM%>">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Titulo:</label>
+                                        <label class="col-md-3 control-label">Informacion:</label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" name="text">
+                                            <input class="form-control" type="text" name="<%=PROFESSOR_INFORMATION_PARAM%>">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -321,7 +324,6 @@
                     </div>
                 </div>
             </div>
-        </form>
     </div>
 </div>
 
@@ -331,7 +333,7 @@
 <div id="addProfessorModal" class="modal">
     <div class="modal-content">
         <span onclick="closeModal(document.getElementById('addProfessorModal'))" class="close">&times;</span>
-    </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="panel panel-default">
@@ -339,7 +341,6 @@
                     Profesores
                 </div>
                 <div class="modal-body">
-
                     <table class="table">
                         <thead>
                         <td>Nombre</td>
@@ -376,6 +377,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 

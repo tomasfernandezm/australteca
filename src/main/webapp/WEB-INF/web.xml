@@ -327,6 +327,17 @@
         <url-pattern>/postSubject</url-pattern>
     </servlet-mapping>
 
+    <!-- ~~~~~~~~~ Load Professoor ~~~~~~~~~~~~ -->
+
+    <servlet>
+        <servlet-name>LoadProfessorServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectLoadProfessorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoadProfessorServlet</servlet-name>
+        <url-pattern>/loadProfessor</url-pattern>
+    </servlet-mapping>
 
     <!-- ~~~~~~~~~~~~~~~~ Session Configuration ~~~~~~~~~~~~~~~~~~~~ -->
 

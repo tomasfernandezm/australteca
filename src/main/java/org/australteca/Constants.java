@@ -129,6 +129,9 @@ public interface Constants {
     /* ~~~~~~~~~~~ Professor - Servlet Parameters ~~~~~~~~~~~ */
 
     String PROFESSOR_NAME_PARAM = "professorName";
+    String PROFESSOR_LAST_NAME_PARAM = "professorLastName";
+    String PROFESSOR_EMAIL_PARAM = "professorEmail";
+    String PROFESSOR_INFORMATION_PARAM = "professorInformation";
     String PROFESSOR_ID_PARAM = "professorID";
 
     /* ~~~~~~~~~~~ Subject Servlet Parameters ~~~~~~~~~~~~~ */
@@ -163,5 +166,5 @@ public interface Constants {
     String ADMIN_PASSWORD = "admin";
 
     String ADMIN_USERNAME_1 = "tomas.martinez@ing.austral.edu.ar";
-    String ADMIN_USERNAME_2 = "tomas.forman@ing,austral.edu.ar";
+    String ADMIN_USERNAME_2 = "tomas.forman@ing.austral.edu.ar";
 }
