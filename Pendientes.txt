@@ -14,10 +14,6 @@ Cosas que hay que hacer:
     1-poder saber si un user se postulo
     2-agregarle timeago
 
-    Raiting
-    1- arreglar para todos, anda chrome
-    2- darle style (anda mal)
-
     Materias
     1-Se borran archivos cuando se corta la base (no pasa con la foto de archivo)
 

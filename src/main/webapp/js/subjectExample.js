@@ -13,7 +13,7 @@ function changeRating(subjectName, button_value) {
         },
 
         success: function(jsonObject){
-            document.getElementById("subject_score").innerHTML = JSON.parse(jsonObject);
+            document.getElementById("subject_score_h2").innerHTML = JSON.parse(jsonObject);
         }
     })
 }
