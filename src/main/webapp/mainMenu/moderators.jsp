@@ -51,11 +51,11 @@
                             <c:set var="waitingListParam" value="<%=WAITING_LIST%>"/>
                             <c:set var="waitingList" value='${requestScope[waitingListParam]}' />
                             <c:forEach items="${waitingList}" var="postulation" varStatus="loop">
-                                <tr>
+                                <tr id="postulant${loop.count}">
                                     <td><c:out value="${postulation.user.firstName}" /></td>
                                     <td><c:out value="${postulation.subject.subjectName}"/></td>
-                                    <td><button type="submit" class="btn btn-success" onclick=acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}',${loop.count})>Aceptar</button> </td>
-                                    <td><button type="submit" class="btn btn-danger" onclick=eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}')>Rechazar</button> </td>
+                                    <td><button type="submit" class="btn btn-success" onclick=acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')>Aceptar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick=eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')>Rechazar</button> </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -71,11 +71,11 @@
                                 <tbody>
                                     <c:set var="acceptedListParam" value="<%=ACCEPTED_LIST%>"/>
                                     <c:set var="acceptedList" value='${requestScope[acceptedListParam]}' />
-                                    <c:forEach items="${acceptedList}" var="moderator">
-                                <tr>
+                                    <c:forEach items="${acceptedList}" var="moderator" varStatus="loop">
+                                <tr id="accepted${loop.count}">
                                     <td><c:out value="${moderator.user.firstName}" /></td>
                                     <td><c:out value="${moderator.subject.subjectName}"/></td>
-                                    <td><button type="submit" class="btn btn-danger" onclick=eliminateAplication('${moderator.user.email}','${moderator.subject.subjectName}')>Eliminar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick=eliminateAplication('${moderator.user.email}','${moderator.subject.subjectName}','accepted${loop.count}')>Eliminar</button> </td>
                                 </tr>
                                 </c:forEach>
                                 </tbody>

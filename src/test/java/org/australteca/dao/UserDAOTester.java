@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class UserDAOTester {
 
-    private User giveUser(){
+    /*private User giveUser(){
         return new User("Pepito", "Rodriguez", "p.rodriguez@ing.austral.edu.ar",
                 "Informática", "123456789", false, false);
     }
@@ -107,5 +107,5 @@ public class UserDAOTester {
     @Test
     public void removeSubjectTest(){
 
-    }
+    }*/
 }
