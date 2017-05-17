@@ -22,10 +22,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale1.0">
     <title><%=Constants.MY_HOME_TITLE%></title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
-    <link href="/css/subject.css" rel="stylesheet" type="text/css">
-    <link href="/css/modalBox.css" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/subject.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/modalBox.css"/>" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -105,6 +105,13 @@
                                     <td><a href="${pageContext.request.contextPath}/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
                                         <c:out value="${subjectWrapper.subject.subjectName}"/></a>
                                     </td>
+                             <td>
+                                 <input id="subject_favorite" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value)
+                                         <c:if test="${subjectWrapper.favorite}">checked</c:if>>
+                             </td>
+
+
+                                    <!--<%--
                                     <td>
                                         <form action="/manageUserSubjects" method="post">
                                             <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="${subjectWrapper.subject.subjectName}">
@@ -116,7 +123,7 @@
                                         </c:if>
                                         </form>
                                     </td>
-
+                            --%>-->
                                     <% if (request.isUserInRole("admin")) { %>
                                     <td>
                                         <form action="/subjectDelete" method="post">
@@ -135,10 +142,10 @@
 
 
 
-    <script type="text/javascript" src="/js/modalBox.js"></script>
-    <script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/subjects.js"></script>
+    <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/subjects.js"/>"></script>
 
 
 

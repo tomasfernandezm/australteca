@@ -47,3 +47,21 @@ $(function(){
     });
     $('[data-toggle="tooltip"]').tooltip();
 })
+
+
+
+function changeFavorite(subjectName) {
+    $.ajax({
+        type:'post',
+        url:'/userSubjectManagerAjax',
+        dataType: 'JSON',
+        data:{
+            subject: subjectName,
+            status: $('#subject_favorite').is(':checked')
+        },
+
+        success: function(jsonObject){
+            document.getElementById("subject_favorite").innerHTML = JSON.parse(jsonObject);
+        }
+    })
+}

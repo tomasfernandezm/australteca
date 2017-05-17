@@ -1,8 +1,6 @@
 package org.australteca.entity;
 
 import com.sun.istack.internal.NotNull;
-
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +13,17 @@ import java.util.List;
 @Table(name = "PROFESSOR")
 public class Professor extends AbstractEntity{
 
-
     @Column(name = "PROFESSOR_FNAME")
     private String firstName;
-
 
     @Column(name = "PROFESSOR_LNAME")
     private String lastName;
 
-    @Column(name = "PROFESSOR_DEGREE")
-    private String degree;
+    @Column(name = "PROFESSOR_EMAIL")
+    private String email;
+
+    @Column(name = "PROFESSOR_INFORMATION")
+    private  String information;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Subject> subjects = new ArrayList<Subject>();
@@ -32,10 +31,11 @@ public class Professor extends AbstractEntity{
     public Professor() {
     }
 
-    public Professor(String firstName, String lastName, String degree) {
+    public Professor(String firstName, String lastName, String email, String information) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.degree = degree;
+        this.email = email;
+        this.information = information;
     }
 
     public String getFirstName() {
@@ -54,12 +54,12 @@ public class Professor extends AbstractEntity{
         this.lastName = lastName;
     }
 
-    public String getDegree() {
-        return degree;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDegree(String degree) {
-        this.degree = degree;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public List<Subject> getSubjects() {
@@ -68,5 +68,13 @@ public class Professor extends AbstractEntity{
 
     public void addSubject(@NotNull Subject subject){
         subjects.add(subject);
+    }
+
+    public String getInformation() {
+        return information;
+    }
+
+    public void setInformation(String information) {
+        this.information = information;
     }
 }

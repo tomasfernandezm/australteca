@@ -173,6 +173,17 @@
         <url-pattern>/upload</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>UserSubjectManagerAjax</servlet-name>
+        <servlet-class>org.australteca.servlet.user.UserSubjectManagerAjax</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserSubjectManagerAjax</servlet-name>
+        <url-pattern>/userSubjectManagerAjax</url-pattern>
+    </servlet-mapping>
+
     <!-- ~~~~~~~~~~~~~~~~~~~~~ User Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <!-- ~~~~~~~~~ User Registration ~~~~~~~~~~~~ -->
@@ -317,6 +328,17 @@
         <url-pattern>/postSubject</url-pattern>
     </servlet-mapping>
 
+    <!-- ~~~~~~~~~ Load Professoor ~~~~~~~~~~~~ -->
+
+    <servlet>
+        <servlet-name>LoadProfessorServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectLoadProfessorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoadProfessorServlet</servlet-name>
+        <url-pattern>/loadProfessor</url-pattern>
+    </servlet-mapping>
 
     <!-- ~~~~~~~~~~~~~~~~ Session Configuration ~~~~~~~~~~~~~~~~~~~~ -->
 
