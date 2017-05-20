@@ -72,4 +72,8 @@ public class Commentary extends AbstractEntity{
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         return dateFormat.format(creationDate);
     }
+
+    public Subject getSubject(){
+        return subject;
+    }
 }

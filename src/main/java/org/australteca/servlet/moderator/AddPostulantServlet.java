@@ -1,5 +1,6 @@
 package org.australteca.servlet.moderator;
 
+import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
 import org.australteca.dao.SubjectModeratorRelationshipDao;
@@ -40,6 +41,7 @@ public class AddPostulantServlet extends HttpServlet{
         SubjectModeratorRelationshipDao sbmrDAO = new SubjectModeratorRelationshipDao();
         sbmrDAO.add(subjectModeratorRelationship);
 
-        //resp.sendRedirect("/mainMenu/moderators.jsp");
+        resp.setContentType("application/json");
+        resp.getWriter().write((new Gson()).toJson("OK"));
     }
 }

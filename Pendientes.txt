@@ -1,29 +1,32 @@
 Cosas que hay que hacer:
 
-1- Ir para atrar cuando te desloggeas / eliminas cuenta.
-2- lema dinamico
+2- tema dinamico
+
+    CHECKPOINT -> moderar
+
+    Ajax
+
+    1- comentarios agregar
+    2- que los aceptados aparezcan en la lista de aceptados al momento de aceptar y vicecersa
+    3- proveer feedback
 
     Comentarios (SubjectExample.jsp)
-    1-timeago
-    2-borrar comentario
-    3-cargar foto
+    3-cargar foto -> carga foto del user actual no del autor del comentario (cambia al refreshear, no anda bien)
     4-agregar comentario, no irse del tab 'comment'
     5-arreglar mobile
+    6- listar comentarios
 
     Moderadores
     1-poder saber si un user se postulo
     2-agregarle timeago
 
-    Materias
-    1-Se borran archivos cuando se corta la base (no pasa con la foto de archivo)
-
-
+    Sesion
+    1- Timeout (se deslogguea solo, ver de proveer feedback)
+    2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar)
 
 BONUS
 1-Estadisticas del usuario
 2-Estadisticas para administradores
-3-Favorito materia cambiar a ajax
-
 
 POSIBLE
 1-Mostrar que se carga archivo

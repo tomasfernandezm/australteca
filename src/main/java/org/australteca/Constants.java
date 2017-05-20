@@ -120,6 +120,7 @@ public interface Constants {
     /* ~~~~~~~~~~~~ Subject - Commentary Servlet Parameters ~~~~~~~ */
 
     String COMMENTARY = "commentaryText";
+    String COMMENTARY_ID = "commentaryID";
 
     /* ~~~~~~~~~~~~ Subject_Moderator Relationship Servlet Parameters ~~~~~~~~ */
 

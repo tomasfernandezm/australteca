@@ -8,11 +8,13 @@ $(document).ready(function () {
             $approved = $('#approved-table');
 
         if (mode === "postulant") {
+            showAplicants();
             $postulant.show();
             $approved.hide();
 
 
         } else {
+            showModerators();
             $approved.show();
             $postulant.hide();
         }
@@ -21,7 +23,15 @@ $(document).ready(function () {
     }).change();
 });
 
-function eliminateAplication(userEmail, subjectName){
+function showModerators(){
+
+}
+
+function showAplicants(){
+
+}
+
+function eliminateAplication(userEmail, subjectName, rowID){
     $.ajax({
         type:'post',
         url:'/deletePostulant',
@@ -29,6 +39,9 @@ function eliminateAplication(userEmail, subjectName){
         data:{
             subjectName: subjectName,
             userEmail: userEmail
+        },
+        success: function(){
+            document.getElementById(rowID).remove();
         }
     })
 }
@@ -42,13 +55,13 @@ function acceptAplication(userEmail, subjectName, rowID){
             subjectName: subjectName,
             userEmail: userEmail
         },
-        success: function(response){
-            $('#table2 tbody tr:nth-child(rowID)').remove();
+        success: function(){
+            document.getElementById(rowID).remove();
         }
     })
 }
 
-function denyAplication(userEmail, subjectName){
+function denyAplication(userEmail, subjectName, rowID){
     $.ajax({
         type:'post',
         url:'/denyPostulation',
@@ -56,6 +69,9 @@ function denyAplication(userEmail, subjectName){
         data:{
             subjectName: subjectName,
             userEmail: userEmail
+        },
+        success: function(){
+            document.getElementById(rowID).remove();
         }
     })
 }

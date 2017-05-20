@@ -1,5 +1,6 @@
 package org.australteca.servlet.moderator;
 
+import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.SubjectModeratorRelationshipDao;
 import org.australteca.entity.SubjectModeratorRelationship;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 /**
  * Created by tomi on 10/05/17.
@@ -34,6 +36,7 @@ public class AcceptPostulationServlet extends HttpServlet {
         smrDao.merge(smr);
 
         resp.setContentType("application/json");
+        resp.getWriter().write((new Gson()).toJson("OK"));
 
     }
 }
