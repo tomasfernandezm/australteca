@@ -100,9 +100,10 @@ public class NoteUploadServlet extends HttpServlet {
         UserDao userDao = new UserDao();
         User user = userDao.getUserByEmail(req.getRemoteUser());
         Note note = new Note(name, type, data, user, format);
+        NoteDao noteDao = new NoteDao();
+        noteDao.add(note);
 
         SubjectDao subjectDao = new SubjectDao();
-        //Subject subject = subjectDao.getByNameWithNotes(subjectName);
         Subject subject = subjectDao.getByName(subjectName);
         subject.getNoteList().add(note);
         subjectDao.merge(subject);

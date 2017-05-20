@@ -8,11 +8,13 @@ $(document).ready(function () {
             $approved = $('#approved-table');
 
         if (mode === "postulant") {
+            showAplicants();
             $postulant.show();
             $approved.hide();
 
 
         } else {
+            showModerators();
             $approved.show();
             $postulant.hide();
         }
@@ -20,6 +22,14 @@ $(document).ready(function () {
 
     }).change();
 });
+
+function showModerators(){
+
+}
+
+function showAplicants(){
+
+}
 
 function eliminateAplication(userEmail, subjectName, rowID){
     $.ajax({

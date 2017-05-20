@@ -1,5 +1,6 @@
 package org.australteca.servlet.user;
 
+import org.australteca.Constants;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 
@@ -25,24 +26,28 @@ public class UserPostPhotoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String userEmail = req.getRemoteUser();
-        UserDao userDao = new UserDao();
-        User user = userDao.getUserByEmail(userEmail);
+        String userEmail = req.getParameter(Constants.USER_EMAIL_PARAM);
+        if(userEmail != null) {
 
-        resp.setHeader("Content-Disposition", "attachment; filename=\"" + "profilePicture" + "."+user.getPhoto().getExt()+"\";");
-        resp.setContentType(user.getPhoto().getFormat());
-        ByteArrayInputStream byteStream = new ByteArrayInputStream(user.getPhoto().getData());
+            UserDao userDao = new UserDao();
+            User user = userDao.getUserByEmail(userEmail);
 
-        // input stream con un buffer incorporado
-        BufferedInputStream bufStream = new BufferedInputStream(byteStream);
-        ServletOutputStream responseOutputStream = resp.getOutputStream();
-        int data = bufStream.read();
-        while (data != -1){
-            responseOutputStream.write(data);
-            data = bufStream.read();
+            if(user.getPhoto() != null) {
+                resp.setHeader("Content-Disposition", "attachment; filename=\"" + "profilePicture" + "." + user.getPhoto().getExt() + "\";");
+                resp.setContentType(user.getPhoto().getFormat());
+                ByteArrayInputStream byteStream = new ByteArrayInputStream(user.getPhoto().getData());
+
+                // input stream con un buffer incorporado
+                BufferedInputStream bufStream = new BufferedInputStream(byteStream);
+                ServletOutputStream responseOutputStream = resp.getOutputStream();
+                int data = bufStream.read();
+                while (data != -1) {
+                    responseOutputStream.write(data);
+                    data = bufStream.read();
+                }
+                bufStream.close();
+                responseOutputStream.close();
+            }
         }
-
-        bufStream.close();
-        responseOutputStream.close();
     }
 }

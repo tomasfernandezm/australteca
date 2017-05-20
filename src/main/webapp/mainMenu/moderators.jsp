@@ -54,8 +54,8 @@
                                 <tr id="postulant${loop.count}">
                                     <td><c:out value="${postulation.user.firstName}" /></td>
                                     <td><c:out value="${postulation.subject.subjectName}"/></td>
-                                    <td><button type="submit" class="btn btn-success" onclick=acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')>Aceptar</button> </td>
-                                    <td><button type="submit" class="btn btn-danger" onclick=eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')>Rechazar</button> </td>
+                                    <td><button type="submit" class="btn btn-success" onclick="acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Aceptar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick="eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Rechazar</button> </td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -75,7 +75,7 @@
                                 <tr id="accepted${loop.count}">
                                     <td><c:out value="${moderator.user.firstName}" /></td>
                                     <td><c:out value="${moderator.subject.subjectName}"/></td>
-                                    <td><button type="submit" class="btn btn-danger" onclick=eliminateAplication('${moderator.user.email}','${moderator.subject.subjectName}','accepted${loop.count}')>Eliminar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick="eliminateAplication('${moderator.user.email}','${moderator.subject.subjectName}','accepted${loop.count}')">Eliminar</button> </td>
                                 </tr>
                                 </c:forEach>
                                 </tbody>

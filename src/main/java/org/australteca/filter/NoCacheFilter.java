@@ -3,6 +3,7 @@ package org.australteca.filter;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -20,6 +21,8 @@ public class NoCacheFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse resp = (HttpServletResponse) response;
         HttpServletRequest req = (HttpServletRequest) request;
+        HttpSession httpSession = req.getSession();
+        httpSession.isNew();
 
         if (req.getRemoteUser() == null) {
             resp.sendRedirect(resp.encodeRedirectURL("/login.jsp"));

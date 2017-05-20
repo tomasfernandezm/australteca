@@ -30,3 +30,22 @@ function addModeratorPostulation(userEmail, subjectName){
     })
 }
 
+function addComment(){
+
+}
+
+function removeComment(commentaryID, subjectName, rowID){
+    $.ajax({
+        type:'post',
+        url:'/deleteCommentary',
+        dataType: 'JSON',
+        data:{
+            commentaryID: commentaryID,
+            subjectName: subjectName
+        },
+        success: function(){
+            document.getElementById(rowID).remove();
+        }
+    })
+}
+

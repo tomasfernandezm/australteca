@@ -1,5 +1,6 @@
 package org.australteca.servlet.moderator;
 
+import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.SubjectModeratorRelationshipDao;
 import org.australteca.entity.SubjectModeratorRelationship;
@@ -31,6 +32,7 @@ public class DeletePostulantServlet extends HttpServlet{
 
         smrDao.delete(smr.getId());
 
-        resp.sendRedirect("/mainMenu/moderators.jsp");
+        resp.setContentType("application/json");
+        resp.getWriter().write((new Gson()).toJson("OK"));
     }
 }

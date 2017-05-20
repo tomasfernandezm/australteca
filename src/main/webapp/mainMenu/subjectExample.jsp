@@ -149,16 +149,15 @@
                                                 <div class="col-xs-12"><hr></div>
 
                                                 <!------- List of comments ------->
-                                                <section class="comment-list">
                                                     <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
                                                     <c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />
                                                     <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
-                                                    <c:forEach items="${commentaryList}" var="commentary">
-                                                    <article class="row">
+                                                    <c:forEach items="${commentaryList}" var="commentary" varStatus="loop">
+                                                    <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
 
-                                                                <img src="/userPostPhoto" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="img-responsive avatar img-circle" alt="avatar">
+                                                                <img src="/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="img-responsive avatar img-circle" alt="avatar">
 
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
@@ -166,13 +165,15 @@
                                                         <div class="col-md-9 col-sm-9">
                                                             <div class="panel panel-default arrow left">
                                                                 <div class="panel-body">
-                                                                    <header class="text-left">
+                                                                    <header class="text-left"></header>
                                                                         <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>
                                                                         <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
                                                                     </header>
-                                                                  <%--  <c:if test="${commentary.author.email.equals(request.getRemoteUser())}">
-                                                                    <button type="submit" class="btn pull-right"><i class="glyphicon glyphicon-remove"></i></button>
-                                                                    </c:if> --%>
+                                                                    <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+                                                                    <c:if test="${commentary.author.email == remoteUser}">
+
+                                                                    <button type="submit" class="btn pull-right" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                                    </c:if>
                                                                     <div class="comment-post">
                                                                         <p>
                                                                             <c:out value="${commentary.commentary}"/>
@@ -182,7 +183,7 @@
                                                             </div>
                                                         </div>
                                                     </article>
-                                                    </c:forEach>
+                                                </c:forEach>
                                                     <!-------- finish -------->
                                                 </section>
 

@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-
+<META HTTP-EQUIV="refresh" CONTENT="<%= session.getMaxInactiveInterval() %>; URL=/loginForm.jsp" />
 
     <nav class="navbar navbar-inverse container-fluid" role="navigation">
         <button type="button" class="navbar-toggle" data-toggle="collapse"
