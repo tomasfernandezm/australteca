@@ -126,6 +126,7 @@ public interface Constants {
 
     String ACCEPTED_LIST = "acceptedList";
     String WAITING_LIST = "waitingList";
+    String LIST_TYPE_PARAM = "listType";
 
     /* ~~~~~~~~~~~ Professor - Servlet Parameters ~~~~~~~~~~~ */
 

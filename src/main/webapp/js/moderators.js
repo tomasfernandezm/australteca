@@ -8,13 +8,11 @@ $(document).ready(function () {
             $approved = $('#approved-table');
 
         if (mode === "postulant") {
-            showAplicants();
             $postulant.show();
             $approved.hide();
 
 
         } else {
-            showModerators();
             $approved.show();
             $postulant.hide();
         }
@@ -23,11 +21,17 @@ $(document).ready(function () {
     }).change();
 });
 
-function showModerators(){
-
-}
-
-function showAplicants(){
+function addModeratorToTable(userEmail, subjectName){
+    var table = document.getElementById("approved-table");
+    var x = document.getElementById("approved-table").rows.length;
+    var row = table.insertRow();
+    row.id = 'accepted' + x;
+    var cellEmail = row.insertCell(0);
+    var cellSubject = row.insertCell(1);
+    var cellButton2 = row.insertCell(2);
+    cellEmail.innerHTML = userEmail;
+    cellSubject.innerHTML = subjectName;
+    cellButton2.innerHTML = '<button type="submit" class="btn btn-danger" onclick="eliminateAplication(' +'\'' + userEmail + '\''+',\'' + subjectName + '\''+',\'accepted' + x +'\')">Eliminar</button>';
 
 }
 
@@ -57,6 +61,7 @@ function acceptAplication(userEmail, subjectName, rowID){
         },
         success: function(){
             document.getElementById(rowID).remove();
+            addModeratorToTable(userEmail, subjectName);
         }
     })
 }

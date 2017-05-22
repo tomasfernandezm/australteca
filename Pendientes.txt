@@ -2,16 +2,14 @@ Cosas que hay que hacer:
 
 2- tema dinamico
 
-    CHECKPOINT -> moderar
+    CHECKPOINT -> moderar (también añadir chequeos en el backend)
 
     Ajax
-
     1- comentarios agregar
-    2- que los aceptados aparezcan en la lista de aceptados al momento de aceptar y vicecersa
     3- proveer feedback
 
     Comentarios (SubjectExample.jsp)
-    3-cargar foto -> carga foto del user actual no del autor del comentario (cambia al refreshear, no anda bien)
+    3-cargar foto (a veces carga y a veces no, siempre es con las fotos de algun usuario completo, chequear con Lucas)
     4-agregar comentario, no irse del tab 'comment'
     5-arreglar mobile
     6- listar comentarios
@@ -22,7 +20,7 @@ Cosas que hay que hacer:
 
     Sesion
     1- Timeout (se deslogguea solo, ver de proveer feedback)
-    2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar)
+    2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).
 
 BONUS
 1-Estadisticas del usuario

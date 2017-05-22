@@ -40,12 +40,12 @@ public class Subject extends AbstractEntity{
     public Subject() {
     }
 
-    public List<Note> getNoteList() {
-        return noteList;
-    }
-
     public Subject(String subjectName) {
         this.subjectName = subjectName;
+    }
+
+    public List<Note> getNoteList() {
+        return noteList;
     }
 
     public String getSubjectName() {

@@ -62,8 +62,8 @@
                         </table>
                         </div>
 
-                        <div id="approved-table">
-                            <table class="table"  id="dev-table">
+                        <div id="approved-table-div">
+                            <table class="table"  id="approved-table">
                                 <thead>
                                 <td>Email</td>
                                 <td>Materia</td>
