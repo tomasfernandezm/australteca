@@ -65,11 +65,13 @@
         <div class="col-md-12">
             <div class="panel with-nav-tabs panel-default">
                 <div class="panel-heading">
-                    <ul class="nav nav-tabs">
+                    <ul class="nav nav-tabs" id="myTab">
                         <li class="active"><a href="#tab1default" data-toggle="tab">Apuntes</a></li>
                         <li><a href="#tab2default" data-toggle="tab">Profesores</a></li>
                         <li><a href="#tab3default" data-toggle="tab">Comentarios</a></li>
+                        <% if (request.isUserInRole("user")) { %>
                         <button type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
+                        <% } %>
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -124,12 +126,23 @@
 
                         <!----------- PROFESSOR tab ----------->
                         <div class="tab-pane fade" id="tab2default">
-                            <% if (request.isUserInRole("admin")) { %>
-                                <div class="btn-group btn-professor">
-                                    <button type="button" onclick="modalBox(document.getElementById('loadProfessorModal'))" id="loadProfessor"class="btn btn-primary">Cargar profesor</button>
-                                    <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Agregar profesor</button>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+                                        <% if (request.isUserInRole("admin")) { %>
+
+                                            <div class="btn-group btn-professor">
+                                                <button type="button" onclick="modalBox(document.getElementById('loadProfessorModal'))" id="loadProfessor"class="btn btn-primary">Cargar profesor</button>
+                                                <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Agregar profesor</button>
+                                            </div>
+                                        <% } %>
+                                    </div>
                                 </div>
-                            <% } %>
+                            </div>
+
+                            <div class="row">
+                            <p>Lista de profesores</p>
+                            </div>
                         </div>
 
 
@@ -162,7 +175,7 @@
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>
-                                                        <div class="col-md-9 col-sm-9">
+                                                        <div class="col-md-9 col-sm-9 col-xs-9">
                                                             <div class="panel panel-default arrow left">
                                                                 <div class="panel-body">
                                                                     <header class="text-left"></header>
@@ -172,7 +185,7 @@
                                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                                     <c:if test="${commentary.author.email == remoteUser}">
 
-                                                                    <button type="submit" class="btn pull-right" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                                    <button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
                                                                     </c:if>
                                                                     <div class="comment-post">
                                                                         <p>
@@ -286,30 +299,30 @@
                                 Cargar profesor
                             </div>
                             <div class="panel-body">
-                                <form action="/loadProfessor" class="form-horizontal"  method="POST" role="form">
-                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
+                                <form action="<c:url value="/loadProfessor"/>" class="form-horizontal"  method="POST" role="form">
+                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>" required>
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Nombre:</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="text" name="<%=PROFESSOR_NAME_PARAM%>">
+                                            <input class="form-control" type="text" name="<%=PROFESSOR_NAME_PARAM%>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Apellido:</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="text" name="<%=PROFESSOR_LAST_NAME_PARAM%>">
+                                            <input class="form-control" type="text" name="<%=PROFESSOR_LAST_NAME_PARAM%>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Email:</label>
                                         <div class="col-lg-8">
-                                            <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=PROFESSOR_EMAIL_PARAM%>">
+                                            <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=PROFESSOR_EMAIL_PARAM%>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Informacion:</label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" name="<%=PROFESSOR_INFORMATION_PARAM%>">
+                                            <input class="form-control" type="text" name="<%=PROFESSOR_INFORMATION_PARAM%>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

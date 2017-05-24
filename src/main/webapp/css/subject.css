@@ -68,3 +68,14 @@
     border-color: transparent;
     background-color: transparent;
 }
+
+input[type=checkbox]{
+
+    color: #ccc;
+    font-style: italic;
+}
+input[type=checkbox]:checked + label {
+    color: #f00;
+    font-style: normal;
+}
+

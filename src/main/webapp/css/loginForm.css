@@ -1,12 +1,13 @@
 
 
 
-html, body {
-    height: 100%;
+body {
+
     background-image: url("/images/campus b&w.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: #666666;
+    min-height: 100%;
 }
 
 .panel{
@@ -27,7 +28,8 @@ html, body {
 }
 
 .lema{
-    margin-top: 170px;
+    margin-bottom: 5%;
+    margin-top: 15%;
     color: white;
     text-align: center;
 }

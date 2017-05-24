@@ -49,3 +49,5 @@ function removeComment(commentaryID, subjectName, rowID){
     })
 }
 
+
+

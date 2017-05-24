@@ -38,7 +38,7 @@
     <div id="addSubjectBox" class="modal">
         <div class="modal-content">
             <span onclick="closeModal(document.getElementById('addSubjectBox'))" class="close">&times;</span>
-            <form action="/addSubject" method="post">
+            <form action="<c:url value="/addSubject"/>" method="post">
                 <div class="form-group">
                     <div class="modal-header">
                     <h3>Materia nueva</h3>
@@ -93,46 +93,35 @@
                     </div>
                         <table class="table"  id="dev-table">
                             <thead>
-                            <td>Nombre</td>
-                            <td>Favorita</td>
-                            <% if (request.isUserInRole("admin")) { %>
-                            <td>Eliminar</td>
-                            <% } %>
+                                <td>Nombre</td>
+                                <td>Favorita</td>
+                                <% if (request.isUserInRole("admin")) { %>
+                                <td>Eliminar</td>
+                                <% } %>
                             </thead>
-                            <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
-                            <c:forEach items="${subjectWrapperList}" var="subjectWrapper">
-                                <tr>
-                                    <td><a href="${pageContext.request.contextPath}/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
-                                        <c:out value="${subjectWrapper.subject.subjectName}"/></a>
-                                    </td>
-                             <td>
-                                 <input id="subject_favorite" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value)
-                                         <c:if test="${subjectWrapper.favorite}">checked</c:if>>
-                             </td>
-
-
-                                    <!--<%--
-                                    <td>
-                                        <form action="/manageUserSubjects" method="post">
-                                            <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="${subjectWrapper.subject.subjectName}">
-                                        <c:if test="${subjectWrapper.favorite}">
-                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=REMOVE_FAVORITE%>" class="btn btn-default favoriteTrue"><i class="glyphicon glyphicon-star"></i></button>
-                                        </c:if>
-                                        <c:if test="${!subjectWrapper.favorite}">
-                                            <button type="submit" name="<%=FAVORITE_PARAM%>" value="<%=MAKE_FAVORITE%>" class="btn btn-default favoriteFalse"><i class="glyphicon glyphicon-star-empty"></i></button>
-                                        </c:if>
-                                        </form>
-                                    </td>
-                            --%>-->
-                                    <% if (request.isUserInRole("admin")) { %>
-                                    <td>
-                                        <form action="/subjectDelete" method="post">
-                                            <button type="submit" name="<%=SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />" class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
-                                        </form>
-                                    </td>
-                                    <% } %>
-                                </tr>
-                            </c:forEach>
+                            <tbody>
+                                <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
+                                <c:forEach items="${subjectWrapperList}" var="subjectWrapper">
+                                    <tr>
+                                        <td><a href="${pageContext.request.contextPath}/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
+                                            <c:out value="${subjectWrapper.subject.subjectName}"/></a>
+                                        </td>
+                                         <td>
+                                             <label class="checkbox"><i class="glyphicon glyphicon-heart"></i>
+                                             <input class="" id="subject_favorite" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value)
+                                                     <c:if test="${subjectWrapper.favorite}">checked</c:if>>
+                                             </label>
+                                         </td>
+                                        <% if (request.isUserInRole("admin")) { %>
+                                        <td>
+                                            <form action="<c:url value="/subjectDelete"/>" method="post">
+                                                <button type="submit" name="<%=SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />" class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
+                                            </form>
+                                        </td>
+                                        <% } %>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
                         </table>
                 </div>
             </div>
