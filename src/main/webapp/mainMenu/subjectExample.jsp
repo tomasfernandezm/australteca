@@ -154,12 +154,10 @@
                                         <div class="widget-area no-padding blank">
                                             <div class="status-upload">
                                                 <!----- writting box ------->
-                                                <form id="commentForm" action="/subjectAddCommentary" method="post">
-                                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
-                                                    <textarea name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Que estas pensando?" ></textarea>
-                                                    <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
+                                                    <textarea id="textarea" name="<%=Constants.COMMENTARY%>" placeholder="Que estas pensando?" ></textarea>
+                                                    <button type="submit" class="btn btn-success green" onclick="addComment('${requestScope[subjectName]}','<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Compartir</button>
                                                 </form>
-                                                <div class="col-xs-12"><hr></div>
+                                                <div id = "article-div" class="col-xs-12"><hr></div>
 
                                                 <!------- List of comments ------->
                                                     <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>

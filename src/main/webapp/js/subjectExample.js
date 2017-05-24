@@ -30,8 +30,21 @@ function addModeratorPostulation(userEmail, subjectName){
     })
 }
 
-function addComment(){
+function addComment(subjectName, email){
+    $.ajax({
+        type:'post',
+        url: '/subjectAddCommentary',
+        dataType: 'JSON',
+        data:{
+            subjectName: subjectName,
+            userEmail: userEmail,
+            commentary: document.getElementById('textarea').value
+        },
 
+        success: function () {
+            // hacer el append
+        }
+    })
 }
 
 function removeComment(commentaryID, subjectName, rowID){

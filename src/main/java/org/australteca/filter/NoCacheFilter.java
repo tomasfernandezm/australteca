@@ -25,7 +25,7 @@ public class NoCacheFilter implements Filter {
         httpSession.isNew();
 
         if (req.getRemoteUser() == null) {
-            resp.sendRedirect(resp.encodeRedirectURL("/login.jsp"));
+            resp.sendRedirect(resp.encodeRedirectURL("/loginForm.jsp?timeout=true"));
         } else {
             resp.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
             resp.setHeader("Pragma", "no-cache"); // HTTP 1.0.
