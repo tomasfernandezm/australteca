@@ -12,8 +12,6 @@ Cosas que hay que hacer:
     2-Mantenerse en tab ( al actualizar y desp del servlet)
     3-ENTER para publicar comentario
     4-agregar comentario, no irse del tab 'comment'
-    5-
-    6-
 
     Moderadores
     1-carteles de aviso
@@ -32,11 +30,6 @@ Cosas que hay que hacer:
 
     Materias
     1-boton buscar cuando sos user
-
-    MateriaIdividual
-    1-que se quede marcado puntaje que hizo el usuario.
-
-
 
     Entidad Trabajo
         Nombre empresa

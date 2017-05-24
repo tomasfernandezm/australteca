@@ -36,6 +36,8 @@
         <mapping class="org.australteca.entity.Note" />
         <mapping class="org.australteca.entity.Photo" />
         <mapping class="org.australteca.entity.SubjectModeratorRelationship"/>
+        <mapping class="org.australteca.entity.Publication"/>
+
 
     </session-factory>
 </hibernate-configuration>

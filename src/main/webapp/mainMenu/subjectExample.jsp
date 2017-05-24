@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <h2><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
+                <h2 id = "subjectName-h2"><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
             </div>
             <div class="pull-right">
             <div id= "subject_score" class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
@@ -196,12 +196,10 @@
                                         <div class="widget-area no-padding blank">
                                             <div class="status-upload">
                                                 <!----- writting box ------->
-                                                <form id="commentForm" action="/subjectAddCommentary" method="post">
-                                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
-                                                    <textarea name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Que estas pensando?" ></textarea>
-                                                    <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
+                                                    <textarea id="textarea" name="<%=Constants.COMMENTARY%>" placeholder="Que estas pensando?" ></textarea>
+                                                    <button type="submit" class="btn btn-success green" onclick="addComment('${requestScope[subjectName]}','<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Compartir</button>
                                                 </form>
-                                                <div class="col-xs-12"><hr></div>
+                                                <div id = "article-div" class="col-xs-12"><hr></div>
 
                                                 <!------- List of comments ------->
                                                     <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
@@ -342,7 +340,7 @@
                             </div>
                             <div class="panel-body">
                                 <form action="<c:url value="/loadProfessor"/>" class="form-horizontal"  method="POST" role="form">
-                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>" required>
+                                    <input id="subjectName" type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>" required>
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Nombre:</label>
                                         <div class="col-lg-8">
