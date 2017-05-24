@@ -1,6 +1,6 @@
 Cosas que hay que hacer:
 
-2- tema dinamico
+2- lema dinamico
 
     CHECKPOINT -> moderar (también añadir chequeos en el backend)
 
@@ -9,18 +9,47 @@ Cosas que hay que hacer:
     3- proveer feedback
 
     Comentarios (SubjectExample.jsp)
-    3-cargar foto (a veces carga y a veces no, siempre es con las fotos de algun usuario completo, chequear con Lucas)
+    2-Mantenerse en tab ( al actualizar y desp del servlet)
+    3-ENTER para publicar comentario
     4-agregar comentario, no irse del tab 'comment'
-    5-arreglar mobile
-    6- listar comentarios
+    5-
+    6-
 
     Moderadores
-    1-poder saber si un user se postulo
-    2-agregarle timeago
+    1-carteles de aviso
+
 
     Sesion
     1- Timeout (se deslogguea solo, ver de proveer feedback)
     2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).
+
+    Notes
+    1-no anda
+
+    Profesores
+    1-imprimir tabla para agregar a la materia (modal)
+    2-imprimir tabla de prof de la materia (servlets)
+
+    Materias
+    1-boton buscar cuando sos user
+
+    MateriaIdividual
+    1-que se quede marcado puntaje que hizo el usuario.
+
+
+
+    Entidad Trabajo
+        Nombre empresa
+        Descripcion
+        Responsable
+        Requisitos
+        -Boton con informacion de como aplicar.
+        -Boton ver mas
+
+
+     LoginForm
+     1-Mostrar mensaje de time out
+
 
 BONUS
 1-Estadisticas del usuario

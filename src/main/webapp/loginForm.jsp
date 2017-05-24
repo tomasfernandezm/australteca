@@ -38,7 +38,6 @@
                 <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
               </form>
             <% if(session.getAttribute("loginSucceded") != null && !(boolean) session.getAttribute("loginSucceded")){%>
-
                 <div class="col-md-3 col-sm-2 alert alert-danger msg-incorrect-login ">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                     <span class="glyphicon glyphicon-remove"></span>

@@ -72,6 +72,10 @@
                         <% if (request.isUserInRole("user")) { %>
                         <button type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
                         <% } %>
+                        <!---- agregar botones moderador ------>
+
+
+
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -140,10 +144,43 @@
                                 </div>
                             </div>
 
+                            <!-- for each de profesores -->
+
+
+
                             <div class="row">
-                            <p>Lista de profesores</p>
+                                <div class="boxContent">
+                                    <div class="col col-md-4">
+                                        <h3>Nombre</h3>
+                                        <p>Email:</p>
+                                        <p>Descripcion</p>
+                                    </div>
+                                </div>
+                                <div class="boxContent">
+                                    <div class="col col-md-4">
+                                        <h3>Nombre</h3>
+                                        <p>Email:</p>
+                                        <p>Descripcion</p>
+                                    </div>
+                                </div>
+                                <div class="boxContent">
+                                    <div class="col col-md-4">
+                                        <h3>Nombre</h3>
+                                        <p>Email:</p>
+                                        <p>Descripcion</p>
+                                    </div>
+                                </div>
+                                <div class="boxContent">
+                                    <div class="col col-md-4">
+                                        <h3>Nombre</h3>
+                                        <p>Email:</p>
+                                        <p>Descripcion</p>
+                                    </div>
+                                </div>
+
+
                             </div>
-                        </div>
+                            </div>
 
 
                         <!------------ Comments tab ------------>
@@ -352,35 +389,28 @@
                     Profesores
                 </div>
                 <div class="modal-body">
+                    <!-------- lista de profesores que se pueden agregar (cambie los nombres pero chequea) --------->
                     <table class="table">
                         <thead>
                         <td>Nombre</td>
                         </thead>
-                        <!-------- lista de profesores que se pueden agregar (cambie los nombres pero chequea) --------->
-                        <!--
-                        <%--
-                       <c:set var="professorWrapperList" value='${requestScope["professorWrappers"]}' />
-                        <c:forEach items="${professorWrapperList}" var="professorWrapper">
+                        <!------ foreach si esta en la materia cambiar a boton eliminar ------->
+                        <tbody>
                             <tr>
-                                <td><a href="${pageContext.request.contextPath}/postSubject?<%=PROFESSOR_NAME_PARAM%>=${professorWrapper.professor.firstName}">
-                                    <c:out value="${professorWrapper.professor.firstName}"/></a>
-                                </td>
-                                <td>
-                                    <form action="/manageUserSubjects" method="post">
-                                        <input type="hidden" name="<%=PROFESSOR_NAME_PARAM%>" value="${professorWrapper.professor.firstName}">
-                                        <c:if test="${professorWrapper.favorite}">
-                                            <button type="submit" name="<%=ADD_PARAM%>" value="<%=REMOVE_PROFESSOR%>" class="btn btn-default favoriteTrue">Agregar</i></button>
-                                        </c:if>
-                                        <c:if test="${!professorWrapper.favorite}">
-                                            <button type="submit" name="<%=DELETE_PARAM%>" value="<%=ADD_PROFESSOR%>" class="btn btn-default favoriteFalse">Eliminar</button>
-                                        </c:if>
-                                    </form>
-                                </td>
-
+                                <td>Andres scoccimarro</td>
+                                <!--- boton agregar ---->
+                                <td><button class="btn btn-success" type="submit">Agregar</button></td>
+                                <!--- boton eliminar ---->
+                                <td><button class="btn btn-danger" type="submit">eliminar</button></td>
                             </tr>
-                        </c:forEach>
-                        --%>
-                    -->
+                            <tr>
+                                <td>Alejandro silvestri</td>
+                                <td><button class="btn btn-success" type="submit">Agregar</button></td>
+                                <!--- boton eliminar ---->
+                                <td><button class="btn btn-danger" type="submit">eliminar</button></td>
+                            </tr>
+
+                        </tbody>
                     </table>
 
 
