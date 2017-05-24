@@ -60,6 +60,16 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>UserGetSubjectRating</servlet-name>
+        <servlet-class>org.australteca.servlet.user.UserGetSubjectRatingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserGetSubjectRating</servlet-name>
+        <url-pattern>/userGetSubjectRating</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>DeleteCommentary</servlet-name>
         <servlet-class>org.australteca.servlet.subject.SubjectDeleteCommentServlet</servlet-class>
     </servlet>

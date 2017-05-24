@@ -1,8 +1,11 @@
 package org.australteca.servlet.subject;
 
+import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
+import org.australteca.dao.SubjectModeratorRelationshipDao;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.Subject;
+import org.australteca.entity.SubjectModeratorRelationship;
 import org.australteca.entity.User;
 
 import javax.servlet.ServletException;
@@ -11,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.List;
 
 import static org.australteca.Constants.*;
 
@@ -30,8 +34,14 @@ public class SubjectPostServlet extends HttpServlet {
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
         String email = req.getRemoteUser();
 
+        SubjectModeratorRelationshipDao smrd = new SubjectModeratorRelationshipDao();
+        SubjectModeratorRelationship smr = smrd.getByUserEmailAndSubjectName(email, subjectName);
+
         UserDao userDao = new UserDao();
         User user = userDao.getUserByEmail(email);
+
+        boolean isModerator = false;
+        if(smr != null && smr.isAccepted()) isModerator = true;
 
         SubjectDao subjectDAO = new SubjectDao();
         Subject subject = subjectDAO.getByName(subjectName);
@@ -42,6 +52,7 @@ public class SubjectPostServlet extends HttpServlet {
         req.setAttribute(SUBJECT_COMMENTARY_LIST, subject.getCommentaryList());
         req.setAttribute(SUBJECT_PROFESSOR_LIST, subject.getProfessors());
         req.setAttribute(SUBJECT_NOTES_LIST, subject.getNoteList());
+        req.setAttribute(Constants.MODERATOR_PARAM, isModerator);
 
         req.setAttribute(SUBJECT_NAME_PARAM, subjectName);
         req.setAttribute(SUBJECT_SCORE, new DecimalFormat("#.##").format(subject.getScore()));

@@ -65,4 +65,21 @@ public class SubjectModeratorRelationshipDao extends AbstractDao<SubjectModerato
         }
         return smrList;
     }
+
+    public List<SubjectModeratorRelationship> getModeratorsBySubject(String subjectName){
+        Session session = HibernateUtil.getCurrentSession();
+        String hql = "from SubjectModeratorRelationship s where s.subject.subjectName = :subjectName and s.accepted = true";
+        Transaction tx = null;
+        List<SubjectModeratorRelationship> smrList = null;
+        try{
+            tx = session.beginTransaction();
+            Query query = session.createQuery(hql).setParameter("accepted", subjectName);
+            smrList = (List<SubjectModeratorRelationship>) query.getResultList();
+            tx.commit();
+        }catch (HibernateException | NoResultException e){
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        }
+        return smrList;
+    }
 }

@@ -2,6 +2,41 @@
  * Created by tomi on 03/05/17.
  */
 
+function getUserRating(){
+    $.ajax({
+        type:'get',
+        url:'/userGetSubjectRating',
+        dataType: 'JSON',
+        data:{
+            subjectName: document.getElementById('subjectName-h2').innerHTML,
+        },
+
+        success: function(jsonObject){
+            switch (jsonObject){
+                case 1:
+                    document.getElementById('rating1').checked = true;
+                    break;
+                case 2:
+                    document.getElementById('rating2').checked = true;
+                    break;
+                case 3:
+                    document.getElementById('rating3').checked = true;
+                    break;
+                case 4:
+                    document.getElementById('rating4').checked = true;
+                    break;
+                case 5:
+                    document.getElementById('rating5').checked = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+    })
+}
+
+$(document).ready(getUserRating());
+
 function changeRating(subjectName, button_value) {
     $.ajax({
         type:'post',
