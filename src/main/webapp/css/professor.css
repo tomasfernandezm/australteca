@@ -1,0 +1,15 @@
+.ProfessorBoxContent{
+    border-radius: 3px;
+    border: solid 1px #c7254e;
+    margin-bottom: 25px;
+    padding: 1rem 1rem;
+    height: 300px;
+    overflow: scroll;
+
+}
+
+
+.btn-professor{
+    margin-bottom: 20px;
+    border-radius: 3px;
+}

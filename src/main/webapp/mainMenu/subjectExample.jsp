@@ -25,6 +25,8 @@
     <link href="/css/subjectExample.css" rel="stylesheet" type="text/css">
     <link href="/css/writeBox.css" rel="stylesheet" type="text/css">
     <link href="/css/comment.css" rel="stylesheet" type="text/css">
+    <link href="/css/professor.css" rel="stylesheet" type="text/css">
+
 
 </head>
 <body>
@@ -149,34 +151,37 @@
 
 
                             <div class="row">
-                                <div class="boxContent">
-                                    <div class="col col-md-4">
+
+                                <div class="col col-md-4 col-sm-6">
+                                    <div class="ProfessorBoxContent">
                                         <h3>Nombre</h3>
                                         <p>Email:</p>
-                                        <p>Descripcion</p>
+                                        <p>Informacion:</p>
                                     </div>
                                 </div>
-                                <div class="boxContent">
-                                    <div class="col col-md-4">
+
+                                <div class="col col-md-4 col-sm-6">
+                                    <div class="ProfessorBoxContent">
                                         <h3>Nombre</h3>
                                         <p>Email:</p>
-                                        <p>Descripcion</p>
+                                        <p>Informacion:</p>
                                     </div>
                                 </div>
-                                <div class="boxContent">
-                                    <div class="col col-md-4">
+                                <div class="col col-md-4 col-sm-6">
+                                    <div class="ProfessorBoxContent">
                                         <h3>Nombre</h3>
                                         <p>Email:</p>
-                                        <p>Descripcion</p>
+                                        <p>Informacion:Nuestro proceso de búsqueda se orienta hacia un profesional joven de la carrera de Ingeniería Mecánica, Diseño Industrial o Tecnicatura en envases con experiencia de 1 a 2 años en roles asociados al diseño de empaque y en general trabajando con envases de plástico u otros materiales. </p>
                                     </div>
                                 </div>
-                                <div class="boxContent">
-                                    <div class="col col-md-4">
+                                <div class="col col-md-4 col-sm-6">
+                                    <div class="ProfessorBoxContent">
                                         <h3>Nombre</h3>
                                         <p>Email:</p>
-                                        <p>Descripcion</p>
+                                        <p>Informacion:</p>
                                     </div>
                                 </div>
+
 
 
                             </div>
