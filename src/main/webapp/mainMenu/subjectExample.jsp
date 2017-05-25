@@ -25,6 +25,8 @@
     <link href="/css/subjectExample.css" rel="stylesheet" type="text/css">
     <link href="/css/writeBox.css" rel="stylesheet" type="text/css">
     <link href="/css/comment.css" rel="stylesheet" type="text/css">
+    <link href="/css/professor.css" rel="stylesheet" type="text/css">
+
 
 </head>
 <body>
@@ -144,7 +146,9 @@
                                 </div>
                             </div>
 
+
                             <!-- for each de profesores -->
+
                             <c:set var="professorWrapperListParam" value="<%=Constants.SUBJECT_PROFESSOR_WRAPPER_LIST%>"/>
                             <c:set var="professorWrapperList" value="${requestScope[professorWrapperListParam]}"/>
                             <c:forEach items="${professorWrapperList}" var="professorWrapper">
@@ -160,7 +164,7 @@
                                     </div>
                                 </c:if>
                             </c:forEach>
-                            </div>
+                        </div>
 
 
                         <!------------ Comments tab ------------>
