@@ -16,6 +16,10 @@ public class Publication extends AbstractEntity{
     private boolean isWork;
     private boolean isPublication;
 
+    public Publication(){
+
+    }
+
     public Publication(String name, String contact, String requirements, String description, boolean isWork, boolean isPublication) {
         this.name = name;
         this.contact = contact;
