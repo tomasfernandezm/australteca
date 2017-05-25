@@ -32,10 +32,51 @@ function getUserRating(){
                     break;
             }
         }
-    })
+    });
 }
 
 $(document).ready(getUserRating());
+
+function addProfessorToSubject(professorID, subjectName){
+    $.ajax({
+        type:'post',
+        url:'/addProfessorToSubject',
+        dataType: 'JSON',
+        data:{
+            professorID: professorID,
+            subjectName: subjectName
+        },
+
+        success: function(jsonObject){
+            document.getElementById('idtab2default').append('<div class="row" id="${professorWrapper.professor.email}"> <div class="boxContent"> <div class="col col-md-4"> <h3>jsonObject[0]</h3> <p>jsonObject[1]</p> <p>jsonObject[2]</p> </div> </div> </div>');
+
+            var button = document.getElementById(jsonObject[1]+'button');
+            button.onclick = removeProfessorFromSubject(professorID, subjectName);
+            button.innerText = 'Eliminar';
+            button.class = 'btn btn-danger';
+        }
+    });
+}
+
+function removeProfessorFromSubject(professorID, subjectName){
+    $.ajax({
+        type:'post',
+        url:'/removeProfessorFromSubject',
+        dataType: 'JSON',
+        data:{
+            professorID: professorID,
+            subjectName: subjectName
+        },
+
+        success: function(jsonObject){
+            document.getElementById(jsonObject).remove();
+            var button = document.getElementById(jsonObject+'button');
+            button.onclick = addProfessorToSubject(professorID, subjectName);
+            button.innerText = 'Agregar';
+            button.class = 'btn btn-success';
+        }
+    });
+}
 
 function changeRating(subjectName, button_value) {
     $.ajax({
@@ -50,7 +91,7 @@ function changeRating(subjectName, button_value) {
         success: function(jsonObject){
             document.getElementById("subject_score_h2").innerHTML = JSON.parse(jsonObject);
         }
-    })
+    });
 }
 
 function addModeratorPostulation(userEmail, subjectName){
@@ -62,7 +103,7 @@ function addModeratorPostulation(userEmail, subjectName){
             subjectName: subjectName,
             userEmail: userEmail
         }
-    })
+    });
 }
 
 function addComment(subjectName, email){
@@ -79,7 +120,7 @@ function addComment(subjectName, email){
         success: function () {
             // hacer el append
         }
-    })
+    });
 }
 
 function removeComment(commentaryID, subjectName, rowID){
@@ -94,8 +135,5 @@ function removeComment(commentaryID, subjectName, rowID){
         success: function(){
             document.getElementById(rowID).remove();
         }
-    })
+    });
 }
-
-
-

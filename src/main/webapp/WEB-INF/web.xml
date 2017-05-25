@@ -369,6 +369,26 @@
         <url-pattern>/loadProfessor</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddProfessorToSubjectServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectAddProfessorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddProfessorToSubjectServlet</servlet-name>
+        <url-pattern>/addProfessorToSubject</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RemoveProfessorFromSubjectServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.subject.SubjectRemoveProfessorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RemoveProfessorFromSubjectServlet</servlet-name>
+        <url-pattern>/removeProfessorFromSubject</url-pattern>
+    </servlet-mapping>
+
     <!-- ~~~~~~~~~~~~~~~~ Session Configuration ~~~~~~~~~~~~~~~~~~~~ -->
 
    <!-- make the session time-out after one minute -->

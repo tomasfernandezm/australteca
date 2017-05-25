@@ -24,7 +24,7 @@ public class PostSubjectCommand implements Command {
         Subject subject = subjectDAO.getByName(subjectName);
 
         context.getServletRequest().setAttribute(SUBJECT_COMMENTARY_LIST, subject.getCommentaryList());
-        context.getServletRequest().setAttribute(SUBJECT_PROFESSOR_LIST, subject.getProfessors());
+        context.getServletRequest().setAttribute(SUBJECT_PROFESSOR_WRAPPER_LIST, subject.getProfessors());
         context.getServletRequest().setAttribute(SUBJECT_NOTES_LIST, subject.getNoteList());
 
         context.getServletRequest().setAttribute(SUBJECT_NAME_PARAM, subjectName);

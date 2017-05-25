@@ -141,7 +141,7 @@ public interface Constants {
     String SUBJECT_NAME_PARAM = "subjectName";
     String OPERATION_SUCCESFUL_PARAM = "operationSuccessful";
     String SUBJECT_COMMENTARY_LIST = "subjectCommentaryList";
-    String SUBJECT_PROFESSOR_LIST = "subjectProfessorList";
+    String SUBJECT_PROFESSOR_WRAPPER_LIST = "subjectProfessorList";
     String SUBJECT_NOTES_LIST = "subjectFilesList";
     String SUBJECT_SCORE = "subjectScore";
     String SUBJECT_SCORE_PARAM = "subjectScoreParam";

@@ -1,5 +1,6 @@
 package org.australteca.servlet.subject;
 
+import com.google.gson.Gson;
 import org.australteca.dao.ProfessorDao;
 import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Professor;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.australteca.Constants.*;
 import static org.australteca.Constants.SUBJECT_NAME_PARAM;
@@ -21,7 +24,7 @@ public class SubjectAddProfessorServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        doPost(req, resp);
     }
 
     @Override
@@ -42,6 +45,12 @@ public class SubjectAddProfessorServlet extends HttpServlet {
         professorDAO.merge(professor);
         subjectDAO.merge(subject);
 
-        req.getRequestDispatcher("a donde sea").forward(req, resp);
+        List<String> response = new ArrayList<>();
+        response.add(professor.getFirstName() +" "+ professor.getLastName());
+        response.add(professor.getEmail());
+        response.add(professor.getInformation());
+
+        resp.setContentType("application/json");
+        resp.getWriter().write(new Gson().toJson(response));
     }
 }

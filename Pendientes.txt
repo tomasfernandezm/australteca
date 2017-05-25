@@ -18,13 +18,12 @@ Cosas que hay que hacer:
 
 
     Sesion
-    1- Timeout (se deslogguea solo, ver de proveer feedback)
     2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).
 
     Notes
     1-no anda
 
-    Profesores
+    Profesores (probar todo)
     1-imprimir tabla para agregar a la materia (modal)
     2-imprimir tabla de prof de la materia (servlets)
 
@@ -32,15 +31,12 @@ Cosas que hay que hacer:
     1-boton buscar cuando sos user
 
     Entidad Trabajo
-        Nombre empresa
-        Descripcion
-        Responsable
-        Requisitos
         -Boton con informacion de como aplicar.
         -Boton ver mas
+        -Hacer servlets para agregar ????
 
 
-     LoginForm
+     LoginForm (probar)
      1-Mostrar mensaje de time out
 
 

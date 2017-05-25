@@ -145,41 +145,21 @@
                             </div>
 
                             <!-- for each de profesores -->
-
-
-
-                            <div class="row">
-                                <div class="boxContent">
-                                    <div class="col col-md-4">
-                                        <h3>Nombre</h3>
-                                        <p>Email:</p>
-                                        <p>Descripcion</p>
+                            <c:set var="professorWrapperListParam" value="<%=Constants.SUBJECT_PROFESSOR_WRAPPER_LIST%>"/>
+                            <c:set var="professorWrapperList" value="${requestScope[professorWrapperListParam]}"/>
+                            <c:forEach items="${professorWrapperList}" var="professorWrapper">
+                                <c:if test="${professorWrapper.favorite}">
+                                    <div class="row" id="${professorWrapper.professor.email}">
+                                        <div class="boxContent">
+                                            <div class="col col-md-4">
+                                                <h3><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </h3>
+                                                <p><c:out value="${professorWrapper.professor.email}"/></p>
+                                                <p><c:out value="${professorWrapper.professor.information}"/></p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="boxContent">
-                                    <div class="col col-md-4">
-                                        <h3>Nombre</h3>
-                                        <p>Email:</p>
-                                        <p>Descripcion</p>
-                                    </div>
-                                </div>
-                                <div class="boxContent">
-                                    <div class="col col-md-4">
-                                        <h3>Nombre</h3>
-                                        <p>Email:</p>
-                                        <p>Descripcion</p>
-                                    </div>
-                                </div>
-                                <div class="boxContent">
-                                    <div class="col col-md-4">
-                                        <h3>Nombre</h3>
-                                        <p>Email:</p>
-                                        <p>Descripcion</p>
-                                    </div>
-                                </div>
-
-
-                            </div>
+                                </c:if>
+                            </c:forEach>
                             </div>
 
 
@@ -396,20 +376,19 @@
                         </thead>
                         <!------ foreach si esta en la materia cambiar a boton eliminar ------->
                         <tbody>
-                            <tr>
-                                <td>Andres scoccimarro</td>
-                                <!--- boton agregar ---->
-                                <td><button class="btn btn-success" type="submit">Agregar</button></td>
-                                <!--- boton eliminar ---->
-                                <td><button class="btn btn-danger" type="submit">eliminar</button></td>
-                            </tr>
-                            <tr>
-                                <td>Alejandro silvestri</td>
-                                <td><button class="btn btn-success" type="submit">Agregar</button></td>
-                                <!--- boton eliminar ---->
-                                <td><button class="btn btn-danger" type="submit">eliminar</button></td>
-                            </tr>
-
+                            <c:forEach items="${professorWrapperList}" var="professorWrapper" varStatus="loop">
+                                <tr id="professorList${loop.count}">
+                                    <td><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </td>
+                                    <!--- boton agregar ---->
+                                    <c:if test="${!professorWrapper.belongsInSubject}">
+                                    <td><button id="${professorWrapper.professor.email}button" class="btn btn-success" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
+                                    </c:if>
+                                    <!--- boton eliminar ---->
+                                    <c:if test="${professorWrapper.belongsInSubject}">
+                                    <td><button id="${professorWrapper.professor.email}button"class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
+                                    </c:if>
+                                </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
 

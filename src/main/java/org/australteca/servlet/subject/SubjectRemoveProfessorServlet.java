@@ -1,5 +1,6 @@
 package org.australteca.servlet.subject;
 
+import com.google.gson.Gson;
 import org.australteca.dao.ProfessorDao;
 import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Professor;
@@ -22,7 +23,7 @@ public class SubjectRemoveProfessorServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        doPost(req, resp);
     }
 
     @Override
@@ -43,6 +44,7 @@ public class SubjectRemoveProfessorServlet extends HttpServlet {
         professorDAO.merge(professor);
         subjectDAO.merge(subject);
 
-        req.getRequestDispatcher("a donde sea").forward(req, resp);
+        resp.setContentType("application/json");
+        resp.getWriter().write(new Gson().toJson(professor.getEmail()));
     }
 }
