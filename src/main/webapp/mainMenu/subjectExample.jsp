@@ -384,19 +384,17 @@
                                 <tr id="professorList${loop.count}">
                                     <td><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </td>
                                     <!--- boton agregar ---->
-                                    <c:if test="${!professorWrapper.belongsInSubject}">
+                                    <%--<c:if test="${!professorWrapper.belongsInSubject}">--%>
                                     <td><button id="${professorWrapper.professor.email}button" class="btn btn-success" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
-                                    </c:if>
+                                    <%--</c:if>--%>
                                     <!--- boton eliminar ---->
-                                    <c:if test="${professorWrapper.belongsInSubject}">
+                                    <%--<c:if test="${professorWrapper.belongsInSubject}">--%>
                                     <td><button id="${professorWrapper.professor.email}button"class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
-                                    </c:if>
+                                    <%--</c:if>--%>
                                 </tr>
                             </c:forEach>
                         </tbody>
                     </table>
-
-
                 </div>
             </div>
         </div>
