@@ -102,8 +102,8 @@
                                     <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
                                     <c:set var="noteList" value='${requestScope[notesListParam]}' />
                                     <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
-                                    <c:forEach items="${noteList}" var="note">
-                                        <tr>
+                                    <c:forEach items="${noteList}" var="note" varStatus="loop">
+                                        <tr id="note${loop.count}">
                                             <td><c:out value="${note.name}"/></td>
                                             <form action="/noteDownload" method="post">
                                                 <td><button type="submit" class="btn downloadButton"><i class="glyphicon glyphicon-download"></i></button> </td>
@@ -115,14 +115,7 @@
                                             <td><abbr class="timeago" title="<c:out value="${note.getFormatDate()}"/>"></abbr></td>
                                             <td><c:out value="${note.downloads}"/></td>
                                             <td><c:out value="${note.author.firstName} ${note.author.lastName}"/></td>
-                                            <% if (request.isUserInRole("user")) { %>
-                                            <form action="/noteDelete" method="post">
-                                                <td><button type="submit" class="btn trashButton"><i class="glyphicon glyphicon-trash"></i></button></td>
-                                                <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
-                                                <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="<%=request.getAttribute(SUBJECT_NAME_PARAM)%>"/>
-
-                                            </form>
-                                            <% } %>
+                                            <td><button type="submit" class="btn trashButton" onclick="removeNote('${note.id}','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')"><i class="glyphicon glyphicon-trash"></i></button></td>
 
                                         </tr>
                                     </c:forEach>
@@ -384,13 +377,13 @@
                                 <tr id="professorList${loop.count}">
                                     <td><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </td>
                                     <!--- boton agregar ---->
-                                    <%--<c:if test="${!professorWrapper.belongsInSubject}">--%>
+                                    <c:if test="${!professorWrapper.favorite}">
                                     <td><button id="${professorWrapper.professor.email}button" class="btn btn-success" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
-                                    <%--</c:if>--%>
+                                    </c:if>
                                     <!--- boton eliminar ---->
-                                    <%--<c:if test="${professorWrapper.belongsInSubject}">--%>
-                                    <td><button id="${professorWrapper.professor.email}button"class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
-                                    <%--</c:if>--%>
+                                    <c:if test="${professorWrapper.favorite}">
+                                    <td><button id="${professorWrapper.professor.email}button" class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
+                                    </c:if>
                                 </tr>
                             </c:forEach>
                         </tbody>

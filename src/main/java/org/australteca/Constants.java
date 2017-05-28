@@ -164,6 +164,21 @@ public interface Constants {
     String NOTE_TYPE_FINAL = "Final";
     String NOTE_TYPE_RESUMEN = "Resumen";
 
+    /* ~~~~~~~~~~~~~~~~ Publication Types ~~~~~~~~~~~~~~~~~ */
+
+    String WORK_PUBLICATION = "Work";
+    String INVESTIGATION_PUBLICATION = "Investigation";
+
+    /* ~~~~~~~~~~~~~~~~ Publication Servlet Parameters ~~~~~~~~ */
+
+    String PUBLICATION_NAME = "publicationName";
+    String PUBLICATION_REQUIREMENTS = "publicationRequirements";
+    String PUBLICATION_DESCRIPTION  = "publicationDescription";
+    String PUBLICATION_ROLE = "publicationRole";
+    String PUBLICATION_ID = "publicationID";
+    String INVESTIGATION_PUBLICATION_LIST = "investigationList";
+    String WORK_PUBLICATION_LIST = "workList";
+
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";

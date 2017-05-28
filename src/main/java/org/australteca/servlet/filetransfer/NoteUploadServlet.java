@@ -83,7 +83,7 @@ public class NoteUploadServlet extends HttpServlet {
                      * should be relegated to same object as above
                      */
                     format = item.getContentType();
-                    if(format != null) format = "."+format.substring(format.lastIndexOf("/")+1);
+                    if(format != null) format = "."+item.getName().substring(item.getName().lastIndexOf(".")+1);
                     outputStream.write(item.get());
                 }
             }
@@ -97,15 +97,20 @@ public class NoteUploadServlet extends HttpServlet {
          * should be relegated to separate object (command maybe)
          */
 
-        UserDao userDao = new UserDao();
-        User user = userDao.getUserByEmail(req.getRemoteUser());
-        Note note = new Note(name, type, data, user, format);
-        NoteDao noteDao = new NoteDao();
-        noteDao.add(note);
 
         SubjectDao subjectDao = new SubjectDao();
         Subject subject = subjectDao.getByName(subjectName);
-        subject.getNoteList().add(note);
+
+        UserDao userDao = new UserDao();
+        User user = userDao.getUserByEmail(req.getRemoteUser());
+
+        Note note = new Note(name, type, data, user, format, subject);
+        NoteDao noteDao = new NoteDao();
+        Integer id = noteDao.add(note);
+
+        Note noteWithID = noteDao.get(id);
+
+        subject.getNoteList().add(noteWithID);
         subjectDao.merge(subject);
 
         resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);

@@ -7,6 +7,8 @@ Cosas que hay que hacer:
     Ajax
     1- comentarios agregar
     3- proveer feedback
+    2- profesores agregar (arreglar styling y no se agrega)
+
 
     Comentarios (SubjectExample.jsp)
     2-Mantenerse en tab ( al actualizar y desp del servlet)
@@ -16,16 +18,8 @@ Cosas que hay que hacer:
     Moderadores
     1-carteles de aviso
 
-
     Sesion
     2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).
-
-    Notes
-    1-no anda
-
-    Profesores (probar todo)
-    1-imprimir tabla para agregar a la materia (modal)
-    2-imprimir tabla de prof de la materia (servlets)
 
     Materias
     1-boton buscar cuando sos user
@@ -33,7 +27,8 @@ Cosas que hay que hacer:
     Entidad Trabajo
         -Boton con informacion de como aplicar.
         -Boton ver mas
-        -Hacer servlets para agregar ????
+        -Hacer botón para agregar una oferta
+        -Hacer forEach del view
 
 
      LoginForm (probar)

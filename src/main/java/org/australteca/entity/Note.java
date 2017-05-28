@@ -47,12 +47,13 @@ public class Note extends AbstractEntity{
 
     }
 
-    public Note(String name, String type, byte[] data, User author, String format) {
+    public Note(String name, String type, byte[] data, User author, String format, Subject subject) {
         this.format = format;
         this.name = name;
         this.type = type;
         this.data = data;
         this.author = author;
+        this.subject = subject;
         date = new Date();
         score = 0;
         downloads = 0;
@@ -130,5 +131,13 @@ public class Note extends AbstractEntity{
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         return dateFormat.format(date);
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 }

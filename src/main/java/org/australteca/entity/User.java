@@ -50,6 +50,9 @@ public class User extends AbstractEntity{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private final Set<Commentary> commentaries = new HashSet<>();
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
+    private final Set<Publication> publications = new HashSet<>();
+
     @OneToMany
     private final List<SubjectModeratorRelationship> subjectModeratorRelationships = new ArrayList<>();
 

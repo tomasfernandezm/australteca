@@ -60,6 +60,36 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>AddPublicationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.publication.AddPublicationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddPublicationServlet</servlet-name>
+        <url-pattern>/addPublication</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RemovePublicationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.publication.RemovePublicationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RemovePublicationServlet</servlet-name>
+        <url-pattern>/removePublication</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListPublicationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.publication.ListPublicationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListPublicationServlet</servlet-name>
+        <url-pattern>/listPublications</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>UserGetSubjectRating</servlet-name>
         <servlet-class>org.australteca.servlet.user.UserGetSubjectRatingServlet</servlet-class>
     </servlet>

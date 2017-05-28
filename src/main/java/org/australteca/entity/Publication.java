@@ -1,6 +1,9 @@
 package org.australteca.entity;
 
+import org.australteca.Constants;
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 /**
  * Created by tomi on 29/04/17.
@@ -10,23 +13,32 @@ import javax.persistence.Entity;
 public class Publication extends AbstractEntity{
 
     private String name;
-    private String contact;
+
+    @ManyToOne
+    private User author;
+
     private String requirements;
     private String description;
-    private boolean isWork;
-    private boolean isPublication;
+    private String role;
 
     public Publication(){
 
     }
 
-    public Publication(String name, String contact, String requirements, String description, boolean isWork, boolean isPublication) {
+    public Publication(String name, User author, String requirements, String description, String role) {
         this.name = name;
-        this.contact = contact;
+        this.author = author;
         this.requirements = requirements;
         this.description = description;
-        this.isWork = isWork;
-        this.isPublication = isPublication;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getName() {
@@ -37,12 +49,12 @@ public class Publication extends AbstractEntity{
         this.name = name;
     }
 
-    public String getContact() {
-        return contact;
+    public User getAuthor() {
+        return author;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setAuthor(User contact) {
+        this.author = contact;
     }
 
     public String getRequirements() {
@@ -59,21 +71,5 @@ public class Publication extends AbstractEntity{
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public boolean isWork() {
-        return isWork;
-    }
-
-    public void setWork(boolean work) {
-        isWork = work;
-    }
-
-    public boolean isPublication() {
-        return isPublication;
-    }
-
-    public void setPublication(boolean publication) {
-        isPublication = publication;
     }
 }

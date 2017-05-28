@@ -37,6 +37,22 @@ function getUserRating(){
 
 $(document).ready(getUserRating());
 
+function removeNote(noteID, subjectName){
+    $.ajax({
+        type: 'post',
+        url:'/noteDelete',
+        dataType: 'JSON',
+        data:{
+            noteID: noteID,
+            subjectName: subjectName
+        },
+
+        success: function(){
+            $(this).closest('tr').remove();
+        }
+    });
+}
+
 function addProfessorToSubject(professorID, subjectName){
     $.ajax({
         type:'post',
