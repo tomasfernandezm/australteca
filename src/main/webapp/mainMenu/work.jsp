@@ -15,6 +15,7 @@
     <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/work.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/modalBox.css"/>" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="active-work">
@@ -31,6 +32,8 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+            <button type="button" id="addWork"class="btn btn-default col-md-12" onclick="modalBox(document.getElementById('addWorkModal'))"><i>Agregar</i> </button>
+
             <div class="row centered-form">
                 <div class="panel-body">
                     <div class="tab-content">
@@ -52,8 +55,8 @@
                                                     con marcada orientacion al cliente y a resultados.</p>
                                             </div>
 
-                                            <button type="submit" class="btn btn-default pull-right"><i>Mostrar mas</i> </button>
-                                            <div class="panel-body showMore">
+
+                                            <div class="panel-body showMore" id="show" hidden>
 
                                                    <h4>Sus tareas principales seran:</h4>
                                                 <p>
@@ -76,49 +79,195 @@
 
                                                 </p>
 
+                                                <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+
 
                                             </div>
+
+                                            <button type="button" id="showandhide"class="btn btn-default pull-right"><i>Mostrar mas</i> </button>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!---------- Trabajo 2 ejemplo ---------->
-                            <div class="bs-calltoaction bs-calltoaction-work">
-                                <div class="row">
-                                    <div class="panel-heading">
-                                        <h1 class="cta-title">Tesla</h1>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="col col-md-4 discussionBox">
-                                            <div class="panel-heading">
-                                                <h3>Ejercicio con matrices</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                <button type="submit" class="btn btn-discussion pull-right"><i>Ver mas</i> </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+
 
 
                         </div>
                         <div class="tab-pane fade" id="tab2default">
-
+                            <button type="button" id="addInvestigation"class="btn btn-default col-md-12" onclick="modalBox(document.getElementById('addWorkModal'))"><i>Agregar</i> </button>
                             Copiar igual que trabajo
 
 
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!------ Modal Box send request ----->
+        <div id="sendRequest" class="modal">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="modal-content">
+                    <span onclick="closeModal(document.getElementById('sendRequest'))" class="close">&times;</span>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <div class="modal-header">
+                                        <h3>Peticion de trabajo</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row form-group">
+                                            <label class="col-lg-3 control-label">Asunto</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control" type="text" name="" required>
+                                            </div>
+                                        </div>
+                                        <div class=" row form-group">
+                                            <label class="col-lg-3 control-label">Descripcion</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button type="submit" class="btn btn-primary foo pull-right">Enviar peticion</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!------ Modal Box add work ----->
+        <div id="addWorkModal" class="modal">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="modal-content">
+                    <span onclick="closeModal(document.getElementById('addWorkModal'))" class="close">&times;</span>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <div class="modal-header">
+                                        <h3>Peticion de trabajo</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row form-group">
+                                            <label class="col-lg-3 control-label">Nombre empresa</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control" type="text" name="" required>
+                                            </div>
+                                        </div>
+                                        <div class=" row form-group">
+                                            <label class="col-lg-3 control-label">Descripcion</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class=" row form-group">
+                                            <label class="col-lg-3 control-label">Requisitos</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class=" row form-group">
+                                            <label class="col-lg-3 control-label">Tareas principales</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button type="button" class="btn btn-primary pull-right" data-toggle="popover"
+                                                    title="Seguro desea enviar?" data-content="hola" value="Agregar">Enviar peticion</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!------ Modal Box add work ----->
+        <div id="addInvestigationModal" class="modal">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="modal-content">
+                    <span onclick="closeModal(document.getElementById('addInvestigationModal'))" class="close">&times;</span>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <div class="modal-header">
+                                        <h3>Peticion de investigacion</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row form-group">
+                                            <label class="col-lg-3 control-label">Nombre empresa</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control" type="text" name="" required>
+                                            </div>
+                                        </div>
+                                        <div class=" row form-group">
+                                            <label class="col-lg-3 control-label">Descripcion</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class=" row form-group">
+                                            <label class="col-lg-3 control-label">Requisitos</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class=" row form-group">
+                                            <label class="col-lg-3 control-label">Tareas principales</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button type="button" class="btn btn-primary pull-right" data-toggle="popover"
+                                                    title="Seguro desea enviar?" data-content="hola" value="Agregar">Enviar peticion</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
     </div>
+
+
+
+
+
+
 
 
     <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/work.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
 
 
 </body>

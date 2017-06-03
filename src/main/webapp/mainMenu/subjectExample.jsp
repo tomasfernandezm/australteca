@@ -18,14 +18,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale1.0">
     <title><%=Constants.MY_HOME_TITLE%></title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
-    <link href="/css/star.css" rel="stylesheet" type="text/css">
-    <link href="/css/modalBox.css" rel="stylesheet" type="text/css">
-    <link href="/css/subjectExample.css" rel="stylesheet" type="text/css">
-    <link href="/css/writeBox.css" rel="stylesheet" type="text/css">
-    <link href="/css/comment.css" rel="stylesheet" type="text/css">
-    <link href="/css/professor.css" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/star.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/modalBox.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/subjectExample.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/writeBox.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/comment.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/professor.css"/>" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -168,6 +168,7 @@
                                         <div class="widget-area no-padding blank">
                                             <div class="status-upload">
                                                 <!----- writting box ------->
+                                                <form>
                                                     <textarea id="textarea" name="<%=Constants.COMMENTARY%>" placeholder="Que estas pensando?" ></textarea>
                                                     <button type="submit" class="btn btn-success green" onclick="addComment('${requestScope[subjectName]}','<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Compartir</button>
                                                 </form>
@@ -358,41 +359,40 @@
 <div id="addProfessorModal" class="modal">
     <div class="modal-content">
         <span onclick="closeModal(document.getElementById('addProfessorModal'))" class="close">&times;</span>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="panel panel-default">
-                <div class="modal-header">
-                    Profesores
-                </div>
-                <div class="modal-body">
-                    <!-------- lista de profesores que se pueden agregar (cambie los nombres pero chequea) --------->
-                    <table class="table">
-                        <thead>
-                        <td>Nombre</td>
-                        </thead>
-                        <!------ foreach si esta en la materia cambiar a boton eliminar ------->
-                        <tbody>
-                            <c:forEach items="${professorWrapperList}" var="professorWrapper" varStatus="loop">
-                                <tr id="professorList${loop.count}">
-                                    <td><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </td>
-                                    <!--- boton agregar ---->
-                                    <c:if test="${!professorWrapper.favorite}">
-                                    <td><button id="${professorWrapper.professor.email}button" class="btn btn-success" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
-                                    </c:if>
-                                    <!--- boton eliminar ---->
-                                    <c:if test="${professorWrapper.favorite}">
-                                    <td><button id="${professorWrapper.professor.email}button" class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
-                                    </c:if>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="modal-header">
+                        Profesores
+                    </div>
+                    <div class="modal-body">
+                        <!-------- lista de profesores que se pueden agregar (cambie los nombres pero chequea) --------->
+                        <table class="table">
+                            <thead>
+                            <td>Nombre</td>
+                            </thead>
+                            <!------ foreach si esta en la materia cambiar a boton eliminar ------->
+                            <tbody>
+                                <c:forEach items="${professorWrapperList}" var="professorWrapper" varStatus="loop">
+                                    <tr id="professorList${loop.count}">
+                                        <td><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </td>
+                                        <!--- boton agregar ---->
+                                        <c:if test="${!professorWrapper.favorite}">
+                                        <td><button id="${professorWrapper.professor.email}button" class="btn btn-success" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
+                                        </c:if>
+                                        <!--- boton eliminar ---->
+                                        <c:if test="${professorWrapper.favorite}">
+                                        <td><button id="${professorWrapper.professor.email}button" class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
+                                        </c:if>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 
