@@ -60,6 +60,16 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>FavoritePublicationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.publication.FavoritePublicationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FavoritePublicationServlet</servlet-name>
+        <url-pattern>/favoritePublication</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>AddPublicationServlet</servlet-name>
         <servlet-class>org.australteca.servlet.publication.AddPublicationServlet</servlet-class>
     </servlet>

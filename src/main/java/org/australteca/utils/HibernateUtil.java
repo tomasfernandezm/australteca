@@ -1,4 +1,4 @@
-package org.australteca.util;
+package org.australteca.utils;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

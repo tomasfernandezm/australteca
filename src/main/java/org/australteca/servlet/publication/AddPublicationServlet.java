@@ -30,6 +30,7 @@ public class AddPublicationServlet extends HttpServlet {
         String pubName = req.getParameter(Constants.PUBLICATION_NAME);
         String pubDescription = req.getParameter(Constants.PUBLICATION_DESCRIPTION);
         String pubRequirements = req.getParameter(Constants.PUBLICATION_REQUIREMENTS);
+        String pubTasks = req.getParameter(Constants.PUBLICATION_TASKS);
         String pubRole = req.getParameter(Constants.PUBLICATION_ROLE);
 
         UserDao userDao = new UserDao();

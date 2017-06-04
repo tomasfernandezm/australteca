@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="org.australteca.Constants" %><%--
+<%@ page import="org.australteca.Constants" %>
+<%@ page import="static org.australteca.Constants.SUBJECT_NAME_PARAM" %><%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 29/3/17
@@ -41,24 +42,25 @@
 
                             <!---------- Trabajo 1 ejemplo ---------->
 
+                        <c:set var="investigationListParam" value="<%=Constants.INVESTIGATION_PUBLICATION_LIST%>"/>
+                        <c:set var="investigationList" value='${requestScope[investigationListParam]}' />
+                        <c:forEach items="${investigationList}" var="investigation" varStatus="loop">
+
                             <div class="bs-calltoaction bs-calltoaction-work">
                                 <div class="row">
                                     <div class="panel-heading">
-                                        <h1 class="cta-title">Falabella</h1>
+                                        <h1 class="cta-title"> <c:out value="${investigation.name}"/> </h1>
                                     </div>
                                     <div class="panel-body">
                                         <div class="col col-md-12 discussionBox">
                                             <div class="panel-heading">
-                                                <p>Descripcion: En Falabella nos encontramos en la busqueda de un Category Manager Marketing SEO y SEM
-                                                    para nuestras oficinas de Olivos.
-                                                    Quien ocupe la posicion, debera contar con un perfil dinamico y proactivo,
-                                                    con marcada orientacion al cliente y a resultados.</p>
+                                                <p>Descripcion: <c:out value="${investigation.description}"/> </p>
                                             </div>
 
 
                                             <div class="panel-body showMore" id="show" hidden>
 
-                                                   <h4>Sus tareas principales seran:</h4>
+                                                <h4>Sus tareas principales seran:</h4>
                                                 <p>
                                                     - Coordinar la implementacion de campanas con agencia digital y pedidos al equipo de diseño.
 
@@ -69,37 +71,34 @@
                                                     - Trackeos de campanas de proveedores.
                                                 </p>
 
-                                                   <h4>Seran requisitos excluyentes:</h4>
-                                                <p>
-                                                    - Graduados o proximos a graduarse de las carreras de marketing, publicidad, comunicacion, administracion de empresas o afines.
-                                                    - Excelente manejo de Excel
-                                                    - Buen manejo del idioma Ingles
-
-                                                    Si buscas trabajar en un excelente clima laboral, posibilidades de crecimiento, desarrollo y capacitacion, postulate a nuestro aviso sin omitir tu remuneracion bruta pretendida.
-
-                                                </p>
+                                                <h4>Seran requisitos excluyentes:</h4>
+                                                <p><c:out value="${investigation.requirements}"/></p>
 
                                                 <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
 
 
                                             </div>
 
-                                            <button type="button" id="showandhide"class="btn btn-default pull-right"><i>Mostrar mas</i> </button>
+                                            <button type="button" id="showandhide" class="btn btn-default pull-right"><i>Mostrar mas</i> </button>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-
-
-
-
+                        </c:forEach>
                         </div>
+                        
                         <div class="tab-pane fade" id="tab2default">
+
+                        <c:set var="workListParam" value="<%=Constants.WORK_PUBLICATION_LIST%>"/>
+                        <c:set var="workList" value='${requestScope[workListParam]}' />
+                        <c:forEach items="${workList}" var="work" varStatus="loop">
+
                             <button type="button" id="addInvestigation"class="btn btn-default col-md-12" onclick="modalBox(document.getElementById('addWorkModal'))"><i>Agregar</i> </button>
                             Copiar igual que trabajo
 
+                        </c:forEach>
 
                         </div>
 
@@ -217,30 +216,29 @@
                                         <div class="row form-group">
                                             <label class="col-lg-3 control-label">Nombre empresa</label>
                                             <div class="col-lg-5">
-                                                <input class="form-control" type="text" name="" required>
+                                                <input id= "nameInput" class="form-control" type="text" name="" required>
                                             </div>
                                         </div>
                                         <div class=" row form-group">
                                             <label class="col-lg-3 control-label">Descripcion</label>
                                             <div class="col-lg-8">
-                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                                <textarea id= "descriptionTextarea" class="form-control" type="text" name="" required></textarea>
                                             </div>
                                         </div>
                                         <div class=" row form-group">
                                             <label class="col-lg-3 control-label">Requisitos</label>
                                             <div class="col-lg-8">
-                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                                <textarea id="requisitesTextarea" class="form-control" type="text" name="" required></textarea>
                                             </div>
                                         </div>
                                         <div class=" row form-group">
                                             <label class="col-lg-3 control-label">Tareas principales</label>
                                             <div class="col-lg-8">
-                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                                <textarea id="tasksTextarea" class="form-control" type="text" name="" required></textarea>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <button type="button" class="btn btn-primary pull-right" data-toggle="popover"
-                                                    title="Seguro desea enviar?" data-content="hola" value="Agregar">Enviar peticion</button>
+                                            <button id="addPublicationButton" type="button" class="btn btn-primary pull-right" data-toggle="popover" title="Seguro desea enviar?" data-content="hola" value="Agregar">Añadir publicación</button>
                                         </div>
                                     </div>
                                 </div>

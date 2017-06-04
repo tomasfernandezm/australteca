@@ -13,9 +13,6 @@ $(document).ready(function(){
 // })
 //
 
-
-
-
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({
         placement : 'top',
@@ -28,3 +25,51 @@ $(document).ready(function(){
         $(this).parents(".popover").popover('hide');
     });
 });
+
+$("#addPublicationButton").click(function(){
+    $.ajax({
+        type:'post',
+        url: '/addPublication',
+        dataType: 'JSON',
+        data:{
+            publicationName: document.getElementById('nameInput').value,
+            publicationDescription: document.getElementById('descriptionTextarea').value,
+            publicationRequirements: document.getElementById('requisitesTextarea').value,
+            publicationTasks: document.getElementById('tasksTextarea').value
+            // añadir role
+        },
+        success: function () {
+
+        }
+    });
+});
+
+function removePublication(publicationID, rowID){
+    $.ajax({
+        type:'post',
+        url: '/removePublication',
+        dataType: 'JSON',
+        data:{
+            subjectName: subjectName,
+            userEmail: userEmail
+        },
+        success: function(){
+            document.getElementById(rowID).remove();
+        }
+    });
+}
+
+function sendPublicationPetition(publicationID){
+    $.ajax({
+        type:'post',
+        url: '/publicationPetition',
+        dataType: 'JSON',
+        data:{
+            publicationID: publicationID
+        },
+        success: function(){
+
+        }
+    });
+}
+

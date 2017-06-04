@@ -122,7 +122,7 @@ function addModeratorPostulation(userEmail, subjectName){
     });
 }
 
-function addComment(subjectName, email){
+function addComment(subjectName, userEmail){
     $.ajax({
         type:'post',
         url: '/subjectAddCommentary',
@@ -134,9 +134,74 @@ function addComment(subjectName, email){
         },
 
         success: function () {
-            // hacer el append
+            var article = document.createElement("ARTICLE");
+            var div = document.createElement("DIV");
+
+
         }
     });
+    /*
+     var strVar = "<article id=\"commentary${loop.count}\" class=\"row\"> <div class=\"col-lg-2 col-md-2 col-sm-2 hidden-xs\">";
+     strVar += "        <figure class=\"thumbnail\">";
+     strVar += "";
+     strVar += "        <img src=\"\/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=${commentary.author.email}\" onerror=\"if (this.src != 'images\/avatar.jpg') this.src = 'images\/avatar.jpg';\"class=\"img-responsive avatar img-circle\" alt=\"avatar\">";
+     strVar += "";
+     strVar += "        <figcaption class=\"text-center\"><c:out value=\"${commentary.author.firstName}\"\/><\/figcaption>";
+     strVar += "        <\/figure>";
+     strVar += "        <\/div>";
+     strVar += "        <div class=\"col-md-9 col-sm-9 col-xs-9\">";
+     strVar += "        <div class=\"panel panel-default arrow left\">";
+     strVar += "        <div class=\"panel-body\">";
+     strVar += "        <header class=\"text-left\"><\/header>";
+     strVar += "        <div class=\"comment-user\"><i class=\"glyphicon glyphicon-user\"><\/i><c:out value=\"${commentary.author.email}\"\/><\/div>";
+     strVar += "        <abbr class=\"timeago\" title=\"<c:out value=\"${commentary.getFormatDate2()}\"\/>\"><\/abbr>";
+     strVar += "    <\/header>";
+     strVar += "    <c:set var=\"remoteUser\" value=\"<%=request.getRemoteUser()%>\"\/>";
+     strVar += "        <c:if test=\"${commentary.author.email == remoteUser}\">";
+     strVar += "";
+     strVar += "        <button type=\"submit\" class=\"btn pull-right remove\" onclick=\"removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')\"><i class=\"glyphicon glyphicon-remove\"><\/i><\/button>";
+     strVar += "        <\/c:if>";
+     strVar += "<div class=\"comment-post\">";
+     strVar += "        <p>";
+     strVar += "        <c:out value=\"${commentary.commentary}\"\/>";
+     strVar += "        <\/p>";
+     strVar += "        <\/div>";
+     strVar += "        <\/div>";
+     strVar += "        <\/div>";
+     strVar += "        <\/div>";
+     strVar += "        <\/article>";
+     */
+
+/*<article id="commentary${loop.count}" class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+        <figure class="thumbnail">
+
+        <img src="/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="img-responsive avatar img-circle" alt="avatar">
+
+        <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
+        </figure>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-9">
+        <div class="panel panel-default arrow left">
+        <div class="panel-body">
+        <header class="text-left"></header>
+        <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>
+        <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
+    </header>
+    <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+        <c:if test="${commentary.author.email == remoteUser}">
+
+        <button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+        </c:if>
+<div class="comment-post">
+        <p>
+        <c:out value="${commentary.commentary}"/>
+        </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </article>*/
 }
 
 function removeComment(commentaryID, subjectName, rowID){

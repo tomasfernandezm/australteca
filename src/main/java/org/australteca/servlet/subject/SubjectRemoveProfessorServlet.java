@@ -5,6 +5,7 @@ import org.australteca.dao.ProfessorDao;
 import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Professor;
 import org.australteca.entity.Subject;
+import org.australteca.servlet.ModeratorChecker;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,21 +31,26 @@ public class SubjectRemoveProfessorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
-        Integer professorID = Integer.parseInt(req.getParameter(PROFESSOR_ID_PARAM));
+        String toParse = req.getParameter(PROFESSOR_ID_PARAM);
+        Integer professorID = null;
+        if(toParse != null) professorID = Integer.parseInt(toParse);
 
         SubjectDao subjectDAO = new SubjectDao();
         ProfessorDao professorDAO = new ProfessorDao();
 
-        Professor professor = professorDAO.get(professorID);
-        Subject subject = subjectDAO.getByName(subjectName);
 
-        professor.getSubjects().remove(subject);
-        subject.getProfessors().remove(professor);
+        if(professorID != null && new ModeratorChecker().check(req.getRemoteUser(), subjectName)) {
 
-        professorDAO.merge(professor);
-        subjectDAO.merge(subject);
+            Professor professor = professorDAO.get(professorID);
+            Subject subject = subjectDAO.getByName(subjectName);
 
-        resp.setContentType("application/json");
-        resp.getWriter().write(new Gson().toJson(professor.getEmail()));
+            professor.getSubjects().remove(subject);
+            subject.getProfessors().remove(professor);
+
+            professorDAO.merge(professor);
+            subjectDAO.merge(subject);
+            resp.setContentType("application/json");
+            resp.getWriter().write(new Gson().toJson(professor.getEmail()));
+        }
     }
 }

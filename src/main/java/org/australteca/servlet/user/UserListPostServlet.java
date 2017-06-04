@@ -1,5 +1,6 @@
 package org.australteca.servlet.user;
 
+import org.australteca.Constants;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
 
@@ -32,6 +33,8 @@ public class UserListPostServlet extends HttpServlet {
 
         req.setAttribute(USER_COMMENTARY_LIST, user.getCommentaries());
         req.setAttribute(USER_SUBJECT_LIST, user.getSubjects());
+        req.setAttribute(Constants.USER_FAVORITE_PUBLICATIONS_LIST, user.getFavoritePublications());
+        req.setAttribute(Constants.USER_PUBLICATION_LIST, user.getPublication());
 
         req.getRequestDispatcher("/mainMenu/home.jsp").forward(req, resp);
     }

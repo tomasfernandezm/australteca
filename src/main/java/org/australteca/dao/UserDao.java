@@ -5,7 +5,7 @@ import org.australteca.entity.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.australteca.util.HibernateUtil;
+import org.australteca.utils.HibernateUtil;
 
 import javax.persistence.NoResultException;
 import javax.persistence.Query;

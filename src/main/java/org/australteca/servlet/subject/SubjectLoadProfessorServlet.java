@@ -3,6 +3,7 @@ package org.australteca.servlet.subject;
 import org.australteca.Constants;
 import org.australteca.dao.ProfessorDao;
 import org.australteca.entity.Professor;
+import org.australteca.servlet.ModeratorChecker;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,13 +31,16 @@ public class SubjectLoadProfessorServlet extends HttpServlet {
         String email = req.getParameter(Constants.PROFESSOR_EMAIL_PARAM);
         String information = req.getParameter(Constants.PROFESSOR_INFORMATION_PARAM);
 
-        ProfessorDao professorDao = new ProfessorDao();
+        if(new ModeratorChecker().check(req.getRemoteUser(), subjectName)) {
 
-        Integer status = professorDao.add(new Professor(name,lastName,email,information));
+            ProfessorDao professorDao = new ProfessorDao();
 
-        if(status != null) req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, true);
-        else req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, false);
+            Integer status = professorDao.add(new Professor(name, lastName, email, information));
 
+            if (status != null) req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, true);
+            else req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, false);
+
+        }
         resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
     }
 }

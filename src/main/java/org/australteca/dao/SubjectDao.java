@@ -2,10 +2,9 @@ package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
 import org.australteca.entity.Commentary;
-import org.australteca.entity.Note;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
-import org.australteca.util.HibernateUtil;
+import org.australteca.utils.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
