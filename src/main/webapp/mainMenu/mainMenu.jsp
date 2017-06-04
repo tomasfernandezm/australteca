@@ -25,7 +25,7 @@
                     <li class="activeSubject2"><a href="<%=response.encodeURL("/listSubjects")%>">Materias</a></li>
                     <li class="activeWork2"><a href="<%=response.encodeURL("/listPublications")%>">Trabajo</a></li>
                 <%if(request.isUserInRole(Constants.ADMINISTRATOR)){%>
-                    <li class="activeModerators2"><a href="<%=response.encodeURL("/postModerators")%>">Moderadores</a></li>
+                    <li class="activeModerators2"><a href="<%=response.encodeURL("/postModerators")%>">Administracion</a></li>
                 <%}%>
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -24,7 +24,11 @@
     </div>
 
     <div class="container-fluid">
+        <div class="row col-md-offset-4">
+            <button type="button" id="addWork"class="btn btn-default col-md-7" onclick="modalBox(document.getElementById('addWorkModal'))"><i>Agregar oferta</i> </button>
+        </div>
         <div class="col-xs-8 col-sm-8 col-md-7 col-xs-offset-4 col-sm-offset-4 col-md-offset-5">
+
             <div class="row">
                 <ul class="nav nav-pills">
                     <li class="active"><a href="#tab1default" data-toggle="tab">   Trabajo   </a></li>
@@ -33,8 +37,6 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
-            <button type="button" id="addWork"class="btn btn-default col-md-12" onclick="modalBox(document.getElementById('addWorkModal'))"><i>Agregar</i> </button>
-
             <div class="row centered-form">
                 <div class="panel-body">
                     <div class="tab-content">
@@ -94,8 +96,6 @@
                         <c:set var="workListParam" value="<%=Constants.WORK_PUBLICATION_LIST%>"/>
                         <c:set var="workList" value='${requestScope[workListParam]}' />
                         <c:forEach items="${workList}" var="work" varStatus="loop">
-
-                            <button type="button" id="addInvestigation"class="btn btn-default col-md-12" onclick="modalBox(document.getElementById('addWorkModal'))"><i>Agregar</i> </button>
                             Copiar igual que trabajo
 
                         </c:forEach>
@@ -162,6 +162,15 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row form-group">
+                                            <label class="col-lg-3 control-label">Tipo</label>
+                                            <div class="col-lg-5">
+                                                <select>
+                                                    <option>Trabajo</option>
+                                                    <option>Investigacion</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
                                             <label class="col-lg-3 control-label">Nombre empresa</label>
                                             <div class="col-lg-5">
                                                 <input class="form-control" type="text" name="" required>
@@ -186,8 +195,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <button type="button" class="btn btn-primary pull-right" data-toggle="popover"
-                                                    title="Seguro desea enviar?" data-content="hola" value="Agregar">Enviar peticion</button>
+                                            <button type="button" class="btn btn-primary pull-right" data-toggle="popover">Enviar peticion</button>
                                         </div>
                                     </div>
                                 </div>
@@ -197,62 +205,6 @@
                 </div>
             </div>
         </div>
-
-
-
-        <!------ Modal Box add work ----->
-        <div id="addInvestigationModal" class="modal">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="modal-content">
-                    <span onclick="closeModal(document.getElementById('addInvestigationModal'))" class="close">&times;</span>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <div class="modal-header">
-                                        <h3>Peticion de investigacion</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row form-group">
-                                            <label class="col-lg-3 control-label">Nombre empresa</label>
-                                            <div class="col-lg-5">
-                                                <input id= "nameInput" class="form-control" type="text" name="" required>
-                                            </div>
-                                        </div>
-                                        <div class=" row form-group">
-                                            <label class="col-lg-3 control-label">Descripcion</label>
-                                            <div class="col-lg-8">
-                                                <textarea id= "descriptionTextarea" class="form-control" type="text" name="" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class=" row form-group">
-                                            <label class="col-lg-3 control-label">Requisitos</label>
-                                            <div class="col-lg-8">
-                                                <textarea id="requisitesTextarea" class="form-control" type="text" name="" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class=" row form-group">
-                                            <label class="col-lg-3 control-label">Tareas principales</label>
-                                            <div class="col-lg-8">
-                                                <textarea id="tasksTextarea" class="form-control" type="text" name="" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <button id="addPublicationButton" type="button" class="btn btn-primary pull-right" data-toggle="popover" title="Seguro desea enviar?" data-content="hola" value="Agregar">Añadir publicación</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
     </div>
 
 
