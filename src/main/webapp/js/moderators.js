@@ -21,6 +21,35 @@ $(document).ready(function () {
     }).change();
 });
 
+function addProfessor(){
+    var form = document.getElementById('addProfessorForm');
+    $.ajax({
+        type:'post',
+        url:'/addProfessor',
+        dataType: 'JSON',
+        data:{
+            professorName: form.elements[1].value,
+            professorLastName: form.elements[2].value,
+            professorEmail: form.elements[3].value,
+            professorInformation: form.elements[4].value
+        }
+    })
+}
+
+function removeProfessor(professorID, rowID){
+    $.ajax({
+        type:'post',
+        url:'/deleteProfessor',
+        dataType: 'JSON',
+        data:{
+            professorID: professorID
+        },
+        success: function(){
+            document.getElementById(rowID).remove();
+        }
+    })
+}
+
 function addModeratorToTable(userEmail, subjectName){
     var table = document.getElementById("approved-table");
     var x = document.getElementById("approved-table").rows.length;

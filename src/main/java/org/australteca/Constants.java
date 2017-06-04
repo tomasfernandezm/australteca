@@ -189,4 +189,5 @@ public interface Constants {
     String ADMIN_PASSWORD = "admin";
     String ADMIN_USERNAME_1 = "tomas.martinez@ing.austral.edu.ar";
     String ADMIN_USERNAME_2 = "tomas.forman@ing.austral.edu.ar";
+    String PROFESSOR_LIST = "professorList";
 }

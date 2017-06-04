@@ -3,7 +3,9 @@ package org.australteca.servlet.moderator;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.australteca.Constants;
+import org.australteca.dao.ProfessorDao;
 import org.australteca.dao.SubjectModeratorRelationshipDao;
+import org.australteca.entity.Professor;
 import org.australteca.entity.SubjectModeratorRelationship;
 
 import javax.servlet.ServletException;
@@ -35,6 +37,10 @@ public class PostPostulantsServlet extends HttpServlet {
             List<SubjectModeratorRelationship> moderators = smrDao.getByAcceptance(true);
             List<SubjectModeratorRelationship> waitingAcceptance = smrDao.getByAcceptance(false);
 
+            ProfessorDao professorDao = new ProfessorDao();
+            List<Professor> professors = professorDao.list();
+
+            req.setAttribute(Constants.PROFESSOR_LIST, professors);
             req.setAttribute(Constants.ACCEPTED_LIST, moderators);
             req.setAttribute(Constants.WAITING_LIST, waitingAcceptance);
 

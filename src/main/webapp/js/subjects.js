@@ -50,14 +50,14 @@ $(function(){
 
 
 
-function changeFavorite(publicationID) {
+function changeFavorite(subjectName) {
     $.ajax({
         type:'post',
-        url:'/favoritePublication',
+        url:'/userSubjectManagerAjax',
         dataType: 'JSON',
         data:{
-            publicationID: publicationID,
-            // poner estrellita para favoritearlo status: $('#subject_favorite').is(':checked')
+            subjectName: subjectName,
+            status: $('#subject_favorite').is(':checked')
         },
 
         success: function(jsonObject){

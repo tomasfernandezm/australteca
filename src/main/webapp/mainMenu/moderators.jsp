@@ -109,17 +109,18 @@
                                         <td></td>
                                     </thead>
                                     <tbody>
-                                        <tr>
+
                                             <!---- ARREGLAR ESTOOOOO------>
-                                            <c:set var="professorWrapperListParam" value="<%=Constants.SUBJECT_PROFESSOR_WRAPPER_LIST%>"/>
-                                            <c:set var="professorWrapperList" value="${requestScope[professorWrapperListParam]}"/>
-                                            <c:forEach items="${professorWrapperList}" var="professorWrapper">
-                                                <td><div class="row" id="${professorWrapper.professor.firstName}"></div></td>
-                                                <td><div class="row" id="${professorWrapper.professor.email}"></div></td>
+                                            <c:set var="professorListParam" value="<%=Constants.PROFESSOR_LIST%>"/>
+                                            <c:set var="professorList" value="${requestScope[professorListParam]}"/>
+                                            <c:forEach items="${professorList}" var="professor" varStatus="loop">
+                                                <tr id="professor${loop.count}">
+                                                <td><c:out value="${professor.firstName} ${professor.lastName}"/></td>
+                                                <td><c:out value="${professor.email}"/></td>
                                                 <!------ boton eliminar de la base de datos ------>
-                                                <td><button type="submit" class="btn btn-danger">Eliminar</button> </td>
+                                                <td><button type="submit" class="btn btn-danger" onclick="removeProfessor('${professor.id}','professor${loop.count}')">Eliminar</button> </td>
+                                                </tr>
                                             </c:forEach>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -141,7 +142,7 @@
                                     Cargar profesor
                                 </div>
                                 <div class="panel-body">
-                                    <form action="<c:url value="/loadProfessor"/>" class="form-horizontal"  method="POST" role="form">
+                                    <form id="addProfessorForm" class="form-horizontal">
                                         <input id="subjectName" type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>" required>
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label">Nombre:</label>
@@ -170,7 +171,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-8 col-md-offset-10">
-                                                <input type="submit" class="btn btn-primary" value="Agregar">
+                                                <input type="submit" class="btn btn-primary" value="Agregar" onclick="addProfessor()">
                                             </div>
                                         </div>
                                     </form>

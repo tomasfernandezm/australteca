@@ -72,7 +72,7 @@ public class SubjectModeratorRelationshipDao extends AbstractDao<SubjectModerato
         List<SubjectModeratorRelationship> smrList = null;
         try{
             tx = session.beginTransaction();
-            Query query = session.createQuery(hql).setParameter("accepted", subjectName);
+            Query query = session.createQuery(hql).setParameter("subjectName", subjectName);
             smrList = (List<SubjectModeratorRelationship>) query.getResultList();
             tx.commit();
         }catch (HibernateException | NoResultException e){

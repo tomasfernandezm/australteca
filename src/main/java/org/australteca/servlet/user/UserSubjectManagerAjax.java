@@ -30,7 +30,7 @@ public class UserSubjectManagerAjax extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-        String subjectName = req.getParameter("subject");
+        String subjectName = req.getParameter("subjectName");
         Boolean status = Boolean.parseBoolean(req.getParameter("status"));
 
         UserDao userDao = new UserDao();
