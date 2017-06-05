@@ -102,22 +102,20 @@
                             <tbody>
                                 <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                                 <c:forEach items="${subjectWrapperList}" var="subjectWrapper" varStatus="loop">
-                                    <tr>
+                                    <tr id="${subjectWrapper.subject.subjectName}Row">
                                         <td><a href="${pageContext.request.contextPath}/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
                                             <c:out value="${subjectWrapper.subject.subjectName}"/></a>
                                         </td>
                                          <td>
                                              <%--<label class="checkbox"><i class="glyphicon glyphicon-heart"></i>--%>
                                             <div class="checkbox_wrapper">
-                                                 <input class="checkbox" id="subject${loop.count}" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value,this.id) <c:if test="${subjectWrapper.favorite}">checked</c:if>>
+                                                 <input class="checkbox" id="${subjectWrapper.subject.subjectName}Checkbox" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value,this.id) <c:if test="${subjectWrapper.favorite}">checked</c:if>>
                                                  <%--<label></label>--%>
                                             </div>
                                          </td>
                                         <% if (request.isUserInRole("admin")) { %>
                                         <td>
-                                            <form action="<c:url value="/subjectDelete"/>" method="post">
-                                                <button type="submit" name="<%=SUBJECT_NAME_PARAM%>" value="<c:out value="${subjectWrapper.subject.subjectName}" />" class="standardButton btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
-                                            </form>
+                                                <button type="submit" class="standardButton btn btn-default btn-xs" onclick="removeSubject('${subjectWrapper.subject.subjectName}')"><i class="glyphicon glyphicon-trash"></i></button>
                                         </td>
                                         <% } %>
                                     </tr>

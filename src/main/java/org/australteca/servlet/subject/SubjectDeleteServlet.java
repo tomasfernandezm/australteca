@@ -1,5 +1,6 @@
 package org.australteca.servlet.subject;
 
+import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Subject;
@@ -34,6 +35,7 @@ public class SubjectDeleteServlet extends HttpServlet {
         subjectDAO.delete(subjectID);
 
         req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, true);
-        resp.sendRedirect("/listSubjects");
+        resp.setContentType("application/json");
+        resp.getWriter().write(new Gson().toJson("OK"));
     }
 }
