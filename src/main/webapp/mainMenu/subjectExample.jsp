@@ -162,24 +162,24 @@
                                     <div class="col-lg-11 col-md-11 col-sm-11">
                                         <div class="widget-area no-padding blank">
                                             <div class="status-upload">
+
                                                 <!----- writting box ------->
-                                                <form>
-                                                    <textarea id="textarea" name="<%=Constants.COMMENTARY%>" placeholder="Que estas pensando?" ></textarea>
-                                                    <button type="submit" class="btn btn-success green" onclick="addComment('${requestScope[subjectName]}','<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Compartir</button>
+                                                <form id="commentForm" action="/subjectAddCommentary" method="post">
+                                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
+                                                    <textarea name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Que estas pensando?" ></textarea>
+                                                    <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
                                                 </form>
-                                                <div id = "article-div" class="col-xs-12"><hr></div>
+                                                <div class="col-xs-12"><hr></div>
 
                                                 <!------- List of comments ------->
-                                                    <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
-                                                    <c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />
-                                                    <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
-                                                    <c:forEach items="${commentaryList}" var="commentary" varStatus="loop">
+                                                <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
+                                                <c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />
+                                                <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
+                                                <c:forEach items="${commentaryList}" var="commentary" varStatus="loop">
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
-
                                                                 <img src="<c:url value="/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=${commentary.author.email}"/>" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="img-responsive avatar img-circle" alt="avatar">
-
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>
@@ -187,13 +187,12 @@
                                                             <div class="panel panel-default arrow left">
                                                                 <div class="panel-body">
                                                                     <header class="text-left">
-                                                                        <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>
-                                                                        <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
+                                                                    <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>
+                                                                    <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
                                                                     </header>
                                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                                     <c:if test="${commentary.author.email == remoteUser}">
-
-                                                                    <button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                                        <button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
                                                                     </c:if>
                                                                     <div class="comment-post">
                                                                         <p>
@@ -205,9 +204,7 @@
                                                         </div>
                                                     </article>
                                                 </c:forEach>
-                                                    <!-------- finish -------->
-                                                </section>
-
+                                                <!-------- finish -------->
                                             </div><!-- Status Upload  -->
                                         </div><!-- Widget Area -->
                                     </div>
@@ -220,7 +217,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
