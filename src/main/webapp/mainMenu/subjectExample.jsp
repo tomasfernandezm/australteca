@@ -18,14 +18,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale1.0">
     <title><%=Constants.MY_HOME_TITLE%></title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
-    <link href="/css/star.css" rel="stylesheet" type="text/css">
-    <link href="/css/modalBox.css" rel="stylesheet" type="text/css">
-    <link href="/css/subjectExample.css" rel="stylesheet" type="text/css">
-    <link href="/css/writeBox.css" rel="stylesheet" type="text/css">
-    <link href="/css/comment.css" rel="stylesheet" type="text/css">
-    <link href="/css/professor.css" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/star.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/modalBox.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/subjectExample.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/writeBox.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/comment.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/professor.css"/>" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -125,19 +125,14 @@
 
                         <!----------- PROFESSOR tab ----------->
                         <div class="tab-pane fade" id="tab2default">
-                            <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
                                         <% if (request.isUserInRole("admin")) { %>
-
-                                            <div class="btn-group btn-professor">
-                                                <button type="button" onclick="modalBox(document.getElementById('loadProfessorModal'))" id="loadProfessor"class="btn btn-primary">Cargar profesor</button>
+                                            <div class="btn btn-professor center-block">
                                                 <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Agregar profesor</button>
                                             </div>
                                         <% } %>
-                                    </div>
                                 </div>
-                            </div>
+
 
 
                             <!-- for each de profesores -->
@@ -147,7 +142,7 @@
                             <c:forEach items="${professorWrapperList}" var="professorWrapper">
                                 <c:if test="${professorWrapper.favorite}">
                                     <div class="row" id="${professorWrapper.professor.email}">
-                                        <div class="boxContent">
+                                        <div class="ProfessorBoxContent">
                                             <div class="col col-md-4">
                                                 <h3><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </h3>
                                                 <p><c:out value="${professorWrapper.professor.email}"/></p>
@@ -175,6 +170,7 @@
                                                     <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
                                                 </form>
                                                 <div class="col-xs-12"><hr></div>
+
                                                 <!------- List of comments ------->
                                                 <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
                                                 <c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />
@@ -183,14 +179,14 @@
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
-                                                                <img src="/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="img-responsive avatar img-circle" alt="avatar">
+                                                                <img src="<c:url value="/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=${commentary.author.email}"/>" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="img-responsive avatar img-circle" alt="avatar">
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>
                                                         <div class="col-md-9 col-sm-9 col-xs-9">
                                                             <div class="panel panel-default arrow left">
                                                                 <div class="panel-body">
-                                                                    <header class="text-left"></header>
+                                                                    <header class="text-left">
                                                                     <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>
                                                                     <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
                                                                     </header>
@@ -209,8 +205,6 @@
                                                     </article>
                                                 </c:forEach>
                                                 <!-------- finish -------->
-                                                </section>
-
                                             </div><!-- Status Upload  -->
                                         </div><!-- Widget Area -->
                                     </div>
@@ -223,7 +217,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -297,101 +290,46 @@
 
 
 
-<!-- modal box for load professor -->
-
-<div id="loadProfessorModal" class="modal">
-    <div class="modal-content">
-        <span onclick="closeModal(document.getElementById('loadProfessorModal'))" class="close">&times;</span>
-            <div class="container-fluid">
-                <div class="row">
-                    <div>
-                        <div class="panel panel-default">
-                            <div class="modal-header">
-                                Cargar profesor
-                            </div>
-                            <div class="panel-body">
-                                <form action="<c:url value="/loadProfessor"/>" class="form-horizontal"  method="POST" role="form">
-                                    <input id="subjectName" type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>" required>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label">Nombre:</label>
-                                        <div class="col-lg-8">
-                                            <input class="form-control" type="text" name="<%=PROFESSOR_NAME_PARAM%>" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label">Apellido:</label>
-                                        <div class="col-lg-8">
-                                            <input class="form-control" type="text" name="<%=PROFESSOR_LAST_NAME_PARAM%>" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-3 control-label">Email:</label>
-                                        <div class="col-lg-8">
-                                            <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=PROFESSOR_EMAIL_PARAM%>" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Informacion:</label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" type="text" name="<%=PROFESSOR_INFORMATION_PARAM%>" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label"></label>
-                                        <div class="col-md-8 col-md-offset-10">
-                                            <input type="submit" class="btn btn-primary" value="Agregar">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div>
-
 
 <!-- modal box add professor -->
 
 <div id="addProfessorModal" class="modal">
     <div class="modal-content">
         <span onclick="closeModal(document.getElementById('addProfessorModal'))" class="close">&times;</span>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="panel panel-default">
-                <div class="modal-header">
-                    Profesores
-                </div>
-                <div class="modal-body">
-                    <!-------- lista de profesores que se pueden agregar (cambie los nombres pero chequea) --------->
-                    <table class="table">
-                        <thead>
-                        <td>Nombre</td>
-                        </thead>
-                        <!------ foreach si esta en la materia cambiar a boton eliminar ------->
-                        <tbody>
-                            <c:forEach items="${professorWrapperList}" var="professorWrapper" varStatus="loop">
-                                <tr id="professorList${loop.count}">
-                                    <td><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </td>
-                                    <!--- boton agregar ---->
-                                    <c:if test="${!professorWrapper.favorite}">
-                                    <td><button id="${professorWrapper.professor.email}button" class="btn btn-success" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
-                                    </c:if>
-                                    <!--- boton eliminar ---->
-                                    <c:if test="${professorWrapper.favorite}">
-                                    <td><button id="${professorWrapper.professor.email}button" class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
-                                    </c:if>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="modal-header">
+                        Profesores
+                    </div>
+                    <div class="modal-body">
+                        <!-------- lista de profesores que se pueden agregar (cambie los nombres pero chequea) --------->
+                        <table class="table">
+                            <thead>
+                            <td>Nombre</td>
+                            </thead>
+                            <!------ foreach si esta en la materia cambiar a boton eliminar ------->
+                            <tbody>
+                                <c:forEach items="${professorWrapperList}" var="professorWrapper" varStatus="loop">
+                                    <tr id="professorList${loop.count}">
+                                        <td><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </td>
+                                        <!--- boton agregar ---->
+                                        <c:if test="${!professorWrapper.favorite}">
+                                        <td><button id="${professorWrapper.professor.email}button" class="btn btn-success" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
+                                        </c:if>
+                                        <!--- boton eliminar ---->
+                                        <c:if test="${professorWrapper.favorite}">
+                                        <td><button id="${professorWrapper.professor.email}button" class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
+                                        </c:if>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 

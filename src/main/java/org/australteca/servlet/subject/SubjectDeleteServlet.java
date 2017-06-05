@@ -34,6 +34,6 @@ public class SubjectDeleteServlet extends HttpServlet {
         subjectDAO.delete(subjectID);
 
         req.setAttribute(Constants.OPERATION_SUCCESFUL_PARAM, true);
-        resp.sendRedirect("/listSubjects"); //arreglar
+        resp.sendRedirect("/listSubjects");
     }
 }

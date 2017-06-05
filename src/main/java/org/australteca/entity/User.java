@@ -40,6 +40,9 @@ public class User extends AbstractEntity{
     @ManyToMany
     private final Set<Subject> subjects = new HashSet<>();
 
+    @ManyToMany
+    private final Set<Publication> favoritePublications = new HashSet<>();
+
     @ElementCollection
     private final Map<String, Integer> subjectScores = new HashMap<>();
 
@@ -68,6 +71,10 @@ public class User extends AbstractEntity{
         this.course = course;
         this.password = password;
         assignRole(moderator, admin);
+    }
+
+    public Set<Publication> getFavoritePublications() {
+        return favoritePublications;
     }
 
     public Map<String, Integer> getSubjectScores() {
@@ -166,5 +173,9 @@ public class User extends AbstractEntity{
 
     public List<SubjectModeratorRelationship> getSubjectModeratorRelationships() {
         return subjectModeratorRelationships;
+    }
+
+    public Set<Publication> getPublication() {
+        return publications;
     }
 }

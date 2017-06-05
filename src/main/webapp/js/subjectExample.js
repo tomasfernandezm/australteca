@@ -122,7 +122,7 @@ function addModeratorPostulation(userEmail, subjectName){
     });
 }
 
-function addComment(subjectName, email){
+function addComment(subjectName, userEmail){
     $.ajax({
         type:'post',
         url: '/subjectAddCommentary',
@@ -130,11 +130,14 @@ function addComment(subjectName, email){
         data:{
             subjectName: subjectName,
             userEmail: userEmail,
-            commentary: document.getElementById('textarea').value
+            commentaryText: document.getElementById('textarea').value
         },
 
         success: function () {
-            // hacer el append
+            var article = document.createElement("ARTICLE");
+            var div = document.createElement("DIV");
+
+
         }
     });
 }

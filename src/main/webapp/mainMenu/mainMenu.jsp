@@ -23,10 +23,9 @@
             <ul class="nav navbar-nav">
                     <li class="activeHome2"><a href="<%=response.encodeURL("/userListPost")%>">Inicio</a></li>
                     <li class="activeSubject2"><a href="<%=response.encodeURL("/listSubjects")%>">Materias</a></li>
-                    <li class="activeWork2"><a href="<%=response.encodeURL("/mainMenu/work.jsp")%>">Trabajo</a></li>
-                    <li class="activeDiscussions2"><a href="<%=response.encodeURL("/mainMenu/discussions.jsp")%>">Discuciones</a></li>
+                    <li class="activeWork2"><a href="<%=response.encodeURL("/listPublications")%>">Trabajo</a></li>
                 <%if(request.isUserInRole(Constants.ADMINISTRATOR)){%>
-                    <li class="activeModerators2"><a href="<%=response.encodeURL("/postModerators")%>">Moderadores</a></li>
+                    <li class="activeModerators2"><a href="<%=response.encodeURL("/postModerators")%>">Administracion</a></li>
                 <%}%>
             </ul>
             <ul class="nav navbar-nav navbar-right">

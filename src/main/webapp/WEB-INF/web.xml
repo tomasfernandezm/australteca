@@ -60,6 +60,26 @@
     <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
 
     <servlet>
+        <servlet-name>DeleteProfessorServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.professor.ProfessorDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteProfessorServlet</servlet-name>
+        <url-pattern>/deleteProfessor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FavoritePublicationServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.publication.FavoritePublicationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FavoritePublicationServlet</servlet-name>
+        <url-pattern>/favoritePublication</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>AddPublicationServlet</servlet-name>
         <servlet-class>org.australteca.servlet.publication.AddPublicationServlet</servlet-class>
     </servlet>
@@ -390,13 +410,13 @@
     <!-- ~~~~~~~~~ Load Professoor ~~~~~~~~~~~~ -->
 
     <servlet>
-        <servlet-name>LoadProfessorServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectLoadProfessorServlet</servlet-class>
+        <servlet-name>AddProfessorServlet</servlet-name>
+        <servlet-class>org.australteca.servlet.professor.ProfessorAddServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>LoadProfessorServlet</servlet-name>
-        <url-pattern>/loadProfessor</url-pattern>
+        <servlet-name>AddProfessorServlet</servlet-name>
+        <url-pattern>/addProfessor</url-pattern>
     </servlet-mapping>
 
     <servlet>

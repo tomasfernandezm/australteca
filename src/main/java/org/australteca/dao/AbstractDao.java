@@ -4,7 +4,7 @@ import org.australteca.entity.EntityInterface;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.australteca.util.HibernateUtil;
+import org.australteca.utils.HibernateUtil;
 
 import java.util.ArrayList;
 import java.util.List;

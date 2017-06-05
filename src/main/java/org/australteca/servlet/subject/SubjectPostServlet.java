@@ -38,14 +38,14 @@ public class SubjectPostServlet extends HttpServlet {
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
         String email = req.getRemoteUser();
 
-        SubjectModeratorRelationshipDao smrd = new SubjectModeratorRelationshipDao();
-        SubjectModeratorRelationship smr = smrd.getByUserEmailAndSubjectName(email, subjectName);
+        //SubjectModeratorRelationshipDao smrd = new SubjectModeratorRelationshipDao();
+        // SubjectModeratorRelationship smr = smrd.getByUserEmailAndSubjectName(email, subjectName);
 
         UserDao userDao = new UserDao();
         User user = userDao.getUserByEmail(email);
 
         boolean isModerator = false;
-        if(smr != null && smr.isAccepted()) isModerator = true;
+//        if(smr != null && smr.isAccepted()) isModerator = true;
 
         SubjectDao subjectDAO = new SubjectDao();
         Subject subject = subjectDAO.getByName(subjectName);

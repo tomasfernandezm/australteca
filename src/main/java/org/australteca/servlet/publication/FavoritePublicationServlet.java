@@ -1,8 +1,9 @@
-package org.australteca.servlet.user;
+package org.australteca.servlet.publication;
 
-import com.google.gson.Gson;
+import org.australteca.dao.PublicationDao;
 import org.australteca.dao.SubjectDao;
 import org.australteca.dao.UserDao;
+import org.australteca.entity.Publication;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 
@@ -11,15 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.DecimalFormat;
 
-import static org.australteca.Constants.FAVORITE_PARAM;
-import static org.australteca.Constants.MAKE_FAVORITE;
+import static org.australteca.Constants.*;
 
 /**
- * Created by tomasforman on 13/5/17.
+ * Created by tomi on 03/06/17.
  */
-public class UserSubjectManagerAjax extends HttpServlet {
+public class FavoritePublicationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,25 +28,25 @@ public class UserSubjectManagerAjax extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-        String subjectName = req.getParameter("subjectName");
-        Boolean status = Boolean.parseBoolean(req.getParameter("status"));
+        String status = req.getParameter(FAVORITE_PARAM);
+        String publicationIDString = req.getParameter(PUBLICATION_ID);
+        Integer publicationID = Integer.parseInt(publicationIDString);
 
         UserDao userDao = new UserDao();
         User user = userDao.getUserByEmail(req.getRemoteUser());
 
-        SubjectDao subjectDao = new SubjectDao();
-        Subject subject = subjectDao.getByName(subjectName);
+        PublicationDao publicationDao = new PublicationDao();
+        Publication publication = publicationDao.get(publicationID);
 
-        if(status){
-            user.getSubjects().add(subject);
-            subject.getUserList().add(user);
+
+        if(status.equals(MAKE_FAVORITE)){
+            user.getFavoritePublications().add(publication);
+            publication.getSuscribedUsers().add(user);
         }else{
-            user.getSubjects().remove(subject);
-            subject.getUserList().remove(user);
+            user.getFavoritePublications().remove(publication);
+            publication.getSuscribedUsers().remove(user);
         }
 
-        subjectDao.merge(subject);
         userDao.merge(user);
 
         resp.setContentType("application/json");

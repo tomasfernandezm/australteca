@@ -3,7 +3,10 @@ package org.australteca.entity;
 import org.australteca.Constants;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by tomi on 29/04/17.
@@ -16,6 +19,9 @@ public class Publication extends AbstractEntity{
 
     @ManyToOne
     private User author;
+
+    @ManyToMany
+    private List<User> suscribedUsers = new ArrayList<>();
 
     private String requirements;
     private String description;
@@ -31,6 +37,10 @@ public class Publication extends AbstractEntity{
         this.requirements = requirements;
         this.description = description;
         this.role = role;
+    }
+
+    public List<User> getSuscribedUsers() {
+        return suscribedUsers;
     }
 
     public String getRole() {

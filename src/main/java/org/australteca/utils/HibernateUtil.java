@@ -1,7 +1,8 @@
-package org.australteca.util;
+package org.australteca.utils;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 /**
@@ -31,5 +32,11 @@ public class HibernateUtil {
 
     public static Session getCurrentSession(){
         return INSTANCE;
+    }
+
+    public static Transaction getNewTransaction(){
+        Transaction transaction = INSTANCE.getTransaction();
+        if(transaction != null) transaction.commit();
+        return INSTANCE.beginTransaction();
     }
 }

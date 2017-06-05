@@ -56,7 +56,7 @@ function changeFavorite(subjectName) {
         url:'/userSubjectManagerAjax',
         dataType: 'JSON',
         data:{
-            subject: subjectName,
+            subjectName: subjectName,
             status: $('#subject_favorite').is(':checked')
         },
 

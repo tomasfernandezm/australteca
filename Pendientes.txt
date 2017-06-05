@@ -2,8 +2,6 @@ Cosas que hay que hacer:
 
     2-lema dinamico
 
-    CHECKPOINT -> moderar (también añadir chequeos en el backend)
-
     Ajax
     1- comentarios agregar
     3- proveer feedback
@@ -40,10 +38,6 @@ Cosas que hay que hacer:
 
      LoginForm (probar)
      1-Mostrar mensaje de time out
-
-
-
-
 
 BONUS
 1-Estadisticas del usuario

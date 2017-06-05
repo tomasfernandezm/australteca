@@ -5,6 +5,7 @@ import org.australteca.dao.ProfessorDao;
 import org.australteca.dao.SubjectDao;
 import org.australteca.entity.Professor;
 import org.australteca.entity.Subject;
+import org.australteca.servlet.ModeratorChecker;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -31,26 +32,32 @@ public class SubjectAddProfessorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String subjectName = req.getParameter(SUBJECT_NAME_PARAM);
-        Integer professorID = Integer.parseInt(req.getParameter(PROFESSOR_ID_PARAM));
 
-        SubjectDao subjectDAO = new SubjectDao();
-        ProfessorDao professorDAO = new ProfessorDao();
+        String toParse = req.getParameter(PROFESSOR_ID_PARAM);
+        Integer professorID = null;
+        if(toParse != null) professorID = Integer.parseInt(toParse);
 
-        Professor professor = professorDAO.get(professorID);
-        Subject subject = subjectDAO.getByName(subjectName);
+        if(new ModeratorChecker().check(req.getRemoteUser(), subjectName)) {
 
-        professor.getSubjects().add(subject);
-        subject.getProfessors().add(professor);
+            SubjectDao subjectDAO = new SubjectDao();
+            ProfessorDao professorDAO = new ProfessorDao();
 
-        professorDAO.merge(professor);
-        subjectDAO.merge(subject);
+            Professor professor = professorDAO.get(professorID);
+            Subject subject = subjectDAO.getByName(subjectName);
 
-        List<String> response = new ArrayList<>();
-        response.add(professor.getFirstName() +" "+ professor.getLastName());
-        response.add(professor.getEmail());
-        response.add(professor.getInformation());
+            professor.getSubjects().add(subject);
+            subject.getProfessors().add(professor);
 
-        resp.setContentType("application/json");
-        resp.getWriter().write(new Gson().toJson(response));
+            professorDAO.merge(professor);
+            subjectDAO.merge(subject);
+
+            List<String> response = new ArrayList<>();
+            response.add(professor.getFirstName() + " " + professor.getLastName());
+            response.add(professor.getEmail());
+            response.add(professor.getInformation());
+
+            resp.setContentType("application/json");
+            resp.getWriter().write(new Gson().toJson(response));
+        }
     }
 }

@@ -25,7 +25,7 @@ public class Professor extends AbstractEntity{
     @Column(name = "PROFESSOR_INFORMATION")
     private  String information;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     private List<Subject> subjects = new ArrayList<Subject>();
 
     public Professor() {
