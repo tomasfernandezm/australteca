@@ -101,7 +101,7 @@
                             </thead>
                             <tbody>
                                 <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
-                                <c:forEach items="${subjectWrapperList}" var="subjectWrapper">
+                                <c:forEach items="${subjectWrapperList}" var="subjectWrapper" varStatus="loop">
                                     <tr>
                                         <td><a href="${pageContext.request.contextPath}/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
                                             <c:out value="${subjectWrapper.subject.subjectName}"/></a>
@@ -109,8 +109,7 @@
                                          <td>
                                              <%--<label class="checkbox"><i class="glyphicon glyphicon-heart"></i>--%>
                                             <div class="checkbox_wrapper">
-                                                 <input class="checkbox" id="subject_favorite" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value)
-                                                     <c:if test="${subjectWrapper.favorite}">checked</c:if>>
+                                                 <input class="checkbox" id="subject${loop.count}" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value,this.id) <c:if test="${subjectWrapper.favorite}">checked</c:if>>
                                                  <%--<label></label>--%>
                                             </div>
                                          </td>

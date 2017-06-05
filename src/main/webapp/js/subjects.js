@@ -50,14 +50,14 @@ $(function(){
 
 
 
-function changeFavorite(subjectName) {
+function changeFavorite(subjectName, checkBoxId) {
     $.ajax({
         type:'post',
         url:'/userSubjectManagerAjax',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
-            status: $('#subject_favorite').is(':checked')
+            status: document.getElementById(checkBoxId).checked
         },
 
         success: function(jsonObject){
