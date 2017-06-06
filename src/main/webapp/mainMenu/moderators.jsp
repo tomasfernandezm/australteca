@@ -165,7 +165,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Informacion:</label>
                                             <div class="col-md-8">
-                                                <input class="form-control" type="text" name="<%=PROFESSOR_INFORMATION_PARAM%>" required>
+                                                <textarea class="form-control" type="text" name="<%=PROFESSOR_INFORMATION_PARAM%>" required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -141,14 +141,12 @@
                             <c:set var="professorWrapperList" value="${requestScope[professorWrapperListParam]}"/>
                             <c:forEach items="${professorWrapperList}" var="professorWrapper">
                                 <c:if test="${professorWrapper.favorite}">
-                                    <div class="row" id="${professorWrapper.professor.email}">
-                                        <div class="ProfessorBoxContent">
-                                            <div class="col col-md-4">
+                                    <div id="${professorWrapper.professor.email}">
+                                            <div class="col col-md-4 ProfessorBoxContent">
                                                 <h3><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </h3>
                                                 <p><c:out value="${professorWrapper.professor.email}"/></p>
                                                 <p><c:out value="${professorWrapper.professor.information}"/></p>
                                             </div>
-                                        </div>
                                     </div>
                                 </c:if>
                             </c:forEach>
@@ -164,10 +162,10 @@
                                             <div class="status-upload">
 
                                                 <!----- writting box ------->
-                                                <form id="commentForm" action="/subjectAddCommentary" method="post">
+                                                <form id="commentForm" action="<c:url value="/subjectAddCommentary"/>" method="post">
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
-                                                    <textarea name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Que estas pensando?" ></textarea>
-                                                    <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Compartir</button>
+                                                    <textarea name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Danos tu opinion" ></textarea>
+                                                    <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Comentar</button>
                                                 </form>
                                                 <div class="col-xs-12"><hr></div>
 

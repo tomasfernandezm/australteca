@@ -110,7 +110,7 @@
                                              <%--<label class="checkbox"><i class="glyphicon glyphicon-heart"></i>--%>
                                             <div class="checkbox_wrapper">
                                                  <input class="checkbox" id="${subjectWrapper.subject.subjectName}Checkbox" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value,this.id) <c:if test="${subjectWrapper.favorite}">checked</c:if>>
-                                                 <%--<label></label>--%>
+                                                 <label></label>
                                             </div>
                                          </td>
                                         <% if (request.isUserInRole("admin")) { %>

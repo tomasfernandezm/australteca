@@ -24,8 +24,8 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row col-md-offset-4">
-            <button type="button" id="addWork"class="btn btn-default col-md-7" onclick="modalBox(document.getElementById('addWorkModal'))"><i>Agregar oferta</i> </button>
+        <div class="row col-md-offset-3 col-lg-offset-3 col-sm-offset-3">
+            <button type="button" id="addWork"class="btn btn-default col-md-8 col-lg-8 col-sm-8 col-xs-11 btnAddWork" onclick="modalBox(document.getElementById('addWorkModal'))">Agregar oferta</button>
         </div>
         <div class="col-xs-8 col-sm-8 col-md-7 col-xs-offset-4 col-sm-offset-4 col-md-offset-5">
 
@@ -52,6 +52,7 @@
                                 <div class="row">
                                     <div class="panel-heading">
                                         <h1 class="cta-title"> <c:out value="${investigation.name}"/> </h1>
+                                        <input type="checkbox" id="agregarid" value="favorite">
                                     </div>
                                     <div class="panel-body">
                                         <div class="col col-md-12 discussionBox">
@@ -148,7 +149,7 @@
         </div>
 
 
-        <!------ Modal Box add work ----->
+        <!------ Modal Box add work or investigation ----->
         <div id="addWorkModal" class="modal">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="modal-content">
@@ -164,9 +165,10 @@
                                         <div class="row form-group">
                                             <label class="col-lg-3 control-label">Tipo</label>
                                             <div class="col-lg-5">
-                                                <select>
-                                                    <option>Trabajo</option>
-                                                    <option>Investigacion</option>
+                                                <select class="select form-control" name="AgregarName">
+                                                    <option value="AgregarValue1" selected>Trabajo</option>
+                                                    <li class="divider"></li>
+                                                    <option value="AgregarValue2">Investigacion</option>
                                                 </select>
                                             </div>
                                         </div>

@@ -85,3 +85,31 @@ body{
 .bs-calltoaction.bs-calltoaction-statistics .cta-button .btn{
     border-color:#fff;
 }
+
+.btnAddWork{
+    margin-bottom: 15px;
+    background-color: #BC8BE8;
+    color: white;
+    border-color: transparent;
+    align-content: center;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.btnAddWork:hover{
+    background-color: white;
+    color: rebeccapurple;
+    border-color: #BC8BE8;
+}
+
+.nav-pills > li > a {
+    border: none;
+    color: rebeccapurple; !important;
+
+}
+.nav-pills > li.active > a, .nav-pills > li > a:hover, .nav-pills > li.active > a:hover {
+    border: none;
+    color: white !important;
+    background-color: rebeccapurple; !important;
+}
+

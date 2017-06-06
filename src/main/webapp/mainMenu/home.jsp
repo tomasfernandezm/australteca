@@ -39,7 +39,7 @@
                         <c:set var="subjectList" value='${requestScope[subjectListParam]}' />
                         <c:forEach items="${subjectList}" var="subject">
                             <div class="col col-md-4">
-                                <a href="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subjectName}" class="btn btn-lg btn-block btn-primary"><c:out value="${subject.subjectName}"/></a>
+                                <a href="<c:url value="/postSubject?<%=Constants.SUBJECT_NAME_PARAM%>=${subject.subjectName}"/>" class="btn btn-lg btn-block btn-primary"><c:out value="${subject.subjectName}"/></a>
                             </div>
                         </c:forEach>
                     </div>

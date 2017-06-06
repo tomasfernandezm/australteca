@@ -14,7 +14,7 @@ $(document).ready(function(){
         html : true,
         title : 'Seguro deseas enviar?',
         content : '<button type="submit" class="btn btn-primary">Si</button>' +
-        '<button type="submit" class="btn btn-danger">No</button>'
+        '<button type="submit" class="btn btn-danger btnCancel">No</button>'
     });
     $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');

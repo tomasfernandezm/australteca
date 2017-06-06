@@ -70,34 +70,35 @@
 }
 
 
-/*.checkbox_wrapper{*/
-    /*position: relative;*/
-    /*height: 25px;*/
-    /*width: 25px;*/
-/*}*/
+.checkbox_wrapper{
+    position: relative;
+    height: 25px;
+    width: 25px;
+}
 
-/*input[type="checkbox"] {*/
-    /*opacity:0;*/
-    /*height: 100%;*/
-    /*width: 100%;*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*z-index: 2;*/
-/*}*/
+input[type="checkbox"] {
+    opacity:0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
 
-/*input[type="checkbox"] + label{*/
-    /*background:url('/images/star-off.svg') no-repeat;*/
-    /*height: 100%;*/
-    /*width: 100%;*/
-    /*display:inline-block;*/
-    /*position: absolute;*/
+input[type="checkbox"] + label{
+    background:url('/images/likeOff.svg') no-repeat;
+    height: 100%;
+    width: 100%;
+    display:inline-block;
+    position: absolute;
 
-/*}*/
+}
 
-/*input[type="checkbox"]:checked + label{*/
-    /*background:url('../images/star-on.svg') no-repeat;*/
-    /*height: 100%;*/
-    /*width: 100%;*/
-    /*display:inline-block;*/
-/*}*/
+input[type="checkbox"]:checked + label{
+    background:url('../images/likeOn.svg') no-repeat;
+    height: 100%;
+    width: 100%;
+    display:inline-block;
+}
+
