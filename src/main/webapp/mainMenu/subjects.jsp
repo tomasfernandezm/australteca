@@ -4,7 +4,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.australteca.Constants" %>
 <%@ page import="javax.security.auth.login.Configuration" %>
-<%@ page import="org.australteca.servlet.command.enums.SubjectEnums" %>
+<%--<%@ page import="org.australteca.servlet.command.enums.SubjectEnums" %>--%>
 <%@ page import="static org.australteca.Constants.REMOVE_FAVORITE" %>
 <%@ page import="static org.australteca.Constants.MAKE_FAVORITE" %>
 <%@ page import="static org.australteca.Constants.*" %>

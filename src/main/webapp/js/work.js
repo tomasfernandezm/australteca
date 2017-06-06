@@ -13,8 +13,7 @@ $(document).ready(function(){
         placement : 'left',
         html : true,
         title : 'Seguro deseas enviar?',
-        content : '<button type="submit" class="btn btn-primary">Si</button>' +
-        '<button type="submit" class="btn btn-danger btnCancel">No</button>'
+        content : '<button type="submit" class="btn btn-primary">Aceptar</button>'
     });
     $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');
