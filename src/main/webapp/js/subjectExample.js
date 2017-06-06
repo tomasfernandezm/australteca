@@ -63,13 +63,28 @@ function addProfessorToSubject(professorID, subjectName){
             subjectName: subjectName
         },
 
-        success: function(jsonObject){
-            document.getElementById('idtab2default').append('<div class="row" id="${professorWrapper.professor.email}"> <div class="boxContent"> <div class="col col-md-4"> <h3>jsonObject[0]</h3> <p>jsonObject[1]</p> <p>jsonObject[2]</p> </div> </div> </div>');
+        success: function(professorJSON){
+            var div = document.getElementById('tab2default');
+            var profDiv = document.createElement('div');
+            profDiv.id = professorJSON[1];
+            div.appendChild(profDiv);
+            var profChildDiv = document.createElement('div');
+            profChildDiv.className = "col col-md-4 ProfessorBoxContent";
+            profDiv.appendChild(profChildDiv);
 
-            var button = document.getElementById(jsonObject[1]+'button');
-            button.onclick = removeProfessorFromSubject(professorID, subjectName);
-            button.innerText = 'Eliminar';
-            button.class = 'btn btn-danger';
+            var h3 = document.createElement('h3');
+            h3.innerHTML = professorJSON[0];
+            var pEmail = document.createElement('p');
+            pEmail.innerHTML = professorJSON[1];
+            var pInformation = document.createElement('p');
+            pInformation.innerHTML = professorJSON[2];
+            profChildDiv.appendChild(h3);
+            profChildDiv.appendChild(pEmail);
+            profChildDiv.appendChild(pInformation);
+            var button = document.getElementById(professorJSON[1]+'button');
+            button.innerHTML = 'Eliminar';
+            button.className = "btn btn-danger";
+            button.setAttribute("onclick","removeProfessorFromSubject("+professorID+", '"+subjectName+"')" );
         }
     });
 }
@@ -87,9 +102,9 @@ function removeProfessorFromSubject(professorID, subjectName){
         success: function(jsonObject){
             document.getElementById(jsonObject).remove();
             var button = document.getElementById(jsonObject+'button');
-            button.onclick = addProfessorToSubject(professorID, subjectName);
-            button.innerText = 'Agregar';
-            button.class = 'btn btn-success';
+            button.innerHTML = 'Agregar';
+            button.className = "btn btn-success";
+            button.setAttribute("onclick","addProfessorToSubject("+professorID+", '"+subjectName+"')" );
         }
     });
 }

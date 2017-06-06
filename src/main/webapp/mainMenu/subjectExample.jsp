@@ -128,7 +128,7 @@
                                 <div class="row">
                                         <% if (request.isUserInRole("admin")) { %>
                                             <div class="btn btn-professor center-block">
-                                                <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Agregar profesor</button>
+                                                <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Editar profesores</button>
                                             </div>
                                         <% } %>
                                 </div>
