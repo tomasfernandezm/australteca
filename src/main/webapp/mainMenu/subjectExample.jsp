@@ -76,9 +76,8 @@
                         <%--<% } %>--%>
                         <!---- agregar botones moderador ------>
                         <% if (request.isUserInRole("user")) { %>
-<<<<<<< HEAD
+
                         <button id="addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
-=======
                         <c:set var="moderator" value="<%=Constants.MODERATOR_PARAM%>"/>
                         <c:if test="${moderator}">
                             <button type="submit"  class="btn btn-danger pull-right" onclick="">Dejar de ser moderador</button>
@@ -86,7 +85,7 @@
                         <c:if test="${!moderator}">
                             <button id= "moderatorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
                         </c:if>
->>>>>>> 49751fec59339f90a1d07f8fa16e494586e353eb
+
                         <% } %>
                     </ul>
                 </div>
