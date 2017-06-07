@@ -57,408 +57,416 @@
     </filter-mapping>
 
 
-    <!-- ~~~~~~~~~~~~~ Servlet Configuration and Mapping ~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~ SERVLET CONFIGURATION AND MAPPING ~~~~~~~~~~~~~~~~~ -->
 
-    <servlet>
-        <servlet-name>DeleteProfessorServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.professor.ProfessorDeleteServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>DeleteProfessorServlet</servlet-name>
-        <url-pattern>/deleteProfessor</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>FavoritePublicationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.publication.FavoritePublicationServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>FavoritePublicationServlet</servlet-name>
-        <url-pattern>/favoritePublication</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AddPublicationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.publication.AddPublicationServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AddPublicationServlet</servlet-name>
-        <url-pattern>/addPublication</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>RemovePublicationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.publication.RemovePublicationServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>RemovePublicationServlet</servlet-name>
-        <url-pattern>/removePublication</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>ListPublicationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.publication.ListPublicationServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ListPublicationServlet</servlet-name>
-        <url-pattern>/listPublications</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>UserGetSubjectRating</servlet-name>
-        <servlet-class>org.australteca.servlet.user.UserGetSubjectRatingServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UserGetSubjectRating</servlet-name>
-        <url-pattern>/userGetSubjectRating</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DeleteCommentary</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectDeleteCommentServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>DeleteCommentary</servlet-name>
-        <url-pattern>/deleteCommentary</url-pattern>
-    </servlet-mapping>
-
-    <!-- ~~~~~~~~~~ Moderator ~~~~~~~~~~~~~~~~ -->
-
-    <servlet>
-        <servlet-name>PostPostulationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.moderator.PostPostulantsServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>PostPostulationServlet</servlet-name>
-        <url-pattern>/postModerators</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DenyPostulationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.moderator.DenyPostulationServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>DenyPostulationServlet</servlet-name>
-        <url-pattern>/denyPostulation</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AcceptPostulationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.moderator.AcceptPostulationServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AcceptPostulationServlet</servlet-name>
-        <url-pattern>/acceptPostulation</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AddPostulantServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.moderator.AddPostulantServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AddPostulantServlet</servlet-name>
-        <url-pattern>/addPostulant</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DeletePostulantServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.moderator.DeletePostulantServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>DeletePostulantServlet</servlet-name>
-        <url-pattern>/deletePostulant</url-pattern>
-    </servlet-mapping>
-
-
-    <servlet>
-        <servlet-name>UserPostPhotoServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.user.UserPostPhotoServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UserPostPhotoServlet</servlet-name>
-        <url-pattern>/userPostPhoto</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>UploadPhotoServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.filetransfer.PhotoUploadServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UploadPhotoServlet</servlet-name>
-        <url-pattern>/uploadPhoto</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>NoteDeleteServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectNoteDelete</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>NoteDeleteServlet</servlet-name>
-        <url-pattern>/noteDelete</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>NoteDownloadServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.filetransfer.DownloadServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>NoteDownloadServlet</servlet-name>
-        <url-pattern>/noteDownload</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>UserListPostServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.user.UserListPostServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UserListPostServlet</servlet-name>
-        <url-pattern>/userListPost</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>UserSubjectManagerServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.user.UserSubjectManagerServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UserSubjectManagerServlet</servlet-name>
-        <url-pattern>/manageUserSubjects</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>UploadServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.filetransfer.NoteUploadServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UploadServlet</servlet-name>
-        <url-pattern>/upload</url-pattern>
-    </servlet-mapping>
-
-
-    <servlet>
-        <servlet-name>UserSubjectManagerAjax</servlet-name>
-        <servlet-class>org.australteca.servlet.user.UserSubjectManagerAjax</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UserSubjectManagerAjax</servlet-name>
-        <url-pattern>/userSubjectManagerAjax</url-pattern>
-    </servlet-mapping>
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~ User Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-    <!-- ~~~~~~~~~ User Registration ~~~~~~~~~~~~ -->
+        <!--  User Registration -->
+        <servlet>
+            <servlet-name>UserRegisterServlet</servlet-name>
+            <!--<description>for registration only</description>-->
+            <servlet-class>org.australteca.servlet.user.UserRegisterServlet</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>UserRegisterServlet</servlet-name>
-        <!--<description>for registration only</description>-->
-        <servlet-class>org.australteca.servlet.user.UserRegisterServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>UserRegisterServlet</servlet-name>
+            <url-pattern>/register</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>UserRegisterServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
+        <!-- User Delete -->
+        <servlet>
+            <servlet-name>UserDeleteServlet</servlet-name>
+            <!--<description>for registration only</description>-->
+            <servlet-class>org.australteca.servlet.user.UserDeleteServlet</servlet-class>
+        </servlet>
 
-    <!-- ~~~~~~~~~ User Delete ~~~~~~~~~~~~ -->
+        <servlet-mapping>
+            <servlet-name>UserDeleteServlet</servlet-name>
+            <url-pattern>/userDelete</url-pattern>
+        </servlet-mapping>
 
-    <servlet>
-        <servlet-name>UserDeleteServlet</servlet-name>
-        <!--<description>for registration only</description>-->
-        <servlet-class>org.australteca.servlet.user.UserDeleteServlet</servlet-class>
-    </servlet>
+        <!-- User Modification -->
+        <servlet>
+            <servlet-name>UserModificationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.user.UserModificationServlet</servlet-class>
+        </servlet>
 
-    <servlet-mapping>
-        <servlet-name>UserDeleteServlet</servlet-name>
-        <url-pattern>/userDelete</url-pattern>
-    </servlet-mapping>
+        <servlet-mapping>
+            <servlet-name>UserModificationServlet</servlet-name>
+            <url-pattern>/userModification</url-pattern>
+        </servlet-mapping>
 
-    <!-- ~~~~~~~~~ User Modification ~~~~~~~~~~~~ -->
+        <!-- User Post -->
+        <servlet>
+            <servlet-name>UserPostServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.user.UserPostServlet</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>UserModificationServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.user.UserModificationServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>UserPostServlet</servlet-name>
+            <url-pattern>/userPost</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>UserModificationServlet</servlet-name>
-        <url-pattern>/userModification</url-pattern>
-    </servlet-mapping>
+        <!-- User subject manager -->
+        <servlet>
+            <servlet-name>UserSubjectManagerAjax</servlet-name>
+            <servlet-class>org.australteca.servlet.user.UserSubjectManagerAjax</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>UserPostServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.user.UserPostServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>UserSubjectManagerAjax</servlet-name>
+            <url-pattern>/userSubjectManagerAjax</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>UserPostServlet</servlet-name>
-        <url-pattern>/userPost</url-pattern>
-    </servlet-mapping>
+        <!-- User post profile photo -->
+        <servlet>
+            <servlet-name>UserPostPhotoServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.user.UserPostPhotoServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>UserPostPhotoServlet</servlet-name>
+            <url-pattern>/userPostPhoto</url-pattern>
+        </servlet-mapping>
+
+        <!-- User upload profile photo -->
+        <servlet>
+            <servlet-name>UploadPhotoServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.filetransfer.PhotoUploadServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>UploadPhotoServlet</servlet-name>
+            <url-pattern>/uploadPhoto</url-pattern>
+        </servlet-mapping>
+
+        <!-- User get subject rating -->
+        <servlet>
+            <servlet-name>UserGetSubjectRating</servlet-name>
+            <servlet-class>org.australteca.servlet.user.UserGetSubjectRatingServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>UserGetSubjectRating</servlet-name>
+            <url-pattern>/userGetSubjectRating</url-pattern>
+        </servlet-mapping>
+
+        <!-- User list POST -->
+        <servlet>
+            <servlet-name>UserListPostServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.user.UserListPostServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>UserListPostServlet</servlet-name>
+            <url-pattern>/userListPost</url-pattern>
+        </servlet-mapping>
+
+        <!-- User subject manager -->
+        <servlet>
+            <servlet-name>UserSubjectManagerServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.user.UserSubjectManagerServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>UserSubjectManagerServlet</servlet-name>
+            <url-pattern>/manageUserSubjects</url-pattern>
+        </servlet-mapping>
+
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~ Subject Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-    <servlet>
-        <servlet-name>SubjectChangeRatingAjax</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingAjax</servlet-class>
-    </servlet>
+        <!-- Add Subject -->
+        <servlet>
+            <servlet-name>AddSubjectServlet</servlet-name>
+            <!--<description> adds subject to database</description>-->
+            <servlet-class>org.australteca.servlet.subject.SubjectAddServlet</servlet-class>
+        </servlet>
 
-    <servlet-mapping>
-        <servlet-name>SubjectChangeRatingAjax</servlet-name>
-        <url-pattern>/subjectChangeRatingAjax</url-pattern>
-    </servlet-mapping>
+        <servlet-mapping>
+            <servlet-name>AddSubjectServlet</servlet-name>
+            <url-pattern>/addSubject</url-pattern>
+        </servlet-mapping>
+
+        <!-- Delete Subject -->
+        <servlet>
+            <servlet-name>SubjectDeleteServlet</servlet-name>
+            <!--<description>for registration only</description>-->
+            <servlet-class>org.australteca.servlet.subject.SubjectDeleteServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>SubjectDeleteServlet</servlet-name>
+            <url-pattern>/subjectDelete</url-pattern>
+        </servlet-mapping>
+
+        <!-- Subject List -->
+        <servlet>
+            <servlet-name>ListSubjectServlet</servlet-name>
+            <!--<description> gives a List of subject according to certain parameters</description>-->
+            <servlet-class>org.australteca.servlet.subject.SubjectListServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>ListSubjectServlet</servlet-name>
+            <url-pattern>/listSubjects</url-pattern>
+        </servlet-mapping>
+
+        <!-- Subject View -->
+        <servlet>
+            <servlet-name>PostSubjectServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.subject.SubjectPostServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>PostSubjectServlet</servlet-name>
+            <url-pattern>/postSubject</url-pattern>
+        </servlet-mapping>
+
+        <!-- Subject change raiting -->
+        <servlet>
+            <servlet-name>SubjectChangeRatingAjax</servlet-name>
+            <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingAjax</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>SubjectChangeRatingAjax</servlet-name>
+            <url-pattern>/subjectChangeRatingAjax</url-pattern>
+        </servlet-mapping>
+
+    <!-- ~~~~~~~~~ Notes servlet ~~~~~~~~~~~~ -->
+
+        <!-- Delete note -->
+        <servlet>
+            <servlet-name>NoteDeleteServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.subject.SubjectNoteDelete</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>NoteDeleteServlet</servlet-name>
+            <url-pattern>/noteDelete</url-pattern>
+        </servlet-mapping>
+
+        <!-- Download note -->
+        <servlet>
+            <servlet-name>NoteDownloadServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.filetransfer.DownloadServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>NoteDownloadServlet</servlet-name>
+            <url-pattern>/noteDownload</url-pattern>
+        </servlet-mapping>
+
+        <!-- Upload file -->
+        <servlet>
+            <servlet-name>UploadServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.filetransfer.NoteUploadServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>UploadServlet</servlet-name>
+            <url-pattern>/upload</url-pattern>
+        </servlet-mapping>
 
 
-    <servlet>
-        <servlet-name>SubjectAddCommentaryServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectAddCommentaryServlet</servlet-class>
-    </servlet>
+    <!-- ~~~~~~~~~Professor servlet ~~~~~~~~~~~~ -->
 
-    <servlet-mapping>
-        <servlet-name>SubjectAddCommentaryServlet</servlet-name>
-        <url-pattern>/subjectAddCommentary</url-pattern>
-    </servlet-mapping>
+        <!-- Add professor -->
+        <servlet>
+            <servlet-name>AddProfessorServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.professor.ProfessorAddServlet</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>SubjectChangeRatingServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectChangeRatingServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>AddProfessorServlet</servlet-name>
+            <url-pattern>/addProfessor</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>SubjectChangeRatingServlet</servlet-name>
-        <url-pattern>/rateSubject</url-pattern>
-    </servlet-mapping>
-    <!-- ~~~~~~~~~ Subject Delete ~~~~~~~~~~~~ -->
-    <servlet>
-        <servlet-name>SubjectDeleteServlet</servlet-name>
-        <!--<description>for registration only</description>-->
-        <servlet-class>org.australteca.servlet.subject.SubjectDeleteServlet</servlet-class>
-    </servlet>
+        <!-- Delete professor -->
+        <servlet>
+            <servlet-name>DeleteProfessorServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.professor.ProfessorDeleteServlet</servlet-class>
+        </servlet>
 
-    <servlet-mapping>
-        <servlet-name>SubjectDeleteServlet</servlet-name>
-        <url-pattern>/subjectDelete</url-pattern>
-    </servlet-mapping>
+        <servlet-mapping>
+            <servlet-name>DeleteProfessorServlet</servlet-name>
+            <url-pattern>/deleteProfessor</url-pattern>
+        </servlet-mapping>
 
-    <!-- ~~~~~~~~~ Subject Add ~~~~~~~~~~~~ -->
+        <!-- Add professor to subject -->
+        <servlet>
+            <servlet-name>AddProfessorToSubjectServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.subject.SubjectAddProfessorServlet</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>AddSubjectServlet</servlet-name>
-        <!--<description> adds subject to database</description>-->
-        <servlet-class>org.australteca.servlet.subject.SubjectAddServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>AddProfessorToSubjectServlet</servlet-name>
+            <url-pattern>/addProfessorToSubject</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>AddSubjectServlet</servlet-name>
-        <url-pattern>/addSubject</url-pattern>
-    </servlet-mapping>
+        <!-- Remove professor to subject -->
+        <servlet>
+            <servlet-name>RemoveProfessorFromSubjectServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.subject.SubjectRemoveProfessorServlet</servlet-class>
+        </servlet>
 
-    <!-- ~~~~~~~~~ Subject List ~~~~~~~~~~~~ -->
+        <servlet-mapping>
+            <servlet-name>RemoveProfessorFromSubjectServlet</servlet-name>
+            <url-pattern>/removeProfessorFromSubject</url-pattern>
+        </servlet-mapping>
 
-    <servlet>
-        <servlet-name>ListSubjectServlet</servlet-name>
-        <!--<description> gives a List of subject according to certain parameters</description>-->
-        <servlet-class>org.australteca.servlet.subject.SubjectListServlet</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>ListSubjectServlet</servlet-name>
-        <url-pattern>/listSubjects</url-pattern>
-    </servlet-mapping>
+    <!-- ~~~~~~~~~~ Commentary ~~~~~~~~~~~~~~~~ -->
 
-    <!-- ~~~~~~~~~ Command Pattern Subject ~~~~~~~~~~~~ -->
+        <!-- add commentary to subject -->
+        <servlet>
+            <servlet-name>SubjectAddCommentaryServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.subject.SubjectAddCommentaryServlet</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>SubjectServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>SubjectAddCommentaryServlet</servlet-name>
+            <url-pattern>/subjectAddCommentary</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>SubjectServlet</servlet-name>
-        <url-pattern>/subject</url-pattern>
-    </servlet-mapping>
+        <!-- Delete commentary to subject -->
+        <servlet>
+            <servlet-name>DeleteCommentary</servlet-name>
+            <servlet-class>org.australteca.servlet.subject.SubjectDeleteCommentServlet</servlet-class>
+        </servlet>
 
-    <!-- ~~~~~~~~~ Subject View ~~~~~~~~~~~~ -->
+        <servlet-mapping>
+            <servlet-name>DeleteCommentary</servlet-name>
+            <url-pattern>/deleteCommentary</url-pattern>
+        </servlet-mapping>
 
-    <servlet>
-        <servlet-name>PostSubjectServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectPostServlet</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>PostSubjectServlet</servlet-name>
-        <url-pattern>/postSubject</url-pattern>
-    </servlet-mapping>
+    <!-- ~~~~~~~~~~ Moderator ~~~~~~~~~~~~~~~~ -->
 
-    <!-- ~~~~~~~~~ Load Professoor ~~~~~~~~~~~~ -->
+        <!-- Post postulation moderator-->
+        <servlet>
+            <servlet-name>PostPostulationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.moderator.PostPostulantsServlet</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>AddProfessorServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.professor.ProfessorAddServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>PostPostulationServlet</servlet-name>
+            <url-pattern>/postModerators</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>AddProfessorServlet</servlet-name>
-        <url-pattern>/addProfessor</url-pattern>
-    </servlet-mapping>
+        <!-- Deny Postulation moderator -->
+        <servlet>
+            <servlet-name>DenyPostulationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.moderator.DenyPostulationServlet</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>AddProfessorToSubjectServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectAddProfessorServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>DenyPostulationServlet</servlet-name>
+            <url-pattern>/denyPostulation</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>AddProfessorToSubjectServlet</servlet-name>
-        <url-pattern>/addProfessorToSubject</url-pattern>
-    </servlet-mapping>
+        <!-- Accept postulation moderator -->
+        <servlet>
+            <servlet-name>AcceptPostulationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.moderator.AcceptPostulationServlet</servlet-class>
+        </servlet>
 
-    <servlet>
-        <servlet-name>RemoveProfessorFromSubjectServlet</servlet-name>
-        <servlet-class>org.australteca.servlet.subject.SubjectRemoveProfessorServlet</servlet-class>
-    </servlet>
+        <servlet-mapping>
+            <servlet-name>AcceptPostulationServlet</servlet-name>
+            <url-pattern>/acceptPostulation</url-pattern>
+        </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>RemoveProfessorFromSubjectServlet</servlet-name>
-        <url-pattern>/removeProfessorFromSubject</url-pattern>
-    </servlet-mapping>
+        <!-- Add postulant moderator -->
+        <servlet>
+            <servlet-name>AddPostulantServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.moderator.AddPostulantServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>AddPostulantServlet</servlet-name>
+            <url-pattern>/addPostulant</url-pattern>
+        </servlet-mapping>
+
+        <!-- Delete postulant moderator -->
+        <servlet>
+            <servlet-name>DeletePostulantServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.moderator.DeletePostulantServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>DeletePostulantServlet</servlet-name>
+            <url-pattern>/deletePostulant</url-pattern>
+        </servlet-mapping>
+
+
+    <!-- ~~~~~~~~~~~~~ Publications ~~~~~~~~~~~~~~~~~ -->
+
+        <!-- Add publications -->
+        <servlet>
+            <servlet-name>AddPublicationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.publication.AddPublicationServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>AddPublicationServlet</servlet-name>
+            <url-pattern>/addPublication</url-pattern>
+        </servlet-mapping>
+
+        <!-- Remove publications -->
+        <servlet>
+            <servlet-name>RemovePublicationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.publication.RemovePublicationServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>RemovePublicationServlet</servlet-name>
+            <url-pattern>/removePublication</url-pattern>
+        </servlet-mapping>
+
+        <!-- List of publications -->
+        <servlet>
+            <servlet-name>ListPublicationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.publication.ListPublicationServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>ListPublicationServlet</servlet-name>
+            <url-pattern>/listPublications</url-pattern>
+        </servlet-mapping>
+
+        <!-- Favorite publications -->
+        <servlet>
+            <servlet-name>FavoritePublicationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.publication.FavoritePublicationServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>FavoritePublicationServlet</servlet-name>
+            <url-pattern>/favoritePublication</url-pattern>
+        </servlet-mapping>
+
 
     <!-- ~~~~~~~~~~~~~~~~ Session Configuration ~~~~~~~~~~~~~~~~~~~~ -->
 
-   <!-- make the session time-out after one minute -->
-   <session-config>
-      <session-timeout>30</session-timeout>
-   </session-config>
+       <!-- make the session time-out after one minute -->
+       <session-config>
+          <session-timeout>30</session-timeout>
+       </session-config>
 
 
     <!-- ~~~~~~~~~~~~~~~ Welcome File List ~~~~~~~~~~~~~~~~~~~~~~-->
 
-   <welcome-file-list>
-       <welcome-file>loginForm.jsp</welcome-file>
-   </welcome-file-list>
+       <welcome-file-list>
+           <welcome-file>loginForm.jsp</welcome-file>
+       </welcome-file-list>
 
     <!-- ~~~~~~~~~~~~~~~ Error Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-   <!-- SecurityFilter works with custom error pages -->
-   <error-page>
-      <error-code>403</error-code>
-      <location>/error/403.jsp</location>
-   </error-page>
+       <error-page>
+          <error-code>403</error-code>
+          <location>/error/403.jsp</location>
+       </error-page>
 
 </web-app>
