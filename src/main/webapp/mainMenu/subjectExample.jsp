@@ -71,13 +71,23 @@
                         <li class="active"><a href="#tab1default" data-toggle="tab">Apuntes</a></li>
                         <li><a href="#tab2default" data-toggle="tab">Profesores</a></li>
                         <li><a href="#tab3default" data-toggle="tab">Comentarios</a></li>
-                        <% if (request.isUserInRole("user")) { %>
-                        <button id="addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
-                        <% } %>
+                        <%--<% if (request.isUserInRole("user")) { %>--%>
+                        <%--<button type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>--%>
+                        <%--<% } %>--%>
                         <!---- agregar botones moderador ------>
-
-
-
+                        <% if (request.isUserInRole("user")) { %>
+<<<<<<< HEAD
+                        <button id="addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
+=======
+                        <c:set var="moderator" value="<%=Constants.MODERATOR_PARAM%>"/>
+                        <c:if test="${moderator}">
+                            <button type="submit"  class="btn btn-danger pull-right" onclick="">Dejar de ser moderador</button>
+                        </c:if>
+                        <c:if test="${!moderator}">
+                            <button id= "moderatorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
+                        </c:if>
+>>>>>>> 49751fec59339f90a1d07f8fa16e494586e353eb
+                        <% } %>
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -225,7 +235,7 @@
 <div id="noteModal" class="modal">
     <div class="modal-content">
         <span onclick="closeModal(document.getElementById('noteModal'))" class="close">&times;</span>
-        <form id="agregar" action="/upload" method="POST" enctype="multipart/form-data">
+        <form id="agregar" action="<c:url value="/upload"/>" method="POST" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row centered-form  ">
                     <div >
