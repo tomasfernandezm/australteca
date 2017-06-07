@@ -165,11 +165,15 @@
                                         <div class="row form-group">
                                             <label class="col-lg-3 control-label">Tipo</label>
                                             <div class="col-lg-5">
-                                                <select class="select form-control" name="AgregarName">
-                                                    <option value="AgregarValue1" selected>Trabajo</option>
-                                                    <li class="divider"></li>
-                                                    <option value="AgregarValue2">Investigacion</option>
-                                                </select>
+                                                <label>
+                                                    <select class="select form-control" name="AgregarName">
+                                                        <option value="AgregarValue1" selected>Trabajo</option>
+                                                        <%--
+                                                        <li class="divider"></li>
+                                                        --%>
+                                                        <option value="AgregarValue2">Investigacion</option>
+                                                    </select>
+                                                </label>
                                             </div>
                                         </div>
                                         <div class="row form-group">
