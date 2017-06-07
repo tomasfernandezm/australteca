@@ -1,5 +1,6 @@
 package org.australteca.servlet.publication;
 
+import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.PublicationDao;
 import org.australteca.dao.UserDao;
@@ -40,7 +41,7 @@ public class RemovePublicationServlet extends HttpServlet {
         }
 
         resp.setContentType("application/json");
-        resp.getWriter().write("OK");
+        resp.getWriter().write(new Gson().toJson("OK"));
 
     }
 }

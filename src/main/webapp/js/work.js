@@ -13,14 +13,18 @@ $(document).ready(function(){
         placement : 'left',
         html : true,
         title : 'Seguro deseas enviar?',
-        content : '<button type="submit" class="btn btn-primary">Aceptar</button>'
+        content : '<button id="addPublicationButton" type="submit" class="btn btn-primary" onclick="addPublication()">Aceptar</button>'
     });
     $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');
     });
 });
 
-$("#addPublicationButton").click(function(){
+function addPublication(){
+
+    var selectedRole = document.getElementById('publicationRole');
+    var roleText = selectedRole.options[selectedRole.selectedIndex].text;
+
     $.ajax({
         type:'post',
         url: '/addPublication',
@@ -29,26 +33,37 @@ $("#addPublicationButton").click(function(){
             publicationName: document.getElementById('nameInput').value,
             publicationDescription: document.getElementById('descriptionTextarea').value,
             publicationRequirements: document.getElementById('requisitesTextarea').value,
-            publicationTasks: document.getElementById('tasksTextarea').value
-            // añadir role
+            publicationTasks: document.getElementById('tasksTextarea').value,
+            publicationRole: roleText
         },
         success: function () {
 
         }
     });
-});
+}
 
-function removePublication(publicationID, rowID){
+function changeFavorite(publicationID, checkBoxId) {
+    $.ajax({
+        type:'post',
+        url:'/favoritePublication',
+        dataType: 'JSON',
+        data:{
+            publicationID: publicationID,
+            status: document.getElementById(checkBoxId).checked
+        }
+    })
+}
+
+function removePublication(publicationID, containerID){
     $.ajax({
         type:'post',
         url: '/removePublication',
         dataType: 'JSON',
         data:{
-            subjectName: subjectName,
-            userEmail: userEmail
+            publicationID: publicationID
         },
         success: function(){
-            document.getElementById(rowID).remove();
+            document.getElementById(containerID ).remove();
         }
     });
 }

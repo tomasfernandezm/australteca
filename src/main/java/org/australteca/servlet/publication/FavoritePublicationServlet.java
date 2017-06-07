@@ -1,5 +1,6 @@
 package org.australteca.servlet.publication;
 
+import com.google.gson.Gson;
 import org.australteca.dao.PublicationDao;
 import org.australteca.dao.SubjectDao;
 import org.australteca.dao.UserDao;
@@ -28,9 +29,11 @@ public class FavoritePublicationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String status = req.getParameter(FAVORITE_PARAM);
+        String status = req.getParameter("status");
         String publicationIDString = req.getParameter(PUBLICATION_ID);
+
         Integer publicationID = Integer.parseInt(publicationIDString);
+        Boolean favoriteStatus = Boolean.parseBoolean(status);
 
         UserDao userDao = new UserDao();
         User user = userDao.getUserByEmail(req.getRemoteUser());
@@ -39,7 +42,7 @@ public class FavoritePublicationServlet extends HttpServlet {
         Publication publication = publicationDao.get(publicationID);
 
 
-        if(status.equals(MAKE_FAVORITE)){
+        if(favoriteStatus){
             user.getFavoritePublications().add(publication);
             publication.getSuscribedUsers().add(user);
         }else{
@@ -50,6 +53,6 @@ public class FavoritePublicationServlet extends HttpServlet {
         userDao.merge(user);
 
         resp.setContentType("application/json");
-        //resp.getWriter().write();
+        resp.getWriter().write(new Gson().toJson("OK"));
     }
 }

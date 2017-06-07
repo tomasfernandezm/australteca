@@ -38,7 +38,7 @@ public class AddPublicationServlet extends HttpServlet {
 
         if (pubRole != null && (pubRole.equals(Constants.WORK_PUBLICATION) || pubRole.equals(Constants.INVESTIGATION_PUBLICATION))) {
 
-            Publication publication = new Publication(pubName, author, pubDescription, pubRequirements, pubRole);
+            Publication publication = new Publication(pubName, author, pubDescription, pubRequirements, pubTasks, pubRole);
             PublicationDao publicationDao = new PublicationDao();
             publicationDao.add(publication);
         }

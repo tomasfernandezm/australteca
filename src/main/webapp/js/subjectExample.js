@@ -133,6 +133,11 @@ function addModeratorPostulation(userEmail, subjectName){
         data:{
             subjectName: subjectName,
             userEmail: userEmail
+        },
+        success: function(){
+            var button = document.getElementById('addModeratorButton');
+            button.innerHTML = "Has aplicado";
+            button.disabled = true;
         }
     });
 }

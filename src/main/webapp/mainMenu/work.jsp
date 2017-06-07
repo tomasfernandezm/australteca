@@ -44,38 +44,31 @@
 
                             <!---------- Trabajo 1 ejemplo ---------->
 
-                        <c:set var="investigationListParam" value="<%=Constants.INVESTIGATION_PUBLICATION_LIST%>"/>
+                        <c:set var="investigationListParam" value="<%=Constants.WORK_PUBLICATION_LIST%>"/>
                         <c:set var="investigationList" value='${requestScope[investigationListParam]}' />
-                        <c:forEach items="${investigationList}" var="investigation" varStatus="loop">
+                        <c:forEach items="${investigationList}" var="work" varStatus="loop">
 
-                            <div class="bs-calltoaction bs-calltoaction-work">
+                            <div id="publicationDiv${loop.count}" class="bs-calltoaction bs-calltoaction-work">
                                 <div class="row">
                                     <div class="panel-heading">
-                                        <h1 class="cta-title"> <c:out value="${investigation.name}"/> </h1>
-                                        <input type="checkbox" id="agregarid" value="favorite">
+                                        <h1 class="cta-title"> <c:out value="${work.name}"/> </h1>
+                                        <input type="checkbox" id="publication${loop.count}" value="favorite" onclick="changeFavorite('${work.id}', this.id)">
+                                        <button type="button" id="deleteButton" class="btn btn-default pull-right" onclick="removePublication('${work.id}', 'publicationDiv${loop.count}')"><i>Eliminar</i> </button>
                                     </div>
                                     <div class="panel-body">
                                         <div class="col col-md-12 discussionBox">
                                             <div class="panel-heading">
-                                                <p>Descripcion: <c:out value="${investigation.description}"/> </p>
+                                                <p>Descripcion: <c:out value="${work.description}"/> </p>
                                             </div>
 
 
                                             <div class="panel-body showMore" id="show" hidden>
 
                                                 <h4>Sus tareas principales seran:</h4>
-                                                <p>
-                                                    - Coordinar la implementacion de campanas con agencia digital y pedidos al equipo de diseño.
-
-                                                    - Redaccion de textos de campanas.
-
-                                                    - Generacion de informes y reportes de campanas.
-
-                                                    - Trackeos de campanas de proveedores.
-                                                </p>
+                                                <p><c:out value="${work.tasks}"/></p>
 
                                                 <h4>Seran requisitos excluyentes:</h4>
-                                                <p><c:out value="${investigation.requirements}"/></p>
+                                                <p><c:out value="${work.requirements}"/></p>
 
                                                 <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
 
@@ -166,7 +159,7 @@
                                             <label class="col-lg-3 control-label">Tipo</label>
                                             <div class="col-lg-5">
                                                 <label>
-                                                    <select class="select form-control" name="AgregarName">
+                                                    <select id="publicationRole" class="select form-control" name="AgregarName">
                                                         <option value="AgregarValue1" selected>Trabajo</option>
                                                         <%--
                                                         <li class="divider"></li>
@@ -179,29 +172,29 @@
                                         <div class="row form-group">
                                             <label class="col-lg-3 control-label">Nombre empresa</label>
                                             <div class="col-lg-5">
-                                                <input class="form-control" type="text" name="" required>
+                                                <input id="nameInput" class="form-control" type="text" name="" required>
                                             </div>
                                         </div>
                                         <div class=" row form-group">
                                             <label class="col-lg-3 control-label">Descripcion</label>
                                             <div class="col-lg-8">
-                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                                <textarea id="descriptionTextarea" class="form-control" type="text" name="" required></textarea>
                                             </div>
                                         </div>
                                         <div class=" row form-group">
                                             <label class="col-lg-3 control-label">Requisitos</label>
                                             <div class="col-lg-8">
-                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                                <textarea id="requisitesTextarea" class="form-control" type="text" name="" required></textarea>
                                             </div>
                                         </div>
                                         <div class=" row form-group">
                                             <label class="col-lg-3 control-label">Tareas principales</label>
                                             <div class="col-lg-8">
-                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                                <textarea id="tasksTextarea" class="form-control" type="text" name="" required></textarea>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <button type="button" class="btn btn-primary pull-right" data-toggle="popover">Enviar peticion</button>
+                                            <button type="button" class="btn btn-primary pull-right" onclick="addPublication()">Enviar peticion</button>
                                         </div>
                                     </div>
                                 </div>

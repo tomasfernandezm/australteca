@@ -26,16 +26,18 @@ public class Publication extends AbstractEntity{
     private String requirements;
     private String description;
     private String role;
+    private String tasks;
 
     public Publication(){
 
     }
 
-    public Publication(String name, User author, String requirements, String description, String role) {
+    public Publication(String name, User author, String requirements, String description, String tasks, String role) {
         this.name = name;
         this.author = author;
         this.requirements = requirements;
         this.description = description;
+        this.tasks = tasks;
         this.role = role;
     }
 
@@ -81,5 +83,17 @@ public class Publication extends AbstractEntity{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setSuscribedUsers(List<User> suscribedUsers) {
+        this.suscribedUsers = suscribedUsers;
+    }
+
+    public String getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(String tasks) {
+        this.tasks = tasks;
     }
 }

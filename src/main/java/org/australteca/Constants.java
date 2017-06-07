@@ -168,9 +168,9 @@ public interface Constants {
     String NOTE_TYPE_RESUMEN = "Resumen";
 
     /* ~~~~~~~~~~~~~~~~ Publication Types ~~~~~~~~~~~~~~~~~ */
-    String WORK_PUBLICATION = "Work";
+    String WORK_PUBLICATION = "Trabajo";
 
-    String INVESTIGATION_PUBLICATION = "Investigation";
+    String INVESTIGATION_PUBLICATION = "Investigacion";
 
     /* ~~~~~~~~~~~~~~~~ Publication Servlet Parameters ~~~~~~~~ */
     String PUBLICATION_NAME = "publicationName";
