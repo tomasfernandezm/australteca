@@ -134,6 +134,7 @@
     <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/subjects.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/search.js"/>"></script>
 
 
 

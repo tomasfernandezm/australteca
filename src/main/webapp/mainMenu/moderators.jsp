@@ -41,30 +41,39 @@
                                     <option value="approved">Aprobados</option>
                                 </select>
                             </div>
+                            <div class="pull-right">
+                                <span class="clickable filter" data-toggle="tooltip" data-container="body">
+                                </span>
+                            </div>
                         </div>
-
                         <div id="postulant-table-div">
-                        <table class="table" id="postulant-table">
-                            <thead>
-                                <td>Email</td>
-                                <td>Materia</td>
-                            </thead>
-                            <tbody>
-                            <c:set var="waitingListParam" value="<%=WAITING_LIST%>"/>
-                            <c:set var="waitingList" value='${requestScope[waitingListParam]}' />
-                            <c:forEach items="${waitingList}" var="postulation" varStatus="loop">
-                                <tr id="postulant${loop.count}">
-                                    <td><c:out value="${postulation.user.firstName}" /></td>
-                                    <td><c:out value="${postulation.subject.subjectName}"/></td>
-                                    <td><button type="submit" class="btn btn-success" onclick="acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Aceptar</button> </td>
-                                    <td><button type="submit" class="btn btn-danger" onclick="eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Rechazar</button> </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+                            <div class="panel-body">
+                                <input type="text" class="form-control" id="dev-table-filter-1" data-action="filter" data-filters="#postulant-table" placeholder="Buscar" />
+                            </div>
+                            <table class="table" id="postulant-table">
+                                <thead>
+                                    <td>Email</td>
+                                    <td>Materia</td>
+                                </thead>
+                                <tbody>
+                                <c:set var="waitingListParam" value="<%=WAITING_LIST%>"/>
+                                <c:set var="waitingList" value='${requestScope[waitingListParam]}' />
+                                <c:forEach items="${waitingList}" var="postulation" varStatus="loop">
+                                    <tr id="postulant${loop.count}">
+                                        <td><c:out value="${postulation.user.firstName}" /></td>
+                                        <td><c:out value="${postulation.subject.subjectName}"/></td>
+                                        <td><button type="submit" class="btn btn-success" onclick="acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Aceptar</button> </td>
+                                        <td><button type="submit" class="btn btn-danger" onclick="eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Rechazar</button> </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
                         </div>
 
                         <div id="approved-table-div">
+                            <div class="panel-body">
+                                <input type="text" class="form-control" id="dev-table-filter-2" data-action="filter" data-filters="#approved-table" placeholder="Buscar" />
+                            </div>
                             <table class="table"  id="approved-table">
                                 <thead>
                                 <td>Email</td>
@@ -93,14 +102,22 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
+                            <div class="col-md-4">
+                                <h3>Administrador de Profesores</h3>
+                            </div>
+                            <div class="col-md-offset-6 col-md-2">
+                                <button type="button" class="btn btn-primary" onclick="modalBox(document.getElementById('loadProfessorModal'))">Cargar profesor</button>
+                            </div>
 
-                            <h3>Administrador de Profesores</h3>
 
-                            <div class="col-md-offset-10">
-                            <button type="button" class="btn btn-primary" onclick="modalBox(document.getElementById('loadProfessorModal'))">Cargar profesor</button>
+                            <div class="pull-right">
+                                <span class="clickable filter" data-toggle="tooltip" data-container="body">
+                                </span>
                             </div>
                         </div>
                         <div class="panel-body">
+                            <input type="text" class="form-control" id="dev-table-filter-3" data-action="filter" data-filters="#professor-table" placeholder="Buscar" />
+                        </div>
                             <div id="professor-table-div">
                                 <table class="table" id="professor-table">
                                     <thead>
@@ -124,7 +141,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -189,5 +206,6 @@
         <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/js/moderators.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="/js/search.js"/>"></script>
     </body>
 </html>

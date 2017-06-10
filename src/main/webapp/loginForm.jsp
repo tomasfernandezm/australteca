@@ -35,7 +35,7 @@
                   <label for="password">Contrase&ntilde;a</label>
                   <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>" required>
                 </div>
-                <input type="Submit" class="btn btn-default btn-xs"  value="Iniciar sesion">
+                <button type="Submit" class="btn btn-default btn-xs btn-login">Iniciar Sesion</button>
               </form>
             <% if(session.getAttribute("loginSucceded") != null && !(boolean) session.getAttribute("loginSucceded")){%>
                 <div class="col-md-3 col-sm-2 alert alert-danger msg-incorrect-login ">

@@ -82,3 +82,10 @@ input.btn:hover{
     padding-bottom: 3px;
 }
 
+.btn-login{
+    padding-bottom: 3px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-content: space-around;
+}

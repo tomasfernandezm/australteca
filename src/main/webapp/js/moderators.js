@@ -5,16 +5,23 @@ $(document).ready(function () {
     $("select").change(function () {
         var mode = $('#mode').val(),
             $postulant = $('#postulant-table'),
-            $approved = $('#approved-table');
+            $approved = $('#approved-table'),
+            $searchPostulant = $('#dev-table-filter-1'),
+            $searchApproved = $('#dev-table-filter-2');
 
         if (mode === "postulant") {
             $postulant.show();
             $approved.hide();
+            $searchPostulant.show();
+            $searchApproved.hide();
+
 
 
         } else {
             $approved.show();
             $postulant.hide();
+            $searchPostulant.hide();
+            $searchApproved.show();
         }
 
 

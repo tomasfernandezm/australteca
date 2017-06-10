@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="org.australteca.Constants" %>
 <%@ page import="static org.australteca.Constants.STATUS" %>
 <%@ page import="static org.australteca.Constants.NAME_PARAM" %>
@@ -14,9 +15,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale1.0">
     <title>User settings</title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/mainMenu.css" rel="stylesheet" type="text/css">
-    <link href="/css/userSettings.css" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/userSettings.css"/>" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -33,7 +34,7 @@
              <!--   <object data="/images/avatar.jpg" class="img-circle" type="image/png"> -->
                     <img src="/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=<%=request.getRemoteUser()%>" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="avatar img-circle" alt="avatar">
             <!--    </object> -->
-                <form action="/uploadPhoto" method="post" enctype="multipart/form-data">
+                <form action="<c:url value="/uploadPhoto"/>" method="post" enctype="multipart/form-data">
                     <label class="btn btn-default btn-file">
                         Subir Foto <input id="fileField" type="file" style="display: none;" name="photo">
                     </label>
@@ -46,7 +47,7 @@
 
             <h3>Informacion personal</h3>
 
-            <form class="form-horizontal" action="/userModification" method="post" role="form">
+            <form class="form-horizontal" action="<c:url value="/userModification"/>" method="post" role="form">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
@@ -114,8 +115,8 @@
 </div>
 
 
-<script type="text/javascript" src="/js/jquery-3.2.0.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/userSettings.js"></script>
+<script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/userSettings.js"/>"></script>
 </body>
 </html>
