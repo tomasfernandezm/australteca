@@ -40,7 +40,9 @@ public class AddPublicationServlet extends HttpServlet {
 
             Publication publication = new Publication(pubName, author, pubDescription, pubRequirements, pubTasks, pubRole);
             PublicationDao publicationDao = new PublicationDao();
-            publicationDao.add(publication);
+            Integer id = publicationDao.add(publication);
+            Publication pub = publicationDao.get(id);
+            author.getPublications().add(pub);
         }
 
         resp.setContentType("application/json");

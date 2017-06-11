@@ -41,7 +41,7 @@ public class User extends AbstractEntity{
     private final Set<Subject> subjects = new HashSet<>();
 
     @ManyToMany
-    private final Set<Publication> favoritePublications = new HashSet<>();
+    private final Set<Publication> publications = new HashSet<>();
 
     @ElementCollection
     private final Map<String, Integer> subjectScores = new HashMap<>();
@@ -52,9 +52,6 @@ public class User extends AbstractEntity{
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private final Set<Commentary> commentaries = new HashSet<>();
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
-    private final Set<Publication> publications = new HashSet<>();
 
     @OneToMany
     private final List<SubjectModeratorRelationship> subjectModeratorRelationships = new ArrayList<>();
@@ -73,8 +70,8 @@ public class User extends AbstractEntity{
         assignRole(moderator, admin);
     }
 
-    public Set<Publication> getFavoritePublications() {
-        return favoritePublications;
+    public Set<Publication> getPublications() {
+        return publications;
     }
 
     public Map<String, Integer> getSubjectScores() {
@@ -173,9 +170,5 @@ public class User extends AbstractEntity{
 
     public List<SubjectModeratorRelationship> getSubjectModeratorRelationships() {
         return subjectModeratorRelationships;
-    }
-
-    public Set<Publication> getPublication() {
-        return publications;
     }
 }

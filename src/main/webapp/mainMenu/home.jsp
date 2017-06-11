@@ -77,21 +77,27 @@
 
                         <%--hacelo con esto y yo desp lo arreglo--%>
 
-                        <div class="container">
+                        <c:set var="publicationListParam" value="<%=Constants.USER_PUBLICATION_LIST%>"/>
+                        <c:set var="publicationList" value="${requestScope[publicationListParam]}"/>
+                        <c:forEach var="publication" items="${publicationList}" varStatus="loop">
+
+                        <div class="container" id="publication${loop.count}">
                             <div class="row">
                                 <div class="col col-md-5 favoriteWork">
 
-                                    <h3>Titulo</h3>
-                                    <input type="checkbox" class="favoriteWork" id="favoriteWork">
+                                    <h3><c:out value="${publication.name}"/> </h3>
+                                    <input type="checkbox" class="favoriteWork" id="favoriteWork" checked>
 
-                                    <p>Descripcion</p>
+                                    <p><c:out value="${publication.description}"/></p>
 
-                                    <p>Requistos
-                                    </p>
+                                    <p><c:out value="${publication.requirements}"/></p>
+
+                                    <p><c:out value="${publication.tasks}"/></p>
                                 </div>
 
                             </div>
                         </div>
+                        </c:forEach>
 
 
                     </div>

@@ -1,9 +1,7 @@
 package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
-import org.australteca.entity.Professor;
 import org.australteca.entity.Publication;
-import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 
 import java.util.List;
@@ -35,7 +33,7 @@ public class PublicationDao extends AbstractDao<Publication> {
     private void removeAllUsers(@NotNull Publication publication){
         if(!publication.getSuscribedUsers().isEmpty()){
             for(User u: publication.getSuscribedUsers()) {
-                u.getFavoritePublications().remove(publication);
+                u.getPublications().remove(publication);
             }
         }
     }

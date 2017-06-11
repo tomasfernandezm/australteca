@@ -18,20 +18,19 @@ public class NoCacheFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        HttpServletResponse resp = (HttpServletResponse) response;
-        HttpServletRequest req = (HttpServletRequest) request;
-        HttpSession httpSession = req.getSession();
-        httpSession.isNew();
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 
-        if (req.getRemoteUser() == null) {
-            resp.sendRedirect(resp.encodeRedirectURL("/loginForm.jsp?timeout=true"));
-        } else {
-            resp.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-            resp.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-            resp.setDateHeader("Expires", 0); // Proxies.
-            chain.doFilter(request, response);
-        }
+            HttpServletResponse response = (HttpServletResponse) res;
+            HttpServletRequest request = (HttpServletRequest) req;
+
+            if(request.getRemoteUser() == null){
+                response.sendRedirect("/loginForm.jsp");
+            }
+
+            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            response.setDateHeader("Expires", 0); // Proxies.
+            chain.doFilter(req, res);
     }
 
     @Override

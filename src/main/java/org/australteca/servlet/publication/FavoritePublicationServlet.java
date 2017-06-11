@@ -2,10 +2,8 @@ package org.australteca.servlet.publication;
 
 import com.google.gson.Gson;
 import org.australteca.dao.PublicationDao;
-import org.australteca.dao.SubjectDao;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.Publication;
-import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 
 import javax.servlet.ServletException;
@@ -43,10 +41,10 @@ public class FavoritePublicationServlet extends HttpServlet {
 
 
         if(favoriteStatus){
-            user.getFavoritePublications().add(publication);
+            user.getPublications().add(publication);
             publication.getSuscribedUsers().add(user);
         }else{
-            user.getFavoritePublications().remove(publication);
+            user.getPublications().remove(publication);
             publication.getSuscribedUsers().remove(user);
         }
 

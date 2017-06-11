@@ -53,7 +53,7 @@
 
     <filter-mapping>
         <filter-name>NoCacheFilter</filter-name>
-        <url-pattern>/mainMenu/*</url-pattern>
+        <url-pattern>/mainMenu/home.jsp</url-pattern>
     </filter-mapping>
 
 
