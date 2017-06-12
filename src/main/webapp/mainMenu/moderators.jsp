@@ -102,12 +102,12 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <div class="col-md-4">
+
                                 <h3>Administrador de Profesores</h3>
-                            </div>
-                            <div class="col-md-offset-6 col-md-2">
+
+
                                 <button type="button" class="btn btn-primary" onclick="modalBox(document.getElementById('loadProfessorModal'))">Cargar profesor</button>
-                            </div>
+
 
 
                             <div class="pull-right">
@@ -188,7 +188,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-8 col-md-offset-10">
-                                                <input type="submit" class="btn btn-primary" value="Agregar" onclick="addProfessor()">
+                                                <button type="submit" class="btn btn-primary" value="Agregar" onclick="addProfessor()">
                                             </div>
                                         </div>
                                     </form>

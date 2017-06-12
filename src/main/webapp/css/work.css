@@ -17,54 +17,54 @@ body{
 
 
 
-.bs-calltoaction > .row > [class^="col-"],
-.bs-calltoaction > .row > [class*=" col-"]{
-    float:none;
-    display:table-cell;
-    vertical-align:middle;
-}
+/*.bs-calltoaction > .row > [class^="col-"],*/
+/*.bs-calltoaction > .row > [class*=" col-"]{*/
+    /*float:none;*/
+    /*display:table-cell;*/
+    /*vertical-align:middle;*/
+/*}*/
 
-.cta-contents{
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
+/*.cta-contents{*/
+    /*padding-top: 5px;*/
+    /*padding-bottom: 10px;*/
+/*}*/
 
-.cta-title{
-    margin: 0 auto 10px;
-    padding: 0;
-}
+/*.cta-title{*/
+    /*margin: 0 auto 10px;*/
+    /*padding: 0;*/
+/*}*/
 
-.cta-desc{
-    padding: 0;
-}
+/*.cta-desc{*/
+    /*padding: 0;*/
+/*}*/
 
-.cta-desc p:last-child{
-    margin-bottom: 0;
-}
+/*.cta-desc p:last-child{*/
+    /*margin-bottom: 0;*/
+/*}*/
 
-.cta-button{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+/*.cta-button{*/
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+/*}*/
 
-@media (max-width: 991px){
-    .bs-calltoaction > .row{
-        display:block;
-        width: auto;
-    }
+/*@media (max-width: 991px){*/
+    /*.bs-calltoaction > .row{*/
+        /*display:block;*/
+        /*width: auto;*/
+    /*}*/
 
-    .bs-calltoaction > .row > [class^="col-"],
-    .bs-calltoaction > .row > [class*=" col-"]{
-        float:none;
-        display:block;
-        vertical-align:middle;
-        position: relative;
-    }
+    /*.bs-calltoaction > .row > [class^="col-"],*/
+    /*.bs-calltoaction > .row > [class*=" col-"]{*/
+        /*float:none;*/
+        /*display:block;*/
+        /*vertical-align:middle;*/
+        /*position: relative;*/
+    /*}*/
 
-    .cta-contents{
-        text-align: center;
-    }
-}
+    /*.cta-contents{*/
+        /*text-align: center;*/
+    /*}*/
+/*}*/
 
 
 
@@ -73,18 +73,20 @@ body{
     color: black;
     background-color: white;
     border-color: #BC8BE8;
+    padding-right: 25px;
+    padding-left: 25px;
 }
 
 
 
 
 
-.bs-calltoaction.bs-calltoaction-subjects .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-discussions .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-work .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-statistics .cta-button .btn{
-    border-color:#fff;
-}
+/*.bs-calltoaction.bs-calltoaction-subjects .cta-button .btn,*/
+/*.bs-calltoaction.bs-calltoaction-discussions .cta-button .btn,*/
+/*.bs-calltoaction.bs-calltoaction-work .cta-button .btn,*/
+/*.bs-calltoaction.bs-calltoaction-statistics .cta-button .btn{*/
+    /*border-color:#fff;*/
+/*}*/
 
 .btnAddWork{
     margin-bottom: 15px;
@@ -112,4 +114,50 @@ body{
     color: white !important;
     background-color: rebeccapurple; !important;
 }
+
+
+
+.checkbox_wrapper{
+    position: relative;
+    height: 25px;
+    width:  25px;
+
+}
+
+
+input[type="checkbox"] {
+    opacity:0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+input[type="checkbox"] + label{
+    background:url('/images/likeOff.svg') no-repeat;
+    height: 100%;
+    width: 100%;
+    display:inline-block;
+    position: absolute;
+
+}
+
+input[type="checkbox"]:checked + label{
+    background:url('../images/likeOn.svg') no-repeat;
+    height: 100%;
+    width: 100%;
+    display:inline-block;
+}
+
+.btnremovework{
+    border-color: transparent;
+
+}
+
+.favorite{
+    padding-right: 10px;
+}
+
 

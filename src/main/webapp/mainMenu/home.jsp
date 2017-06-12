@@ -73,31 +73,45 @@
                     <div class="panel-heading">
                         <h1 class="cta-title">Mis Proyectos</h1>
                     </div>
+
                     <div class="panel-body">
 
                         <%--hacelo con esto y yo desp lo arreglo--%>
+                            <h3 class="cta-title">Trabajos</h3>
 
-                        <c:set var="publicationListParam" value="<%=Constants.USER_PUBLICATION_LIST%>"/>
-                        <c:set var="publicationList" value="${requestScope[publicationListParam]}"/>
-                        <c:forEach var="publication" items="${publicationList}" varStatus="loop">
+                            <c:set var="publicationListParam" value="<%=Constants.USER_PUBLICATION_LIST%>"/>
+                            <c:set var="publicationList" value="${requestScope[publicationListParam]}"/>
+                            <c:forEach var="publication" items="${publicationList}" varStatus="loop">
+                                <c:set var="role" value="Trabajo"/>
+                                <c:if test="${publication.role == role}">
+                                    <div class="col col-md-6">
+                                        <div id="publication${loop.count}" class="favoriteWork">
+                                            <div class="panel-heading clearfix">
+                                                <h3 class="pull-left"><c:out value="${publication.name}"/> </h3>
+                                                <div class="checkbox_wrapper pull-right">
+                                                    <input class="checkbox" type="checkbox" id="favoriteWork" checked>
+                                                    <label></label>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
 
-                        <div class="container" id="publication${loop.count}">
-                            <div class="row">
-                                <div class="col col-md-5 favoriteWork">
+                                            <p><c:out value="${publication.description}"/></p>
 
-                                    <h3><c:out value="${publication.name}"/> </h3>
-                                    <input type="checkbox" class="favoriteWork" id="favoriteWork" checked>
+                                            <div class="panel-body showMore" id="show${publication.name}" hidden>
+                                                <p><c:out value="${publication.requirements}"/></p>
+                                                <p><c:out value="${publication.tasks}"/></p>
+                                                <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                            </div>
 
-                                    <p><c:out value="${publication.description}"/></p>
+                                            <button type="button" class="btn btn-default pull-right" onclick="show('#show${publication.name}')"><i>Mostrar mas</i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </c:if>
+                            </c:forEach>
 
-                                    <p><c:out value="${publication.requirements}"/></p>
 
-                                    <p><c:out value="${publication.tasks}"/></p>
-                                </div>
 
-                            </div>
-                        </div>
-                        </c:forEach>
 
 
                     </div>

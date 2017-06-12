@@ -8,7 +8,7 @@ var modal;
 
 // When the user clicks on <span> (x), close the modal
     function closeModal(btnId){
-    btnId.style.display = "none";
+    modal.style.display = "none";
     }
 
 

@@ -32,44 +32,6 @@
     opacity:1;
 }
 
-.favoriteFalse{
-    border-color: transparent;
-    background-color: transparent;
-    color: black;
-    font-size: large;
-}
-
-.favoriteFalse:hover{
-    border-color: transparent;
-    background-color: transparent;
-    color: gold;
-}
-
-.favoriteFalse:active{
-    border-color: transparent;
-    background-color: transparent;
-}
-
-
-
-.favoriteTrue{
-    border-color: transparent;
-    font-size: large;
-    color: gold;
-}
-
-.favoriteTrue:hover{
-    border-color: transparent;
-    background-color: transparent;
-    color: black;
-}
-
-.favoriteTrue:active{
-    border-color: transparent;
-    background-color: transparent;
-}
-
-
 .checkbox_wrapper{
     position: relative;
     height: 25px;

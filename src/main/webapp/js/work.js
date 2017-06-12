@@ -2,11 +2,12 @@
  * Created by tomasforman on 2/6/17.
  */
 
-$(document).ready(function(){
-    $("#showandhide").click(function(){
-        $("#show").toggle("show");
-    });
-});
+
+function show(divId, buttonId) {
+    $(divId).toggle();
+        var button = document.getElementById(buttonId);
+        button.innerHTML = "Mostrar menos";
+}
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({

@@ -41,8 +41,7 @@
                 <div class="panel-body">
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1default">
-
-                            <!---------- Trabajo 1 ejemplo ---------->
+                            <!---------- WORK ---------->
 
                         <c:set var="investigationListParam" value="<%=Constants.WORK_PUBLICATION_LIST%>"/>
                         <c:set var="investigationList" value='${requestScope[investigationListParam]}' />
@@ -51,9 +50,23 @@
                             <div id="publicationDiv${loop.count}" class="bs-calltoaction bs-calltoaction-work">
                                 <div class="row">
                                     <div class="panel-heading">
-                                        <h1 class="cta-title"> <c:out value="${work.name}"/> </h1>
-                                        <input type="checkbox" id="publication${loop.count}" value="favorite" onclick="changeFavorite('${work.id}', this.id)">
-                                        <button type="button" id="deleteButton" class="btn btn-default pull-right" onclick="removePublication('${work.id}', 'publicationDiv${loop.count}')"><i>Eliminar</i> </button>
+                                        <div class="row">
+                                            <div class="pull-left">
+                                                <h1 class="cta-title"> <c:out value="${work.name}"/> </h1>
+                                            </div>
+                                            <div class="pull-right">
+                                                <div class="checkbox_wrapper pull-left">
+                                                    <input class="checkbox" type="checkbox" id="publication${loop.count}" value="favorite" onclick="changeFavorite('${work.id}', this.id)">
+                                                    <label></label>
+                                                </div>
+
+                                                <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+                                                <c:if test="${work.author.email == remoteUser}">
+                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${work.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                </c:if>
+
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="panel-body">
                                         <div class="col col-md-12 discussionBox">
@@ -61,8 +74,7 @@
                                                 <p>Descripcion: <c:out value="${work.description}"/> </p>
                                             </div>
 
-
-                                            <div class="panel-body showMore" id="show" hidden>
+                                            <div class="panel-body showMore" id="show${work.name}" hidden>
 
                                                 <h4>Sus tareas principales seran:</h4>
                                                 <p><c:out value="${work.tasks}"/></p>
@@ -72,11 +84,9 @@
 
                                                 <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
 
-
                                             </div>
 
-                                            <button type="button" id="showandhide" class="btn btn-default pull-right"><i>Mostrar mas</i> </button>
-
+                                            <button type="button" id="showhide" class="btn btn-default pull-right" onclick="show('#show${work.name}')"><i>Mostrar mas</i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -84,15 +94,64 @@
 
                         </c:forEach>
                         </div>
-                        
+
+                        <!------ INVESTIGATION  -------->
+
                         <div class="tab-pane fade" id="tab2default">
 
-                        <c:set var="workListParam" value="<%=Constants.WORK_PUBLICATION_LIST%>"/>
-                        <c:set var="workList" value='${requestScope[workListParam]}' />
-                        <c:forEach items="${workList}" var="work" varStatus="loop">
-                            Copiar igual que trabajo
+                            <c:set var="investigationListParam" value="<%=Constants.INVESTIGATION_PUBLICATION_LIST%>"/>
+                            <c:set var="investigationList" value='${requestScope[investigationListParam]}' />
+                            <c:forEach items="${investigationList}" var="investigation" varStatus="loop">
 
-                        </c:forEach>
+                                <div id="publicationDiv${loop.count}" class="bs-calltoaction bs-calltoaction-work">
+                                    <div class="row">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="pull-left">
+                                                    <h1 class="cta-title"> <c:out value="${investigation.name}"/> </h1>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <div class="checkbox_wrapper pull-left">
+                                                        <input class="checkbox" type="checkbox" id="publication${loop.count}" value="favorite" onclick="changeFavorite('${investigation.id}', this.id)">
+                                                        <label></label>
+                                                    </div>
+
+                                                    <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+                                                    <c:if test="${investigation.author.email == remoteUser}">
+                                                        <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${investigation.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                    </c:if>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="col col-md-12 discussionBox">
+                                                <div class="panel-heading">
+                                                    <p>Descripcion: <c:out value="${investigation.description}"/> </p>
+                                                </div>
+
+
+                                                <div class="panel-body showMore" id="show${investigation.name}" hidden>
+
+                                                    <h4>Sus tareas principales seran:</h4>
+                                                    <p><c:out value="${investigation.tasks}"/></p>
+
+                                                    <h4>Seran requisitos excluyentes:</h4>
+                                                    <p><c:out value="${investigation.requirements}"/></p>
+
+                                                    <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+
+
+                                                </div>
+
+                                                <button type="button" id="buttonShow${investigation.name}" class="btn btn-default pull-right" onclick="show('#show${investigation.name}', document.getElementById(this))"><i>Mostrar mas</i> </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </c:forEach>
 
                         </div>
 
@@ -130,7 +189,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <button type="submit" class="btn btn-primary foo pull-right">Enviar peticion</button>
+                                            <button type="submit" class="btn btn-primary foo pull-right" onclick="closeModal(document.getElementById('sendRequest'))">Enviar peticion</button>
                                         </div>
                                     </div>
                                 </div>
@@ -161,9 +220,6 @@
                                                 <label>
                                                     <select id="publicationRole" class="select form-control" name="AgregarName">
                                                         <option value="AgregarValue1" selected>Trabajo</option>
-                                                        <%--
-                                                        <li class="divider"></li>
-                                                        --%>
                                                         <option value="AgregarValue2">Investigacion</option>
                                                     </select>
                                                 </label>
@@ -194,7 +250,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <button type="button" class="btn btn-primary pull-right" onclick="addPublication()">Enviar peticion</button>
+                                            <button type="button" class="btn btn-primary pull-right cancel" onclick="addPublication(); closeModal(document.getElementById('addWorkModal'));">Enviar peticion</button>
                                         </div>
                                     </div>
                                 </div>
@@ -205,11 +261,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
 
 

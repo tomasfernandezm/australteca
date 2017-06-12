@@ -1,6 +1,6 @@
-.container{
-    padding-bottom: 50px;
-}
+/*.container{*/
+    /*padding-bottom: 50px;*/
+/*}*/
 
 .bs-calltoaction{
     position: relative;
@@ -14,54 +14,54 @@
 
 
 
-.bs-calltoaction > .row > [class^="col-"],
-.bs-calltoaction > .row > [class*=" col-"]{
-    float:none;
-    display:table-cell;
-    vertical-align:middle;
-}
+/*.bs-calltoaction > .row > [class^="col-"],*/
+/*.bs-calltoaction > .row > [class*=" col-"]{*/
+    /*float:none;*/
+    /*display:table-cell;*/
+    /*vertical-align:middle;*/
+/*}*/
 
-.cta-contents{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+/*.cta-contents{*/
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+/*}*/
 
-.cta-title{
-    margin: 0 auto 15px;
-    padding: 0;
-}
+/*.cta-title{*/
+    /*margin: 0 auto 15px;*/
+    /*padding: 0;*/
+/*}*/
 
-.cta-desc{
-    padding: 0;
-}
+/*.cta-desc{*/
+    /*padding: 0;*/
+/*}*/
 
-.cta-desc p:last-child{
-    margin-bottom: 0;
-}
+/*.cta-desc p:last-child{*/
+    /*margin-bottom: 0;*/
+/*}*/
 
-.cta-button{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+/*.cta-button{*/
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+/*}*/
 
-@media (max-width: 991px){
-    .bs-calltoaction > .row{
-        display:block;
-        width: auto;
-    }
+/*@media (max-width: 991px){*/
+    /*!*.bs-calltoaction > .row{*!*/
+        /*!*display:block;*!*/
+        /*!*width: auto;*!*/
+    /*!*}*!*/
 
-    .bs-calltoaction > .row > [class^="col-"],
-    .bs-calltoaction > .row > [class*=" col-"]{
-        float:none;
-        display:block;
-        vertical-align:middle;
-        position: relative;
-    }
+    /*!*.bs-calltoaction > .row > [class^="col-"],*!*/
+    /*!*.bs-calltoaction > .row > [class*=" col-"]{*!*/
+        /*!*float:none;*!*/
+        /*!*display:block;*!*/
+        /*!*vertical-align:middle;*!*/
+        /*!*position: relative;*!*/
+    /*!*}*!*/
 
-    .cta-contents{
-        text-align: center;
-    }
-}
+    /*.cta-contents{*/
+        /*text-align: center;*/
+    /*}*/
+/*}*/
 
 
 
@@ -95,50 +95,87 @@
     border-color: transparent;
 }
 
-.bs-calltoaction.bs-calltoaction-statistics{
-    color: black;
-    background-color: white;
-    border-color: #444444;
-}
+/*.bs-calltoaction.bs-calltoaction-statistics{*/
+    /*color: black;*/
+    /*background-color: white;*/
+    /*border-color: #444444;*/
+/*}*/
 
 
 
 
-.bs-calltoaction.bs-calltoaction-subjects .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-discussions .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-work .cta-button .btn,
-.bs-calltoaction.bs-calltoaction-statistics .cta-button .btn{
-    border-color:#fff;
-}
+/*.bs-calltoaction.bs-calltoaction-subjects .cta-button .btn,*/
+/*.bs-calltoaction.bs-calltoaction-discussions .cta-button .btn,*/
+/*.bs-calltoaction.bs-calltoaction-work .cta-button .btn,*/
+/*.bs-calltoaction.bs-calltoaction-statistics .cta-button .btn{*/
+    /*border-color:#fff;*/
+/*}*/
 
 .panel-body .col{
     margin-bottom: 15px;
 }
 
-.circle-file{
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 100%;
-    background-color: crimson;
-    border-color: crimson;
-    height: 100px;
-    margin: 0 auto -40px;
-    position: relative;
-    transition: all 0.3s ease-in-out 0s;
-    width: 100px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.circle-file p{
-    padding-top: 20px;
-    color:white;
-    font-size: 40px;
-}
-
+/*.circle-file{*/
+    /*border: 3px solid rgba(255, 255, 255, 0.3);*/
+    /*border-radius: 100%;*/
+    /*background-color: crimson;*/
+    /*border-color: crimson;*/
+    /*height: 100px;*/
+    /*margin: 0 auto -40px;*/
+    /*position: relative;*/
+    /*transition: all 0.3s ease-in-out 0s;*/
+    /*width: 100px;*/
+    /*text-align: center;*/
+    /*margin-bottom: 15px;*/
+/*}*/
+/*.circle-file p{*/
+    /*padding-top: 20px;*/
+    /*color:white;*/
+    /*font-size: 40px;*/
+/*}*/
 
 
 .favoriteWork{
-    border-color: white;
+    background-color: white;
+    color:grey;
+    border-color: white !important;
     border: solid 1px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
 }
 
 
+.checkbox_wrapper{
+    position: relative;
+    height: 25px;
+    width:  25px;
+
+}
+
+input[type="checkbox"] {
+    opacity:0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+input[type="checkbox"] + label{
+    background:url('/images/likeOff.svg') no-repeat;
+    height: 100%;
+    width: 100%;
+    display:inline-block;
+    position: absolute;
+
+}
+
+input[type="checkbox"]:checked + label{
+    background:url('../images/likeOn.svg') no-repeat;
+    height: 100%;
+    width: 100%;
+    display:inline-block;
+}
