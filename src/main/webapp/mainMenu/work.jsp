@@ -40,29 +40,31 @@
             <div class="row centered-form">
                 <div class="panel-body">
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="tab1default">
+                        <div id="workDiv" class="tab-pane fade in active" id="tab1default">
                             <!---------- WORK ---------->
 
                         <c:set var="investigationListParam" value="<%=Constants.WORK_PUBLICATION_LIST%>"/>
                         <c:set var="investigationList" value='${requestScope[investigationListParam]}' />
-                        <c:forEach items="${investigationList}" var="work" varStatus="loop">
+                        <c:forEach items="${investigationList}" var="workWrapper" varStatus="loop">
 
-                            <div id="publicationDiv${loop.count}" class="bs-calltoaction bs-calltoaction-work">
+                            <div id="workDiv${loop.count}" class="bs-calltoaction bs-calltoaction-work">
                                 <div class="row">
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="pull-left">
-                                                <h1 class="cta-title"> <c:out value="${work.name}"/> </h1>
+                                                <h1 class="cta-title"> <c:out value="${workWrapper.publication.name}"/> </h1>
                                             </div>
                                             <div class="pull-right">
+                                                <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+                                                <c:if test="${workWrapper.publication.author.email != remoteUser}">
                                                 <div class="checkbox_wrapper pull-left">
-                                                    <input class="checkbox" type="checkbox" id="publication${loop.count}" value="favorite" onclick="changeFavorite('${work.id}', this.id)">
+                                                    <input class="checkbox" type="checkbox" id="publication${loop.count}" value="favorite" onclick="changeFavorite('${workWrapper.publication.id}', this.id)" <c:if test="${workWrapper.favorite}">checked</c:if>/>
                                                     <label></label>
                                                 </div>
+                                                </c:if>
 
-                                                <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
-                                                <c:if test="${work.author.email == remoteUser}">
-                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${work.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                <c:if test="${workWrapper.publication.author.email == remoteUser}">
+                                                    <button type="button" id="deleteButton" class="btn btn-default btn removework pull-right"  onclick="removePublication('${workWrapper.publication.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
                                                 </c:if>
 
                                             </div>
@@ -71,22 +73,22 @@
                                     <div class="panel-body">
                                         <div class="col col-md-12 discussionBox">
                                             <div class="panel-heading">
-                                                <p>Descripcion: <c:out value="${work.description}"/> </p>
+                                                <p>Descripcion: <c:out value="${workWrapper.publication.description}"/> </p>
                                             </div>
 
-                                            <div class="panel-body showMore" id="show${work.name}" hidden>
+                                            <div class="panel-body showMore" id="show${workWrapper.publication.name}" hidden>
 
                                                 <h4>Sus tareas principales seran:</h4>
-                                                <p><c:out value="${work.tasks}"/></p>
+                                                <p><c:out value="${workWrapper.publication.tasks}"/></p>
 
                                                 <h4>Seran requisitos excluyentes:</h4>
-                                                <p><c:out value="${work.requirements}"/></p>
+                                                <p><c:out value="${workWrapper.publication.requirements}"/></p>
 
                                                 <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
 
                                             </div>
 
-                                            <button type="button" id="showhide" class="btn btn-default pull-right" onclick="show('#show${work.name}')"><i>Mostrar mas</i></button>
+                                            <button type="button" id="showhide" class="btn btn-default pull-right" onclick="show('#show${workWrapper.publication.name}')"><i>Mostrar mas</i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -101,24 +103,26 @@
 
                             <c:set var="investigationListParam" value="<%=Constants.INVESTIGATION_PUBLICATION_LIST%>"/>
                             <c:set var="investigationList" value='${requestScope[investigationListParam]}' />
-                            <c:forEach items="${investigationList}" var="investigation" varStatus="loop">
+                            <c:forEach items="${investigationList}" var="investigationWrapper" varStatus="loop">
 
                                 <div id="publicationDiv${loop.count}" class="bs-calltoaction bs-calltoaction-work">
                                     <div class="row">
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="pull-left">
-                                                    <h1 class="cta-title"> <c:out value="${investigation.name}"/> </h1>
+                                                    <h1 class="cta-title"> <c:out value="${investigationWrapper.publication.name}"/> </h1>
                                                 </div>
                                                 <div class="pull-right">
+                                                    <c:if test="${investigationWrapper.publication.author.email != remoteUser}">
                                                     <div class="checkbox_wrapper pull-left">
-                                                        <input class="checkbox" type="checkbox" id="publication${loop.count}" value="favorite" onclick="changeFavorite('${investigation.id}', this.id)">
+                                                        <input class="checkbox" type="checkbox" id="publication${loop.count}" value="favorite" onclick="changeFavorite('${investigationWrapper.publication.id}', this.id)" <c:if test="${investigationWrapper.favorite}">checked</c:if>>
                                                         <label></label>
                                                     </div>
+                                                    </c:if>
 
                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
-                                                    <c:if test="${investigation.author.email == remoteUser}">
-                                                        <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${investigation.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                    <c:if test="${investigationWrapper.publication.author.email == remoteUser}">
+                                                        <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${investigationWrapper.publication.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
                                                     </c:if>
 
                                                 </div>
@@ -127,24 +131,24 @@
                                         <div class="panel-body">
                                             <div class="col col-md-12 discussionBox">
                                                 <div class="panel-heading">
-                                                    <p>Descripcion: <c:out value="${investigation.description}"/> </p>
+                                                    <p>Descripcion: <c:out value="${investigationWrapper.publication.description}"/> </p>
                                                 </div>
 
 
-                                                <div class="panel-body showMore" id="show${investigation.name}" hidden>
+                                                <div class="panel-body showMore" id="show${investigationWrapper.publication.name}" hidden>
 
                                                     <h4>Sus tareas principales seran:</h4>
-                                                    <p><c:out value="${investigation.tasks}"/></p>
+                                                    <p><c:out value="${investigationWrapper.publication.tasks}"/></p>
 
                                                     <h4>Seran requisitos excluyentes:</h4>
-                                                    <p><c:out value="${investigation.requirements}"/></p>
+                                                    <p><c:out value="${investigationWrapper.publication.requirements}"/></p>
 
                                                     <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
 
 
                                                 </div>
 
-                                                <button type="button" id="buttonShow${investigation.name}" class="btn btn-default pull-right" onclick="show('#show${investigation.name}', document.getElementById(this))"><i>Mostrar mas</i> </button>
+                                                <button type="button" id="buttonShow${investigationWrapper.publication.name}" class="btn btn-default pull-right" onclick="show('#show${investigationWrapper.publication.name}', document.getElementById(this))"><i>Mostrar mas</i> </button>
 
                                             </div>
                                         </div>

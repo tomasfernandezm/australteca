@@ -1,5 +1,6 @@
 package org.australteca.servlet.subject;
 
+import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.CommentaryDao;
 import org.australteca.dao.SubjectDao;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.australteca.Constants.SUBJECT_NAME_PARAM;
 
@@ -33,29 +36,31 @@ public class SubjectAddCommentaryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String subjectName = req.getParameter(Constants.SUBJECT_NAME_PARAM);
-        try {
-            String email = req.getRemoteUser();
-            UserDao userDao = new UserDao();
-            User user = userDao.getUserByEmail(email);
 
-            SubjectDao subjectDao = new SubjectDao();
-            Subject subject = subjectDao.getByName(subjectName);
+        String email = req.getRemoteUser();
+        UserDao userDao = new UserDao();
+        User user = userDao.getUserByEmail(email);
 
-            String commentaryText = req.getParameter(Constants.COMMENTARY);
-            Commentary commentary = new Commentary(commentaryText, user, subject);
+        SubjectDao subjectDao = new SubjectDao();
+        Subject subject = subjectDao.getByName(subjectName);
 
-            CommentaryDao commentaryDao = new CommentaryDao();
-            commentaryDao.add(commentary);
+        String commentaryText = req.getParameter(Constants.COMMENTARY);
+        Commentary commentary = new Commentary(commentaryText, user, subject);
 
-            subject.getCommentaryList().add(commentary);
-            user.getCommentaries().add(commentary);
+        CommentaryDao commentaryDao = new CommentaryDao();
+        commentaryDao.add(commentary);
 
-            subjectDao.merge(subject);
-            userDao.merge(user);
-        }catch(IllegalStateException e){
-            Transaction tx = HibernateUtil.getCurrentSession().getTransaction();
-            if(tx.isActive()) tx.rollback();
-        }
-        resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
+        subject.getCommentaryList().add(commentary);
+        user.getCommentaries().add(commentary);
+
+        List<String> response = new ArrayList<>();
+        response.add(user.getFirstName());
+        response.add(commentary.getFormatDate2());
+        response.add(String.valueOf(commentary.getId()));
+
+        subjectDao.merge(subject);
+        userDao.merge(user);
+
+        resp.getWriter().write(new Gson().toJson(response));
     }
 }

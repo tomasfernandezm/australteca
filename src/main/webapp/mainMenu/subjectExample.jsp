@@ -168,13 +168,13 @@
                                 <div class="row">
                                     <div class="col-lg-11 col-md-11 col-sm-11">
                                         <div class="widget-area no-padding blank">
-                                            <div class="status-upload">
+                                            <div id ="comments_container" class="status-upload">
 
                                                 <!----- writting box ------->
-                                                <form id="commentForm" action="<c:url value="/subjectAddCommentary"/>" method="post">
+                                                <form id="commentForm" method="post">
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
-                                                    <textarea name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Danos tu opinion" ></textarea>
-                                                    <button type="submit" class="btn btn-success green"><i class="glyphicon glyphicon-share"></i>Comentar</button>
+                                                    <textarea id="commentTextarea" name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Danos tu opinion" ></textarea>
+                                                    <button type="submit" class="btn btn-success green" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Comentar</button>
                                                 </form>
                                                 <div class="col-xs-12"><hr></div>
 
@@ -347,6 +347,7 @@
 <script type="text/javascript" src="<c:url value="/js/tootip.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/jquery-timeago.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/filePreview.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/commentary.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/subjectExample.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/timeago.js"/>"></script>
 

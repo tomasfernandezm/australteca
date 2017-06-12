@@ -32,7 +32,7 @@ public class UserPostPhotoServlet extends HttpServlet {
             UserDao userDao = new UserDao();
             User user = userDao.getUserByEmail(userEmail);
 
-            if(user.getPhoto() != null) {
+            if(user != null && user.getPhoto() != null) {
                 resp.setHeader("Content-Disposition", "attachment; filename=\"" + "profilePicture" + "." + user.getPhoto().getExt() + "\";");
                 resp.setContentType(user.getPhoto().getFormat());
                 ByteArrayInputStream byteStream = new ByteArrayInputStream(user.getPhoto().getData());

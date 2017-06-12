@@ -37,7 +37,7 @@ function addSubject(subjectName){
             checkbox.value = subjectName;
             checkbox.class = "checkbox";
             checkbox.id = subjectName + "Checkbox";
-            checkbox.onclick = "changeFavorite(" + checkbox.value +","+checkbox.id +")";
+            checkbox.setAttribute("onclick","changeFavorite(" + checkbox.value +","+checkbox.id +")");
             var button = document.createElement('button');
             button.type="submit";
             button.class="standardButton btn btn-default btn-xs";

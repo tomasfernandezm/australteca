@@ -49,6 +49,7 @@ public class FavoritePublicationServlet extends HttpServlet {
         }
 
         userDao.merge(user);
+        publicationDao.merge(publication);
 
         resp.setContentType("application/json");
         resp.getWriter().write(new Gson().toJson("OK"));

@@ -8,7 +8,7 @@ function getUserRating(){
         url:'/userGetSubjectRating',
         dataType: 'JSON',
         data:{
-            subjectName: document.getElementById('subjectName-h2').innerHTML,
+            subjectName: document.getElementById('subjectName-h2').innerHTML
         },
 
         success: function(jsonObject){
@@ -143,6 +143,7 @@ function addModeratorPostulation(userEmail, subjectName){
 }
 
 function addComment(subjectName, userEmail){
+    var commentaryText = document.getElementById('commentTextarea').value;
     $.ajax({
         type:'post',
         url: '/subjectAddCommentary',
@@ -150,14 +151,12 @@ function addComment(subjectName, userEmail){
         data:{
             subjectName: subjectName,
             userEmail: userEmail,
-            commentaryText: document.getElementById('textarea').value
+            commentaryText: commentaryText
         },
 
-        success: function () {
-            var article = document.createElement("ARTICLE");
-            var div = document.createElement("DIV");
-
-
+        success: function (jsonObject) {
+           var div = document.getElementById("comments_container");
+           div.appendChild(createComment(userEmail, jsonObject[0],commentaryText, jsonObject[1], jsonObject[2],subjectName));
         }
     });
 }
