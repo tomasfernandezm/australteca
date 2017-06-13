@@ -41,19 +41,22 @@
    </filter>
 
    <!-- map all requests to the SecurityFilter, control what it does with configuration settings -->
-   <filter-mapping>
-      <filter-name>Security Filter</filter-name>
-      <url-pattern>/*</url-pattern>
-   </filter-mapping>
+
 
     <filter>
         <filter-name>NoCacheFilter</filter-name>
         <filter-class>org.australteca.filter.NoCacheFilter</filter-class>
     </filter>
 
+
+    <filter-mapping>
+        <filter-name>Security Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <filter-mapping>
         <filter-name>NoCacheFilter</filter-name>
-        <url-pattern>/mainMenu/home.jsp</url-pattern>
+        <url-pattern>/mainMenu/*</url-pattern>
     </filter-mapping>
 
 
