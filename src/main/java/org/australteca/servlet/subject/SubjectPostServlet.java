@@ -45,8 +45,10 @@ public class SubjectPostServlet extends HttpServlet {
         User user = userDao.getUserByEmail(email);
 
         boolean isModerator = false;
+        boolean isWannabeModerator = false;
 
         if(smr != null && smr.isAccepted()) isModerator = true;
+        else if(smr != null) isWannabeModerator = true;
 
         SubjectDao subjectDAO = new SubjectDao();
         Subject subject = subjectDAO.getByName(subjectName);
@@ -68,6 +70,7 @@ public class SubjectPostServlet extends HttpServlet {
         req.setAttribute(SUBJECT_PROFESSOR_WRAPPER_LIST, professorWrappers);
         req.setAttribute(SUBJECT_NOTES_LIST, subject.getNoteList());
         req.setAttribute(Constants.MODERATOR_PARAM, isModerator);
+        req.setAttribute(Constants.WANNABE_MODERATOR_PARAM, isWannabeModerator);
 
         req.setAttribute(SUBJECT_NAME_PARAM, subjectName);
         req.setAttribute(SUBJECT_SCORE, new DecimalFormat("#.##").format(subject.getScore()));

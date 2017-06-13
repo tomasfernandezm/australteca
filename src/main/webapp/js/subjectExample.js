@@ -142,6 +142,29 @@ function addModeratorPostulation(userEmail, subjectName){
     });
 }
 
+function stopBeingModerator(userEmail, subjectName){
+    $.ajax({
+        type:'post',
+        url: '/deletePostulant',
+        dataType: 'JSON',
+        data:{
+            subjectName: subjectName,
+            userEmail: userEmail
+        },
+        success: function(){
+            document.getElementById('stopBeingModeratorButton').remove();
+            var button = document.createElement('button');
+            button.id = "addModeratorButton";
+            button.type = "submit";
+            button.className = "btn btn-success pull-right";
+            button.setAttribute("click", "addModeratorPostulation('" + userEmail +"','" + subjectName + "')");
+            button.innerText = "Aplicar a Moderador";
+            var navbar = document.getElementById('myTab');
+            navbar.appendChild(button);
+        }
+    });
+}
+
 function addComment(subjectName, userEmail){
     var commentaryText = document.getElementById('commentTextarea').value;
     $.ajax({

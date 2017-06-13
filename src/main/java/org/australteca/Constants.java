@@ -149,20 +149,22 @@ public interface Constants {
     String SUBJECT_SCORE_PARAM = "subjectScoreParam";
     String SUBJECT_USER_SCORE = "subjectUserScore";
 
-    String MODERATOR_PARAM = "moderatorParam";
+    String WANNABE_MODERATOR_PARAM = "wannabeModeratorParam";
 
+    String MODERATOR_PARAM = "moderatorParam";
     /* ~~~~~~~~~~~ Upload - Download Servlet Parameters ~~~~~~~~~~~~~~~ */
     String NOTE_NAME_PARAM = "noteName";
     String NOTE_TYPE_PARAM = "noteType";
+
     String NOTE_ID_PARAM = "noteID";
 
     String NOTE_FORMAT_PARAM = "noteFormat";
-
     /* ~~~~~~~~~~~ Note Types ~~~~~~~~~~~~~~~~~~~ */
     String NOTE_TYPE_TEORIA = "Teoria";
     String NOTE_TYPE_GUIA = "Guía";
     String NOTE_TYPE_GUIA_RESUELTA = "Guía Resuelta";
     String NOTE_TYPE_PARCIAL = "Parcial";
+
     String NOTE_TYPE_FINAL = "Final";
 
     String NOTE_TYPE_RESUMEN = "Resumen";
@@ -171,7 +173,6 @@ public interface Constants {
     String WORK_PUBLICATION = "Trabajo";
 
     String INVESTIGATION_PUBLICATION = "Investigacion";
-
     /* ~~~~~~~~~~~~~~~~ Publication Servlet Parameters ~~~~~~~~ */
     String PUBLICATION_NAME = "publicationName";
     String PUBLICATION_REQUIREMENTS = "publicationRequirements";
@@ -179,11 +180,11 @@ public interface Constants {
     String PUBLICATION_ROLE = "publicationRole";
     String PUBLICATION_ID = "publicationID";
     String INVESTIGATION_PUBLICATION_LIST = "investigationList";
+
+
     String WORK_PUBLICATION_LIST = "workList";
 
-
     String PUBLICATION_TASKS = "publicationTasks";
-
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";

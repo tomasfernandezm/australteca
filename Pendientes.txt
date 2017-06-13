@@ -8,17 +8,13 @@ hay que conectar ese boton de eliminar para que se elimine esa publicacion de la
 5-No se eliminan los archivos en Materias (el post se hace, hay algun problema ahi que no lo borra en la base)
 
 
-    MODERADOR (botones en materia, esta comentado tambien)
-    3 botones
-        1-si sos moderador de la materia te aparece boton rojo para eliminarte de moderador "Dejar de ser moderador"
-        2-si no sos moderador de la materia y no te postulaste te aparece boton verde "Aplicar moderador"
-        3-si no sos moderador de la materia y te postulaste te aparece boton verde bloqueado "has aplicado"
+    conectar dejar de ser moderador con servlet, reemplazar al tener success
 
+Terminar ajax comemmentario
+Terminar ajax trabajo
+Terminar envío de mail
 
-
-
-
-
+encontrar "Transaction is already active"
 
 
 Cosas que hay que hacer:

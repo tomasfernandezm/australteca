@@ -66,7 +66,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel with-nav-tabs panel-default">
-                <div class="panel-heading">
+                <div  class="panel-heading">
                     <ul class="nav nav-tabs" id="myTab">
                         <li class="active"><a href="#tab1default" data-toggle="tab">Apuntes</a></li>
                         <li><a href="#tab2default" data-toggle="tab">Profesores</a></li>
@@ -78,18 +78,24 @@
                         <% if (request.isUserInRole("user")) { %>
 
                         <%--<button id="addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>--%>
-                        <c:set var="moderator" value="<%=Constants.MODERATOR_PARAM%>"/>
+                        <c:set var="moderatorParam" value="<%=Constants.MODERATOR_PARAM%>"/>
+                        <c:set var="moderator" value="${requestScope[moderatorParam]}"/>
+                        <c:set var="wannabeModeratorParam" value="<%=Constants.WANNABE_MODERATOR_PARAM%>"/>
+                        <c:set var="wannabeModerator" value="${requestScope[wannabeModeratorParam]}"/>
                         <!------- si sos moderador de la materia te aparece este boton para eliminarte de moderador ----->
                         <c:if test="${moderator}">
-                            <button type="submit"  class="btn btn-danger pull-right" onclick="">Dejar de ser moderador</button>
+                            <button id="stopBeingModeratorButton" type="submit"  class="btn btn-danger pull-right" onclick="stopBeingModerator('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Dejar de ser moderador</button>
                         </c:if>
                         <!-------- si no sos moderador de la materia y no te postulaste te aparece este boton -------->
-                        <c:if test="${!moderator}">
+                        <c:if test="${!moderator && !wannabeModerator}">
                             <button id= "addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
                         </c:if>
 
-                        <!-------- si no sos moderador de la materia y te postulaste te aparece este boton (igual a anterior pero bloqueado -------->
-                            <%--<button id= "moderatorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')" disabled>Has aplicado</button>--%>
+                        <!-- se actualizo -->
+
+                        <c:if test="${wannabeModerator}">
+                            <button id= "moderatorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')" disabled>Has aplicado</button>
+                        </c:if>
 
 
 
@@ -194,7 +200,7 @@
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
-                                                                <img src="<c:url value="/userPostPhoto?userEmail=${commentary.author.email}"/>" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
+                                                                <img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>
