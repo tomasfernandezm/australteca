@@ -1,3 +1,26 @@
+ARREGLAR
+
+1-cuando un user cualquiera quiere defavoritear trabajo desde home no se hace.
+2-Los trabajos que son del usuario de la sesion ahora aparecen en el home pero no le aparece el boton de fav, sino un boton de eliminar.
+hay que conectar ese boton de eliminar para que se elimine esa publicacion de la base.
+3- En trabajo. Cuando pasas de tab trabajo a investigacion y desp volves a trabajo se muestra lo de investigacion.
+4-No anda el boton eliminar trabajo/investigacion si sos propietario
+5-No se eliminan los archivos en Materias (el post se hace, hay algun problema ahi que no lo borra en la base)
+
+
+    MODERADOR (botones en materia, esta comentado tambien)
+    3 botones
+        1-si sos moderador de la materia te aparece boton rojo para eliminarte de moderador "Dejar de ser moderador"
+        2-si no sos moderador de la materia y no te postulaste te aparece boton verde "Aplicar moderador"
+        3-si no sos moderador de la materia y te postulaste te aparece boton verde bloqueado "has aplicado"
+
+
+
+
+
+
+
+
 Cosas que hay que hacer:
 
     Ajax

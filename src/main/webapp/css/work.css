@@ -152,12 +152,32 @@ input[type="checkbox"]:checked + label{
 }
 
 .btnremovework{
-    border-color: transparent;
-
+    border-color: transparent !important;
 }
 
 .favorite{
     padding-right: 10px;
 }
 
+
+
+.btnremovework:hover{
+    border-color: transparent !important;
+    background-color: transparent; !important;
+    box-shadow: none !important;
+    color: red !important;
+}
+
+.btnremovework:active:hover{
+    border-color: transparent !important;
+    background-color: transparent; !important;
+    box-shadow: none !important;
+    color: red !important;
+}
+
+.btnremovework:focus{
+    border-color: transparent !important;
+    background-color: transparent; !important;
+    box-shadow: none !important;
+}
 

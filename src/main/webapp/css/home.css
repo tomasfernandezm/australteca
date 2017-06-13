@@ -179,3 +179,29 @@ input[type="checkbox"]:checked + label{
     width: 100%;
     display:inline-block;
 }
+
+.btnremovework{
+    border-color: transparent !important;
+
+}
+
+
+.btnremovework:hover{
+    border-color: transparent !important;
+    background-color: transparent; !important;
+    box-shadow: none !important;
+    color: red !important;
+}
+
+.btnremovework:active:hover{
+    border-color: transparent !important;
+    background-color: transparent; !important;
+    box-shadow: none !important;
+    color: red !important;
+}
+
+.btnremovework:focus{
+    border-color: transparent !important;
+    background-color: transparent; !important;
+    box-shadow: none !important;
+}

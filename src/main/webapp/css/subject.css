@@ -22,15 +22,29 @@
 .standardButton:hover{
     background-color: transparent;
     border-color: transparent;
+    box-shadow: none;
+    color: red;
+}
+
+.btnPlus{
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.btnPlus:hover{
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
     color: black;
 }
 
-.btn span.glyphicon {
-    opacity: 0;
-}
-.btn.active span.glyphicon {
-    opacity:1;
-}
+/*.btn span.glyphicon {*/
+    /*opacity: 0;*/
+/*}*/
+/*.btn.active span.glyphicon {*/
+    /*opacity:1;*/
+/*}*/
 
 .checkbox_wrapper{
     position: relative;

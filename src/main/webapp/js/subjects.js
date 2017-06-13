@@ -40,7 +40,7 @@ function addSubject(subjectName){
             checkbox.setAttribute("onclick","changeFavorite(" + checkbox.value +","+checkbox.id +")");
             var button = document.createElement('button');
             button.type="submit";
-            button.class="standardButton btn btn-default btn-xs";
+            button.class="btn btn-default standardButton";
             button.onsubmit = "removeSubject('" + subjectName +"')";
             var iButton = document.createElement('i');
             iButton.class = "glyphicon glyphicon-trash";

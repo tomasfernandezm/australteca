@@ -77,14 +77,22 @@
                         <!---- agregar botones moderador ------>
                         <% if (request.isUserInRole("user")) { %>
 
-                        <button id="addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
+                        <%--<button id="addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>--%>
                         <c:set var="moderator" value="<%=Constants.MODERATOR_PARAM%>"/>
+                        <!------- si sos moderador de la materia te aparece este boton para eliminarte de moderador ----->
                         <c:if test="${moderator}">
                             <button type="submit"  class="btn btn-danger pull-right" onclick="">Dejar de ser moderador</button>
                         </c:if>
+                        <!-------- si no sos moderador de la materia y no te postulaste te aparece este boton -------->
                         <c:if test="${!moderator}">
-                            <button id= "moderatorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
+                            <button id= "addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
                         </c:if>
+
+                        <!-------- si no sos moderador de la materia y te postulaste te aparece este boton (igual a anterior pero bloqueado -------->
+                            <%--<button id= "moderatorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')" disabled>Has aplicado</button>--%>
+
+
+
 
                         <% } %>
                     </ul>
@@ -124,7 +132,7 @@
                                             <td><abbr class="timeago" title="<c:out value="${note.getFormatDate()}"/>"></abbr></td>
                                             <td><c:out value="${note.downloads}"/></td>
                                             <td><c:out value="${note.author.firstName} ${note.author.lastName}"/></td>
-                                            <td><button type="submit" class="btn trashButton" onclick="removeNote('${note.id}','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')"><i class="glyphicon glyphicon-trash"></i></button></td>
+                                            <td><button type="button" class="btn trashButton" onclick="removeNote('${note.id}','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')"><i class="glyphicon glyphicon-trash"></i></button></td>
 
                                         </tr>
                                     </c:forEach>

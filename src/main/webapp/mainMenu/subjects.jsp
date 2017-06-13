@@ -76,9 +76,9 @@
             <div class="col-md-12">
                 <h1>Materias</h1>
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading clearfix">
                         <% if (request.isUserInRole("admin")) { %>
-                        <button type="button" class="standardButton btn btn-default btn-xs" onclick="modalBox(document.getElementById('addSubjectBox'))">
+                        <button type="button" class="btn btn-default btn-xs btnPlus" onclick="modalBox(document.getElementById('addSubjectBox'))">
                             <i class="glyphicon glyphicon-plus"></i></button>
                         <% } %>
                         <div class="pull-right">
@@ -115,7 +115,7 @@
                                          </td>
                                         <% if (request.isUserInRole("admin")) { %>
                                         <td>
-                                                <button type="submit" class="standardButton btn btn-default btn-xs" onclick="removeSubject('${subjectWrapper.subject.subjectName}')"><i class="glyphicon glyphicon-trash"></i></button>
+                                                <button type="button" class="btn btn-default standardButton" onclick="removeSubject('${subjectWrapper.subject.subjectName}')"><i class="glyphicon glyphicon-trash"></i></button>
                                         </td>
                                         <% } %>
                                     </tr>

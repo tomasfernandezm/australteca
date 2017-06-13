@@ -76,22 +76,29 @@
 
                     <div class="panel-body">
 
-                        <%--hacelo con esto y yo desp lo arreglo--%>
-                            <h3 class="cta-title">Trabajos</h3>
-
                             <c:set var="publicationListParam" value="<%=Constants.USER_PUBLICATION_LIST%>"/>
                             <c:set var="publicationList" value="${requestScope[publicationListParam]}"/>
                             <c:forEach var="publication" items="${publicationList}" varStatus="loop">
                                 <c:set var="role" value="Trabajo"/>
-                                <c:if test="${publication.role == role}">
+                                <%--<c:if test="${publication.role == role}">--%>
                                     <div class="col col-md-6">
                                         <div id="publication${loop.count}" class="favoriteWork">
                                             <div class="panel-heading clearfix">
                                                 <h3 class="pull-left"><c:out value="${publication.name}"/> </h3>
+
+
+                                                <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+                                                <c:if test="${publication.author.email != remoteUser}">
                                                 <div class="checkbox_wrapper pull-right">
                                                     <input class="checkbox" type="checkbox" id="favoriteWork" checked>
                                                     <label></label>
                                                 </div>
+                                                </c:if>
+                                                <c:if test="${publication.author.email == remoteUser}">
+                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${publication.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
+                                                </c:if>
+
+
                                             </div>
                                             <div class="panel-body">
 
@@ -107,7 +114,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </c:if>
+                                <%--</c:if>--%>
                             </c:forEach>
 
 

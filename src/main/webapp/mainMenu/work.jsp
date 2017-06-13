@@ -64,7 +64,7 @@
                                                 </c:if>
 
                                                 <c:if test="${workWrapper.publication.author.email == remoteUser}">
-                                                    <button type="button" id="deleteButton" class="btn btn-default btn removework pull-right"  onclick="removePublication('${workWrapper.publication.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${workWrapper.publication.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                 </c:if>
 
                                             </div>
@@ -122,7 +122,7 @@
 
                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                     <c:if test="${investigationWrapper.publication.author.email == remoteUser}">
-                                                        <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${investigationWrapper.publication.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                        <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${investigationWrapper.publication.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                     </c:if>
 
                                                 </div>
