@@ -14,9 +14,6 @@ Cosas que hay que hacer:
 
     Ajax
     1- comentarios agregar
-    3- proveer feedback
-    2- profesores agregar (arreglar styling y no se agrega)
-
 
     Comentarios (SubjectExample.jsp)
     2-Mantenerse en tab (al actualizar y desp del servlet)
@@ -29,7 +26,7 @@ Cosas que hay que hacer:
 
     Materias
     1-boton buscar cuando sos user
-     
+
     LoginForm (probar)
     1-Mostrar mensaje de time out
 

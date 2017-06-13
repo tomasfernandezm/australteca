@@ -86,7 +86,7 @@ function sendPublicationPetition(publicationID){
             publicationID: publicationID
         },
         success: function(){
-
+            alert("your petition has been sent!")
         }
     });
 }

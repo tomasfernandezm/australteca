@@ -406,6 +406,17 @@
 
     <!-- ~~~~~~~~~~~~~ Publications ~~~~~~~~~~~~~~~~~ -->
 
+        <!-- Email publication -->
+        <servlet>
+            <servlet-name>PublicationPetitionSender</servlet-name>
+            <servlet-class>org.australteca.servlet.email.PublicationPetitionServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>PublicationPetitionSender</servlet-name>
+            <url-pattern>/publicationPetition</url-pattern>
+        </servlet-mapping>
+
         <!-- Add publications -->
         <servlet>
             <servlet-name>AddPublicationServlet</servlet-name>

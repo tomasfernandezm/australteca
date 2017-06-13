@@ -84,8 +84,12 @@
                                                 <h4>Seran requisitos excluyentes:</h4>
                                                 <p><c:out value="${workWrapper.publication.requirements}"/></p>
 
-                                                <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                    <%--<button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
 
+                                                <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+                                                <c:if test="${workWrapper.publication.author.email == remoteUser}">
+                                                <button type="button" class="btn btn-primary pull-right" onclick="sendPublicationPetition(${workWrapper.publication.id})">Enviar peticion</button>
+                                                </c:if>
                                             </div>
 
                                             <button type="button" id="showhide" class="btn btn-default pull-right" onclick="show('#show${workWrapper.publication.name}')"><i>Mostrar mas</i></button>
@@ -143,8 +147,13 @@
                                                     <h4>Seran requisitos excluyentes:</h4>
                                                     <p><c:out value="${investigationWrapper.publication.requirements}"/></p>
 
-                                                    <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                    <%--<button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
 
+                                                    <c:set var="userEmail" value="${pageContext.request.remoteUser}"/>
+                                                    <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+                                                    <c:if test="${investigationWrapper.publication.author.email == remoteUser}">
+                                                    <button type="button" class="btn btn-primary pull-right" onclick="sendPublicationPetition(${investigationWrapper.publication.id})">Enviar peticion</button>
+                                                    </c:if>
 
                                                 </div>
 
