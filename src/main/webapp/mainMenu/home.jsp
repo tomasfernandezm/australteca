@@ -81,7 +81,7 @@
                             <c:forEach var="publication" items="${publicationList}" varStatus="loop">
                                 <c:set var="role" value="Trabajo"/>
                                 <%--<c:if test="${publication.role == role}">--%>
-                                    <div class="col col-md-6">
+                                    <div id="publicationPanel${loop.count}" class="col col-md-6">
                                         <div id="publication${loop.count}" class="favoriteWork">
                                             <div class="panel-heading clearfix">
                                                 <h3 class="pull-left"><c:out value="${publication.name}"/> </h3>
@@ -90,12 +90,12 @@
                                                 <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                 <c:if test="${publication.author.email != remoteUser}">
                                                 <div class="checkbox_wrapper pull-right">
-                                                    <input class="checkbox" type="checkbox" id="favoriteWork" checked>
+                                                    <input class="checkbox" type="checkbox" id="favoriteWork${loop.count}" checked onclick="changeFavorite('${publication.id}', 'favoriteWork${loop.count}', 'publicationPanel${loop.count}')">
                                                     <label></label>
                                                 </div>
                                                 </c:if>
                                                 <c:if test="${publication.author.email == remoteUser}">
-                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${publication.id}', 'publicationDiv${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
+                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${publication.id}', 'publicationPanel${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                 </c:if>
 
 

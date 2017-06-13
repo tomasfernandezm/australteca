@@ -1,14 +1,7 @@
 ARREGLAR
 
-1-cuando un user cualquiera quiere defavoritear trabajo desde home no se hace.
-2-Los trabajos que son del usuario de la sesion ahora aparecen en el home pero no le aparece el boton de fav, sino un boton de eliminar.
-hay que conectar ese boton de eliminar para que se elimine esa publicacion de la base.
+
 3- En trabajo. Cuando pasas de tab trabajo a investigacion y desp volves a trabajo se muestra lo de investigacion.
-4-No anda el boton eliminar trabajo/investigacion si sos propietario
-5-No se eliminan los archivos en Materias (el post se hace, hay algun problema ahi que no lo borra en la base)
-
-
-    conectar dejar de ser moderador con servlet, reemplazar al tener success
 
 Terminar ajax comemmentario
 Terminar ajax trabajo
@@ -31,37 +24,16 @@ Cosas que hay que hacer:
     4-agregar comentario, no irse del tab 'comment'
     5-fotos no se muestran bien
 
-    Moderadores
-    1-carteles de aviso
-    2-botones en materia
-
     Sesion
     2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).
 
     Materias
     1-boton buscar cuando sos user
-
-    Entidad Trabajo
-        -Boton con informacion de como aplicar.
-        -Boton ver mas
-        -conectar botón para agregar una oferta
-        -Hacer forEach del view
-        -conectar Boton favorito
-        -Delete
-        -Mandar mail para postularse
-
-    HOME
-    1-trabajos favoritos
-
-     LoginForm (probar)
-     1-Mostrar mensaje de time out
+     
+    LoginForm (probar)
+    1-Mostrar mensaje de time out
 
 BONUS
 1-Estadisticas del usuario
 2-Estadisticas para administradores
-
-POSIBLE
-1-Mostrar que se carga archivo
-
-
 

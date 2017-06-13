@@ -15,6 +15,8 @@ public class PublicationDao extends AbstractDao<Publication> {
     public void delete(Integer id) throws IllegalArgumentException {
         Publication publication = get(id);
         removeAllUsers(publication);
+        User u = publication.getAuthor();
+        u.getPublications().remove(publication);
         publication.getSuscribedUsers().clear();
         merge(publication);
         delete(Publication.class, id);
@@ -32,7 +34,8 @@ public class PublicationDao extends AbstractDao<Publication> {
 
     private void removeAllUsers(@NotNull Publication publication){
         if(!publication.getSuscribedUsers().isEmpty()){
-            for(User u: publication.getSuscribedUsers()) {
+            List<User> users = publication.getSuscribedUsers();
+            for(User u: users) {
                 u.getPublications().remove(publication);
             }
         }

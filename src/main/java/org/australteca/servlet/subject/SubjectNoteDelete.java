@@ -7,6 +7,7 @@ import org.australteca.dao.SubjectModeratorRelationshipDao;
 import org.australteca.entity.Note;
 import org.australteca.entity.Subject;
 import org.australteca.entity.SubjectModeratorRelationship;
+import org.australteca.entity.User;
 import org.australteca.servlet.ModeratorChecker;
 
 import javax.servlet.ServletException;
@@ -46,6 +47,7 @@ public class SubjectNoteDelete extends HttpServlet {
                 Subject subject = subjectDao.getByName(subjectName);
 
                 subject.getNoteList().remove(note);
+                noteDao.delete(id);
             }
         }
         resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);

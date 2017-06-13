@@ -72,7 +72,7 @@ function removePublication(publicationID, containerID){
             publicationID: publicationID
         },
         success: function(){
-            document.getElementById(containerID ).remove();
+            document.getElementById(containerID).remove();
         }
     });
 }
