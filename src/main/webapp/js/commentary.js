@@ -15,14 +15,15 @@ function createImageDiv(userEmail, firstName){
 
     var div = document.createElement("div");
     div.className="col-lg-2 col-md-2 col-sm-2 hidden-xs";
-    article.appendChild(div);
+
 
     var figure = document.createElement("figure");
+    figure.className = "thumbnail";
     var img = document.createElement("img");
-    img.currentSrc = "/userPostPhoto?userEmail="+userEmail;
-    img.setAttribute("error", "afsfasdf"); /* fix onerror attribute, check if this is the right way */
+    img.src = "/userPostPhoto?userEmail="+userEmail;
+    img.setAttribute("onerror", "if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';");
     img.className="img-responsive avatar img-circle";
-    img.alt = ""; /* check correct attribute */
+    img.alt = "avatar"; /* check correct attribute */
     var figcaption = document.createElement("figcaption");
     figcaption.className="text-center";
     figcaption.innerText= firstName;
@@ -62,7 +63,7 @@ function makeButton(commentaryID, subjectName, articleID){
     var button = document.createElement("button");
     button.type = "submit";
     button.className = "btn pull-right remove";
-    button.setAttribute("click", "removeComment('" + commentaryID + "','" + subjectName + "','" + articleID+ "')");
+    button.setAttribute("onclick", "removeComment('" + commentaryID + "','" + subjectName + "','" + articleID+ "')");
     var i = document.createElement("i");
     i.className = "glyphicon glyphicon-remove";
     button.appendChild(i);
@@ -74,13 +75,13 @@ function makeHeader(userEmail, date){
     header.className = "text-left";
     var subDiv = document.createElement("div");
     subDiv.className = "comment-user";
-    subDiv.innerText = userEmail;
     var i = document.createElement("i");
     i.className ="glyphicon glyphicon-user";
     var abbr = document.createElement("abbr");
-    abbr.className = "timeago";
-    abbr.title = date; /* proveer getFormatDate2 */
     subDiv.appendChild(i);
+    subDiv.innerText = userEmail;
+    abbr.className = "timeago";
+    abbr.title = date;
     header.appendChild(subDiv);
     header.appendChild(abbr);
     return header;

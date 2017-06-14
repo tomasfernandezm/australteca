@@ -63,7 +63,7 @@
                                                 </div>
                                                 </c:if>
 
-                                                <c:if test="${workWrapper.publication.author.email == remoteUser}">
+                                                <c:if test="${workWrapper.publication.author.email != remoteUser}">
                                                     <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${workWrapper.publication.id}', 'workDiv${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                 </c:if>
 
@@ -87,7 +87,7 @@
                                                     <%--<button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
 
                                                 <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
-                                                <c:if test="${workWrapper.publication.author.email == remoteUser}">
+                                                <c:if test="${workWrapper.publication.author.email != remoteUser}">
                                                 <button type="button" class="btn btn-primary pull-right" onclick="sendPublicationPetition(${workWrapper.publication.id})">Enviar peticion</button>
                                                 </c:if>
                                             </div>
