@@ -90,7 +90,7 @@ body{
 
 .btnAddWork{
     margin-bottom: 15px;
-    background-color: #BC8BE8;
+    background-color: #BC8BE8 !important;
     color: white;
     border-color: transparent;
     align-content: center;
@@ -100,7 +100,7 @@ body{
 
 .btnAddWork:hover{
     background-color: white;
-    color: rebeccapurple;
+    color: rebeccapurple !important;
     border-color: #BC8BE8;
 }
 

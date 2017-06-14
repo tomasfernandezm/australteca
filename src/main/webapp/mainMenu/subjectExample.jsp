@@ -125,6 +125,7 @@
                                     <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
                                     <c:set var="noteList" value='${requestScope[notesListParam]}' />
                                     <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
+                                    <c:set var="admin" value="<%=request.isUserInRole(Constants.ADMINISTRATOR)%>"/>
                                     <c:forEach items="${noteList}" var="note" varStatus="loop">
                                         <tr id="note${loop.count}">
                                             <td><c:out value="${note.name}"/></td>
@@ -138,7 +139,10 @@
                                             <td><abbr class="timeago" title="<c:out value="${note.getFormatDate()}"/>"></abbr></td>
                                             <td><c:out value="${note.downloads}"/></td>
                                             <td><c:out value="${note.author.firstName} ${note.author.lastName}"/></td>
+
+                                            <c:if test="${moderator || admin}">
                                             <td><button type="button" class="btn trashButton" onclick="removeNote('${note.id}','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')"><i class="glyphicon glyphicon-trash"></i></button></td>
+                                            </c:if>
 
                                         </tr>
                                     </c:forEach>
@@ -148,13 +152,13 @@
 
                         <!----------- PROFESSOR tab ----------->
                         <div class="tab-pane fade" id="tab2default">
-                                <div class="row">
-                                        <% if (request.isUserInRole("admin")) { %>
-                                            <div class="btn btn-professor center-block">
-                                                <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Editar profesores</button>
-                                            </div>
-                                        <% } %>
-                                </div>
+                            <div class="row">
+                                <c:if test="${moderator || admin}">
+                                    <div class="btn btn-professor center-block">
+                                        <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Editar profesores</button>
+                                    </div>
+                                </c:if>
+                            </div>
 
 
 
@@ -186,10 +190,12 @@
 
                                                 <!----- writting box ------->
                                                 <%--<form id="commentForm" method="post">--%>
+                                                <div id="commentForm" class="commentBox" >
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
-                                                    <textarea id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
-                                                    <button type="submit" class="btn btn-success green" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Comentar</button>
-                                                <%--</form>--%>
+                                                    <textarea  id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
+                                                    <button type="submit" class="btn btn-success green pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Comentar</button>
+                                                </div>
+                                                    <%--</form>--%>
                                                 <div class="col-xs-12"><hr></div>
 
                                                 <!------- List of comments ------->
@@ -200,7 +206,7 @@
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
-                                                                <img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
+                                                                <img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="avatar img-circle" alt="avatar">
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>
@@ -212,7 +218,7 @@
                                                                     <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
                                                                     </header>
                                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
-                                                                    <c:if test="${commentary.author.email == remoteUser}">
+                                                                    <c:if test="${(commentary.author.email == remoteUser) || moderator || admin}">
                                                                         <button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
                                                                     </c:if>
                                                                     <div class="comment-post">
