@@ -32,7 +32,7 @@ public class Publication extends AbstractEntity{
 
     }
 
-    public Publication(String name, User author, String requirements, String description, String tasks, String role) {
+    public Publication(String name, User author, String description, String requirements, String tasks, String role) {
         this.name = name;
         this.author = author;
         this.requirements = requirements;

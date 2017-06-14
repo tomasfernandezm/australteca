@@ -42,10 +42,11 @@ function addPublication(){
             publicationTasks: publicationTasks,
             publicationRole: roleText
         },
-        success: function () {
+        success: function (id) {
             var div;
             if(roleText === 'Trabajo') div = document.getElementById("tab1default");
             else div = document.getElementById("tab2default");
+            div.appendChild(createPublicationDiv(publicationName, publicationDescription, publicationRequirements, publicationTasks, id));
 
         }
     });
@@ -92,23 +93,26 @@ function sendPublicationPetition(publicationID){
 }
 
 function createPublicationDiv(name, description, requierements, tasks, id){
+
     var firstDiv = document.createElement("div");
-    firstDiv.id = name + id;
-    firstDiv.className = "bs-calltoaction bs-calltoaction-work";
+        firstDiv.id = name + id;
+        firstDiv.className = "bs-calltoaction bs-calltoaction-work";
     var secondDiv = document.createElement("div");
-    secondDiv.className = "row";
+        secondDiv.className = "row";
     var thirdDiv = document.createElement("div");
-    thirdDiv.className = "panel-heading";
+        thirdDiv.className = "panel-heading";
     var fourthDiv = document.createElement("div");
-    fourthDiv.className = "row";
+        fourthDiv.className = "row";
 
     var fifthDiv = document.createElement("div");
-    fifthDiv.className = "pull-left";
+        fifthDiv.className = "pull-left";
     var h1 = document.createElement("h1");
-    h1.className ="cta-title";
-    h1.innerText = name;
+        h1.className ="cta-title";
+        h1.innerText = name;
+
     fifthDiv.appendChild(h1);
     fourthDiv.appendChild(fifthDiv);
+    secondDiv.appendChild(thirdDiv);
 
     var sixthDiv = document.createElement("div");
     sixthDiv.className = "pull-right";
@@ -116,7 +120,7 @@ function createPublicationDiv(name, description, requierements, tasks, id){
     button.type="button";
     button.id="deleteButton";
     button.className="btn btn-default btn removework pull-right";
-    button.setAttribute("click", "removePublication('" + id + "'" + name + id + "')");
+    button.setAttribute("onclick", "removePublication('" + id + "','" + name + id + "')");
     var i = document.createElement("i");
     i.className = "glyphicon glyphicon-remove";
     button.appendChild(i);
@@ -139,7 +143,9 @@ function createPublicationDiv(name, description, requierements, tasks, id){
 
     var fourthTextDiv = document.createElement("div");
     fourthTextDiv.className = "panel-body showMore";
-    fourthTextDiv.id="show" + name + id;
+    fourthTextDiv.id="show" + name;
+    fourthTextDiv.setAttribute("hidden","");
+
     var tareasPrincipalesHeader = document.createElement("h4");
     tareasPrincipalesHeader.innerText = "Sus tareas principales seran:";
     var tareasPrincipalesP = document.createElement("p");
@@ -148,21 +154,22 @@ function createPublicationDiv(name, description, requierements, tasks, id){
     requisitosHeader.innerText ="Seran requisitos excluyentes";
     var requisitosP = document.createElement("p");
     requisitosP.innerText = requierements;
-    var button1 = document.createElement("button");
-    button1.className = "btn btn-primary pull-right";
-    button1.setAttribute("click", "modalBox(document.getElementById('sendRequest'))");
-    button1.innerText="Enviar peticion";
+
+
     fourthTextDiv.appendChild(tareasPrincipalesHeader);
     fourthTextDiv.appendChild(tareasPrincipalesP);
     fourthTextDiv.appendChild(requisitosHeader);
     fourthTextDiv.appendChild(requisitosP);
-    fourthTextDiv.appendChild(button1);
+
 
     var button2 = document.createElement("button");
     button2.type = "button";
-    button2.id = "showhide";
+    button2.id = "showhide"+ id + 5;
     button2.className="btn btn-default pull-right";
-    button2.setAttribute("click", "show(#show" + name + id);
+    buttonItag = document.createElement("i");
+    buttonItag.innerText="Mostrar mas";
+    button2.appendChild(buttonItag);
+    button2.setAttribute("onclick", "show('#show" + name + "','showhide" +id + 5 +"')");
 
     secondTextDiv.appendChild(fourthTextDiv);
     secondTextDiv.appendChild(button2);

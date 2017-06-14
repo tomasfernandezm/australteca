@@ -40,7 +40,7 @@
             <div class="row centered-form">
                 <div class="panel-body">
                     <div class="tab-content">
-                        <div id="workDiv" class="tab-pane fade in active" id="tab1default">
+                        <div class="tab-pane fade in active" id="tab1default">
                             <!---------- WORK ---------->
 
                         <c:set var="investigationListParam" value="<%=Constants.WORK_PUBLICATION_LIST%>"/>
@@ -92,7 +92,7 @@
                                                 </c:if>
                                             </div>
 
-                                            <button type="button" id="showhide" class="btn btn-default pull-right" onclick="show('#show${workWrapper.publication.name}')"><i>Mostrar mas</i></button>
+                                            <button type="button" id="showhide${loop.count}" class="btn btn-default pull-right" onclick="show('#show${workWrapper.publication.name}',this.id)"><i>Mostrar mas</i></button>
                                         </div>
                                     </div>
                                 </div>

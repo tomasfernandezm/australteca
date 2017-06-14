@@ -1,34 +1,15 @@
-ARREGLAR
-
-
-3- En trabajo. Cuando pasas de tab trabajo a investigacion y desp volves a trabajo se muestra lo de investigacion.
 
 Terminar ajax comentario
-Terminar ajax trabajo
-Terminar envío de mail
-
-encontrar "Transaction is already active"
-
-
-Cosas que hay que hacer:
-
-    Ajax
-    1- comentarios agregar
 
     Comentarios (SubjectExample.jsp)
     2-Mantenerse en tab (al actualizar y desp del servlet)
     3-ENTER para publicar comentario
-    4-agregar comentario, no irse del tab 'comment'
-    5-fotos no se muestran bien
+
+    5-fotos no se muestran bien (Probar)
 
     Sesion
     2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).
 
-    Materias
-    1-boton buscar cuando sos user
-
-    LoginForm (probar)
-    1-Mostrar mensaje de time out
 
 BONUS
 1-Estadisticas del usuario
