@@ -1,9 +1,4 @@
 
-Terminar ajax comentario
-
-    Comentarios (SubjectExample.jsp)
-    2-Mantenerse en tab (al actualizar y desp del servlet)
-    3-ENTER para publicar comentario
 
     5-fotos no se muestran bien (Probar)
 
