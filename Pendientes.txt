@@ -3,7 +3,7 @@ ARREGLAR
 
 3- En trabajo. Cuando pasas de tab trabajo a investigacion y desp volves a trabajo se muestra lo de investigacion.
 
-Terminar ajax comemmentario
+Terminar ajax comentario
 Terminar ajax trabajo
 Terminar envío de mail
 

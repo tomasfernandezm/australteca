@@ -10,22 +10,18 @@ import java.util.List;
  */
 
 @Entity
-@Table(name = "SUBJECT")
 public class Subject extends AbstractEntity{
 
-    @Column (name = "SUBJECT_SCORE")
     private double score;
-
-    @Column (name = "SUBJECT_AMOUNT_OF_SCORES")
     private double amountOfScores;
 
-    @Column (name = "SUBJECT_NAME", unique = true)
+    @Column (unique = true)
     private String subjectName;
 
     @ManyToMany
     private final List<Professor> professors = new ArrayList<>();
 
-    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "subject")
+    @OneToMany
     private final List<Commentary> commentaries = new ArrayList<>();
 
     @ManyToMany

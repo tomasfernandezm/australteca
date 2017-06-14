@@ -12,29 +12,19 @@ import static org.australteca.Constants.*;
  */
 
 @Entity
-@Table(name = "USER")
 public class User extends AbstractEntity{
 
-    @Column(name = "USER_FNAME")
     private String firstName;
-
-    @Column(name = "USER_LNAME")
     private String lastName;
 
     @Embedded
-    @Column(name = "USER_PHOTO")
     private Photo photo;
 
-    @Column(name = "USER_EMAIL", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
 
-    @Column(name = "USER_COURSE")
     private String course;
-
-    @Column(name = "USER_PASSWORD")
     private String password;
-
-    @Column(name = "USER_ROLE")
     private String role;
 
     @ManyToMany
@@ -46,18 +36,13 @@ public class User extends AbstractEntity{
     @ElementCollection
     private final Map<String, Integer> subjectScores = new HashMap<>();
 
-    /* CascadeType.ALL -> al añadir un comentario a un usuario y persistirlo, también se persiste el comentario */
-    /* orphanRemoval = true -> si saco un comentario de la Collection, se borra el link en la tabla y también se
-    borra el comentario */
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
+    @OneToMany
     private final Set<Commentary> commentaries = new HashSet<>();
 
     @OneToMany
     private final List<SubjectModeratorRelationship> subjectModeratorRelationships = new ArrayList<>();
 
-    public User() {
-    }
+    public User() {}
 
     public User(String firstName, String lastName, String email, String course,
                 String password, boolean moderator, boolean admin) {

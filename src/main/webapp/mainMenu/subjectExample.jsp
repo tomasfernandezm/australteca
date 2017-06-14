@@ -185,11 +185,11 @@
                                             <div id ="comments_container" class="status-upload">
 
                                                 <!----- writting box ------->
-                                                <form id="commentForm" method="post">
+                                                <%--<form id="commentForm" method="post">--%>
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
-                                                    <textarea id="commentTextarea" name="<%=Constants.COMMENTARY%>" form="commentForm" placeholder="Danos tu opinion" ></textarea>
+                                                    <textarea id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
                                                     <button type="submit" class="btn btn-success green" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Comentar</button>
-                                                </form>
+                                                <%--</form>--%>
                                                 <div class="col-xs-12"><hr></div>
 
                                                 <!------- List of comments ------->
