@@ -185,11 +185,11 @@
                                             <div id ="comments_container" class="status-upload">
 
                                                 <!----- writting box ------->
-                                                <%--<form id="commentForm" method="post">--%>
+
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
                                                     <textarea id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
-                                                    <button type="submit" class="btn btn-success green" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Comentar</button>
-                                                <%--</form>--%>
+                                                    <button id="commentButton" type="submit" class="btn btn-success green" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Comentar</button>
+
                                                 <div class="col-xs-12"><hr></div>
 
                                                 <!------- List of comments ------->
@@ -200,7 +200,7 @@
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
-                                                                <img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
+                                                                <img src="/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>

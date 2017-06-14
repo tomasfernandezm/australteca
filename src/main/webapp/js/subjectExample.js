@@ -179,6 +179,7 @@ function addComment(subjectName, userEmail){
 
         success: function (jsonObject) {
            var div = document.getElementById("comments_container");
+           /*div.insertAfter(createComment(userEmail, jsonObject[0],commentaryText, jsonObject[1], jsonObject[2],subjectName), div.children[3]);*/
            div.appendChild(createComment(userEmail, jsonObject[0],commentaryText, jsonObject[1], jsonObject[2],subjectName));
         }
     });
