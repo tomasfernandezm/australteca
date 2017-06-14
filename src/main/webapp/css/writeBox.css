@@ -38,11 +38,11 @@ body .no-padding {
     float: left;
     width: 100%;
 }
-.status-upload form {
+.status-upload .commentBox{
     float: left;
     width: 100%;
 }
-.status-upload form textarea {
+.status-upload .commentBox textarea {
     background: none repeat scroll 0 0 #fff;
     border: medium none;
     -webkit-border-radius: 4px 4px 0 0;
@@ -60,7 +60,7 @@ body .no-padding {
     width: 100%;
     resize:vertical;
     outline:none;
-    border: 1px solid #F2F2F2;
+    border: 5px solid #F2F2F2;
 }
 
 .status-upload ul {

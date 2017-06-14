@@ -63,7 +63,7 @@
                                                 </div>
                                                 </c:if>
 
-                                                <c:if test="${workWrapper.publication.author.email != remoteUser}">
+                                                <c:if test="${workWrapper.publication.author.email == remoteUser}">
                                                     <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${workWrapper.publication.id}', 'workDiv${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                 </c:if>
 
