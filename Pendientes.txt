@@ -1,12 +1,40 @@
 
+Lo Nuevo:
 
-    5-fotos no se muestran bien (Probar)
+- Sort by en los comments.
+    Hay que hacer un comparable según el Date, desde el más reciente hasta el más nuevo. Después, al momento de insertar hay que insertar primero.
 
-    Sesion
-    2- Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).
+- Unificar los iconos de eliminar y delete. -> es importante ver la parte de javascript
 
+- Centrar los botones que no quedaron centrados.
 
-BONUS
-1-Estadisticas del usuario
-2-Estadisticas para administradores
+- Ojo con los paddings en la parte de los trabajos.
 
+- Estilo cursor: pointer para las acciones.
+
+- Reducir en lineas generales los "espacios en blanco" que hay.
+
+- Agregarle un template al mail.
+
+- OAuth con Google. (ni idea...)
+
+- Estadisticas de usuario.
+
+- Soportar Markdown (https://guides.github.com/features/mastering-markdown/)
+    Falta definir donde se va a poner markdown y hacer los arreglos necesarios en la base (hay que ver si hace falta arreglar algo)
+    Modificar jsp para poder pegar el html directamente (al parsear el markdown se parsea en html)
+    Usar txtMark para parsear el markdown -> simpleMDE no lo hace
+    El css de simpleMde es "simplemde.min.css"
+    El js de simpleMde es "simplemde.min.js"
+
+- Llenar de mas datos la base para mostrar en una demo.
+    Habría que hacer una clase auxiliar para llenar la base al momento de presentar
+
+- Presentación tecnica y no tecnica.
+    Powerpoint o Prezi
+    Demo en vivo de la aplicación
+    Video rápido de demo de aplicación ?
+
+Lo Viejo:
+
+    - Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).

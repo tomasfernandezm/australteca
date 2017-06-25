@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale1.0">
     <title><%=Constants.MY_HOME_TITLE%></title>
     <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/simplemde.min.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/work.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/modalBox.css"/>" rel="stylesheet" type="text/css">
@@ -279,6 +280,7 @@
 
     <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/simplemde.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/work.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
 

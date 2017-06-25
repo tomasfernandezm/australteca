@@ -6,10 +6,7 @@ import org.australteca.dao.ProfessorDao;
 import org.australteca.dao.SubjectDao;
 import org.australteca.dao.SubjectModeratorRelationshipDao;
 import org.australteca.dao.UserDao;
-import org.australteca.entity.Professor;
-import org.australteca.entity.Subject;
-import org.australteca.entity.SubjectModeratorRelationship;
-import org.australteca.entity.User;
+import org.australteca.entity.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
