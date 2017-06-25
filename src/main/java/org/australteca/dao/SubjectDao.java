@@ -5,6 +5,7 @@ import org.australteca.entity.Commentary;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 import org.australteca.utils.HibernateUtil;
+import org.australteca.utils.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

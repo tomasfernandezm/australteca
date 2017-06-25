@@ -3,6 +3,7 @@ package org.australteca.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public class Subject extends AbstractEntity{
     private final List<Professor> professors = new ArrayList<>();
 
     @OneToMany
-    private final List<Commentary> commentaries = new ArrayList<>();
+    private final List<Commentary> commentaries = new LinkedList<>();
 
     @ManyToMany
     private final List<User> userList = new ArrayList<>();

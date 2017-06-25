@@ -13,7 +13,7 @@ import java.util.TimeZone;
 
 @Entity
 @Table(name = "COMMENTARY")
-public class Commentary extends AbstractEntity implements Comparable<Commentary>{
+public class Commentary extends AbstractEntity{
 
     @Temporal(TemporalType.DATE)
     @Column (name = "COMMENTARY_CREATION_DATE")
@@ -75,10 +75,5 @@ public class Commentary extends AbstractEntity implements Comparable<Commentary>
 
     public Subject getSubject(){
         return subject;
-    }
-
-    @Override
-    public int compareTo(Commentary o) {
-        return creationDate.compareTo(o.getCreationDate());
     }
 }

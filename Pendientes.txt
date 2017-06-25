@@ -1,8 +1,7 @@
 
 Lo Nuevo:
 
-- Sort by en los comments.
-    Hay que hacer un comparable según el Date, desde el más reciente hasta el más nuevo. Después, al momento de insertar hay que insertar primero.
+- Sort by en los comments. -> implementado con linked list (hay que probar).
 
 - Unificar los iconos de eliminar y delete. -> es importante ver la parte de javascript
 

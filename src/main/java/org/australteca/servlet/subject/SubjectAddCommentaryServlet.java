@@ -8,9 +8,6 @@ import org.australteca.dao.UserDao;
 import org.australteca.entity.Commentary;
 import org.australteca.entity.Subject;
 import org.australteca.entity.User;
-import org.australteca.utils.HibernateUtil;
-import org.hibernate.Hibernate;
-import org.hibernate.Transaction;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.australteca.Constants.SUBJECT_NAME_PARAM;
 
 /**
  * Created by tomi on 28/04/17.
@@ -50,7 +45,7 @@ public class SubjectAddCommentaryServlet extends HttpServlet {
         CommentaryDao commentaryDao = new CommentaryDao();
         commentaryDao.add(commentary);
 
-        subject.getCommentaryList().add(commentary);
+        subject.getCommentaryList().add(0, commentary);
         user.getCommentaries().add(commentary);
 
         List<String> response = new ArrayList<>();
