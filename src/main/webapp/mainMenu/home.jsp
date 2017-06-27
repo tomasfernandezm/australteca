@@ -131,20 +131,26 @@
             <div class="bs-calltoaction bs-calltoaction-statistics">
                 <div class="row">
                     <div class="panel-heading">
-                        <h1 class="cta-title">Mi actividad</h1>
+                        <h1 class="activity-title">Mi actividad</h1>
                     </div>
                     <div class="panel-body">
-                        <div class="col col-md-4">
+                        <div class="col col-md-4 center-column">
                             <h4>Archivos compartidos</h4>
-                            <div class="circle-file">
+                            <div class="circle-file activity-1">
                                 <p>12</p>
                             </div>
                         </div>
-                        <div class="col col-md-4">
-                            <p>Discuciones empezadas</p>
+                        <div class="col col-md-4 center-column">
+                            <h4>Discuciones empezadas</h4>
+                            <div class="circle-file activity-2">
+                                <p>2</p>
+                            </div>
                         </div>
-                        <div class="col col-md-4">
-                            <p>Archivos descargados</p>
+                        <div class="col col-md-4 center-column">
+                            <h4>Archivos descargados</h4>
+                            <div class="circle-file activity-3">
+                                <p>45</p>
+                            </div>
                         </div>
 
                     </div>

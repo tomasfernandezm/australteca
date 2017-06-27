@@ -9,7 +9,7 @@ Lo Nuevo:
 
 - Ojo con los paddings en la parte de los trabajos.
 
-- Estilo cursor: pointer para las acciones.
+- Estilo cursor: pointer para las acciones. "HECHO"
 
 - Reducir en lineas generales los "espacios en blanco" que hay.
 

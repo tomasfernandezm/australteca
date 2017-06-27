@@ -60,6 +60,7 @@ input[type="checkbox"] {
     top: 0;
     left: 0;
     z-index: 2;
+    cursor: pointer;
 }
 
 input[type="checkbox"] + label{
@@ -68,6 +69,7 @@ input[type="checkbox"] + label{
     width: 100%;
     display:inline-block;
     position: absolute;
+    cursor: pointer;
 
 }
 
@@ -76,5 +78,17 @@ input[type="checkbox"]:checked + label{
     height: 100%;
     width: 100%;
     display:inline-block;
+    cursor: pointer;
 }
 
+.panel-heading{
+    background-color: whitesmoke !important;
+    border: solid 1px;
+    border-color: grey;
+}
+
+.panel{
+    border-color: white !important;
+    border-radius: inherit !important;
+    background-color: white !important;
+}

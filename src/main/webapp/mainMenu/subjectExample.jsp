@@ -207,11 +207,11 @@
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
-<<<<<<< HEAD
+
                                                                 <img src="/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
-=======
-                                                                <img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="avatar img-circle" alt="avatar">
->>>>>>> 8a910ac96b8243a907b9c56d1a66b70344010062
+
+                                                                <%--<img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="avatar img-circle" alt="avatar">--%>
+
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
                                                         </div>
@@ -224,7 +224,7 @@
                                                                     </header>
                                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                                     <c:if test="${(commentary.author.email == remoteUser) || moderator || admin}">
-                                                                        <button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-remove"></i></button>
+                                                                        <button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                                     </c:if>
                                                                     <div class="comment-post">
                                                                         <p>

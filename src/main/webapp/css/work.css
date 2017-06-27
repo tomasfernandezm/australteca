@@ -8,11 +8,10 @@ body{
 .bs-calltoaction{
     position: relative;
     width:auto;
-    padding: 10px 15px;
     border: 1px solid black;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 
@@ -72,7 +71,7 @@ body{
 .bs-calltoaction.bs-calltoaction-work{
     color: black;
     background-color: white;
-    border-color: #BC8BE8;
+    border-color: #E74C3C;
     padding-right: 25px;
     padding-left: 25px;
 }
@@ -90,7 +89,7 @@ body{
 
 .btnAddWork{
     margin-bottom: 15px;
-    background-color: #BC8BE8 !important;
+    background-color: #E74C3C !important;
     color: white;
     border-color: transparent;
     align-content: center;
@@ -100,19 +99,19 @@ body{
 
 .btnAddWork:hover{
     background-color: white;
-    color: rebeccapurple !important;
-    border-color: #BC8BE8;
+    color: #E74C3C !important;
+    border-color: #E74C3C;
 }
 
 .nav-pills > li > a {
     border: none;
-    color: rebeccapurple; !important;
+    color: #E74C3C; !important;
 
 }
 .nav-pills > li.active > a, .nav-pills > li > a:hover, .nav-pills > li.active > a:hover {
     border: none;
     color: white !important;
-    background-color: rebeccapurple; !important;
+    background-color: #E74C3C; !important;
 }
 
 
@@ -133,6 +132,7 @@ input[type="checkbox"] {
     top: 0;
     left: 0;
     z-index: 2;
+    cursor: pointer;
 }
 
 input[type="checkbox"] + label{
@@ -141,7 +141,7 @@ input[type="checkbox"] + label{
     width: 100%;
     display:inline-block;
     position: absolute;
-
+    cursor: pointer;
 }
 
 input[type="checkbox"]:checked + label{
@@ -149,6 +149,7 @@ input[type="checkbox"]:checked + label{
     height: 100%;
     width: 100%;
     display:inline-block;
+    cursor: pointer;
 }
 
 .btnremovework{

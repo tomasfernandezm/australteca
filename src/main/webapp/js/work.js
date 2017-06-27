@@ -119,10 +119,10 @@ function createPublicationDiv(name, description, requierements, tasks, id){
     var button = document.createElement("button");
     button.type="button";
     button.id="deleteButton";
-    button.className="btn btn-default btn removework pull-right";
+    button.className="btn btn-default btnremovework pull-right";
     button.setAttribute("onclick", "removePublication('" + id + "','" + name + id + "')");
     var i = document.createElement("i");
-    i.className = "glyphicon glyphicon-remove";
+    i.className = "glyphicon glyphicon-trash";
     button.appendChild(i);
     sixthDiv.appendChild(button);
     fourthDiv.appendChild(sixthDiv);
