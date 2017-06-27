@@ -26,6 +26,10 @@ public class UserListPostServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        if(req.getSession().getAttribute("loggedIn") == null){
+            req.getSession().setAttribute("loggedIn", true);
+        }
+
         String email = req.getRemoteUser();
 
         UserDao userDAO = new UserDao();
@@ -35,6 +39,6 @@ public class UserListPostServlet extends HttpServlet {
         req.setAttribute(USER_SUBJECT_LIST, user.getSubjects());
         req.setAttribute(Constants.USER_PUBLICATION_LIST, user.getPublications());
 
-        req.getRequestDispatcher("/mainMenu/home.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/home.jsp").forward(req, resp);
     }
 }

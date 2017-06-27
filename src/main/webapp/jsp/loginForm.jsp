@@ -8,8 +8,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale1.0">
     <title><%=Constants.MY_HOME_TITLE%></title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/loginForm.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/loginForm.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="principal">
@@ -22,7 +22,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand"><img class="logo" src="images/logo.png"></a>
+              <a class="navbar-brand"><img class="logo" src="../images/logo.png"></a>
           </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -115,7 +115,7 @@
         <h2>Y buscar lo que no sabes.</h2>
       </div>
     </div>
-    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   </body>
 </html>

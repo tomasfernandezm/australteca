@@ -1,7 +1,6 @@
 package org.australteca.filter;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,29 +18,24 @@ public class NoCacheFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        HttpServletResponse resp = (HttpServletResponse) response;
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpSession httpSession = req.getSession();
+        httpSession.isNew();
 
-            /*HttpServletResponse response = (HttpServletResponse) res;
-            HttpServletRequest request = (HttpServletRequest) req;
+        String path = req.getRequestURI().substring(req.getContextPath().length());
+        boolean isLoginPath = path.equals("/") || path.equals("/jsp/loginForm.jsp") || path.equals("/jsp/j_security_check") || path.equals("/login");
+        boolean loggedIn = httpSession.getAttribute("loggedIn") != null;
 
-            String path = request.getRequestURI().substring(request.getContextPath().length());
-
-            String userString = request.getRemoteUser();
-
-            if(userString == null && (path.equals("/loginForm.jsp") || path.equals("/") || path.equals("/userListPost"))){
-                response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-                response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-                response.setDateHeader("Expires", 0); // Proxies.
-                chain.doFilter(req, res);
-            }else if(userString == null && !path.equals("/j_security_check")){
-                response.sendRedirect("/loginForm.jsp");
-            }
-            else {
-                response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-                response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-                response.setDateHeader("Expires", 0); // Proxies.
-                chain.doFilter(req, res);
-            }*/
+        if (!loggedIn && !isLoginPath) {
+            resp.sendRedirect(resp.encodeRedirectURL("/jsp/loginForm.jsp"));
+        } else {
+            resp.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+            resp.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+            resp.setDateHeader("Expires", 0); // Proxies.
+            chain.doFilter(request, response);
+        }
     }
 
     @Override

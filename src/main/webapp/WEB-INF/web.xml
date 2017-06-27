@@ -13,15 +13,20 @@
 
     <!-- ~~~~~~~~~~~~~~~~~~~ Security Filter Configuration ~~~~~~~~~~~~~~~~~~~~~~ -->
 
-    <!--<filter>-->
-        <!--<filter-name>NoCacheFilter</filter-name>-->
-        <!--<filter-class>org.australteca.filter.NoCacheFilter</filter-class>-->
-    <!--</filter>-->
+    <filter>
+        <filter-name>NoCacheFilter</filter-name>
+        <filter-class>org.australteca.filter.NoCacheFilter</filter-class>
+    </filter>
 
-    <!--<filter-mapping>-->
-        <!--<filter-name>NoCacheFilter</filter-name>-->
-        <!--<url-pattern>/*</url-pattern>-->
-    <!--</filter-mapping>-->
+    <filter-mapping>
+        <filter-name>NoCacheFilter</filter-name>
+        <url-pattern>/jsp/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>NoCacheFilter</filter-name>
+        <url-pattern>/servlet/*</url-pattern>
+    </filter-mapping>
 
     <filter>
       <filter-name>Security Filter</filter-name>
@@ -61,6 +66,16 @@
 
 
     <!-- ~~~~~~~~~~~~~ SERVLET CONFIGURATION AND MAPPING ~~~~~~~~~~~~~~~~~ -->
+
+        <servlet>
+            <servlet-name>LoginServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.LoginServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>LoginServlet</servlet-name>
+            <url-pattern>/login</url-pattern>
+        </servlet-mapping>
 
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~ User Servlets ~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -163,7 +178,7 @@
 
         <servlet-mapping>
             <servlet-name>UserListPostServlet</servlet-name>
-            <url-pattern>/userListPost</url-pattern>
+            <url-pattern>/servlet/userListPost</url-pattern>
         </servlet-mapping>
 
         <!-- User subject manager -->
@@ -473,7 +488,7 @@
     <!-- ~~~~~~~~~~~~~~~ Welcome File List ~~~~~~~~~~~~~~~~~~~~~~-->
 
        <welcome-file-list>
-           <welcome-file>loginForm.jsp</welcome-file>
+           <welcome-file>/jsp/loginForm.jsp</welcome-file>
        </welcome-file-list>
 
     <!-- ~~~~~~~~~~~~~~~ Error Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->

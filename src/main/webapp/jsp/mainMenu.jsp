@@ -1,4 +1,4 @@
-    <%--
+<%@ page import="org.australteca.Constants" %>    <%--
   Created by IntelliJ IDEA.
   User: tomasforman
   Date: 29/3/17
@@ -35,7 +35,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="<%= response.encodeURL("/userPost")%>">Ajustes</a></li>
-                        <li><a href="<%= response.encodeURL("/logout.jsp")%>">Sign out</a></li>
+                        <li><a href="<%= response.encodeURL("/jsp/logout.jsp")%>">Sign out</a></li>
                     </ul>
                 </div>
             </ul>

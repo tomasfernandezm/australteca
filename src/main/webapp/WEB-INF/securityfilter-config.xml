@@ -43,9 +43,9 @@
    <login-config>
       <auth-method>FORM</auth-method>
       <form-login-config>
-         <form-login-page>/loginForm.jsp</form-login-page>
-         <form-error-page>/loginError.jsp</form-error-page>
-         <form-default-page>/userListPost</form-default-page>
+         <form-login-page>/jsp/loginForm.jsp</form-login-page>
+         <form-error-page>/jsp/loginError.jsp</form-error-page>
+         <form-default-page>/login</form-default-page>
       </form-login-config>
    </login-config>
 
