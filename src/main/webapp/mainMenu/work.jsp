@@ -28,12 +28,13 @@
         <div class="row col-md-offset-3 col-lg-offset-3 col-sm-offset-3">
             <button type="button" id="addWork"class="btn btn-default btnAddWork" onclick="modalBox(document.getElementById('addWorkModal'))">Agregar oferta</button>
         </div>
-        <div class="col-xs-8 col-sm-8 col-md-7 col-xs-offset-4 col-sm-offset-4 col-md-offset-5">
+        <div class="row">
+        <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8  col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 
-            <div class="row">
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="#tab1default" data-toggle="tab">   Trabajo   </a></li>
-                    <li><a href=    "#tab2default" data-toggle="tab">Investigacion</a></li>
+
+                <ul class="nav nav-pills nav-justified">
+                    <li class="active"><a href="#tab1default" data-toggle="tab">Trabajo</a></li>
+                    <li class=""><a href="#tab2default" data-toggle="tab">Investigacion</a></li>
                 </ul>
             </div>
         </div>
