@@ -84,8 +84,8 @@
                                 <%--<c:if test="${publication.role == role}">--%>
                                     <div id="publicationPanel${loop.count}" class="col col-md-6">
                                         <div id="publication${loop.count}" class="favoriteWork">
-                                            <div class="panel-heading clearfix">
-                                                <h3 class="pull-left"><c:out value="${publication.name}"/> </h3>
+                                            <div class="panel-heading work-heading clearfix">
+                                                <h4 class="pull-left"><c:out value="${publication.name}"/> </h4>
 
 
                                                 <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
@@ -101,6 +101,7 @@
 
 
                                             </div>
+                                            <div class="arrow-down"></div>
                                             <div class="panel-body">
 
                                             <p><c:out value="${publication.description}"/></p>
@@ -108,10 +109,10 @@
                                             <div class="panel-body showMore" id="show${publication.name}" hidden>
                                                 <p><c:out value="${publication.requirements}"/></p>
                                                 <p><c:out value="${publication.tasks}"/></p>
-                                                <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                <button type="button" class="btn btn-success pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
                                             </div>
 
-                                            <button type="button" class="btn btn-default pull-right" onclick="show('#show${publication.name}')"><i>Mostrar mas</i></button>
+                                            <button type="button" class="btn btn-default btn-show-more pull-right" onclick="show('#show${publication.name}')"><i>Mostrar mas</i></button>
                                             </div>
                                         </div>
                                     </div>

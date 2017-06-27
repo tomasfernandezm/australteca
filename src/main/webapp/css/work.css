@@ -15,59 +15,6 @@ body{
 }
 
 
-
-/*.bs-calltoaction > .row > [class^="col-"],*/
-/*.bs-calltoaction > .row > [class*=" col-"]{*/
-    /*float:none;*/
-    /*display:table-cell;*/
-    /*vertical-align:middle;*/
-/*}*/
-
-/*.cta-contents{*/
-    /*padding-top: 5px;*/
-    /*padding-bottom: 10px;*/
-/*}*/
-
-/*.cta-title{*/
-    /*margin: 0 auto 10px;*/
-    /*padding: 0;*/
-/*}*/
-
-/*.cta-desc{*/
-    /*padding: 0;*/
-/*}*/
-
-/*.cta-desc p:last-child{*/
-    /*margin-bottom: 0;*/
-/*}*/
-
-/*.cta-button{*/
-    /*padding-top: 10px;*/
-    /*padding-bottom: 10px;*/
-/*}*/
-
-/*@media (max-width: 991px){*/
-    /*.bs-calltoaction > .row{*/
-        /*display:block;*/
-        /*width: auto;*/
-    /*}*/
-
-    /*.bs-calltoaction > .row > [class^="col-"],*/
-    /*.bs-calltoaction > .row > [class*=" col-"]{*/
-        /*float:none;*/
-        /*display:block;*/
-        /*vertical-align:middle;*/
-        /*position: relative;*/
-    /*}*/
-
-    /*.cta-contents{*/
-        /*text-align: center;*/
-    /*}*/
-/*}*/
-
-
-
-
 .bs-calltoaction.bs-calltoaction-work{
     color: black;
     background-color: white;
@@ -76,16 +23,6 @@ body{
     padding-left: 25px;
 }
 
-
-
-
-
-/*.bs-calltoaction.bs-calltoaction-subjects .cta-button .btn,*/
-/*.bs-calltoaction.bs-calltoaction-discussions .cta-button .btn,*/
-/*.bs-calltoaction.bs-calltoaction-work .cta-button .btn,*/
-/*.bs-calltoaction.bs-calltoaction-statistics .cta-button .btn{*/
-    /*border-color:#fff;*/
-/*}*/
 
 .btnAddWork{
     margin-bottom: 15px;

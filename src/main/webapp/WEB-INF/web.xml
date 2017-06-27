@@ -101,7 +101,7 @@
 
         <servlet-mapping>
             <servlet-name>UserDeleteServlet</servlet-name>
-            <url-pattern>/userDelete</url-pattern>
+            <url-pattern>/servlet/userDelete</url-pattern>
         </servlet-mapping>
 
         <!-- User Modification -->
@@ -112,7 +112,7 @@
 
         <servlet-mapping>
             <servlet-name>UserModificationServlet</servlet-name>
-            <url-pattern>/userModification</url-pattern>
+            <url-pattern>/servlet/userModification</url-pattern>
         </servlet-mapping>
 
         <!-- User Post -->
@@ -123,7 +123,7 @@
 
         <servlet-mapping>
             <servlet-name>UserPostServlet</servlet-name>
-            <url-pattern>/userPost</url-pattern>
+            <url-pattern>/servlet/userPost</url-pattern>
         </servlet-mapping>
 
         <!-- User subject manager -->
@@ -134,7 +134,7 @@
 
         <servlet-mapping>
             <servlet-name>UserSubjectManagerAjax</servlet-name>
-            <url-pattern>/userSubjectManagerAjax</url-pattern>
+            <url-pattern>/servlet/userSubjectManagerAjax</url-pattern>
         </servlet-mapping>
 
         <!-- User post profile photo -->
@@ -145,7 +145,7 @@
 
         <servlet-mapping>
             <servlet-name>UserPostPhotoServlet</servlet-name>
-            <url-pattern>/userPostPhoto</url-pattern>
+            <url-pattern>/servlet/userPostPhoto</url-pattern>
         </servlet-mapping>
 
         <!-- User upload profile photo -->
@@ -156,7 +156,7 @@
 
         <servlet-mapping>
             <servlet-name>UploadPhotoServlet</servlet-name>
-            <url-pattern>/uploadPhoto</url-pattern>
+            <url-pattern>/servlet/uploadPhoto</url-pattern>
         </servlet-mapping>
 
         <!-- User get subject rating -->
@@ -167,7 +167,7 @@
 
         <servlet-mapping>
             <servlet-name>UserGetSubjectRating</servlet-name>
-            <url-pattern>/userGetSubjectRating</url-pattern>
+            <url-pattern>/servlet/userGetSubjectRating</url-pattern>
         </servlet-mapping>
 
         <!-- User list POST -->
@@ -189,7 +189,7 @@
 
         <servlet-mapping>
             <servlet-name>UserSubjectManagerServlet</servlet-name>
-            <url-pattern>/manageUserSubjects</url-pattern>
+            <url-pattern>/servlet/manageUserSubjects</url-pattern>
         </servlet-mapping>
 
 
@@ -204,7 +204,7 @@
 
         <servlet-mapping>
             <servlet-name>AddSubjectServlet</servlet-name>
-            <url-pattern>/addSubject</url-pattern>
+            <url-pattern>/servlet/addSubject</url-pattern>
         </servlet-mapping>
 
         <!-- Delete Subject -->
@@ -216,7 +216,7 @@
 
         <servlet-mapping>
             <servlet-name>SubjectDeleteServlet</servlet-name>
-            <url-pattern>/subjectDelete</url-pattern>
+            <url-pattern>/servlet/subjectDelete</url-pattern>
         </servlet-mapping>
 
         <!-- Subject List -->
@@ -228,7 +228,7 @@
 
         <servlet-mapping>
             <servlet-name>ListSubjectServlet</servlet-name>
-            <url-pattern>/listSubjects</url-pattern>
+            <url-pattern>/servlet/listSubjects</url-pattern>
         </servlet-mapping>
 
         <!-- Subject View -->
@@ -239,7 +239,7 @@
 
         <servlet-mapping>
             <servlet-name>PostSubjectServlet</servlet-name>
-            <url-pattern>/postSubject</url-pattern>
+            <url-pattern>/servlet/postSubject</url-pattern>
         </servlet-mapping>
 
         <!-- Subject change raiting -->
@@ -250,7 +250,7 @@
 
         <servlet-mapping>
             <servlet-name>SubjectChangeRatingAjax</servlet-name>
-            <url-pattern>/subjectChangeRatingAjax</url-pattern>
+            <url-pattern>/servlet/subjectChangeRatingAjax</url-pattern>
         </servlet-mapping>
 
     <!-- ~~~~~~~~~ Notes servlet ~~~~~~~~~~~~ -->
@@ -263,7 +263,7 @@
 
         <servlet-mapping>
             <servlet-name>NoteDeleteServlet</servlet-name>
-            <url-pattern>/noteDelete</url-pattern>
+            <url-pattern>/servlet/noteDelete</url-pattern>
         </servlet-mapping>
 
         <!-- Download note -->
@@ -274,7 +274,7 @@
 
         <servlet-mapping>
             <servlet-name>NoteDownloadServlet</servlet-name>
-            <url-pattern>/noteDownload</url-pattern>
+            <url-pattern>/servlet/noteDownload</url-pattern>
         </servlet-mapping>
 
         <!-- Upload file -->
@@ -285,7 +285,7 @@
 
         <servlet-mapping>
             <servlet-name>UploadServlet</servlet-name>
-            <url-pattern>/upload</url-pattern>
+            <url-pattern>/servlet/upload</url-pattern>
         </servlet-mapping>
 
 
@@ -299,7 +299,7 @@
 
         <servlet-mapping>
             <servlet-name>AddProfessorServlet</servlet-name>
-            <url-pattern>/addProfessor</url-pattern>
+            <url-pattern>/servlet/addProfessor</url-pattern>
         </servlet-mapping>
 
         <!-- Delete professor -->
@@ -310,7 +310,7 @@
 
         <servlet-mapping>
             <servlet-name>DeleteProfessorServlet</servlet-name>
-            <url-pattern>/deleteProfessor</url-pattern>
+            <url-pattern>/servlet/deleteProfessor</url-pattern>
         </servlet-mapping>
 
         <!-- Add professor to subject -->
@@ -321,7 +321,7 @@
 
         <servlet-mapping>
             <servlet-name>AddProfessorToSubjectServlet</servlet-name>
-            <url-pattern>/addProfessorToSubject</url-pattern>
+            <url-pattern>/servlet/addProfessorToSubject</url-pattern>
         </servlet-mapping>
 
         <!-- Remove professor to subject -->
@@ -332,7 +332,7 @@
 
         <servlet-mapping>
             <servlet-name>RemoveProfessorFromSubjectServlet</servlet-name>
-            <url-pattern>/removeProfessorFromSubject</url-pattern>
+            <url-pattern>/servlet/removeProfessorFromSubject</url-pattern>
         </servlet-mapping>
 
 
@@ -346,7 +346,7 @@
 
         <servlet-mapping>
             <servlet-name>SubjectAddCommentaryServlet</servlet-name>
-            <url-pattern>/subjectAddCommentary</url-pattern>
+            <url-pattern>/servlet/subjectAddCommentary</url-pattern>
         </servlet-mapping>
 
         <!-- Delete commentary to subject -->
@@ -357,7 +357,7 @@
 
         <servlet-mapping>
             <servlet-name>DeleteCommentary</servlet-name>
-            <url-pattern>/deleteCommentary</url-pattern>
+            <url-pattern>/servlet/deleteCommentary</url-pattern>
         </servlet-mapping>
 
 
@@ -371,7 +371,7 @@
 
         <servlet-mapping>
             <servlet-name>PostPostulationServlet</servlet-name>
-            <url-pattern>/postModerators</url-pattern>
+            <url-pattern>/servlet/postModerators</url-pattern>
         </servlet-mapping>
 
         <!-- Deny Postulation moderator -->
@@ -382,7 +382,7 @@
 
         <servlet-mapping>
             <servlet-name>DenyPostulationServlet</servlet-name>
-            <url-pattern>/denyPostulation</url-pattern>
+            <url-pattern>/servlet/denyPostulation</url-pattern>
         </servlet-mapping>
 
         <!-- Accept postulation moderator -->
@@ -393,7 +393,7 @@
 
         <servlet-mapping>
             <servlet-name>AcceptPostulationServlet</servlet-name>
-            <url-pattern>/acceptPostulation</url-pattern>
+            <url-pattern>/servlet/acceptPostulation</url-pattern>
         </servlet-mapping>
 
         <!-- Add postulant moderator -->
@@ -404,7 +404,7 @@
 
         <servlet-mapping>
             <servlet-name>AddPostulantServlet</servlet-name>
-            <url-pattern>/addPostulant</url-pattern>
+            <url-pattern>/servlet/addPostulant</url-pattern>
         </servlet-mapping>
 
         <!-- Delete postulant moderator -->
@@ -415,7 +415,7 @@
 
         <servlet-mapping>
             <servlet-name>DeletePostulantServlet</servlet-name>
-            <url-pattern>/deletePostulant</url-pattern>
+            <url-pattern>/servlet/deletePostulant</url-pattern>
         </servlet-mapping>
 
 
@@ -429,7 +429,7 @@
 
         <servlet-mapping>
             <servlet-name>PublicationPetitionSender</servlet-name>
-            <url-pattern>/publicationPetition</url-pattern>
+            <url-pattern>/servlet/publicationPetition</url-pattern>
         </servlet-mapping>
 
         <!-- Add publications -->
@@ -440,7 +440,7 @@
 
         <servlet-mapping>
             <servlet-name>AddPublicationServlet</servlet-name>
-            <url-pattern>/addPublication</url-pattern>
+            <url-pattern>/servlet/addPublication</url-pattern>
         </servlet-mapping>
 
         <!-- Remove publications -->
@@ -451,7 +451,7 @@
 
         <servlet-mapping>
             <servlet-name>RemovePublicationServlet</servlet-name>
-            <url-pattern>/removePublication</url-pattern>
+            <url-pattern>/servlet/removePublication</url-pattern>
         </servlet-mapping>
 
         <!-- List of publications -->
@@ -462,7 +462,7 @@
 
         <servlet-mapping>
             <servlet-name>ListPublicationServlet</servlet-name>
-            <url-pattern>/listPublications</url-pattern>
+            <url-pattern>/servlet/listPublications</url-pattern>
         </servlet-mapping>
 
         <!-- Favorite publications -->
@@ -473,7 +473,7 @@
 
         <servlet-mapping>
             <servlet-name>FavoritePublicationServlet</servlet-name>
-            <url-pattern>/favoritePublication</url-pattern>
+            <url-pattern>/servlet/favoritePublication</url-pattern>
         </servlet-mapping>
 
 
