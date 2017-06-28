@@ -20,7 +20,7 @@ function createImageDiv(userEmail, firstName){
     var figure = document.createElement("figure");
     figure.className = "thumbnail";
     var img = document.createElement("img");
-    img.src = "/userPostPhoto?userEmail="+userEmail;
+    img.src = "/servlet/userPostPhoto?userEmail="+userEmail;
     img.setAttribute("onerror", "if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';");
     img.className="img-responsive avatar img-circle";
     img.alt = "avatar"; /* check correct attribute */

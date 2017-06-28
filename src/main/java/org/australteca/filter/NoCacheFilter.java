@@ -27,6 +27,9 @@ public class NoCacheFilter implements Filter {
         String path = req.getRequestURI().substring(req.getContextPath().length());
         boolean isLoginPath = path.equals("/") || path.equals("/jsp/loginForm.jsp") || path.equals("/jsp/j_security_check") || path.equals("/login");
         boolean loggedIn = httpSession.getAttribute("loggedIn") != null;
+        boolean isRegisterPath = path.equals("/servlet/register");
+        boolean isLoginError = path.equals("/jsp/loginError.jsp");
+        boolean isRegisterConfirmation = path.equals("/jsp/registerConfirmation.jsp");
 
         if (!loggedIn && !isLoginPath) {
             resp.sendRedirect(resp.encodeRedirectURL("/jsp/loginForm.jsp"));

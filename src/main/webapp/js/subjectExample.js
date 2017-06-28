@@ -5,7 +5,7 @@
 function getUserRating(){
     $.ajax({
         type:'get',
-        url:'/userGetSubjectRating',
+        url:'/servlet/userGetSubjectRating',
         dataType: 'JSON',
         data:{
             subjectName: document.getElementById('subjectName-h2').innerHTML
@@ -40,7 +40,7 @@ $(document).ready(getUserRating());
 function removeNote(noteID, subjectName){
     $.ajax({
         type: 'post',
-        url:'/noteDelete',
+        url:'/servlet/noteDelete',
         dataType: 'JSON',
         data:{
             noteID: noteID,
@@ -56,7 +56,7 @@ function removeNote(noteID, subjectName){
 function addProfessorToSubject(professorID, subjectName){
     $.ajax({
         type:'post',
-        url:'/addProfessorToSubject',
+        url:'/servlet/addProfessorToSubject',
         dataType: 'JSON',
         data:{
             professorID: professorID,
@@ -92,7 +92,7 @@ function addProfessorToSubject(professorID, subjectName){
 function removeProfessorFromSubject(professorID, subjectName){
     $.ajax({
         type:'post',
-        url:'/removeProfessorFromSubject',
+        url:'/servlet/removeProfessorFromSubject',
         dataType: 'JSON',
         data:{
             professorID: professorID,
@@ -112,7 +112,7 @@ function removeProfessorFromSubject(professorID, subjectName){
 function changeRating(subjectName, button_value) {
     $.ajax({
         type:'post',
-        url:'/subjectChangeRatingAjax',
+        url:'/servlet/subjectChangeRatingAjax',
         dataType: 'JSON',
         data:{
                 rating: button_value,
@@ -128,7 +128,7 @@ function changeRating(subjectName, button_value) {
 function addModeratorPostulation(userEmail, subjectName){
     $.ajax({
         type:'post',
-        url: '/addPostulant',
+        url: '/servlet/addPostulant',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
@@ -145,7 +145,7 @@ function addModeratorPostulation(userEmail, subjectName){
 function stopBeingModerator(userEmail, subjectName){
     $.ajax({
         type:'post',
-        url: '/deletePostulant',
+        url: '/servlet/deletePostulant',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
@@ -169,7 +169,7 @@ function addComment(subjectName, userEmail){
     var commentaryText = document.getElementById('commentTextarea').value;
     $.ajax({
         type:'post',
-        url: '/subjectAddCommentary',
+        url: '/servlet/subjectAddCommentary',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
@@ -179,7 +179,6 @@ function addComment(subjectName, userEmail){
 
         success: function (jsonObject) {
            var div = document.getElementById("comments_container");
-           /*div.insertAfter(createComment(userEmail, jsonObject[0],commentaryText, jsonObject[1], jsonObject[2],subjectName), div.children[3]);*/
            div.appendChild(createComment(userEmail, jsonObject[0],commentaryText, jsonObject[1], jsonObject[2],subjectName));
         }
     });
@@ -188,7 +187,7 @@ function addComment(subjectName, userEmail){
 function removeComment(commentaryID, subjectName, rowID){
     $.ajax({
         type:'post',
-        url:'/deleteCommentary',
+        url:'/servlet/deleteCommentary',
         dataType: 'JSON',
         data:{
             commentaryID: commentaryID,

@@ -89,6 +89,6 @@ public class PhotoUploadServlet extends HttpServlet {
         user.setPhoto(data, contentType, extension);
         userDao.merge(user);
 
-        resp.sendRedirect("/userPost");
+        resp.sendRedirect("/servlet/userPost");
     }
 }

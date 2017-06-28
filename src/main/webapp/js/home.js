@@ -5,7 +5,7 @@ function show(divId) {
 function changeFavorite(publicationID, checkBoxId, divID) {
     $.ajax({
         type:'post',
-        url:'/favoritePublication',
+        url:'/servlet/favoritePublication',
         dataType: 'JSON',
         data:{
             publicationID: publicationID,
@@ -21,7 +21,7 @@ function changeFavorite(publicationID, checkBoxId, divID) {
 function removePublication(publicationID, containerID){
     $.ajax({
         type:'post',
-        url: '/removePublication',
+        url: '/servlet/removePublication',
         dataType: 'JSON',
         data:{
             publicationID: publicationID

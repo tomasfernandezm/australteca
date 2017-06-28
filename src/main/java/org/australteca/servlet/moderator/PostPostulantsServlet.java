@@ -44,7 +44,7 @@ public class PostPostulantsServlet extends HttpServlet {
             req.setAttribute(Constants.ACCEPTED_LIST, moderators);
             req.setAttribute(Constants.WAITING_LIST, waitingAcceptance);
 
-            req.getRequestDispatcher("/mainMenu/moderators.jsp").forward(req, resp);
+            req.getRequestDispatcher("/jsp/moderators.jsp").forward(req, resp);
 
         }else if(list.equals(Constants.ACCEPTED_LIST)){
 

@@ -50,7 +50,7 @@
         </div>
       </nav>
 
-    <form id="<%=Constants.REGISTER_FORM_ID%>" action="/register" method="POST">
+    <form id="<%=Constants.REGISTER_FORM_ID%>" action="/servlet/register" method="POST">
         <div class="container-fluid">
           <div class="row centered-form  ">
             <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">

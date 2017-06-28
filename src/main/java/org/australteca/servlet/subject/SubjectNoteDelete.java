@@ -50,6 +50,6 @@ public class SubjectNoteDelete extends HttpServlet {
                 noteDao.delete(id);
             }
         }
-        resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
+        resp.sendRedirect("/servlet/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
     }
 }

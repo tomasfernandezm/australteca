@@ -71,7 +71,7 @@ public class SubjectPostServlet extends HttpServlet {
 
         req.setAttribute(SUBJECT_NAME_PARAM, subjectName);
         req.setAttribute(SUBJECT_SCORE, new DecimalFormat("#.##").format(subject.getScore()));
-        req.getRequestDispatcher("/mainMenu/subjectExample.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/subjectExample.jsp").forward(req, resp);
 
     }
 

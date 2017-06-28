@@ -17,15 +17,15 @@
             <span class="icon-bar"></span>
         </button>
         <div class="navbar-header">
-            <a href="<%=response.encodeURL("/userListPost")%>" class="navbar-brand"><img class="logo" src="/images/logo.png"></a>
+            <a href="<%=response.encodeURL("/servlet/userListPost")%>" class="navbar-brand"><img class="logo" src="/images/logo.png"></a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li class="activeHome2"><a href="<%=response.encodeURL("/userListPost")%>">Inicio</a></li>
-                    <li class="activeSubject2"><a href="<%=response.encodeURL("/listSubjects")%>">Materias</a></li>
-                    <li class="activeWork2"><a href="<%=response.encodeURL("/listPublications")%>">Trabajo</a></li>
+                    <li class="activeHome2"><a href="<%=response.encodeURL("/servlet/userListPost")%>">Inicio</a></li>
+                    <li class="activeSubject2"><a href="<%=response.encodeURL("/servlet/listSubjects")%>">Materias</a></li>
+                    <li class="activeWork2"><a href="<%=response.encodeURL("/servlet/listPublications")%>">Trabajo</a></li>
                 <%if(request.isUserInRole(Constants.ADMINISTRATOR)){%>
-                    <li class="activeModerators2"><a href="<%=response.encodeURL("/postModerators")%>">Administracion</a></li>
+                    <li class="activeModerators2"><a href="<%=response.encodeURL("/servlet/postModerators")%>">Administracion</a></li>
                 <%}%>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -34,7 +34,7 @@
                         <%= request.getRemoteUser() %> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="<%= response.encodeURL("/userPost")%>">Ajustes</a></li>
+                        <li><a href="<%= response.encodeURL("/servlet/userPost")%>">Ajustes</a></li>
                         <li><a href="<%= response.encodeURL("/jsp/logout.jsp")%>">Sign out</a></li>
                     </ul>
                 </div>

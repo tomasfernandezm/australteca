@@ -32,7 +32,7 @@ function addProfessor(){
     var form = document.getElementById('addProfessorForm');
     $.ajax({
         type:'post',
-        url:'/addProfessor',
+        url:'/servlet/addProfessor',
         dataType: 'JSON',
         data:{
             professorName: form.elements[1].value,
@@ -46,7 +46,7 @@ function addProfessor(){
 function removeProfessor(professorID, rowID){
     $.ajax({
         type:'post',
-        url:'/deleteProfessor',
+        url:'/servlet/deleteProfessor',
         dataType: 'JSON',
         data:{
             professorID: professorID
@@ -74,7 +74,7 @@ function addModeratorToTable(userEmail, subjectName){
 function eliminateAplication(userEmail, subjectName, rowID){
     $.ajax({
         type:'post',
-        url:'/deletePostulant',
+        url:'/servlet/deletePostulant',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
@@ -89,7 +89,7 @@ function eliminateAplication(userEmail, subjectName, rowID){
 function acceptAplication(userEmail, subjectName, rowID){
     $.ajax({
         type:'post',
-        url:'/acceptPostulation',
+        url:'/servlet/acceptPostulation',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
@@ -105,7 +105,7 @@ function acceptAplication(userEmail, subjectName, rowID){
 function denyAplication(userEmail, subjectName, rowID){
     $.ajax({
         type:'post',
-        url:'/denyPostulation',
+        url:'/servlet/denyPostulation',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,

@@ -49,7 +49,7 @@ public class ListPublicationServlet extends HttpServlet {
         req.setAttribute(Constants.WORK_PUBLICATION_LIST, works);
         req.setAttribute(Constants.INVESTIGATION_PUBLICATION_LIST, investigations);
 
-        req.getRequestDispatcher("/mainMenu/work.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/work.jsp").forward(req, resp);
     }
 
     public class PublicationWrapper{

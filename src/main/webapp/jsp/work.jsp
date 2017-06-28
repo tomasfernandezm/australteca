@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="active-work">
-        <%@include file="/mainMenu/mainMenu.jsp" %>
+        <%@include file="/jsp/mainMenu.jsp" %>
     </div>
 
     <div class="container-fluid">

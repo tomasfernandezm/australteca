@@ -47,6 +47,6 @@ public class UserRegisterServlet extends HttpServlet {
             if(userID == null) status = 2;
         }
         request.setAttribute(STATUS, status);
-        request.getRequestDispatcher("/registerConfirmation.jsp").forward(request, resp);
+        request.getRequestDispatcher("/jsp/registerConfirmation.jsp").forward(request, resp);
     }
 }

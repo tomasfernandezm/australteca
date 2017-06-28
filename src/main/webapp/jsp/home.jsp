@@ -40,33 +40,12 @@
                         <c:set var="subjectList" value='${requestScope[subjectListParam]}' />
                         <c:forEach items="${subjectList}" var="subject">
                             <div class="col col-md-4">
-                                <a href="<c:url value="/postSubject?subjectName=${subject.subjectName}"/>" class="btn btn-lg btn-block btn-primary"><c:out value="${subject.subjectName}"/></a>
+                                <a href="<c:url value="/servlet/postSubject?subjectName=${subject.subjectName}"/>" class="btn btn-lg btn-block btn-primary"><c:out value="${subject.subjectName}"/></a>
                             </div>
                         </c:forEach>
                     </div>
                 </div>
             </div>
-
-            <%--<!------------ Discussions ----------->--%>
-            <%--<div class="bs-calltoaction bs-calltoaction-discussions">--%>
-                <%--<div class="row">--%>
-                    <%--<div class="panel-heading">--%>
-                        <%--<h1 class="cta-title">Mis Discuciones</h1>--%>
-                    <%--</div>--%>
-                    <%--<div class="panel-body">--%>
-                        <%--<div class="col col-md-4 discussionBox">--%>
-                            <%--<div class="panel-heading">--%>
-                                <%--<h3>Ejercicio con matrices</h3>--%>
-                            <%--</div>--%>
-                            <%--<div class="panel-body">--%>
-                                <%--<h6>Materia: Algebra 1</h6>--%>
-                                <%--<h6>Respuestas: 7</h6>--%>
-                                <%--<button type="submit" class="btn btn-discussion pull-right"><i>Ver mas</i> </button>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
 
             <!--------------- Work --------------->
             <div class="bs-calltoaction bs-calltoaction-work">
@@ -139,12 +118,6 @@
                             <h4>Archivos compartidos</h4>
                             <div class="circle-file activity-1">
                                 <p>12</p>
-                            </div>
-                        </div>
-                        <div class="col col-md-4 center-column">
-                            <h4>Discuciones empezadas</h4>
-                            <div class="circle-file activity-2">
-                                <p>2</p>
                             </div>
                         </div>
                         <div class="col col-md-4 center-column">

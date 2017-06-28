@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<%@include file="/mainMenu/mainMenu.jsp" %>
+<%@include file="/jsp/mainMenu.jsp" %>
 
 
 <div class="container">
@@ -34,7 +34,7 @@
              <!--   <object data="/images/avatar.jpg" class="img-circle" type="image/png"> -->
                     <img src="/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=<%=request.getRemoteUser()%>" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="avatar img-circle" alt="avatar">
             <!--    </object> -->
-                <form action="<c:url value="/uploadPhoto"/>" method="post" enctype="multipart/form-data">
+                <form action="<c:url value="/servlet/uploadPhoto"/>" method="post" enctype="multipart/form-data">
                     <label class="btn btn-default btn-file">
                         Subir Foto <input id="fileField" type="file" style="display: none;" name="photo">
                     </label>
@@ -47,7 +47,7 @@
 
             <h3>Informacion personal</h3>
 
-            <form class="form-horizontal" action="<c:url value="/userModification"/>" method="post" role="form">
+            <form class="form-horizontal" action="<c:url value="/servlet/userModification"/>" method="post" role="form">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
@@ -109,7 +109,7 @@
         <% Integer status = (Integer) request.getAttribute(STATUS);%>
         <% if(status != null && status == 0) {
             // mostrar mensaje
-            response.sendRedirect("/logout.jsp");
+            response.sendRedirect("/servlet/logout.jsp");
         }%>
     </div>
 </div>

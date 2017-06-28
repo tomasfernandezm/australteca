@@ -49,6 +49,6 @@ public class UserSubjectManagerServlet extends HttpServlet{
         subjectDao.merge(subject);
         userDao.merge(user);
 
-        resp.sendRedirect("/listSubjects");
+        resp.sendRedirect("/servlet/listSubjects");
     }
 }

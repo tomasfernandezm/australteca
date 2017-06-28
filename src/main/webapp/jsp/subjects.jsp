@@ -30,7 +30,7 @@
 </head>
 <body>
     <div class="active-subject">
-        <%@include file="/mainMenu/mainMenu.jsp" %>
+        <%@include file="/jsp/mainMenu.jsp" %>
     </div>
 
     <!--------- Add subject modal box ---------->
@@ -38,7 +38,7 @@
     <div id="addSubjectBox" class="modal">
         <div class="modal-content">
             <span onclick="closeModal(document.getElementById('addSubjectBox'))" class="close">&times;</span>
-            <form action="<c:url value="/addSubject"/>" method="post">
+            <form action="<c:url value="/servlet/addSubject"/>" method="post">
                 <div class="form-group">
                     <div class="modal-header">
                     <h3>Materia nueva</h3>
@@ -103,7 +103,7 @@
                                 <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                                 <c:forEach items="${subjectWrapperList}" var="subjectWrapper" varStatus="loop">
                                     <tr id="${subjectWrapper.subject.subjectName}Row">
-                                        <td><a href="${pageContext.request.contextPath}/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
+                                        <td><a href="${pageContext.request.contextPath}/servlet/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
                                             <c:out value="${subjectWrapper.subject.subjectName}"/></a>
                                         </td>
                                          <td>

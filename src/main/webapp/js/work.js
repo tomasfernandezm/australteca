@@ -33,7 +33,7 @@ function addPublication(){
 
     $.ajax({
         type:'post',
-        url: '/addPublication',
+        url: '/servlet/addPublication',
         dataType: 'JSON',
         data:{
             publicationName: publicationName,
@@ -55,7 +55,7 @@ function addPublication(){
 function changeFavorite(publicationID, checkBoxId) {
     $.ajax({
         type:'post',
-        url:'/favoritePublication',
+        url:'/servlet/favoritePublication',
         dataType: 'JSON',
         data:{
             publicationID: publicationID,
@@ -67,7 +67,7 @@ function changeFavorite(publicationID, checkBoxId) {
 function removePublication(publicationID, containerID){
     $.ajax({
         type:'post',
-        url: '/removePublication',
+        url: '/servlet/removePublication',
         dataType: 'JSON',
         data:{
             publicationID: publicationID
@@ -81,7 +81,7 @@ function removePublication(publicationID, containerID){
 function sendPublicationPetition(publicationID){
     $.ajax({
         type:'post',
-        url: '/publicationPetition',
+        url: '/servlet/publicationPetition',
         dataType: 'JSON',
         data:{
             publicationID: publicationID

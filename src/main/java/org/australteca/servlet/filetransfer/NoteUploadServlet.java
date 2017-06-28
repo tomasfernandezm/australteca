@@ -113,6 +113,6 @@ public class NoteUploadServlet extends HttpServlet {
         subject.getNoteList().add(noteWithID);
         subjectDao.merge(subject);
 
-        resp.sendRedirect("/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
+        resp.sendRedirect("/servlet/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
     }
 }

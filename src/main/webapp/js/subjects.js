@@ -1,7 +1,7 @@
 function changeFavorite(subjectName, checkBoxId) {
     $.ajax({
         type:'post',
-        url:'/userSubjectManagerAjax',
+        url:'/servlet/userSubjectManagerAjax',
         dataType: 'JSON',
         data:{
             subjectName: subjectName,
@@ -13,7 +13,7 @@ function changeFavorite(subjectName, checkBoxId) {
 function addSubject(subjectName){
     $.ajax({
         type:'post',
-        url:'/userSubjectManagerAjax',
+        url:'/servlet/userSubjectManagerAjax',
         dataType: 'JSON',
         data:{
             subjectName: subjectName
@@ -53,7 +53,7 @@ function addSubject(subjectName){
 function removeSubject(subjectName){
     $.ajax({
         type:'post',
-        url:'/subjectDelete',
+        url:'/servlet/subjectDelete',
         dataType: 'JSON',
         data:{
             subjectName: subjectName

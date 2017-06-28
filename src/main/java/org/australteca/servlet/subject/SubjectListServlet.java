@@ -38,7 +38,7 @@ public class SubjectListServlet extends HttpServlet{
             }
         }
         req.setAttribute("subjectWrappers", subjectWrapperList);
-        req.getRequestDispatcher("/mainMenu/subjects.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/subjects.jsp").forward(req, resp);
     }
 
     @Override

@@ -30,6 +30,6 @@ public class UserDeleteServlet extends HttpServlet {
 
         userDAO.delete(userID);
 
-        req.getRequestDispatcher("/logout.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/logout.jsp").forward(req, resp);
     }
 }

@@ -30,7 +30,7 @@
 
 </head>
 <body>
-<%@include file="/mainMenu/mainMenu.jsp" %>
+<%@include file="/jsp/mainMenu.jsp" %>
 
 
 <div class="container">
@@ -129,7 +129,7 @@
                                     <c:forEach items="${noteList}" var="note" varStatus="loop">
                                         <tr id="note${loop.count}">
                                             <td><c:out value="${note.name}"/></td>
-                                            <form action="/noteDownload" method="post">
+                                            <form action="/servlet/noteDownload" method="post">
                                                 <td><button type="submit" class="btn downloadButton"><i class="glyphicon glyphicon-download"></i></button> </td>
                                                 <input type="hidden" name="<%=Constants.NOTE_ID_PARAM%>" value="${note.id}">
                                                 <input type="hidden" name="<%=Constants.NOTE_NAME_PARAM%>" value="${note.name}">
@@ -208,7 +208,7 @@
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
 
-                                                                <img src="/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
+                                                                <img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
 
                                                                 <%--<img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="avatar img-circle" alt="avatar">--%>
 
@@ -259,7 +259,7 @@
 <div id="noteModal" class="modal">
     <div class="modal-content">
         <span onclick="closeModal(document.getElementById('noteModal'))" class="close">&times;</span>
-        <form id="agregar" action="<c:url value="/upload"/>" method="POST" enctype="multipart/form-data">
+        <form id="agregar" action="<c:url value="servlet/upload"/>" method="POST" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row centered-form  ">
                     <div >

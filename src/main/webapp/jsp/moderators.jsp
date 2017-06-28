@@ -24,7 +24,7 @@
     </head>
     <body>
         <div class="active-moderators">
-            <%@include file="/mainMenu/mainMenu.jsp" %>
+            <%@include file="/jsp/mainMenu.jsp" %>
         </div>
 
         <div class="container">

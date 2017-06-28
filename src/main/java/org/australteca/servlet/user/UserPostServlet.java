@@ -35,6 +35,6 @@ public class UserPostServlet extends HttpServlet{
         req.setAttribute(CAREER_PARAM, user.getCourse());
         req.setAttribute(ROLE_PARAM, user.getRole());
 
-        req.getRequestDispatcher("/mainMenu/userSettings.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/userSettings.jsp").forward(req, resp);
     }
 }

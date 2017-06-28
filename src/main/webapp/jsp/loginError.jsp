@@ -11,7 +11,7 @@
         Bad username/password combination, please <a href="<%=response.encodeURL("loginForm.jsp")%>">try again</a>.--%>
 
         <% session.setAttribute("loginSucceded", false);%>
-        <% response.sendRedirect("/loginForm.jsp");%>
+        <% response.sendRedirect("/jsp/loginForm.jsp");%>
     </body>
 
 </html>
