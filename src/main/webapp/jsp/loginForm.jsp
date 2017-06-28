@@ -7,6 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale1.0">
+      <meta name="google-signin-client_id" content="216780875381-nu4ni7rjerbp4o39rom9esasprc2n9bf.apps.googleusercontent.com">
     <title><%=Constants.MY_HOME_TITLE%></title>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../css/loginForm.css" rel="stylesheet" type="text/css">
@@ -26,7 +27,8 @@
           </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
                 <div class="form-group">
                   <label id="email"for="email">Email</label>
                   <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>" required>
@@ -117,5 +119,8 @@
     </div>
     <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/loginForm.js"></script>
+    <script type="text/javascript" src="../js/googlePlatform.js" async defer></script>
+
   </body>
 </html>
