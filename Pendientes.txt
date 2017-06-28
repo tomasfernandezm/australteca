@@ -32,8 +32,13 @@ Lo Nuevo:
 - Presentación tecnica y no tecnica.
     Powerpoint o Prezi
     Demo en vivo de la aplicación
-    Video rápido de demo de aplicación ?
+    Video rápido de demo de aplicación?
 
-Lo Viejo:
+- Falta hacer los fillers para el demo
 
-    - Ir para atrar cuando te desloggeas / eliminas cuenta. (enprolijar) (ver como hacer para que no pueda ni ir para atrás).
+- En trabajo, si no tiene título o descripción no se tiene que poder agregar
+
+- LO QUE QUEDARÍA BIEN:
+    -  hacer un buscador para los trabajos
+    -  hacer un modo de contactarse con los administradores (enviar un mail al mail de australteca ??)
+    -  separar carreras de ingeniería informática o industrial ??? (pinta paja)

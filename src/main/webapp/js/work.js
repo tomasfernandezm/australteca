@@ -2,6 +2,7 @@
  * Created by tomasforman on 2/6/17.
  */
 
+var simplemde;
 
 function show(divId, buttonId) {
     $(divId).toggle();
@@ -19,14 +20,14 @@ $(document).ready(function(){
     $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');
     });
+
+    simplemde = new SimpleMDE({ element: document.getElementById("descriptionTextarea") });
 });
 
 function addPublication(){
 
     var publicationName = document.getElementById('nameInput').value;
-    var publicationDescription = document.getElementById('descriptionTextarea').value;
-    var publicationRequirements = document.getElementById('requisitesTextarea').value;
-    var publicationTasks = document.getElementById('tasksTextarea').value;
+    var publicationDescription = simplemde.value();
 
     var selectedRole = document.getElementById('publicationRole');
     var roleText = selectedRole.options[selectedRole.selectedIndex].text;
