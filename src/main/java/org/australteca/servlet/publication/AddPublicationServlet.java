@@ -29,8 +29,6 @@ public class AddPublicationServlet extends HttpServlet {
         String email = req.getRemoteUser();
         String pubName = req.getParameter(Constants.PUBLICATION_NAME);
         String pubDescription = req.getParameter(Constants.PUBLICATION_DESCRIPTION);
-        String pubRequirements = req.getParameter(Constants.PUBLICATION_REQUIREMENTS);
-        String pubTasks = req.getParameter(Constants.PUBLICATION_TASKS);
         String pubRole = req.getParameter(Constants.PUBLICATION_ROLE);
 
         UserDao userDao = new UserDao();
@@ -38,7 +36,7 @@ public class AddPublicationServlet extends HttpServlet {
 
         if (pubRole != null && (pubRole.equals(Constants.WORK_PUBLICATION) || pubRole.equals(Constants.INVESTIGATION_PUBLICATION))) {
 
-            Publication publication = new Publication(pubName, author, pubDescription, pubRequirements, pubTasks, pubRole);
+            Publication publication = new Publication(pubName, author, pubDescription, pubRole);
             PublicationDao publicationDao = new PublicationDao();
             Integer id = publicationDao.add(publication);
             Publication pub = publicationDao.get(id);

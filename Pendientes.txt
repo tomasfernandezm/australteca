@@ -37,6 +37,8 @@ Lo Nuevo:
 - Falta hacer los fillers para el demo
 
 - En trabajo, si no tiene título o descripción no se tiene que poder agregar
+    - parte de front
+    - parte de back
 
 - LO QUE QUEDARÍA BIEN:
     -  hacer un buscador para los trabajos

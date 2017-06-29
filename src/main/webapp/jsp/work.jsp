@@ -252,18 +252,7 @@
                                                 <textarea id="descriptionTextarea" class="form-control" type="text" name="" required></textarea>
                                             </div>
                                         </div>
-                                        <div class=" row form-group">
-                                            <label class="col-lg-3 control-label">Requisitos</label>
-                                            <div class="col-lg-8">
-                                                <textarea id="requisitesTextarea" class="form-control" type="text" name="" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class=" row form-group">
-                                            <label class="col-lg-3 control-label">Tareas principales</label>
-                                            <div class="col-lg-8">
-                                                <textarea id="tasksTextarea" class="form-control" type="text" name="" required></textarea>
-                                            </div>
-                                        </div>
+
                                         <div class="row">
                                             <button type="button" class="btn btn-primary pull-right cancel" onclick="addPublication(); closeModal(document.getElementById('addWorkModal'));">Enviar peticion</button>
                                         </div>

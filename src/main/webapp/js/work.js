@@ -39,15 +39,13 @@ function addPublication(){
         data:{
             publicationName: publicationName,
             publicationDescription: publicationDescription,
-            publicationRequirements: publicationRequirements,
-            publicationTasks: publicationTasks,
             publicationRole: roleText
         },
         success: function (id) {
             var div;
             if(roleText === 'Trabajo') div = document.getElementById("tab1default");
             else div = document.getElementById("tab2default");
-            div.appendChild(createPublicationDiv(publicationName, publicationDescription, publicationRequirements, publicationTasks, id));
+            div.appendChild(createPublicationDiv(publicationName, publicationDescription, id));
 
         }
     });
@@ -93,7 +91,7 @@ function sendPublicationPetition(publicationID){
     });
 }
 
-function createPublicationDiv(name, description, requierements, tasks, id){
+function createPublicationDiv(name, description, id){
 
     var firstDiv = document.createElement("div");
         firstDiv.id = name + id;
@@ -146,22 +144,6 @@ function createPublicationDiv(name, description, requierements, tasks, id){
     fourthTextDiv.className = "panel-body showMore";
     fourthTextDiv.id="show" + name;
     fourthTextDiv.setAttribute("hidden","");
-
-    var tareasPrincipalesHeader = document.createElement("h4");
-    tareasPrincipalesHeader.innerText = "Sus tareas principales seran:";
-    var tareasPrincipalesP = document.createElement("p");
-    tareasPrincipalesP.innerText = tasks;
-    var requisitosHeader = document.createElement("h4");
-    requisitosHeader.innerText ="Seran requisitos excluyentes";
-    var requisitosP = document.createElement("p");
-    requisitosP.innerText = requierements;
-
-
-    fourthTextDiv.appendChild(tareasPrincipalesHeader);
-    fourthTextDiv.appendChild(tareasPrincipalesP);
-    fourthTextDiv.appendChild(requisitosHeader);
-    fourthTextDiv.appendChild(requisitosP);
-
 
     var button2 = document.createElement("button");
     button2.type = "button";
