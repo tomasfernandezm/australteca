@@ -30,7 +30,7 @@
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
                 <div class="form-group">
-                  <label id="email"for="email">Email</label>
+                  <label id="email" for="email">Email</label>
                   <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>" required>
                 </div>
                 <div class="form-group">
@@ -52,7 +52,7 @@
         </div>
       </nav>
 
-    <form id="<%=Constants.REGISTER_FORM_ID%>" action="/servlet/register" method="POST">
+    <form id="<%=Constants.REGISTER_FORM_ID%>" action="/register" method="POST">
         <div class="container-fluid">
           <div class="row centered-form  ">
             <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">

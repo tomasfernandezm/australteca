@@ -136,7 +136,10 @@ function createPublicationDiv(name, description, id){
     var thirdTextDiv = document.createElement("div");
     thirdTextDiv.className = "panel-heading";
     var descripcionHeader = document.createElement("p");
-    descripcionHeader.innerText = "Descripcion: " + description;
+    // descripcionHeader.innerText = "Descripcion: ";
+    var e = document.createElement("div");
+    e.innerHTML = simplemde.options.previewRender(description);
+    descripcionHeader.appendChild(e);
     thirdTextDiv.appendChild(descripcionHeader);
     secondTextDiv.appendChild(thirdTextDiv);
 

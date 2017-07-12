@@ -13,13 +13,13 @@
    <security-constraint>
       <web-resource-collection>
          <web-resource-name>Secure Page</web-resource-name>
-         <url-pattern>/mainMenu/home.jsp</url-pattern>
-         <url-pattern>/mainMenu/mainMenu.jsp</url-pattern>
-         <url-pattern>/mainMenu/discussions.jsp</url-pattern>
-         <url-pattern>/mainMenu/subject.jsp</url-pattern>
-         <url-pattern>/mainMenu/work.jsp</url-pattern>
-         <url-pattern>/mainMenu/subjectExample.jsp</url-pattern>
-         <url-pattern>/mainMenu/moderators.jsp</url-pattern>
+         <url-pattern>/jsp/home.jsp</url-pattern>
+         <url-pattern>/jsp/mainMenu.jsp</url-pattern>
+         <url-pattern>/jsp/discussions.jsp</url-pattern>
+         <url-pattern>/jsp/subject.jsp</url-pattern>
+         <url-pattern>/jsp/work.jsp</url-pattern>
+         <url-pattern>/jsp/subjectExample.jsp</url-pattern>
+         <url-pattern>/jsp/moderators.jsp</url-pattern>
       </web-resource-collection>
       <auth-constraint>
           <!-- Role del usuario, sirve para identificar al usuario y para determinar

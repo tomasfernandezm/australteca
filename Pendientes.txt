@@ -1,7 +1,7 @@
 
 Lo Nuevo:
 
-- Sort by en los comments. -> implementado con linked list (hay que probar).
+- Sort by en los comments. -> implementado con linked list "HECHO"
 
 - Unificar los iconos de eliminar y delete. -> es importante ver la parte de javascript
 
@@ -15,16 +15,14 @@ Lo Nuevo:
 
 - Agregarle un template al mail.
 
-- OAuth con Google. (ni idea...)
+- OAuth con Google
 
-- Estadisticas de usuario.
+- Estadisticas de usuario. "HECHO" Solo cantidad de subidos y comentarios
 
-- Soportar Markdown (https://guides.github.com/features/mastering-markdown/)
-    Falta definir donde se va a poner markdown y hacer los arreglos necesarios en la base (hay que ver si hace falta arreglar algo)
-    Modificar jsp para poder pegar el html directamente (al parsear el markdown se parsea en html)
-    Usar txtMark para parsear el markdown -> simpleMDE no lo hace
-    El css de simpleMde es "simplemde.min.css"
-    El js de simpleMde es "simplemde.min.js"
+- Soportar Markdown (https://guides.github.com/features/mastering-markdown/) "Hecho" (en work.jsp)
+
+- Formatear apropiadamente el recuadro del editor de markdown
+- Hacer botón "Ver mas" acorde
 
 - Llenar de mas datos la base para mostrar en una demo.
     Habría que hacer una clase auxiliar para llenar la base al momento de presentar
@@ -35,10 +33,15 @@ Lo Nuevo:
     Video rápido de demo de aplicación?
 
 - Falta hacer los fillers para el demo
+    - Users "HECHO" falta probar
+    - Subject "HECHO"
+    - Commentaries "HECHO" falta probar
+    - falta hacer relaciones
 
-- En trabajo, si no tiene título o descripción no se tiene que poder agregar
-    - parte de front
-    - parte de back
+
+- En trabajo, si no tiene título o descripción no se tiene que poder agregar "HECHO"
+    - parte de front "HECHO"
+    - parte de back "HECHO" devolver algún error ??
 
 - LO QUE QUEDARÍA BIEN:
     -  hacer un buscador para los trabajos

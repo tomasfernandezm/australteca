@@ -111,6 +111,9 @@ public class NoteUploadServlet extends HttpServlet {
         Note noteWithID = noteDao.get(id);
 
         subject.getNoteList().add(noteWithID);
+        user.noteUploaded();
+
+        userDao.merge(user);
         subjectDao.merge(subject);
 
         resp.sendRedirect("/servlet/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);

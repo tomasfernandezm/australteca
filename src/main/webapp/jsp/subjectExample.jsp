@@ -208,9 +208,9 @@
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
 
-                                                                <img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">
+                                                                <%--<img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="img-responsive avatar img-circle" alt="avatar">--%>
 
-                                                                <%--<img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="avatar img-circle" alt="avatar">--%>
+                                                                <img src="#" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';" class="avatar img-circle" alt="avatar">
 
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
                                                             </figure>
@@ -259,7 +259,7 @@
 <div id="noteModal" class="modal">
     <div class="modal-content">
         <span onclick="closeModal(document.getElementById('noteModal'))" class="close">&times;</span>
-        <form id="agregar" action="<c:url value="servlet/upload"/>" method="POST" enctype="multipart/form-data">
+        <form id="agregar" action="servlet/upload" method="POST" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row centered-form  ">
                     <div >

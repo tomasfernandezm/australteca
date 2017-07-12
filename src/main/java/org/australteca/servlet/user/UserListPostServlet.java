@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static org.australteca.Constants.USER_COMMENTARY_LIST;
-import static org.australteca.Constants.USER_SUBJECT_LIST;
+import static org.australteca.Constants.*;
 
 /**
  * Created by tomi on 16/04/17.
@@ -38,6 +37,9 @@ public class UserListPostServlet extends HttpServlet {
         req.setAttribute(USER_COMMENTARY_LIST, user.getCommentaries());
         req.setAttribute(USER_SUBJECT_LIST, user.getSubjects());
         req.setAttribute(Constants.USER_PUBLICATION_LIST, user.getPublications());
+
+        req.setAttribute(AMOUNT_OF_UPLOADED_NOTES, user.getAmountOfNotes());
+        req.setAttribute(AMOUNT_OF_COMMENTARIES, user.getCommentaries().size());
 
         req.getRequestDispatcher("/jsp/home.jsp").forward(req, resp);
     }

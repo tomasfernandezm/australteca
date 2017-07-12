@@ -34,7 +34,9 @@ public class AddPublicationServlet extends HttpServlet {
         UserDao userDao = new UserDao();
         User author = userDao.getUserByEmail(email);
 
-        if (pubRole != null && (pubRole.equals(Constants.WORK_PUBLICATION) || pubRole.equals(Constants.INVESTIGATION_PUBLICATION))) {
+        boolean validParameters = pubName != null && pubDescription != null && pubRole != null && (pubRole.equals(Constants.WORK_PUBLICATION) || pubRole.equals(Constants.INVESTIGATION_PUBLICATION));
+
+        if (validParameters) {
 
             Publication publication = new Publication(pubName, author, pubDescription, pubRole);
             PublicationDao publicationDao = new PublicationDao();

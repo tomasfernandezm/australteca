@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 
+import com.github.rjeschke.txtmark.Processor;
+
 /**
  * Created by tomi on 27/05/17.
  */
@@ -56,10 +58,12 @@ public class ListPublicationServlet extends HttpServlet {
 
         Publication publication;
         boolean favorite;
+        String htmlDescription;
 
-        public PublicationWrapper(Publication publication, boolean favorite) {
+        PublicationWrapper(Publication publication, boolean favorite) {
             this.publication = publication;
             this.favorite = favorite;
+            htmlDescription = Processor.process(publication.getDescription());
         }
 
         public Publication getPublication() {
@@ -68,6 +72,10 @@ public class ListPublicationServlet extends HttpServlet {
 
         public void setPublication(Publication publication) {
             this.publication = publication;
+        }
+
+        public String getHtmlDescription(){
+            return htmlDescription;
         }
 
         public boolean isFavorite() {

@@ -74,17 +74,16 @@
                                     </div>
                                     <div class="panel-body">
                                         <div class="col col-md-12 discussionBox">
-                                            <div class="panel-heading">
-                                                <p>Descripcion: <c:out value="${workWrapper.publication.description}"/> </p>
+                                            <div id="descriptionID" class="panel-heading">
+                                                ${workWrapper.htmlDescription}
                                             </div>
-
                                             <div class="panel-body showMore" id="show${workWrapper.publication.name}" hidden>
 
-                                                <h4>Sus tareas principales seran:</h4>
-                                                <p><c:out value="${workWrapper.publication.tasks}"/></p>
+                                                <%--<h4>Sus tareas principales seran:</h4>
+                                                <p><c:out value="${workWrapper.publication.tasks}"/></p>--%>
 
-                                                <h4>Seran requisitos excluyentes:</h4>
-                                                <p><c:out value="${workWrapper.publication.requirements}"/></p>
+                                                <%--<h4>Seran requisitos excluyentes:</h4>
+                                                <p><c:out value="${workWrapper.publication.requirements}"/></p>--%>
 
                                                     <%--<button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
 
@@ -137,18 +136,18 @@
                                         <div class="panel-body">
                                             <div class="col col-md-12 discussionBox">
                                                 <div class="panel-heading">
-                                                    <p>Descripcion: <c:out value="${investigationWrapper.publication.description}"/> </p>
+                                                    ${investigationWrapper.htmlDescription}
                                                 </div>
 
 
                                                 <div class="panel-body showMore" id="show${investigationWrapper.publication.name}" hidden>
 
-                                                    <h4>Sus tareas principales seran:</h4>
+                                                    <%--<h4>Sus tareas principales seran:</h4>
                                                     <p><c:out value="${investigationWrapper.publication.tasks}"/></p>
 
                                                     <h4>Seran requisitos excluyentes:</h4>
                                                     <p><c:out value="${investigationWrapper.publication.requirements}"/></p>
-
+--%>
                                                     <%--<button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
 
                                                     <c:set var="userEmail" value="${pageContext.request.remoteUser}"/>

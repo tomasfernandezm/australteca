@@ -111,6 +111,8 @@ public interface Constants {
     String USER_DISCUSSION_LIST = "userDiscussionList";
     String USER_FAVORITE_PUBLICATIONS_LIST = "userFavoritePublicationList";
     String USER_PUBLICATION_LIST = "userPublicationList";
+    String AMOUNT_OF_UPLOADED_NOTES = "amountOfUploadedNotes";
+    String AMOUNT_OF_COMMENTARIES = "amountOfCommentaries";
 
     String USER_EMAIL_PARAM = "userEmail";
 
@@ -180,11 +182,9 @@ public interface Constants {
     String PUBLICATION_ROLE = "publicationRole";
     String PUBLICATION_ID = "publicationID";
     String INVESTIGATION_PUBLICATION_LIST = "investigationList";
-
-
     String WORK_PUBLICATION_LIST = "workList";
 
-    String PUBLICATION_TASKS = "publicationTasks";
+    String HTML_MARKDOWN_DESCRIPTIONS = "htmlMarkdownDescription";
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";

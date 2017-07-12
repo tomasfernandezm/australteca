@@ -55,14 +55,14 @@
                         </div>
                     </div>
                 </div>
-                <% if (request.getParameter("addSubject") != null){%>
+                <% if (request.getParameter("/servlet/addSubject") != null){%>
 
                 <% if ((boolean) request.getAttribute(OPERATION_SUCCESFUL_PARAM)) { %>
                     <p> Materia agregada!</p>
                 <% } else { %>
                     <p> Ups! Algun problema ocurrió, intentalo de nuevo!</p>
                 <% }
-                response.sendRedirect("/listSubjects");
+                response.sendRedirect("/servlet/listSubjects");
                 }%>
             </form>
         </div>
