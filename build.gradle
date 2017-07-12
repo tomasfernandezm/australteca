@@ -46,6 +46,6 @@ dependencies {
     compile group: 'javax.jdo', name: 'jdo2-api', version: '2.3-eb'
     compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
     compile group: 'com.google.protobuf', name: 'protobuf-java', version: '3.3.1'
-    provided group: 'javax.transaction', name: 'transaction-api', version: '1.1'
+    compile group: 'javax.transaction', name: 'transaction-api', version: '1.1'
     compile group: 'org.ogce', name: 'xpp3', version: '1.1.6'
 }

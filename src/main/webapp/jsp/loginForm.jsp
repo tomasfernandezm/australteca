@@ -27,7 +27,6 @@
           </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
                 <div class="form-group">
                   <label id="email"for="email">Email</label>
@@ -103,7 +102,9 @@
                       </select>
                     </div>
 
-                    <input type="submit" value="Unirme!" class="form-control btn btn-info btn-block">
+                    <input type="submit" value="Unirme!" class="form-control btn btn-info btn-block btn-submit">
+
+                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
                   </form>
                 </div>

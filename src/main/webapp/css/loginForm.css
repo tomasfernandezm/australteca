@@ -89,3 +89,7 @@ input.btn:hover{
     padding-right: 10px;
     align-content: space-around;
 }
+
+.btn-submit{
+    margin-bottom: 15px;
+}
