@@ -86,8 +86,6 @@
                                             <p><c:out value="${publication.description}"/></p>
 
                                             <div class="panel-body showMore" id="show${publication.name}" hidden>
-                                                <p><c:out value="${publication.requirements}"/></p>
-                                                <p><c:out value="${publication.tasks}"/></p>
                                                 <button type="button" class="btn btn-success pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
                                             </div>
 
@@ -117,13 +115,15 @@
                         <div class="col col-md-4 center-column">
                             <h4>Archivos compartidos</h4>
                             <div class="circle-file activity-1">
-                                <p>12</p>
+                                <c:set var="noteAmountParam" value="<%=Constants.AMOUNT_OF_UPLOADED_NOTES%>"/>
+                                <p>${requestScope[noteAmountParam]}</p>
                             </div>
                         </div>
                         <div class="col col-md-4 center-column">
-                            <h4>Archivos descargados</h4>
+                            <h4>Comentarios hechos</h4>
                             <div class="circle-file activity-3">
-                                <p>45</p>
+                                <c:set var="commentaryAmountParam" value="<%=Constants.AMOUNT_OF_COMMENTARIES%>"/>
+                                <p>${requestScope[commentaryAmountParam]}</p>
                             </div>
                         </div>
 

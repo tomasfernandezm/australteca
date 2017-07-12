@@ -27,6 +27,8 @@ public class User extends AbstractEntity{
     private String password;
     private String role;
 
+    private int amountOfNotes = 0;
+
     @ManyToMany
     private final Set<Subject> subjects = new HashSet<>();
 
@@ -53,6 +55,18 @@ public class User extends AbstractEntity{
         this.course = course;
         this.password = password;
         assignRole(moderator, admin);
+    }
+
+    public void noteUploaded(){
+        amountOfNotes++;
+    }
+
+    public int getAmountOfNotes() {
+        return amountOfNotes;
+    }
+
+    public void setAmountOfNotes(int amountOfNotes) {
+        this.amountOfNotes = amountOfNotes;
     }
 
     public Set<Publication> getPublications() {

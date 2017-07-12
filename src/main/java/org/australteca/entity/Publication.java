@@ -23,21 +23,17 @@ public class Publication extends AbstractEntity{
     @ManyToMany
     private List<User> suscribedUsers = new ArrayList<>();
 
-    private String requirements;
     private String description;
     private String role;
-    private String tasks;
 
     public Publication(){
 
     }
 
-    public Publication(String name, User author, String description, String requirements, String tasks, String role) {
+    public Publication(String name, User author, String description, String role) {
         this.name = name;
         this.author = author;
-        this.requirements = requirements;
         this.description = description;
-        this.tasks = tasks;
         this.role = role;
     }
 
@@ -69,14 +65,6 @@ public class Publication extends AbstractEntity{
         this.author = contact;
     }
 
-    public String getRequirements() {
-        return requirements;
-    }
-
-    public void setRequirements(String requirements) {
-        this.requirements = requirements;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -87,13 +75,5 @@ public class Publication extends AbstractEntity{
 
     public void setSuscribedUsers(List<User> suscribedUsers) {
         this.suscribedUsers = suscribedUsers;
-    }
-
-    public String getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(String tasks) {
-        this.tasks = tasks;
     }
 }

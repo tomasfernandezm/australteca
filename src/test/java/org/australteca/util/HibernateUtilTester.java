@@ -1,6 +1,6 @@
 package org.australteca.util;
 
-import org.australteca.utils.hibernate.HibernateUtil;
+import org.australteca.utils.HibernateUtil;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import static org.junit.Assert.*;

@@ -34,7 +34,7 @@
                 <div class="info">
                     <h4 class="text-center">Te has registrado correctamente!</h4>
                     <p>Gracias por unirte a la comunidad! Esperamos que puedas aprovecharla al maximo!</p>
-                    <a href="loginForm.jsp" class="btn">Iniciar sesion</a>
+                    <a href="/jsp/loginForm.jsp" class="btn">Iniciar sesion</a>
                 </div>
                 <%} else { %>
                 <div class="box-icon-incorrect">

@@ -74,17 +74,16 @@
                                     </div>
                                     <div class="panel-body">
                                         <div class="col col-md-12 discussionBox">
-                                            <div class="panel-heading">
-                                                <p>Descripcion: <c:out value="${workWrapper.publication.description}"/> </p>
+                                            <div id="descriptionID" class="panel-heading">
+                                                ${workWrapper.htmlDescription}
                                             </div>
-
                                             <div class="panel-body showMore" id="show${workWrapper.publication.name}" hidden>
 
-                                                <h4>Sus tareas principales seran:</h4>
-                                                <p><c:out value="${workWrapper.publication.tasks}"/></p>
+                                                <%--<h4>Sus tareas principales seran:</h4>
+                                                <p><c:out value="${workWrapper.publication.tasks}"/></p>--%>
 
-                                                <h4>Seran requisitos excluyentes:</h4>
-                                                <p><c:out value="${workWrapper.publication.requirements}"/></p>
+                                                <%--<h4>Seran requisitos excluyentes:</h4>
+                                                <p><c:out value="${workWrapper.publication.requirements}"/></p>--%>
 
                                                     <%--<button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
 
@@ -137,18 +136,18 @@
                                         <div class="panel-body">
                                             <div class="col col-md-12 discussionBox">
                                                 <div class="panel-heading">
-                                                    <p>Descripcion: <c:out value="${investigationWrapper.publication.description}"/> </p>
+                                                    ${investigationWrapper.htmlDescription}
                                                 </div>
 
 
                                                 <div class="panel-body showMore" id="show${investigationWrapper.publication.name}" hidden>
 
-                                                    <h4>Sus tareas principales seran:</h4>
+                                                    <%--<h4>Sus tareas principales seran:</h4>
                                                     <p><c:out value="${investigationWrapper.publication.tasks}"/></p>
 
                                                     <h4>Seran requisitos excluyentes:</h4>
                                                     <p><c:out value="${investigationWrapper.publication.requirements}"/></p>
-
+--%>
                                                     <%--<button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
 
                                                     <c:set var="userEmail" value="${pageContext.request.remoteUser}"/>
@@ -252,18 +251,7 @@
                                                 <textarea id="descriptionTextarea" class="form-control" type="text" name="" required></textarea>
                                             </div>
                                         </div>
-                                        <div class=" row form-group">
-                                            <label class="col-lg-3 control-label">Requisitos</label>
-                                            <div class="col-lg-8">
-                                                <textarea id="requisitesTextarea" class="form-control" type="text" name="" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class=" row form-group">
-                                            <label class="col-lg-3 control-label">Tareas principales</label>
-                                            <div class="col-lg-8">
-                                                <textarea id="tasksTextarea" class="form-control" type="text" name="" required></textarea>
-                                            </div>
-                                        </div>
+
                                         <div class="row">
                                             <button type="button" class="btn btn-primary pull-right cancel" onclick="addPublication(); closeModal(document.getElementById('addWorkModal'));">Enviar peticion</button>
                                         </div>

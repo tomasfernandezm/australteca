@@ -16,5 +16,5 @@ public class SubjectConstants {
             "Ingeniería de Sistemas", "Sistemas Operativos", "Aseguramiento de la Calidad del Software",
             "Ética Profesional", "Contabilidad y Presupuestos", "Finanzas y Evaluación de Proyectos",
             "Doctrina Social de la Iglesia", "Legal", "Factor Humano", "Dirección de Proyectos",
-            "Economía Política", "Sistemas de inforación gerencial"};
+            "Economía Política", "Sistemas de información gerencial"};
 }

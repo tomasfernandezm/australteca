@@ -1,44 +1,43 @@
 
-Lo Nuevo:
+Objetivos Hechos:
 
-- Sort by en los comments. -> implementado con linked list (hay que probar).
+- Sort by en los comments. -> implementado con linked list "HECHO"
+- Estilo cursor: pointer para las acciones. "HECHO"
+- Soportar Markdown "Hecho" (en work.jsp)
+- En trabajo, si no tiene título o descripción no se tiene que poder agregar "HECHO"
+    - parte de front "HECHO"
+    - parte de back "HECHO" devolver algún error ??
+
+Objetivos arrancados:
+
+- OAuth con Google
+- Estadisticas de usuario. "HECHO" Solo cantidad de subidos y comentarios
+- Falta hacer los fillers para el demo
+    - Users "HECHO" falta probar
+    - Subject "HECHO"
+    - Commentaries "HECHO" falta probar
+    - falta hacer relaciones
+
+Objetivos por hacer:
 
 - Unificar los iconos de eliminar y delete. -> es importante ver la parte de javascript
-
 - Centrar los botones que no quedaron centrados.
-
 - Ojo con los paddings en la parte de los trabajos.
-
-- Estilo cursor: pointer para las acciones. "HECHO"
-
 - Reducir en lineas generales los "espacios en blanco" que hay.
-
 - Agregarle un template al mail.
-
-- OAuth con Google. (ni idea...)
-
-- Estadisticas de usuario.
-
-- Soportar Markdown (https://guides.github.com/features/mastering-markdown/)
-    Falta definir donde se va a poner markdown y hacer los arreglos necesarios en la base (hay que ver si hace falta arreglar algo)
-    Modificar jsp para poder pegar el html directamente (al parsear el markdown se parsea en html)
-    Usar txtMark para parsear el markdown -> simpleMDE no lo hace
-    El css de simpleMde es "simplemde.min.css"
-    El js de simpleMde es "simplemde.min.js"
-
 - Llenar de mas datos la base para mostrar en una demo.
-    Habría que hacer una clase auxiliar para llenar la base al momento de presentar
-
 - Presentación tecnica y no tecnica.
     Powerpoint o Prezi
     Demo en vivo de la aplicación
     Video rápido de demo de aplicación?
 
-- Falta hacer los fillers para el demo
+Derivados:
 
-- En trabajo, si no tiene título o descripción no se tiene que poder agregar
+- Formatear apropiadamente el recuadro del editor de markdown
+- Hacer botón "Ver mas" acorde
 
 - LO QUE QUEDARÍA BIEN:
     -  hacer un buscador para los trabajos
     -  hacer un modo de contactarse con los administradores (enviar un mail al mail de australteca ??)
     -  separar carreras de ingeniería informática o industrial ??? (pinta paja)
+
