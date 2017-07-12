@@ -1,49 +1,43 @@
 
-Lo Nuevo:
+Objetivos Hechos:
 
 - Sort by en los comments. -> implementado con linked list "HECHO"
-
-- Unificar los iconos de eliminar y delete. -> es importante ver la parte de javascript
-
-- Centrar los botones que no quedaron centrados.
-
-- Ojo con los paddings en la parte de los trabajos.
-
 - Estilo cursor: pointer para las acciones. "HECHO"
+- Soportar Markdown "Hecho" (en work.jsp)
+- En trabajo, si no tiene título o descripción no se tiene que poder agregar "HECHO"
+    - parte de front "HECHO"
+    - parte de back "HECHO" devolver algún error ??
 
-- Reducir en lineas generales los "espacios en blanco" que hay.
-
-- Agregarle un template al mail.
+Objetivos arrancados:
 
 - OAuth con Google
-
 - Estadisticas de usuario. "HECHO" Solo cantidad de subidos y comentarios
-
-- Soportar Markdown (https://guides.github.com/features/mastering-markdown/) "Hecho" (en work.jsp)
-
-- Formatear apropiadamente el recuadro del editor de markdown
-- Hacer botón "Ver mas" acorde
-
-- Llenar de mas datos la base para mostrar en una demo.
-    Habría que hacer una clase auxiliar para llenar la base al momento de presentar
-
-- Presentación tecnica y no tecnica.
-    Powerpoint o Prezi
-    Demo en vivo de la aplicación
-    Video rápido de demo de aplicación?
-
 - Falta hacer los fillers para el demo
     - Users "HECHO" falta probar
     - Subject "HECHO"
     - Commentaries "HECHO" falta probar
     - falta hacer relaciones
 
+Objetivos por hacer:
 
-- En trabajo, si no tiene título o descripción no se tiene que poder agregar "HECHO"
-    - parte de front "HECHO"
-    - parte de back "HECHO" devolver algún error ??
+- Unificar los iconos de eliminar y delete. -> es importante ver la parte de javascript
+- Centrar los botones que no quedaron centrados.
+- Ojo con los paddings en la parte de los trabajos.
+- Reducir en lineas generales los "espacios en blanco" que hay.
+- Agregarle un template al mail.
+- Llenar de mas datos la base para mostrar en una demo.
+- Presentación tecnica y no tecnica.
+    Powerpoint o Prezi
+    Demo en vivo de la aplicación
+    Video rápido de demo de aplicación?
+
+Derivados:
+
+- Formatear apropiadamente el recuadro del editor de markdown
+- Hacer botón "Ver mas" acorde
 
 - LO QUE QUEDARÍA BIEN:
     -  hacer un buscador para los trabajos
     -  hacer un modo de contactarse con los administradores (enviar un mail al mail de australteca ??)
     -  separar carreras de ingeniería informática o industrial ??? (pinta paja)
+
