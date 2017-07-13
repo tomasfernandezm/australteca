@@ -68,6 +68,16 @@
     <!-- ~~~~~~~~~~~~~ SERVLET CONFIGURATION AND MAPPING ~~~~~~~~~~~~~~~~~ -->
 
         <servlet>
+            <servlet-name>GoogleOAuthServlet</servlet-name>
+            <servlet-class>org.australteca.oauth.google.GoogleLoginServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>GoogleOAuthServlet</servlet-name>
+            <url-pattern>/googleOAuth</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
             <servlet-name>LoginServlet</servlet-name>
             <servlet-class>org.australteca.servlet.LoginServlet</servlet-class>
         </servlet>
@@ -494,8 +504,13 @@
     <!-- ~~~~~~~~~~~~~~~ Error Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
        <error-page>
-          <error-code>403</error-code>
-          <location>/error/403.jsp</location>
+          <error-code>404</error-code>
+          <location>/jsp/error/not_found.jsp</location>
        </error-page>
+
+        <error-page>
+            <error-code>403</error-code>
+            <location>/jsp/error/forbidden.jsp</location>
+        </error-page>
 
 </web-app>

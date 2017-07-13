@@ -57,25 +57,25 @@
                     <div class="panel-body">
 
                             <c:set var="publicationListParam" value="<%=Constants.USER_PUBLICATION_LIST%>"/>
-                            <c:set var="publicationList" value="${requestScope[publicationListParam]}"/>
-                            <c:forEach var="publication" items="${publicationList}" varStatus="loop">
+                            <c:set var="publicationWrapperList" value="${requestScope[publicationListParam]}"/>
+                            <c:forEach var="publicationWrapper" items="${publicationWrapperList}" varStatus="loop">
                                 <c:set var="role" value="Trabajo"/>
                                 <%--<c:if test="${publication.role == role}">--%>
                                     <div id="publicationPanel${loop.count}" class="col col-md-6">
                                         <div id="publication${loop.count}" class="favoriteWork">
                                             <div class="panel-heading work-heading clearfix">
-                                                <h4 class="pull-left"><c:out value="${publication.name}"/> </h4>
+                                                <h4 class="pull-left"><c:out value="${publicationWrapper.publication.name}"/> </h4>
 
 
                                                 <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
-                                                <c:if test="${publication.author.email != remoteUser}">
+                                                <c:if test="${publicationWrapper.publication.author.email != remoteUser}">
                                                 <div class="checkbox_wrapper pull-right">
-                                                    <input class="checkbox" type="checkbox" id="favoriteWork${loop.count}" checked onclick="changeFavorite('${publication.id}', 'favoriteWork${loop.count}', 'publicationPanel${loop.count}')">
+                                                    <input class="checkbox" type="checkbox" id="favoriteWork${loop.count}" checked onclick="changeFavorite('${publicationWrapper.publication.id}', 'favoriteWork${loop.count}', 'publicationPanel${loop.count}')">
                                                     <label></label>
                                                 </div>
                                                 </c:if>
-                                                <c:if test="${publication.author.email == remoteUser}">
-                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${publication.id}', 'publicationPanel${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
+                                                <c:if test="${publicationWrapper.publication.author.email == remoteUser}">
+                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${publicationWrapper.publication.id}', 'publicationPanel${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                 </c:if>
 
 
@@ -83,13 +83,13 @@
                                             <div class="arrow-down"></div>
                                             <div class="panel-body">
 
-                                            <p><c:out value="${publication.description}"/></p>
+                                            ${publicationWrapper.htmlDescription}
 
-                                            <div class="panel-body showMore" id="show${publication.name}" hidden>
+                                            <div class="panel-body showMore" id="show${publicationWrapper.publication.name}" hidden>
                                                 <button type="button" class="btn btn-success pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
                                             </div>
 
-                                            <button type="button" class="btn btn-default btn-show-more pull-right" onclick="show('#show${publication.name}')"><i>Mostrar mas</i></button>
+                                            <button type="button" class="btn btn-default btn-show-more pull-right" onclick="show('#show${publicationWrapper.publication.name}')"><i>Mostrar mas</i></button>
                                             </div>
                                         </div>
                                     </div>

@@ -105,6 +105,7 @@
                     <input type="submit" value="Unirme!" class="form-control btn btn-info btn-block btn-submit">
 
                       <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <button type="button" onclick="signOut()"> Google sign out</button>
 
                   </form>
                 </div>
@@ -120,7 +121,7 @@
     </div>
     <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/loginForm.js"></script>
+    <script type="text/javascript" src="../js/googleOAuth.js"></script>
     <script type="text/javascript" src="../js/googlePlatform.js" async defer></script>
 
   </body>

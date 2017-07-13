@@ -185,10 +185,17 @@ public interface Constants {
     String WORK_PUBLICATION_LIST = "workList";
 
     String HTML_MARKDOWN_DESCRIPTIONS = "htmlMarkdownDescription";
+
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";
     String ADMIN_USERNAME_1 = "tomas.martinez@ing.austral.edu.ar";
     String ADMIN_USERNAME_2 = "tomas.forman@ing.austral.edu.ar";
     String PROFESSOR_LIST = "professorList";
+
+    /* ~~~~~~~~~~~ Authentification Type ~~~~~~~~~~~~~~~~~ */
+
+    String GOOGLE_OAUTH = "googleOAuth";
+    String FACEBOOK_OAUTH = "facebookOAuth";
+    String OAUTH_TYPE = "OAuthType";
 }

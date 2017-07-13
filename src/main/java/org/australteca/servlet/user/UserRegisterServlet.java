@@ -32,21 +32,29 @@ public class UserRegisterServlet extends HttpServlet {
         String password = request.getParameter(PASSWORD_PARAM);
         String passwordC = request.getParameter(PASSWORD_CONFIRMATION_PARAM);
         String career = request.getParameter(CAREER_PARAM);
+        String oauth = request.getParameter(OAUTH_TYPE);
         Integer status = 0;
 
-        if(!password.equals(passwordC)){
+        if (!password.equals(passwordC)) {
             status = 1;
-        }else {
+        } else {
             Integer userID;
 
-            if(email.equals(Constants.ADMIN_USERNAME_1) || email.equals(Constants.ADMIN_USERNAME_2)){
+            if (email.equals(Constants.ADMIN_USERNAME_1) || email.equals(Constants.ADMIN_USERNAME_2)) {
                 userID = new UserDao().add(new User(name, lname, email, career, password, false, true));
-            }else {
+            } else {
                 userID = new UserDao().add(new User(name, lname, email, career, password, false, false));
             }
-            if(userID == null) status = 2;
+            if (userID == null) status = 2;
         }
-        request.setAttribute(STATUS, status);
-        request.getRequestDispatcher("/jsp/registerConfirmation.jsp").forward(request, resp);
+
+        if (oauth == Constants.OAUTH_TYPE) {
+            String usernameParam = Constants.LOGIN_USERNAME_FIELD+"="+email;
+            String passwordParam = Constants.LOGIN_PASSWORD_FIELD+"="+password;
+            request.getRequestDispatcher(Constants.LOGIN_FORM_ACTION+"?"+usernameParam+"&"+passwordParam).forward(request, resp);
+        } else {
+            request.setAttribute(STATUS, status);
+            request.getRequestDispatcher("/jsp/registerConfirmation.jsp").forward(request, resp);
+        }
     }
 }
