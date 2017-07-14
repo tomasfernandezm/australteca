@@ -27,6 +27,7 @@ Objetivos por hacer:
 - Ojo con los paddings en la parte de los trabajos.
 - Reducir en lineas generales los "espacios en blanco" que hay.
 - Agregarle un template al mail.
+- Agregar lugar de contacto
 - Llenar de mas datos la base para mostrar en una demo.
 - Presentación tecnica y no tecnica.
     Powerpoint o Prezi
@@ -41,5 +42,5 @@ Derivados:
 - LO QUE QUEDARÍA BIEN:
     -  hacer un buscador para los trabajos
     -  hacer un modo de contactarse con los administradores (enviar un mail al mail de australteca ??)
-    -  separar carreras de ingeniería informática o industrial ??? (pinta paja)
+
 
