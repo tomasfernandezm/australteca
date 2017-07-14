@@ -65,7 +65,7 @@ function makeButton(commentaryID, subjectName, articleID){
     button.className = "btn pull-right remove";
     button.setAttribute("onclick", "removeComment('" + commentaryID + "','" + subjectName + "','" + articleID+ "')");
     var i = document.createElement("i");
-    i.className = "glyphicon glyphicon-remove";
+    i.className = "glyphicon glyphicon-trash";
     button.appendChild(i);
     return button;
 }

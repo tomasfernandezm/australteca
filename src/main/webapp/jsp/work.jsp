@@ -17,7 +17,6 @@
     <link href="<c:url value="/css/simplemde.min.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/work.css"/>" rel="stylesheet" type="text/css">
-    <link href="<c:url value="/css/modalBox.css"/>" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="active-work">
@@ -38,6 +37,7 @@
                 </ul>
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
             <div class="row centered-form">
                 <div class="panel-body">
@@ -51,11 +51,11 @@
 
                             <div id="workDiv${loop.count}" class="bs-calltoaction bs-calltoaction-work">
                                 <div class="row">
-                                    <div class="panel-heading">
+                                    <div class="panel-heading work-heading clearfix">
                                         <div class="row">
-                                            <div class="pull-left">
-                                                <h1 class="cta-title"> <c:out value="${workWrapper.publication.name}"/> </h1>
-                                            </div>
+
+                                            <h1 class="cta-title pull-left"> <c:out value="${workWrapper.publication.name}"/> </h1>
+
                                             <div class="pull-right">
                                                 <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                 <c:if test="${workWrapper.publication.author.email != remoteUser}">
@@ -66,18 +66,22 @@
                                                 </c:if>
 
                                                 <c:if test="${workWrapper.publication.author.email == remoteUser}">
-                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework pull-right"  onclick="removePublication('${workWrapper.publication.id}', 'workDiv${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
+                                                    <button type="button" id="deleteButton" class="btn btn-default btnremovework"  onclick="removePublication('${workWrapper.publication.id}', 'workDiv${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                 </c:if>
 
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="arrow-down"></div>
+
                                     <div class="panel-body">
                                         <div class="col col-md-12 discussionBox">
-                                            <div id="descriptionID" class="panel-heading">
+                                            <%--<div id="descriptionID" class="content hideContent">--%>
+                                            <div id="show${workWrapper.publication.name}" class="content hideContent">
                                                 ${workWrapper.htmlDescription}
                                             </div>
-                                            <div class="panel-body showMore" id="show${workWrapper.publication.name}" hidden>
+                                            <div class="panel-body showMore" id="show${workWrapper.publication.name}">
 
                                                 <%--<h4>Sus tareas principales seran:</h4>
                                                 <p><c:out value="${workWrapper.publication.tasks}"/></p>--%>
@@ -93,7 +97,11 @@
                                                 </c:if>
                                             </div>
 
-                                            <button type="button" id="showhide${loop.count}" class="btn btn-default pull-right" onclick="show('#show${workWrapper.publication.name}',this.id)"><i>Mostrar mas</i></button>
+                                            <%--<button type="button" id="showhide${loop.count}" class="btn btn-default pull-right" onclick="show('#show${workWrapper.publication.name}',this.id)"><i>Mostrar mas</i></button>--%>
+                                            <%--<button type="button" id="showhide${loop.count}" class="btn btn-default pull-right" onclick="show('#show${workWrapper.publication.name}',this.id)"><i>Mostrar mas</i></button>--%>
+                                            <div class="show-more">
+                                            <button type="button" id="showhide${loop.count}" class="btn btn-default pull-right" ><i>Mostrar mas</i></button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -140,15 +148,7 @@
                                                 </div>
 
 
-                                                <div class="panel-body showMore" id="show${investigationWrapper.publication.name}" hidden>
-
-                                                    <%--<h4>Sus tareas principales seran:</h4>
-                                                    <p><c:out value="${investigationWrapper.publication.tasks}"/></p>
-
-                                                    <h4>Seran requisitos excluyentes:</h4>
-                                                    <p><c:out value="${investigationWrapper.publication.requirements}"/></p>
---%>
-                                                    <%--<button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
+                                                <div class="panel-body " id="show${investigationWrapper.publication.name}">
 
                                                     <c:set var="userEmail" value="${pageContext.request.remoteUser}"/>
                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
@@ -179,7 +179,7 @@
 
         <!------ Modal Box send request ----->
         <div id="sendRequest" class="modal">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="modal-content">
                     <span onclick="closeModal(document.getElementById('sendRequest'))" class="close">&times;</span>
                     <div class="container-fluid">
@@ -213,10 +213,11 @@
                 </div>
             </div>
         </div>
-
+    </div>
 
         <!------ Modal Box add work or investigation ----->
-        <div id="addWorkModal" class="modal">
+
+    <div id="addWorkModal" class="modal">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="modal-content">
                     <span onclick="closeModal(document.getElementById('addWorkModal'))" class="close">&times;</span>
@@ -245,15 +246,14 @@
                                                 <input id="nameInput" class="form-control" type="text" name="" required>
                                             </div>
                                         </div>
-                                        <div class=" row form-group">
-                                            <label class="col-lg-3 control-label">Descripcion</label>
-                                            <div class="col-lg-8">
-                                                <textarea id="descriptionTextarea" class="form-control" type="text" name="" required></textarea>
+                                        <div class="row">
+                                            <div class="col-lg-12 markDown">
+                                                <textarea id="descriptionTextarea" type="text" name="" required></textarea>
                                             </div>
                                         </div>
 
                                         <div class="row">
-                                            <button type="button" class="btn btn-primary pull-right cancel" onclick="addPublication(); closeModal(document.getElementById('addWorkModal'));">Enviar peticion</button>
+                                            <button type="button" class="btn btn-primary pull-right" onclick="addPublication(); closeModal(document.getElementById('addWorkModal'));">Enviar peticion</button>
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
 
 

@@ -104,7 +104,9 @@
 
                     <input type="submit" value="Unirme!" class="form-control btn btn-info btn-block btn-submit">
 
-                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <div class="form-group">
+                      <div class="g-signin2" data-width="auto" data-onsuccess="onSignIn"></div>
+                    </div>
                   </form>
                 </div>
               </div>

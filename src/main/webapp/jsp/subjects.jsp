@@ -74,24 +74,27 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Materias</h1>
+
                 <div class="panel panel-default">
                     <div class="panel-heading clearfix">
+                        <h1 class="subject-title">Materias</h1>
                         <% if (request.isUserInRole("admin")) { %>
-                        <button type="button" class="btn btn-default btn-xs btnPlus" onclick="modalBox(document.getElementById('addSubjectBox'))">
+                        <button type="button" class="btn btn-default btn-lg btnPlus pull-right" onclick="modalBox(document.getElementById('addSubjectBox'))">
                             <i class="glyphicon glyphicon-plus"></i></button>
                         <% } %>
-                        <div class="pull-right">
-							<span class="clickable filter" data-toggle="tooltip" data-container="body">
-								<i class="glyphicon glyphicon-search"></i>
-							</span>
-                        </div>
+                        <%--<div class="pull-right">--%>
+							<%--<span class="clickable filter" data-toggle="tooltip" data-container="body">--%>
+								<%--<i class="glyphicon glyphicon-search"></i>--%>
+							<%--</span>--%>
+                        <%--</div>--%>
                     </div>
 
                     <div class="panel-body">
-                        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Buscar" />
-                    </div>
-                        <table class="table"  id="dev-table">
+                        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#subject-table" placeholder="Buscar"  />
+
+
+
+                        <table class="table"  id="subject-table">
                             <thead>
                                 <td>Nombre</td>
                                 <td>Favorita</td>
@@ -103,7 +106,7 @@
                                 <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                                 <c:forEach items="${subjectWrapperList}" var="subjectWrapper" varStatus="loop">
                                     <tr id="${subjectWrapper.subject.subjectName}Row">
-                                        <td><a href="${pageContext.request.contextPath}/servlet/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
+                                        <td><a class="subject-name" href="${pageContext.request.contextPath}/servlet/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
                                             <c:out value="${subjectWrapper.subject.subjectName}"/></a>
                                         </td>
                                          <td>
@@ -122,6 +125,7 @@
                                 </c:forEach>
                             </tbody>
                         </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,11 +133,10 @@
 
 
 
-
-    <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/subjects.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/search.js"/>"></script>
 
 

@@ -7,9 +7,7 @@
 .panel-heading div span{
     margin-left:5px;
 }
-.panel-body{
-    display: none;
-}
+
 
 .standardButton{
     background-color: transparent;
@@ -27,16 +25,19 @@
 }
 
 .btnPlus{
+    color: white;
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
+    margin-top: -45px;
+
 }
 
 .btnPlus:hover{
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
-    color: black;
+    color: #9d9d9d;
 }
 
 /*.btn span.glyphicon {*/
@@ -91,4 +92,27 @@ input[type="checkbox"]:checked + label{
     border-color: white !important;
     border-radius: inherit !important;
     background-color: white !important;
+}
+
+.subject-title{
+    color: white;
+    margin-top: 5px;
+}
+
+.panel-heading{
+    border-color: #2980B9 !important;
+    background-color: #2980B9 !important;
+}
+
+.subject-name{
+    color: black !important;
+}
+
+.panel-body{
+    background-color: white;
+}
+
+body{
+    background-color: whitesmoke;
+
 }

@@ -1,0 +1,18 @@
+
+
+.btn-danger{
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+}
+
+.btn-danger:hover{
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+    color: red;
+}
+
+.load-professor{
+    margin-top: -45px;
+}

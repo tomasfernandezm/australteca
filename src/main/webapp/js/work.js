@@ -4,11 +4,20 @@
 
 var simplemde;
 
-function show(divId, buttonId) {
-    $(divId).toggle();
-        var button = document.getElementById(buttonId);
-        button.innerHTML = "Mostrar menos";
-}
+// function show(divId, buttonId) {
+//     $(divId).toggle();
+//         var button = document.getElementById(buttonId);
+//         button.innerHTML = "Mostrar menos";
+// }
+
+$(".show-more").on("click", function() {
+    var $this = $(this);
+    var $content = $this.parent().prev("div.content");
+    var linkText = $this.text().toUpperCase();
+    $content.switchClass("hideContent", "showContent", 400);
+
+});
+
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({

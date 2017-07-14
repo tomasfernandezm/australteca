@@ -119,6 +119,7 @@ input[type="checkbox"] {
     top: 0;
     left: 0;
     z-index: 2;
+
 }
 
 input[type="checkbox"] + label{
@@ -135,6 +136,9 @@ input[type="checkbox"]:checked + label{
     height: 100%;
     width: 100%;
     display:inline-block;
+    fill: purple;
+    stroke-width: 10px;
+    stroke: yellow;
 }
 
 .btnremovework{

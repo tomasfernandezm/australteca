@@ -21,6 +21,7 @@
         <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
         <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
         <link href="<c:url value="/css/modalBox.css"/>" rel="stylesheet" type="text/css">
+        <link href="<c:url value="/css/moderator.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="active-moderators">
@@ -86,7 +87,8 @@
                                 <tr id="accepted${loop.count}">
                                     <td><c:out value="${moderator.user.firstName}" /></td>
                                     <td><c:out value="${moderator.subject.subjectName}"/></td>
-                                    <td><button type="submit" class="btn btn-danger" onclick="eliminateAplication('${moderator.user.email}','${moderator.subject.subjectName}','accepted${loop.count}')">Eliminar</button> </td>
+                                    <td><button type="submit" class="btn btn-danger" onclick="eliminateAplication('${moderator.user.email}','${moderator.subject.subjectName}','accepted${loop.count}')">
+                                        <i class="glyphicon glyphicon-trash"></i></button> </td>
                                 </tr>
                                 </c:forEach>
                                 </tbody>
@@ -101,23 +103,16 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
+                        <div class="panel-heading clearfix">
 
                                 <h3>Administrador de Profesores</h3>
+                                <button type="button" class="btn btn-primary load-professor pull-right" onclick="modalBox(document.getElementById('loadProfessorModal'))">Cargar profesor</button>
 
-
-                                <button type="button" class="btn btn-primary" onclick="modalBox(document.getElementById('loadProfessorModal'))">Cargar profesor</button>
-
-
-
-                            <div class="pull-right">
-                                <span class="clickable filter" data-toggle="tooltip" data-container="body">
-                                </span>
-                            </div>
                         </div>
+
                         <div class="panel-body">
                             <input type="text" class="form-control" id="dev-table-filter-3" data-action="filter" data-filters="#professor-table" placeholder="Buscar" />
-                        </div>
+
                             <div id="professor-table-div">
                                 <table class="table" id="professor-table">
                                     <thead>
@@ -135,13 +130,14 @@
                                                 <td><c:out value="${professor.firstName} ${professor.lastName}"/></td>
                                                 <td><c:out value="${professor.email}"/></td>
                                                 <!------ boton eliminar de la base de datos ------>
-                                                <td><button type="submit" class="btn btn-danger" onclick="removeProfessor('${professor.id}','professor${loop.count}')">Eliminar</button> </td>
+                                                <td><button type="submit" class="btn btn-danger" onclick="removeProfessor('${professor.id}','professor${loop.count}')">
+                                                    <i class="glyphicon glyphicon-trash"></i></button> </td>
                                                 </tr>
                                             </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
-
+                        </div>
                     </div>
                 </div>
             </div>

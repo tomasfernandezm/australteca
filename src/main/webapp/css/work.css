@@ -8,19 +8,41 @@ body{
 .bs-calltoaction{
     position: relative;
     width:auto;
-    border: 1px solid black;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 3px solid black;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 3px;
 }
 
 
-.bs-calltoaction.bs-calltoaction-work{
+.bs-calltoaction-work{
     color: black;
     background-color: white;
-    border-color: #E74C3C;
+    border-color: #e5e5e5 !important;
+}
+
+
+.work-heading{
+    background-color: #666666 !important;
+    color: white !important;
+    border-radius: 0px !important;
     padding-right: 25px;
     padding-left: 25px;
+}
+
+.arrow-down{
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    margin-left: 10px;
+    border-top: 20px solid #666666;
+}
+
+.cta-title{
+    margin-top: 5px;
 }
 
 
@@ -57,7 +79,8 @@ body{
     position: relative;
     height: 25px;
     width:  25px;
-
+    margin-top: 15px;
+    margin-right: 5px;
 }
 
 
@@ -91,6 +114,9 @@ input[type="checkbox"]:checked + label{
 
 .btnremovework{
     border-color: transparent !important;
+    background-color: transparent !important;
+    color: white;
+    margin-top: 10px;
 }
 
 .favorite{
@@ -103,7 +129,7 @@ input[type="checkbox"]:checked + label{
     border-color: transparent !important;
     background-color: transparent; !important;
     box-shadow: none !important;
-    color: red !important;
+    color: #e5e5e5 !important;
 }
 
 .btnremovework:active:hover{
@@ -117,5 +143,64 @@ input[type="checkbox"]:checked + label{
     border-color: transparent !important;
     background-color: transparent; !important;
     box-shadow: none !important;
+}
+
+.hideContent {
+    overflow: hidden;
+    line-height: 1em;
+    height: 2em;
+}
+
+.showContent {
+    line-height: 1em;
+    height: auto;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width:  100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 90%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.markDown {
+    height: 50% !important;
+    /*overflow: auto;*/
+
+}
+
+#textarea{
+    height: 100px !important;
 }
 
