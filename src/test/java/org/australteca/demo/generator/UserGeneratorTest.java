@@ -1,7 +1,11 @@
 package org.australteca.demo.generator;
 
+import org.australteca.dao.UserDao;
 import org.australteca.demo.generator.UserGenerator;
+import org.australteca.entity.User;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -13,14 +17,14 @@ public class UserGeneratorTest {
     @Test
     public void generationTest(){
 
-        UserGenerator userGenerator = new UserGenerator();
+        UserGenerator userGenerator = new UserGenerator(80);
         userGenerator.generate();
 
-       /* UserDao userDao = new UserDao();
+        UserDao userDao = new UserDao();
 
         List<User> userList = userDao.list();
 
-        assertThat(userList).hasSize(userGenerator.getNumberOfUsers());*/
+        assertThat(userList).hasSize(userGenerator.getNumberOfUsersAdded());
     }
 
     @Test

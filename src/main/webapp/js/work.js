@@ -30,7 +30,7 @@ $(document).ready(function(){
         $(this).parents(".popover").popover('hide');
     });
 
-    simplemde = new SimpleMDE({ element: document.getElementById("descriptionTextarea") });
+    simplemde = loadSimpleMDE("descriptionTextarea");
 });
 
 function addPublication(){
@@ -176,3 +176,41 @@ function createPublicationDiv(name, description, id){
     return firstDiv;
 }
 
+function loadSimpleMDE(textareaID){
+
+    return new SimpleMDE({
+        autofocus: false,
+        autosave: {
+            enabled: false
+        },
+        element: document.getElementById(textareaID),
+        forceSync: true,
+        hideIcons: ["guide", "heading"],
+        insertTexts: {
+            horizontalRule: ["", "\n\n-----\n\n"],
+            image: ["![](http://", ")"],
+            link: ["[", "](http://)"],
+            table: ["", "\n\n| Column 1 | Column 2 | Column 3 |\n| -------- | -------- | -------- |\n| Text     | Text      | Text     |\n\n"]
+        },
+        placeholder: "Dale una descripción ...",
+        shortcuts: {
+            drawTable: "Cmd-Alt-T"
+        },
+        showIcons: ["code", "table"],
+        spellChecker: false,
+        status: false,
+        status: ["autosave", "lines", "words", "cursor"], // Optional usage
+        status: ["autosave", "lines", "words", "cursor", {
+            className: "keystrokes",
+            defaultValue: function(el) {
+                this.keystrokes = 0;
+                el.innerHTML = "0 Keystrokes";
+            },
+            onUpdate: function(el) {
+                el.innerHTML = ++this.keystrokes + " Keystrokes";
+            }
+        }], // Another optional usage, with a custom status bar item that counts keystrokes
+        styleSelectedText: false,
+        tabSize: 4,
+    });
+}

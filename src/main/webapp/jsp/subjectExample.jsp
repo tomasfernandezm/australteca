@@ -207,7 +207,7 @@
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                                             <figure class="thumbnail">
-                                                                
+
                                                                 <img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';" class="avatar img-circle" alt="avatar">
 
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>

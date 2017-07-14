@@ -4,6 +4,7 @@ import com.github.rjeschke.txtmark.Processor;
 import org.australteca.Constants;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.Publication;
+import org.australteca.entity.SubjectModeratorRelationship;
 import org.australteca.entity.User;
 
 import javax.servlet.ServletException;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.australteca.Constants.*;
-import static com.github.rjeschke.txtmark.Processor.*;
 
 /**
  * Created by tomi on 16/04/17.
@@ -48,6 +48,12 @@ public class UserListPostServlet extends HttpServlet {
         }
         req.setAttribute(Constants.USER_PUBLICATION_LIST, publicationWrappers);
 
+        int amounOfModeratedSubjects = 0;
+        for(SubjectModeratorRelationship smr: user.getSubjectModeratorRelationships()){
+            if(smr.isAccepted()) amounOfModeratedSubjects++;
+        }
+
+        req.setAttribute(Constants.AMOUNT_OF_MODERATED_SUBJECTS, amounOfModeratedSubjects);
         req.setAttribute(AMOUNT_OF_UPLOADED_NOTES, user.getAmountOfNotes());
         req.setAttribute(AMOUNT_OF_COMMENTARIES, user.getCommentaries().size());
 

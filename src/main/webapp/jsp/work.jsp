@@ -248,7 +248,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 markDown">
-                                                <textarea id="descriptionTextarea" type="text" name="" required></textarea>
+                                                <textarea id="descriptionTextarea"></textarea>
                                             </div>
                                         </div>
 

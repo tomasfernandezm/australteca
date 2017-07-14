@@ -112,12 +112,13 @@ public interface Constants {
     String USER_FAVORITE_PUBLICATIONS_LIST = "userFavoritePublicationList";
     String USER_PUBLICATION_LIST = "userPublicationList";
     String AMOUNT_OF_UPLOADED_NOTES = "amountOfUploadedNotes";
+    String AMOUNT_OF_MODERATED_SUBJECTS = "amountOfModeratedSubjects";
     String AMOUNT_OF_COMMENTARIES = "amountOfCommentaries";
 
     String USER_EMAIL_PARAM = "userEmail";
-
     /*~~~~~~~~~~~~~ User - Subject Servlet Parameters ~~~~~~~~~~ */
     String FAVORITE_PARAM = "favorite";
+
     String MAKE_FAVORITE = "makeFavorite";
 
     String REMOVE_FAVORITE = "removeFavorite";
@@ -126,21 +127,20 @@ public interface Constants {
     String COMMENTARY = "commentaryText";
 
     String COMMENTARY_ID = "commentaryID";
-
     /* ~~~~~~~~~~~~ Subject_Moderator Relationship Servlet Parameters ~~~~~~~~ */
     String ACCEPTED_LIST = "acceptedList";
+
     String WAITING_LIST = "waitingList";
 
     String LIST_TYPE_PARAM = "listType";
-
     /* ~~~~~~~~~~~ Professor - Servlet Parameters ~~~~~~~~~~~ */
     String PROFESSOR_NAME_PARAM = "professorName";
     String PROFESSOR_LAST_NAME_PARAM = "professorLastName";
     String PROFESSOR_EMAIL_PARAM = "professorEmail";
+
     String PROFESSOR_INFORMATION_PARAM = "professorInformation";
 
     String PROFESSOR_ID_PARAM = "professorID";
-
     /* ~~~~~~~~~~~ Subject Servlet Parameters ~~~~~~~~~~~~~ */
     String SUBJECT_NAME_PARAM = "subjectName";
     String OPERATION_SUCCESFUL_PARAM = "operationSuccessful";
@@ -149,22 +149,23 @@ public interface Constants {
     String SUBJECT_NOTES_LIST = "subjectFilesList";
     String SUBJECT_SCORE = "subjectScore";
     String SUBJECT_SCORE_PARAM = "subjectScoreParam";
+
     String SUBJECT_USER_SCORE = "subjectUserScore";
 
     String WANNABE_MODERATOR_PARAM = "wannabeModeratorParam";
-
     String MODERATOR_PARAM = "moderatorParam";
     /* ~~~~~~~~~~~ Upload - Download Servlet Parameters ~~~~~~~~~~~~~~~ */
     String NOTE_NAME_PARAM = "noteName";
+
     String NOTE_TYPE_PARAM = "noteType";
 
     String NOTE_ID_PARAM = "noteID";
-
     String NOTE_FORMAT_PARAM = "noteFormat";
     /* ~~~~~~~~~~~ Note Types ~~~~~~~~~~~~~~~~~~~ */
     String NOTE_TYPE_TEORIA = "Teoria";
     String NOTE_TYPE_GUIA = "Guía";
     String NOTE_TYPE_GUIA_RESUELTA = "Guía Resuelta";
+
     String NOTE_TYPE_PARCIAL = "Parcial";
 
     String NOTE_TYPE_FINAL = "Final";
@@ -173,7 +174,6 @@ public interface Constants {
 
     /* ~~~~~~~~~~~~~~~~ Publication Types ~~~~~~~~~~~~~~~~~ */
     String WORK_PUBLICATION = "Trabajo";
-
     String INVESTIGATION_PUBLICATION = "Investigacion";
     /* ~~~~~~~~~~~~~~~~ Publication Servlet Parameters ~~~~~~~~ */
     String PUBLICATION_NAME = "publicationName";
@@ -182,19 +182,19 @@ public interface Constants {
     String PUBLICATION_ROLE = "publicationRole";
     String PUBLICATION_ID = "publicationID";
     String INVESTIGATION_PUBLICATION_LIST = "investigationList";
+
     String WORK_PUBLICATION_LIST = "workList";
 
     String HTML_MARKDOWN_DESCRIPTIONS = "htmlMarkdownDescription";
-
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";
     String ADMIN_USERNAME_1 = "tomas.martinez@ing.austral.edu.ar";
     String ADMIN_USERNAME_2 = "tomas.forman@ing.austral.edu.ar";
+
     String PROFESSOR_LIST = "professorList";
 
     /* ~~~~~~~~~~~ Authentification Type ~~~~~~~~~~~~~~~~~ */
-
     String GOOGLE_OAUTH = "googleOAuth";
     String FACEBOOK_OAUTH = "facebookOAuth";
     String OAUTH_TYPE = "OAuthType";

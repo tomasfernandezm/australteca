@@ -7,13 +7,13 @@ Objetivos Hechos:
 - En trabajo, si no tiene título o descripción no se tiene que poder agregar "HECHO"
     - parte de front "HECHO"
     - parte de back "HECHO" devolver algún error ??
+- OAuth con Google
+- Estadisticas de usuario.
 
 Objetivos arrancados:
 
-- OAuth con Google
-- Estadisticas de usuario. "HECHO" Solo cantidad de subidos y comentarios
 - Falta hacer los fillers para el demo
-    - Users "HECHO" falta probar
+    - Users "HECHO"
     - Subject "HECHO"
     - Commentaries "HECHO" falta probar
     - falta hacer relaciones
@@ -21,6 +21,8 @@ Objetivos arrancados:
 Objetivos por hacer:
 
 - Unificar los iconos de eliminar y delete. -> es importante ver la parte de javascript
+- Añadir paginación en work.jsp
+- Añadir scrollbar en subjects.jsp
 - Centrar los botones que no quedaron centrados.
 - Ojo con los paddings en la parte de los trabajos.
 - Reducir en lineas generales los "espacios en blanco" que hay.

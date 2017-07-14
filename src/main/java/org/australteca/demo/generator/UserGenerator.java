@@ -12,6 +12,8 @@ import java.util.Random;
 public class UserGenerator extends AbstractGenerator {
 
     private int numberOfUsers;
+    private UserDao userDao = new UserDao();
+    private int numberOfUsersAdded = 0;
 
     UserGenerator(){
         numberOfUsers = 100;
@@ -24,8 +26,6 @@ public class UserGenerator extends AbstractGenerator {
     @Override
     public void generate() {
 
-        UserDao userDao = new UserDao();
-
         String[] names = UserConstants.names;
         String[] lastNames = UserConstants.lastNames;
         String[] passwords = UserConstants.passwords;
@@ -35,12 +35,15 @@ public class UserGenerator extends AbstractGenerator {
 
             double random1 = random.nextDouble();
             String fn = names[getIndex(0, names.length, random1)];
-            String ln = names[getIndex(0, lastNames.length, random1)];
-            String p = names[getIndex(0, passwords.length, random1)];
-            String c = names[getIndex(0, careers.length, random1)];
+            String ln = lastNames[getIndex(0, lastNames.length, random1)];
+            String p = passwords[getIndex(0, passwords.length, random1)];
+            String c = careers[getIndex(0, careers.length, random1)];
 
             User user = new User(fn, ln, makeEmail(fn, ln), c, p, false, false);
-            userDao.add(user);
+            if(!checkIfExists(user)) {
+                userDao.add(user);
+                numberOfUsersAdded++;
+            }
         }
 
     }
@@ -55,5 +58,13 @@ public class UserGenerator extends AbstractGenerator {
 
     public int getNumberOfUsers() {
         return numberOfUsers;
+    }
+
+    private boolean checkIfExists(User user){
+        return userDao.getUserByEmail(user.getEmail()) != null;
+    }
+
+    public int getNumberOfUsersAdded() {
+        return numberOfUsersAdded;
     }
 }
