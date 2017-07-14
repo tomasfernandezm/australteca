@@ -32,7 +32,6 @@ public class UserRegisterServlet extends HttpServlet {
         String password = request.getParameter(PASSWORD_PARAM);
         String passwordC = request.getParameter(PASSWORD_CONFIRMATION_PARAM);
         String career = request.getParameter(CAREER_PARAM);
-        String oauth = request.getParameter(OAUTH_TYPE);
         Integer status = 0;
 
         if (!password.equals(passwordC)) {
@@ -48,13 +47,7 @@ public class UserRegisterServlet extends HttpServlet {
             if (userID == null) status = 2;
         }
 
-        if (oauth == Constants.OAUTH_TYPE) {
-            String usernameParam = Constants.LOGIN_USERNAME_FIELD+"="+email;
-            String passwordParam = Constants.LOGIN_PASSWORD_FIELD+"="+password;
-            request.getRequestDispatcher(Constants.LOGIN_FORM_ACTION+"?"+usernameParam+"&"+passwordParam).forward(request, resp);
-        } else {
-            request.setAttribute(STATUS, status);
-            request.getRequestDispatcher("/jsp/registerConfirmation.jsp").forward(request, resp);
-        }
+        request.setAttribute(STATUS, status);
+        request.getRequestDispatcher("/jsp/registerConfirmation.jsp").forward(request, resp);
     }
 }

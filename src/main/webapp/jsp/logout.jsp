@@ -10,7 +10,10 @@
     </head>
 
     <body>
+        <script>
+            signOut();
+        </script>
         <% session.invalidate(); %>
+    <script type="text/javascript" src="/js/googleOAuth.js"></script>
     </body>
-
 </html>

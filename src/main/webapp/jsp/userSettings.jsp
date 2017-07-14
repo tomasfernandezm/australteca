@@ -32,7 +32,7 @@
         <div class="col-md-3">
             <div class="text-center">
              <!--   <object data="/images/avatar.jpg" class="img-circle" type="image/png"> -->
-                    <img src="/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=<%=request.getRemoteUser()%>" onerror="if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';"class="avatar img-circle" alt="avatar">
+                    <img src="/servlet/userPostPhoto?<%=Constants.USER_EMAIL_PARAM%>=<%=request.getRemoteUser()%>" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';"class="avatar img-circle" alt="avatar">
             <!--    </object> -->
                 <form action="<c:url value="/servlet/uploadPhoto"/>" method="post" enctype="multipart/form-data">
                     <label class="btn btn-default btn-file">

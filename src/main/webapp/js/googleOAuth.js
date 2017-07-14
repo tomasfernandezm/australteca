@@ -1,6 +1,4 @@
-/**
- * Created by tomi on 28/06/17.
- */
+
 
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
@@ -8,17 +6,39 @@ function onSignIn(googleUser) {
 
     $.ajax({
         type:'post',
-        url:"/googleOAuth",
+        url:'/googleOAuth',
         datatype:JSON,
         data:{
             id_token: id_token,
             name: profile.getName(),
             email: profile.getEmail()
         },
-        success: function(){
-
+        success: function(jsonObject){
+            login(jsonObject[0], jsonObject[1]);
         }
-    })
+    });
+}
+
+function login(u, p){
+
+    var form = document.createElement("form");
+    var element1 = document.createElement("input");
+    var element2 = document.createElement("input");
+
+    form.method = "POST";
+    form.action = "/j_security_check";
+
+    element1.value=u;
+    element1.name="j_username";
+    form.appendChild(element1);
+
+    element2.value=p;
+    element2.name="j_password";
+    form.appendChild(element2);
+
+    document.body.appendChild(form);
+
+    form.submit();
 }
 
 function signOut() {
@@ -28,3 +48,7 @@ function signOut() {
         console.log('User signed out');
     });
 }
+
+window.onbeforeunload = function(){
+    gapi.auth2.getAuthInstance().signOut();
+};

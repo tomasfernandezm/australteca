@@ -30,11 +30,11 @@
             <form class="navbar-form navbar-right" id="<%=LOGIN_FORM_ID%>" action="<%=response.encodeURL(LOGIN_FORM_ACTION)%>" method="POST">
                 <div class="form-group">
                   <label id="email" for="email">Email</label>
-                  <input type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>" required>
+                  <input id="usernameLogin" type="email" name="<%=Constants.LOGIN_USERNAME_FIELD%>" required>
                 </div>
                 <div class="form-group">
                   <label for="password">Contrase&ntilde;a</label>
-                  <input type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>" required>
+                  <input id="passwordLogin" type="password" name="<%=Constants.LOGIN_PASSWORD_FIELD%>" required>
                 </div>
                 <button type="Submit" class="btn btn-default btn-xs btn-login">Iniciar Sesion</button>
               </form>
@@ -104,9 +104,7 @@
 
                     <input type="submit" value="Unirme!" class="form-control btn btn-info btn-block btn-submit">
 
-                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                    <button type="button" onclick="signOut()"> Google sign out</button>
-
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
                   </form>
                 </div>
               </div>
