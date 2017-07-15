@@ -34,13 +34,15 @@ Objetivos por hacer:
     Demo en vivo de la aplicación
     Video rápido de demo de aplicación?
 
+- work dinámico no es igual a estático
+
+
 Derivados:
 
 - Formatear apropiadamente el recuadro del editor de markdown
 - Hacer botón "Ver mas" acorde
+- Si un admin se registra con google, no lo agrega como administrador
 
 - LO QUE QUEDARÍA BIEN:
     -  hacer un buscador para los trabajos
     -  hacer un modo de contactarse con los administradores (enviar un mail al mail de australteca ??)
-
-
