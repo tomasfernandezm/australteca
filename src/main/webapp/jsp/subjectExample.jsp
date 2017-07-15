@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <h2 id = "subjectName-h2"><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
+                <h2 class="subject-name" id = "subjectName-h2"><%= request.getAttribute(SUBJECT_NAME_PARAM)%></h2>
             </div>
             <div class="pull-right">
             <div id= "subject_score" class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
@@ -107,7 +107,7 @@
                     <div class="tab-content">
                         <!---------------- Notes tab ----------------->
                         <div class="tab-pane fade in active" id="tab1default">
-                            <button type="button" onclick="modalBox(document.getElementById('noteModal'))" id="addNoteBtn" class="btn btn-primary center-block">Agregar apunte</button>
+                            <button type="button" onclick="modalBox(document.getElementById('noteModal'))" id="addNoteBtn" class="btn btn-subject-example center-block">Agregar apunte</button>
                             <div class="pre-scrollable" data-offset="50">
                                 <table class="table"  id="dev-table">
                                     <thead>
@@ -155,7 +155,7 @@
                             <div class="row">
                                 <c:if test="${moderator || admin}">
                                     <div class="btn btn-professor center-block">
-                                        <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-primary">Editar profesores</button>
+                                        <button type="button" onclick="modalBox(document.getElementById('addProfessorModal'))" id="addProfessor"class="btn btn-subject-example">Editar profesores</button>
                                     </div>
                                 </c:if>
                             </div>
@@ -194,7 +194,7 @@
                                                 <div id="commentForm" class="commentBox" >
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
                                                     <textarea  id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
-                                                    <button type="submit" class="btn btn-success green pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')"><i class="glyphicon glyphicon-share"></i>Comentar</button>
+                                                    <button type="submit" class="btn btn-subject-example btn-comment pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')">Comentar</button>
                                                 </div>
                                                     <%--</form>--%>
                                                 <div class="col-xs-12"><hr></div>
@@ -206,12 +206,12 @@
                                                 <c:forEach items="${commentaryList}" var="commentary" varStatus="loop">
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
-                                                            <figure class="thumbnail">
+                                                            <%--<figure class="thumbnail">--%>
 
                                                                 <img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';" class="avatar img-circle" alt="avatar">
 
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
-                                                            </figure>
+                                                            <%--</figure>--%>
                                                         </div>
                                                         <div class="col-md-9 col-sm-9 col-xs-9">
                                                             <div class="panel panel-default arrow left">
@@ -268,14 +268,14 @@
                             <div class="panel-body">
                                 <form role="form">
                                     <div class="row">
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="col-xs-8 col-sm-8 col-md-8">
                                             <div class="form-group">
                                                 <input type="text" name= "<%=NOTE_NAME_PARAM%>" class="form-control input-sm" placeholder="Nombre" required/>
                                                 <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="<%=request.getAttribute(SUBJECT_NAME_PARAM)%>"/>
                                                 <input type="hidden" name="<%=NOTE_FORMAT_PARAM%>" value="txt">
                                             </div>
                                         </div>
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="col-xs-4 col-sm-4 col-md-4">
                                             <label class="btn btn-success btn-file form-control">
                                                 Buscar <input type="file" id="filePreview" style="display: none;" name="fileName">
                                             </label>
@@ -345,11 +345,11 @@
                                         <td><c:out value="${professorWrapper.professor.firstName} ${professorWrapper.professor.lastName}"/> </td>
                                         <!--- boton agregar ---->
                                         <c:if test="${!professorWrapper.favorite}">
-                                        <td><button id="${professorWrapper.professor.email}button" class="btn btn-success" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
+                                        <td><button id="${professorWrapper.professor.email}button" class="btn btn-accept" type="submit" onclick="addProfessorToSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Agregar</button></td>
                                         </c:if>
                                         <!--- boton eliminar ---->
                                         <c:if test="${professorWrapper.favorite}">
-                                        <td><button id="${professorWrapper.professor.email}button" class="btn btn-danger" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
+                                        <td><button id="${professorWrapper.professor.email}button" class="btn btn-deny" type="submit" onclick="removeProfessorFromSubject('${professorWrapper.professor.id}','${requestScope[subjectName]}')">Eliminar</button></td>
                                         </c:if>
                                     </tr>
                                 </c:forEach>

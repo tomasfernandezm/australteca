@@ -23,7 +23,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand"><img class="logo" src="../images/logo.png"></a>
+
+            <%--<a class="navbar-brand"><img class="logo" src="../images/logo.png"></a>--%>
+            <svg height="50" width="150">:
+              <text x="0" y="40" fill="black" style="font-family: SignPainter, georgia, times, serif; font-weight: normal; font-style: normal; font-size: 40px; fill:white">Australteca</text>
+            </svg>
           </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -56,9 +60,11 @@
           <div class="row centered-form  ">
             <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
               <div class="panel panel-default">
+
                 <div class="panel-heading">
                   <h3 class="panel-title">Registrate <small>Es gratis! Y siempre lo sera!</small></h3>
                 </div>
+
                 <div class="panel-body">
                   <form role="form">
                     <div class="row">
@@ -73,12 +79,10 @@
                         </div>
                       </div>
                     </div>
-
                     <div class="form-group">
                       <input type="email" name= "<%=EMAIL_PARAM%>" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar"
                              placeholder="Email: ejemplo@ing.austral.edu.ar" class="form-control input-sm" required/>
                     </div>
-
                     <div class="row">
                       <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
@@ -93,7 +97,6 @@
                         </div>
                       </div>
                     </div>
-
                     <div class="form-group">
                       <select class="select form-control" name="<%=CAREER_PARAM%>">
                         <option value="<%=INGENIERIA_INF_VALUE%>" selected>Ingenieria informatica</option>
@@ -101,24 +104,26 @@
                         <option value="<%= INGENIERIA_IND_VALUE%>">Ingenieria indutrial</option>
                       </select>
                     </div>
-
                     <input type="submit" value="Unirme!" class="form-control btn btn-info btn-block btn-submit">
-
                     <div class="form-group">
                       <div class="g-signin2" data-width="auto" data-onsuccess="onSignIn"></div>
                     </div>
                   </form>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
     </form>
+
       <div class="lema">
-        <h2>Una comunidad para compartir lo que conoces.</h2>
-        <h2>Y buscar lo que no sabes.</h2>
+        <h2>Una comunidad para compartir lo que conoces,</h2>
+        <h2>y buscar lo que no sabes.</h2>
       </div>
+
     </div>
+
     <script type="text/javascript" src="../js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/googleOAuth.js"></script>

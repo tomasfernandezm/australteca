@@ -13,13 +13,13 @@
             <a href="#" class="logo"></a>
 
             <div class="error-message">
-                <p class="title">Epa, no podés ver este contenido</p>
+                <p class="title">Epa, no podes ver este contenido</p>
                 <p class="message"></p>
-                <p class="small">Andá al
+                <p class="small">Anda al
                     <a href="<c:url value="<%=request.getHeader("Referer")%>"/>">login</a>
                     o
-                    <a href="#">contactanos</a>
-                    si no podés resolver tu problema</p>
+                    <a href="#">contactanos: help@australteca.com.ar</a>
+                    si no podes resolver tu problema</p>
             </div>
         </div>
     </body>

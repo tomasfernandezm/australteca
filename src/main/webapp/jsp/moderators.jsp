@@ -61,10 +61,10 @@
                                 <c:set var="waitingList" value='${requestScope[waitingListParam]}' />
                                 <c:forEach items="${waitingList}" var="postulation" varStatus="loop">
                                     <tr id="postulant${loop.count}">
-                                        <td><c:out value="${postulation.user.firstName}" /></td>
-                                        <td><c:out value="${postulation.subject.subjectName}"/></td>
-                                        <td><button type="submit" class="btn btn-success" onclick="acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Aceptar</button> </td>
-                                        <td><button type="submit" class="btn btn-danger" onclick="eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Rechazar</button> </td>
+                                        <td class="col-md-4"><c:out value="${postulation.user.email}" /></td>
+                                        <td class="col-md-6"><c:out value="${postulation.subject.subjectName}"/></td>
+                                        <td class="col-md-1"><button type="submit" class="btn btn-accept" onclick="acceptAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Aceptar</button> </td>
+                                        <td class="col-md-1"><button type="submit" class="btn btn-deny" onclick="eliminateAplication('${postulation.user.email}','${postulation.subject.subjectName}','postulant${loop.count}')">Rechazar</button> </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -127,7 +127,7 @@
                                             <c:set var="professorList" value="${requestScope[professorListParam]}"/>
                                             <c:forEach items="${professorList}" var="professor" varStatus="loop">
                                                 <tr id="professor${loop.count}">
-                                                <td><c:out value="${professor.firstName} ${professor.lastName}"/></td>
+                                                <td class="col-md-4"><c:out value="${professor.firstName} ${professor.lastName}"/></td>
                                                 <td><c:out value="${professor.email}"/></td>
                                                 <!------ boton eliminar de la base de datos ------>
                                                 <td><button type="submit" class="btn btn-danger" onclick="removeProfessor('${professor.id}','professor${loop.count}')">
@@ -183,8 +183,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label"></label>
-                                            <div class="col-md-8 col-md-offset-10">
-                                                <button type="submit" class="btn btn-primary" value="Agregar" onclick="addProfessor()">Agregar</button>
+                                            <div class=" pull-right">
+                                                <button type="submit" class="btn btn-add-professor" value="Agregar" onclick="addProfessor()">Agregar</button>
                                             </div>
                                         </div>
                                     </form>

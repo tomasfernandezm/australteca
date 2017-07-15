@@ -121,13 +121,13 @@
                         </div>
                         <div class="col col-md-4 center-column">
                             <h4>Comentarios hechos</h4>
-                            <div class="circle-file activity-3">
+                            <div class="circle-file activity-2">
                                 <c:set var="commentaryAmountParam" value="<%=Constants.AMOUNT_OF_COMMENTARIES%>"/>
                                 <p>${requestScope[commentaryAmountParam]}</p>
                             </div>
                         </div>
                         <div class="col col-md-4 center-column">
-                            <h4>Número de materias moderadas</h4>
+                            <h4>Materias moderadas</h4>
                             <div class="circle-file activity-3">
                                 <c:set var="moderatedAmountParam" value="<%=Constants.AMOUNT_OF_MODERATED_SUBJECTS%>"/>
                                 <p>${requestScope[moderatedAmountParam]}</p>

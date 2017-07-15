@@ -15,4 +15,63 @@
 
 .load-professor{
     margin-top: -45px;
+    background-color: white;
+    border-color: #036AFE ;
+    color: #036AFE;
+}
+
+.load-professor:hover{
+    background-color: #036AFE;
+    border-color: #036AFE ;
+    color: white;
+}
+
+
+.btn-accept{
+    background-color: white ;
+    border-color: #57a544;
+    color: #57a544;
+    border-radius: 2px !important;
+}
+
+.btn-accept:hover{
+    background-color: #57a544;
+    border-color: #57a544;
+    color: white;
+}
+
+
+.btn-deny{
+    background-color: white;
+    border-color: red;
+    color: red;
+    border-radius: 2px !important;
+}
+
+.btn-deny:hover{
+    background-color: red ;
+    border-color: red;
+    color: white;
+}
+
+.btn-add-professor{
+    background-color: white;
+    color: #57a544;
+    border-color: #57a544;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.btn-add-professor:hover{
+    background-color: #57a544;
+    color: white;
+    border-color: #57a544;
+}
+
+.modal-content{
+    width: 40%;
+}
+
+.close{
+    margin-right: 10px;
 }
