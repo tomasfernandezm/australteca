@@ -206,12 +206,12 @@
                                                 <c:forEach items="${commentaryList}" var="commentary" varStatus="loop">
                                                     <article id="commentary${loop.count}" class="row">
                                                         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
-                                                            <figure class="thumbnail">
+                                                            <%--<figure class="thumbnail">--%>
 
                                                                 <img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';" class="avatar img-circle" alt="avatar">
 
                                                                 <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
-                                                            </figure>
+                                                            <%--</figure>--%>
                                                         </div>
                                                         <div class="col-md-9 col-sm-9 col-xs-9">
                                                             <div class="panel panel-default arrow left">
@@ -268,14 +268,14 @@
                             <div class="panel-body">
                                 <form role="form">
                                     <div class="row">
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="col-xs-8 col-sm-8 col-md-8">
                                             <div class="form-group">
                                                 <input type="text" name= "<%=NOTE_NAME_PARAM%>" class="form-control input-sm" placeholder="Nombre" required/>
                                                 <input type="hidden" name="<%=SUBJECT_NAME_PARAM%>" value="<%=request.getAttribute(SUBJECT_NAME_PARAM)%>"/>
                                                 <input type="hidden" name="<%=NOTE_FORMAT_PARAM%>" value="txt">
                                             </div>
                                         </div>
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                        <div class="col-xs-4 col-sm-4 col-md-4">
                                             <label class="btn btn-success btn-file form-control">
                                                 Buscar <input type="file" id="filePreview" style="display: none;" name="fileName">
                                             </label>

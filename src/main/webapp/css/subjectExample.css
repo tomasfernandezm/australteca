@@ -94,3 +94,30 @@ img.fileImg{
 
 }
 
+.modal-content{
+    width: 30%;
+}
+
+.btn-info{
+    background-color: #699064;
+    border-color: transparent;
+    border-radius: 3px !important;
+}
+
+.btn-info:hover{
+    background-color: #486345;
+    border-color: transparent;
+}
+
+.btn-file{
+    background-color: white;
+    border-color: orangered;
+    color: orangered;
+    border-radius: 3px !important;
+}
+
+.btn-file:hover{
+    background-color: orangered;
+    border-color: orangered;
+    color: white;
+}

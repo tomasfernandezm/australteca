@@ -116,3 +116,7 @@ body{
     background-color: whitesmoke;
 
 }
+
+.modal-content{
+    width: 30%;
+}

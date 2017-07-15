@@ -183,8 +183,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label"></label>
-                                            <div class="col-md-8 col-md-offset-10">
-                                                <button type="submit" class="btn btn-primary" value="Agregar" onclick="addProfessor()">Agregar</button>
+                                            <div class=" pull-right">
+                                                <button type="submit" class="btn btn-add-professor" value="Agregar" onclick="addProfessor()">Agregar</button>
                                             </div>
                                         </div>
                                     </form>

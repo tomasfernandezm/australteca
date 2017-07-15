@@ -18,9 +18,10 @@
         </button>
         <div class="navbar-header">
             <%--<a href="<%=response.encodeURL("/servlet/userListPost")%>" class="navbar-brand"><img class="logo" src="/images/logo.png"></a>--%>
-            <svg height="50" width="150">:
+            <svg height="50" width="150" href="<%=response.encodeURL("/servlet/userListPost")%>">:
                 <text x="0" y="40" fill="black" style="font-family: SignPainter, georgia, times, serif; font-weight: normal; font-style: normal; font-size: 40px; fill:white">Australteca</text>
             </svg>
+
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">

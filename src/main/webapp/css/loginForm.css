@@ -1,8 +1,7 @@
 
 
 
-body {
-
+body{
     background-image: url("/images/campus b&w.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -14,22 +13,19 @@ body {
     box-shadow: 15px 15px 10px grey;
 }
 
-
-
 .navbar-inverse{
 	background-color: #666666;
 	border-radius: 0px;
     margin-bottom: 100px;
-	}
+}
 
 .navbar{
-    border-bottom-color: #666666;
     border-color: #666666;
 }
 
 .lema{
     margin-bottom: 5%;
-    margin-top: 15%;
+    margin-top: 10%;
     color: white;
     text-align: center;
 }
@@ -48,12 +44,12 @@ form.navbar-form label {
 
 	
 	
-form.navbar-form input {
+form.navbar-form input{
 	border: 1px solid #FFFFFF;
 	border-radius: 3px;
 	background-color: white;
     margin-top: 5px;
-   	}
+}
 	
 input.btn:hover{
     background-color: #666666;
@@ -64,16 +60,7 @@ input.btn:hover{
     height: 100%;
 }
 
-.footPage {
-    background-color: #666666;
-    min-height: 50px;
-    width: 100%;
-    color: white;
-    text-align: left;
-  }
-
 .msg-incorrect-login{
-
     margin-top: 10px;
     margin-bottom: 5px;
     padding-left: 3px;

@@ -44,5 +44,30 @@ Derivados:
     -  hacer un modo de contactarse con los administradores (enviar un mail al mail de australteca ??)
 
 
-TOMAS FORMAN
-    en trabajo cambiar corazon a blanco
+TOMAS FORMAN (* items plus)
+
+    -loginform.jsp
+        lema
+
+    -home.jsp
+        boton mostrar mas
+        agregar nombre materias*
+
+    -SubjectExample
+        Arreglar comentarios
+
+    -userSettings.jsp
+        que hace el boton reset?
+
+    -work.jsp
+        en trabajo cambiar corazon a blanco
+
+
+    TERMINADOS
+    -not_found.jsp
+    -logout.jsp
+    -mainmenu.jsp
+    -registerConfirmation.jsp
+    -subjects.jsp
+
+

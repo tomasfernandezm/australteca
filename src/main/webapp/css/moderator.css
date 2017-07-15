@@ -53,3 +53,25 @@
     border-color: red;
     color: white;
 }
+
+.btn-add-professor{
+    background-color: white;
+    color: #57a544;
+    border-color: #57a544;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.btn-add-professor:hover{
+    background-color: #57a544;
+    color: white;
+    border-color: #57a544;
+}
+
+.modal-content{
+    width: 40%;
+}
+
+.close{
+    margin-right: 10px;
+}
