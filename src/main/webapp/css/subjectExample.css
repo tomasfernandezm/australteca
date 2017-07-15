@@ -1,3 +1,52 @@
+
+.subject-name{
+    color: #699064;
+}
+
+.panel-heading{
+    background-color: #699064!important;
+    border-radius: 2px !important;
+    border: transparent !important;
+}
+
+.panel{
+    border-color: transparent !important;
+}
+
+.btn-subject-example{
+    background-color: white;
+    color: #699064;
+    border-color: #699064;
+    border-radius: 2px !important;
+}
+
+.btn-subject-example:hover{
+    background-color: #699064;
+    color: white ;
+    border-color: #699064;
+}
+
+.btn-comment{
+    margin-right: 5px;
+}
+
+.nav-tabs{
+    background-color: transparent !important;
+    border-color: white !important;
+
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover, .nav-tabs > li.active > a:hover {
+    border: none;
+    color: #699064!important;
+    background-color: white !important;
+}
+
+.nav-tabs > li > a{
+    color: white !important;
+}
+
+
 .trashButton{
     background-color: transparent;
     border-color: transparent;

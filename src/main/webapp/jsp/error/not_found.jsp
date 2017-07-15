@@ -13,13 +13,13 @@
 		    <a href="#" class="logo"></a>
 
 		    <div class="error-message">
-			    <p class="title">No encontramos tu página</p>
+			    <p class="title">No encontramos tu pagina</p>
 			    <p class="message">Puede que hayamos movido o eliminado el link al que quisiste acceder</p>
-			    <p class="small">Andá al
+			    <p class="small">Anda al
                     <a href="<c:url value="/jsp/loginForm.jsp"/>">login</a>
                     o
-                    <a href="#">contactanos</a>
-                    si no podés resolver tu problema</p>
+                    <a href="#">contactanos: help@australteca.com.ar</a>
+                    si no podes resolver tu problema</p>
 		    </div>
 	    </div>
     </body>
