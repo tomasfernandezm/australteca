@@ -1,78 +1,66 @@
 
-Objetivos Hechos:
-
-- Sort by en los comments. -> implementado con linked list "HECHO"
-- Estilo cursor: pointer para las acciones. "HECHO"
-- Soportar Markdown "Hecho" (en work.jsp)
-- En trabajo, si no tiene título o descripción no se tiene que poder agregar "HECHO"
-    - parte de front "HECHO"
-    - parte de back "HECHO" devolver algún error ??
-- OAuth con Google
-- Estadisticas de usuario.
-
-Objetivos arrancados:
-
 - Falta hacer los fillers para el demo
     - Users "HECHO"
     - Subject "HECHO"
     - Commentaries "HECHO" falta probar
     - falta hacer relaciones
 
-Objetivos por hacer:
 
-- Unificar los iconos de eliminar y delete. -> es importante ver la parte de javascript
-- Añadir paginación en work.jsp
-- Añadir scrollbar en subjects.jsp
-- Centrar los botones que no quedaron centrados.
-- Ojo con los paddings en la parte de los trabajos.
-- Reducir en lineas generales los "espacios en blanco" que hay.
-- Agregarle un template al mail.
-- Agregar lugar de contacto
-- Llenar de mas datos la base para mostrar en una demo.
-- Presentación tecnica y no tecnica.
-    Powerpoint o Prezi
-    Demo en vivo de la aplicación
-    Video rápido de demo de aplicación?
-
-- work dinámico no es igual a estático
-
-
-Derivados:
-
-- Formatear apropiadamente el recuadro del editor de markdown
-- Hacer botón "Ver mas" acorde
-- Si un admin se registra con google, no lo agrega como administrador
-
-- LO QUE QUEDARÍA BIEN:
-    -  hacer un buscador para los trabajos
-    -  hacer un modo de contactarse con los administradores (enviar un mail al mail de australteca ??)
-
+<------------- nuevas tareas ---------------->
 
 TOMAS FORMAN (* items plus)
 
-    -loginform.jsp
-        lema
 
     -home.jsp
         boton mostrar mas
         agregar nombre materias*
 
+     -subjects
+        arreglar el boton fav y centrarlo (todos)
+        scrollbar max
+
     -SubjectExample
-        Arreglar comentarios
+        -Arreglar comentarios
+        -revisar color estrellas
+        -botones moderador
 
     -userSettings.jsp
-        que hace el boton reset?
+        -sacar boton reset
+
+     -mdoerator.jsp
+        cambiar largo texto
+        -boton eliminar aprobados
+
 
     -work.jsp
         en trabajo cambiar corazon a blanco
+        boton megusta.
+
+
+    COMENTARIOS (para lo ultimi)
+     - agregarlo al principio
+     - acomodar visual
+     - comentar con el enter
+
+     MAIL
+     - template email marketing
+
+    nuevo navbar nosotros - lugar de contacto
+    Llena publications constant
+    Arreglar todos los modal
+    revisar toda la parte de agregado dinamico con js
+    paginacion
+    buscador de trabajos
+
 
 
     TERMINADOS
     -not_found.jsp
+    -loginForm
     -logout.jsp
     -mainmenu.jsp
     -registerConfirmation.jsp
-    -subjects.jsp
+    -
 
 
 
