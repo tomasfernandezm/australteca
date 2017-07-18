@@ -6,6 +6,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-color: #666666;
+    background-size: cover;
     min-height: 100%;
 }
 

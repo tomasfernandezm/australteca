@@ -4,11 +4,13 @@
 
 var simplemde;
 
-// function show(divId, buttonId) {
-//     $(divId).toggle();
-//         var button = document.getElementById(buttonId);
-//         button.innerHTML = "Mostrar menos";
-// }
+function show(divId) {
+    $(divId).readmore(    {
+        speed: 75,
+        lessLink:'<a href="#">Read less</a>'
+    })
+
+}
 
 $(".show-more").on("click", function() {
     var $this = $(this);
@@ -17,6 +19,8 @@ $(".show-more").on("click", function() {
     $content.switchClass("hideContent", "showContent", 400);
 
 });
+
+
 
 
 $(document).ready(function(){

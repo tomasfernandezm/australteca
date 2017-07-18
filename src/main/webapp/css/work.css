@@ -23,6 +23,9 @@ body{
     border-color: #e5e5e5 !important;
 }
 
+.panel-body{
+    padding: 0px !important;
+}
 
 .work-heading{
     background-color: #666666 !important;
@@ -48,17 +51,14 @@ body{
 
 .btnAddWork{
     margin-bottom: 15px;
-    background-color: #E74C3C !important;
-    color: white;
-    border-color: transparent;
-    align-content: center;
-    margin-left: 4%;
-    margin-right: 4%;
+    background-color: transparent !important;
+    color: #E74C3C;
+    border-color: #E74C3C;
 }
 
 .btnAddWork:hover{
-    background-color: white;
-    color: #E74C3C !important;
+    background-color: #E74C3C !important;
+    color: white !important;
     border-color: #E74C3C;
 }
 
@@ -67,12 +67,12 @@ body{
     color: #E74C3C; !important;
 
 }
-.nav-pills > li.active > a, .nav-pills > li > a:hover, .nav-pills > li.active > a:hover {
-    border: none;
-    color: white !important;
-    background-color: #E74C3C; !important;
-}
 
+
+.nav-pills > li.active > a {
+    background-color:  #E74C3C !important;
+
+}
 
 
 .checkbox_wrapper{
@@ -96,7 +96,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label{
-    background:url('/images/likeOff.svg') no-repeat;
+    background:url('../images/likeOff.svg') no-repeat;
     height: 100%;
     width: 100%;
     display:inline-block;
@@ -176,7 +176,7 @@ input[type="checkbox"]:checked + label{
     padding: 10px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-    height: 90%;
+    /*overflow: visible;*/
 }
 
 /* The Close Button */

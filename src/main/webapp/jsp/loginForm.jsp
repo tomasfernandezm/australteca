@@ -118,8 +118,7 @@
     </form>
 
       <div class="lema">
-        <h2>Una comunidad para compartir lo que conoces,</h2>
-        <h2>y buscar lo que no sabes.</h2>
+        <h2>Una comunidad para compartir lo que conoces, <br> y buscar lo que no sabes.</h2>
       </div>
 
     </div>
