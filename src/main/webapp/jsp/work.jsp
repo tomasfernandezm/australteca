@@ -92,6 +92,7 @@
                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                     <c:if test="${workWrapper.publication.author.email != remoteUser}">
                                                         <button type="button" class="btn btn-primary pull-right" onclick="sendPublicationPetition(${workWrapper.publication.id})">Enviar peticion</button>
+                                                        <button type="button" class="btn btn-primary pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
                                                     </c:if>
 
                                                     <button type="button" id="showhide${loop.count}" class="btn btn-default pull-left" onclick="show('show${workWrapper.publication.name}')"><i>Mostrar mas</i></button>
@@ -166,41 +167,41 @@
     </div>
 
         <%--<!------ Modal Box send request ----->--%>
-        <%--<div id="sendRequest" class="modal">--%>
-            <%--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">--%>
-                <%--<div class="modal-content">--%>
-                    <%--<span onclick="closeModal(document.getElementById('sendRequest'))" class="close">&times;</span>--%>
-                    <%--<div class="container-fluid">--%>
-                        <%--<div class="row">--%>
-                            <%--<form action="" method="post">--%>
-                                <%--<div class="form-group">--%>
-                                    <%--<div class="modal-header">--%>
-                                        <%--<h3>Peticion de trabajo</h3>--%>
-                                    <%--</div>--%>
-                                    <%--<div class="modal-body">--%>
-                                        <%--<div class="row form-group">--%>
-                                            <%--<label class="col-lg-3 control-label">Asunto</label>--%>
-                                            <%--<div class="col-lg-5">--%>
-                                                <%--<input class="form-control" type="text" name="" required>--%>
-                                            <%--</div>--%>
-                                        <%--</div>--%>
-                                        <%--<div class=" row form-group">--%>
-                                            <%--<label class="col-lg-3 control-label">Descripcion</label>--%>
-                                            <%--<div class="col-lg-8">--%>
-                                                <%--<textarea class="form-control" type="text" name="" required></textarea>--%>
-                                            <%--</div>--%>
-                                        <%--</div>--%>
-                                        <%--<div class="row">--%>
-                                            <%--<button type="submit" class="btn btn-primary foo pull-right" onclick="closeModal(document.getElementById('sendRequest'))">Enviar peticion</button>--%>
-                                        <%--</div>--%>
-                                    <%--</div>--%>
-                                <%--</div>--%>
-                            <%--</form>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
+        <div id="sendRequest" class="modal">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="modal-content">
+                    <span onclick="closeModal(document.getElementById('sendRequest'))" class="close">&times;</span>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <div class="modal-header">
+                                        <h3>Peticion de trabajo</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row form-group">
+                                            <label class="col-lg-3 control-label">Asunto</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control" type="text" name="" required>
+                                            </div>
+                                        </div>
+                                        <div class=" row form-group">
+                                            <label class="col-lg-3 control-label">Descripcion</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button type="submit" class="btn btn-primary foo pull-right" onclick="closeModal(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <%--<!------ Modal Box add work or investigation ----->--%>
