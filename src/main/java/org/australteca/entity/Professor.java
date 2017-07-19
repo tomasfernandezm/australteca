@@ -22,7 +22,7 @@ public class Professor extends AbstractEntity{
     @Column(name = "PROFESSOR_EMAIL")
     private String email;
 
-    @Column(name = "PROFESSOR_INFORMATION")
+    @Column(name = "PROFESSOR_INFORMATION", length = 1024*1024)
     private  String information;
 
     @ManyToMany
