@@ -42,7 +42,9 @@
 
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
-                <input type="text" class="form-control search-input" id="poner" data-action="filter" data-filters="poner" placeholder="Buscar" />
+                <form action="/servlet/listPublications" method="get">
+                    <input name="<%=Constants.PUBLICATION_NAME%>" type="text" class="form-control search-input" id="poner" data-action="filter" data-filters="poner" placeholder="Buscar"/>
+                </form>
             </div>
         </div>
         <div class="row">
@@ -116,8 +118,45 @@
 
                             <div class="row">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-primary">Anterior</button>
-                                    <button type="button" class="btn btn-primary">Siguiente</button>
+                                    <c:set var="workPageNumberParam" value="<%=Constants.WORK_PAGE_NUMBER%>"/>
+                                    <c:set var="workPageNumber" value="${requestScope[workPageNumberParam]}"/>
+                                    <c:set var="investPageNumberParam" value="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                    <c:set var="investPageNumber" value="${requestScope[investPageNumberParam]}"/>
+                                    <c:set var="workTotalPagesParam" value="<%=Constants.WORK_TOTAL_PAGES%>"/>
+                                    <c:set var="investigationTotalPagesParam" value="<%=Constants.INVESTIGATION_TOTAL_PAGES%>"/>
+                                    <c:set var="workTotalPages" value="${requestScope[workTotalPagesParam]}"/>
+                                    <c:set var="investigationTotalPages" value="${requestScope[investigationTotalPagesParam]}"/>
+                                    <c:set var="searchTitleParam" value="<%=Constants.SEARCH_PATTERN%>"/>
+                                    <c:set var="searchTitle" value="${requestScope[searchTitleParam]}"/>
+                                    <p> ${workPageNumber}</p>
+                                    <c:if test="${!(workPageNumber eq 1)}">
+                                        <form action="/servlet/listPublications" method="get">
+                                            <input type="hidden" value="${workPageNumber-1}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
+                                            <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                            <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>" value="<%=Constants.WORK_PUBLICATION%>"/>
+                                            <c:if test="${searchTitle eq null}">
+                                            <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="">
+                                            </c:if>
+                                            <c:if test="${!(searchTitle eq null)}">
+                                                <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="${searchTitle}">
+                                            </c:if>
+                                            <button type="submit" class="btn btn-primary">Anterior</button>
+                                        </form>
+                                    </c:if>
+                                    <c:if test="${!(workPageNumber eq workTotalPages)}">
+                                        <form action="/servlet/listPublications" method="get">
+                                            <input type="hidden" value="${workPageNumber+1}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
+                                            <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                            <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>" value="<%=Constants.WORK_PUBLICATION%>"/>
+                                            <c:if test="${searchTitle eq null}">
+                                                <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="">
+                                            </c:if>
+                                            <c:if test="${!(searchTitle eq null)}">
+                                                <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="${searchTitle}">
+                                            </c:if>
+                                        <button type="submit" class="btn btn-primary">Siguiente</button>
+                                        </form>
+                                    </c:if>
                                 </div>
                             </div>
 
@@ -177,8 +216,25 @@
                             </c:forEach>
                             <div class="row">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-primary">Anterior</button>
-                                    <button type="button" class="btn btn-primary">Siguiente</button>
+
+                                <c:if test="${!(investPageNumber eq 1)}">
+                                    <form action="/servlet/listPublications" method="get">
+                                        <input type="hidden" value="${workPageNumber}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
+                                        <input type="hidden" value="${investPageNumber-1}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                        <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>"
+                                        value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
+                                        <button type="submit" class="btn btn-primary">Anterior</button>
+                                    </form>
+                                </c:if>
+                                <c:if test="${!(investPageNumber eq investigationTotalPages)}">
+                                    <form action="/servlet/listPublications" method="get">
+                                        <input type="hidden" value="${workPageNumber+1}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
+                                        <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                        <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>"
+                                               value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
+                                        <button type="submit" class="btn btn-primary">Siguiente</button>
+                                    </form>
+                                </c:if>
                                 </div>
                             </div>
                         </div>
