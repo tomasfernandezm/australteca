@@ -84,17 +84,17 @@
                         <c:set var="wannabeModerator" value="${requestScope[wannabeModeratorParam]}"/>
                         <!------- si sos moderador de la materia te aparece este boton para eliminarte de moderador ----->
                         <c:if test="${moderator}">
-                            <button id="stopBeingModeratorButton" type="submit"  class="btn btn-delete pull-right" onclick="stopBeingModerator('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Dejar de ser moderador</button>
+                            <button id="stopBeingModeratorButton" type="submit"  class="hidden-xs btn btn-delete pull-right" onclick="stopBeingModerator('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Dejar de ser moderador</button>
                         </c:if>
                         <!-------- si no sos moderador de la materia y no te postulaste te aparece este boton -------->
                         <c:if test="${!moderator && !wannabeModerator}">
-                            <button id= "addModeratorButton" type="submit"  class="btn btn-moderator pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
+                            <button id= "addModeratorButton" type="submit"  class=" hidden-xs btn btn-moderator pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
                         </c:if>
 
                         <!-- se actualizo -->
 
                         <c:if test="${wannabeModerator}">
-                            <button id= "moderatorButton" type="submit"  class="btn btn-blocked pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')" disabled>Has aplicado</button>
+                            <button id= "moderatorButton" type="submit"  class=" hidden-xs btn btn-blocked pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')" disabled>Has aplicado</button>
                         </c:if>
 
 
@@ -115,17 +115,18 @@
                                         <td></td>
                                         <td>Tipo</td>
                                         <td>Fecha</td>
-                                        <td>Descargas</td>
+                                        <td class="hidden-xs">Descargas</td>
                                         <td>Subido por</td>
-                                        <% if (request.isUserInRole("user")) { %>
+                                        <c:set var="admin" value="<%=request.isUserInRole(Constants.ADMINISTRATOR)%>"/>
+                                        <c:if test="${moderator || admin}">
                                             <td></td>
-                                        <% } %>
+                                        </c:if>
                                     </thead>
 
                                     <c:set var="notesListParam" value="<%=SUBJECT_NOTES_LIST%>"/>
                                     <c:set var="noteList" value='${requestScope[notesListParam]}' />
                                     <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
-                                    <c:set var="admin" value="<%=request.isUserInRole(Constants.ADMINISTRATOR)%>"/>
+
                                     <c:forEach items="${noteList}" var="note" varStatus="loop">
                                         <tr id="note${loop.count}">
                                             <td><c:out value="${note.name}"/></td>
@@ -137,7 +138,7 @@
                                             </form>
                                             <td><c:out value="${note.type}"/></td>
                                             <td><abbr class="timeago" title="<c:out value="${note.getFormatDate()}"/>"></abbr></td>
-                                            <td><c:out value="${note.downloads}"/></td>
+                                            <td class="hidden-xs"><c:out value="${note.downloads}"/></td>
                                             <td><c:out value="${note.author.firstName} ${note.author.lastName}"/></td>
 
                                             <c:if test="${moderator || admin}">
@@ -182,68 +183,89 @@
 
                         <!------------ Comments tab ------------>
                         <div class="tab-pane fade" id="tab3default">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-11 col-md-11 col-sm-11">
-                                        <div class="widget-area no-padding blank">
-                                            <div id ="comments_container" class="status-upload">
-
-                                                <!----- writting box ------->
-
-                                                <%--<form id="commentForm" method="post">--%>
-
-                                                <div id="commentForm" class="commentBox" >
-                                                    <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
-                                                    <textarea  id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
-                                                    <button type="submit" class="btn btn-subject-example btn-comment pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')">Comentar</button>
-                                                </div>
-
-                                                <div class="col-xs-12"><hr></div>
-
-                                                <!------- List of comments ------->
-                                                <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
-                                                <c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />
-                                                <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
-                                                <c:forEach items="${commentaryList}" var="commentary" varStatus="loop">
-                                                    <article id="commentary${loop.count}" class="row">
-                                                        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
-                                                            <%--<figure class="thumbnail">--%>
-
-                                                                <img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';" class="avatar img-circle" alt="avatar">
-
-                                                                <figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>
-                                                            <%--</figure>--%>
-                                                        </div>
-                                                        <div class="col-md-9 col-sm-9 col-xs-9">
-                                                            <div class="panel panel-default arrow left">
-                                                                <div class="panel-body">
-                                                                    <header class="text-left">
-                                                                    <div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>
-                                                                    <abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>
-                                                                    </header>
-                                                                    <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
-                                                                    <c:if test="${(commentary.author.email == remoteUser) || moderator || admin}">
-                                                                        <button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
-                                                                    </c:if>
-                                                                    <div class="comment-post">
-                                                                        <p>
-                                                                            <c:out value="${commentary.commentary}"/>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </article>
-                                                </c:forEach>
-                                                <!-------- finish -------->
-                                            </div><!-- Status Upload  -->
-                                        </div><!-- Widget Area -->
+                            <div class="row writting-box">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="writting-box">
+                                        <div id ="comments_container" class="status-upload">
+                                            <!----- writting box ------->
+                                            <div id="commentForm" class="commentBox" >
+                                                <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
+                                                <textarea  id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
+                                                <button type="submit" class="btn btn-subject-example btn-comment pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')">Comentar</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>
+                            <c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />
+                            <c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>
+                            <c:forEach items="${commentaryList}" var="commentary" varStatus="loop">
+                                <div class="row">
+                                    <div id="commentary${loop.count}" >
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-1  hidden-xs">
+                                            <div class="thumbnail">
+                                                <img class="img-responsive user-photo" src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';">
+                                            </div> <!-- /thumbnail -->
+                                        </div> <!-- /col-sm-1 -->
+                                        <div class="col-lg-8 col-md-10 col-sm-10 col-xs-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <strong style="color: white"><c:out value="${commentary.author.email}"/></strong> <span class="text-muted" style="color: whitesmoke"><abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr></span>
+                                                    <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+                                                    <c:if test="${(commentary.author.email == remoteUser) || moderator || admin}">
+                                                        <button type="submit" class="btn pull-right remove-comment" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
+                                                    </c:if>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <c:out value="${commentary.commentary}"/>
+                                                </div><!-- /panel-body -->
+                                            </div><!-- /panel panel-default -->
+                                        </div><!-- /col-sm-5 -->
+                                    </div><!-- /id -->
+                                </div><!-- /row -->
+                            </c:forEach>
                         </div>
+                                <%--<!------- List of comments ------->--%>
+                                <%--<c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>--%>
+                                <%--<c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />--%>
+                                <%--<c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>--%>
+                                <%--<c:forEach items="${commentaryList}" var="commentary" varStatus="loop">--%>
+                                    <%--<div class="row">--%>
+                                        <%--<div class="prueba">--%>
+                                        <%--<div class="col-lg-10 col-lg-offset-1">--%>
 
+                                            <%--<article id="commentary${loop.count}" class="commentList">--%>
+                                                <%--<div class="col-lg-2 col-md-2 col-sm-2 hidden-xs img-comment">--%>
+                                                        <%--<img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';" class="avatar img-circle" alt="avatar">--%>
+                                                        <%--<figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>--%>
+                                                <%--</div>--%>
 
+                                                <%--<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="background-color: transparent">--%>
+                                                    <%--<div class="panel panel-default">--%>
+                                                        <%--<div class="panel-body comment">--%>
+                                                            <%--<header class="text-left">--%>
+                                                                <%--<div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>--%>
+                                                                <%--<abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>--%>
+                                                            <%--</header>--%>
+                                                            <%--<c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>--%>
+                                                            <%--<c:if test="${(commentary.author.email == remoteUser) || moderator || admin}">--%>
+                                                                <%--<button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>--%>
+                                                            <%--</c:if>--%>
+                                                            <%--<div class="comment-post">--%>
+                                                                <%--<p>--%>
+                                                                    <%--<c:out value="${commentary.commentary}"/>--%>
+                                                                <%--</p>--%>
+                                                            <%--</div>--%>
+                                                        <%--</div>--%>
+                                                    <%--</div>--%>
+                                                <%--</div>--%>
+                                            <%--</article>--%>
+                                            <%--</div>--%>
+                                        <%--</div>--%>
+                                     <%--</div>--%>
+                                <%--</c:forEach>--%>
 
                     </div>
                 </div>

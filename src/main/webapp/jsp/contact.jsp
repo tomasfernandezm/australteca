@@ -10,6 +10,7 @@
 <html>
     <head>
         <title>Contact and team page</title>
+        <meta name="viewport" content="width=device-width, initial-scale1.0">
         <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
         <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
         <link href="<c:url value="/css/contact.css"/>" rel="stylesheet" type="text/css">

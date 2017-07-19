@@ -1,80 +1,43 @@
-/*font Awesome http://fontawesome.io*/
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-/*Comment List styles*/
-.comment-list .row {
-    margin-bottom: 0px;
-    margin-left: 10px;
+.btn-comment{
+    margin-bottom: 5px;
 }
 
-.comment-list .panel .panel-heading .panel-body {
-    padding-top: 6px;
-}
-.comment-list figcaption {
-    /*For wrapping text in thumbnail*/
-    word-wrap: break-word;
-}
-/* Portrait tablets and medium desktops */
-@media (min-width: 768px) {
-    .comment-list .arrow:after, .comment-list .arrow:before {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-color: transparent;
-    }
-    .comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
-        border-left: 0;
-    }
-    /*****Left Arrow*****/
-    /*Outline effect style*/
-    .comment-list .panel.arrow.left:before {
-        left: 0px;
-        top: 30px;
-        /*Use boarder color of panel*/
-        border-right-color: inherit;
-        border-width: 16px;
-    }
-    /*Background color effect*/
-    .comment-list .panel.arrow.left:after {
-        left: 1px;
-        top: 31px;
-        /*Change for different outline color*/
-        border-right-color: #FFFFFF;
-        border-width: 15px;
-    }
-
-    /*Background color effect*/
-    .comment-list .panel.arrow.right:after {
-        right: -14px;
-        top: 31px;
-        /*Change for different outline color*/
-        border-left-color: #FFFFFF;
-        border-width: 15px;
-    }
-    
-}
-.comment-list .comment-post {
-    margin-top: 6px;
-}
-
-
-.thumbnail{
+.remove-comment{
     background-color: transparent;
-    border-color: transparent;
-    font-weight: bold;
+    color: white;
 }
 
-.remove{
+.remove-comment:hover{
     background-color: transparent;
+    color: #bbbbbb;
 }
 
-.img-circle{
-    width: 100px;
-    height: 100px;
-    border-radius: 150px;
-    -webkit-border-radius: 150px;
-    -moz-border-radius: 150px;
-    margin-bottom: 10px;
-    margin-left: 5px;
+
+.thumbnail {
+    padding:0px;
+}
+.panel {
+    position:relative;
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+    position:absolute;
+    top:11px;left:-16px;
+    right:100%;
+    width:0;
+    height:0;
+    display:block;
+    content:" ";
+    border-color:transparent;
+    border-style:solid solid outset;
+    pointer-events:none;
+}
+.panel>.panel-heading:after{
+    border-width:7px;
+    border-right-color:#699064;
+    margin-top:1px;
+    margin-left:2px;
+}
+.panel>.panel-heading:before{
+    border-right-color:#699064;
+    border-width:8px;
 }

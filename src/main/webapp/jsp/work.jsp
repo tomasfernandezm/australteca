@@ -89,7 +89,7 @@
                                         <div class="row">
                                             <div class="col col-md-12 discussionBox">
                                                 <div id="show${workWrapper.publication.name}">
-                                                    <p>
+                                                    <p class="read-more">
                                                     ${workWrapper.htmlDescription}
                                                     </p>
                                                     <%--<p>Here's how it is: Earth got used up, so we terraformed a whole new galaxy of Earths, some rich and flush with the new technologies, some not so much. Central Planets, them was formed the Alliance, waged war to bring everyone under their rule; a few idiots tried to fight it, among them myself. I'm Malcolm Reynolds, captain of Serenity. Got a good crew: fighters, pilot, mechanic. We even picked up a preacher, and a bona fide companion. There's a doctor, too, took his genius sister out of some Alliance camp, so they're keeping a low profile. You got a job, we can do it, don't much care what it is.</p>--%>

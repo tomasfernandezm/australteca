@@ -4,23 +4,13 @@
 
 var simplemde;
 
-function show(divId) {
-    $(divId).readmore(    {
-        speed: 75,
-        lessLink:'<a href="#">Read less</a>'
-    })
-
-}
-
-$(".show-more").on("click", function() {
-    var $this = $(this);
-    var $content = $this.parent().prev("div.content");
-    var linkText = $this.text().toUpperCase();
-    $content.switchClass("hideContent", "showContent", 400);
-
-});
-
-
+// function show(divId) {
+//     $(divId).readmore(    {
+//         speed: 400,
+//         lessLink:'<a href="#">Read less</a>'
+//     })
+//
+// }
 
 
 $(document).ready(function(){
