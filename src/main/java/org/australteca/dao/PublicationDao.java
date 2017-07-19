@@ -3,11 +3,15 @@ package org.australteca.dao;
 import com.sun.istack.internal.NotNull;
 import org.australteca.Constants;
 import org.australteca.entity.Publication;
+import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 import org.australteca.utils.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.search.FullTextSession;
+import org.hibernate.search.Search;
+import org.hibernate.search.query.dsl.QueryBuilder;
 
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
@@ -64,5 +68,29 @@ public class PublicationDao extends AbstractDao<Publication> {
             e.printStackTrace();
         }
         return publications;
+    }
+
+    public List<Publication> search(String title){
+        Session session = HibernateUtil.getCurrentSession();
+        FullTextSession fullTextSession = Search.getFullTextSession(session);
+        Transaction tx = fullTextSession.beginTransaction();
+
+        // create native Lucene query using the query DSL
+        // alternatively you can write the Lucene query using the Lucene query parser
+        // or the Lucene programmatic API. The Hibernate Search DSL is recommended though
+        QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Publication.class).get();
+
+       org.apache.lucene.search.Query query = queryBuilder.keyword().onField("name").matching(title).createQuery();
+
+        // wrap Lucene query in a org.hibernate.Query
+        org.hibernate.query.Query hibQuery =
+                fullTextSession.createFullTextQuery(query, Publication.class);
+
+        // execute search
+        List<Publication> result = (List<Publication>) hibQuery.list();
+
+        tx.commit();
+
+        return result;
     }
 }

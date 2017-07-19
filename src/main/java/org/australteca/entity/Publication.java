@@ -1,6 +1,12 @@
 package org.australteca.entity;
 
+import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
+import org.apache.lucene.analysis.ngram.EdgeNGramFilterFactory;
+import org.apache.lucene.analysis.ngram.EdgeNGramTokenizerFactory;
+import org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory;
+import org.apache.lucene.analysis.standard.StandardTokenizerFactory;
 import org.australteca.Constants;
+import org.hibernate.search.annotations.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,8 +20,20 @@ import java.util.List;
  */
 
 @Entity
+@Indexed
+@AnalyzerDef(name = "customanalyzer",
+        tokenizer = @TokenizerDef(factory = StandardTokenizerFactory.class),
+        filters = {
+                @TokenFilterDef(factory = LowerCaseFilterFactory.class),
+                @TokenFilterDef(factory = EdgeNGramFilterFactory.class),
+                @TokenFilterDef(factory = SnowballPorterFilterFactory.class, params = {
+                        @Parameter(name = "language", value = "English")
+                })
+        })
 public class Publication extends AbstractEntity{
 
+    @Field
+    @Analyzer(definition = "customanalyzer")
     private String name;
 
     @ManyToOne
