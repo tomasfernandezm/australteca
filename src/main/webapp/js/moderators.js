@@ -67,7 +67,8 @@ function addModeratorToTable(userEmail, subjectName){
     var cellButton2 = row.insertCell(2);
     cellEmail.innerHTML = userEmail;
     cellSubject.innerHTML = subjectName;
-    cellButton2.innerHTML = '<button type="submit" class="btn btn-danger" onclick="eliminateAplication(' +'\'' + userEmail + '\''+',\'' + subjectName + '\''+',\'accepted' + x +'\')">Eliminar</button>';
+    cellButton2.innerHTML = '<button type="submit" class="btn btn-danger" onclick="eliminateAplication(' +'\'' + userEmail + '\''+',\'' + subjectName + '\''+',\'accepted' + x +'\')">' +
+        '<i class="glyphicon glyphicon-trash"></i></button>';
 
 }
 

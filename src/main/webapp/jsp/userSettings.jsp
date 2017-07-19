@@ -91,8 +91,8 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
-                        <input type="submit" class="btn btn-primary" value="Guardar">
-                        <input type="reset" class="btn btn-default" value="Reset">
+                        <input type="submit" class="btn btn-save-account pull-right" value="Guardar">
+                        <%--<input type="reset" class="btn btn-default" value="Reset">--%>
                     </div>
                 </div>
             </form>
@@ -100,7 +100,7 @@
                 <label class="col-md-3 control-label"></label>
                 <div class="col-md-8">
                     <form action="/userDelete" method="post">
-                        <input type="submit" class="btn btn-danger btn-block" value="Eliminar cuenta">
+                        <input type="submit" class="btn btn-delete-account form-control" value="Eliminar cuenta">
                     </form>
                 </div>
             </div>

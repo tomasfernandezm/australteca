@@ -97,27 +97,26 @@
                         <table class="table"  id="subject-table">
                             <thead>
                                 <td>Nombre</td>
-                                <td>Favorita</td>
+                                <td align="center">Favorita</td>
                                 <% if (request.isUserInRole("admin")) { %>
-                                <td>Eliminar</td>
+                                <td align="center">Eliminar</td>
                                 <% } %>
                             </thead>
-                            <tbody>
+                            <tbody class="scrollbar">
                                 <c:set var="subjectWrapperList" value='${requestScope["subjectWrappers"]}' />
                                 <c:forEach items="${subjectWrapperList}" var="subjectWrapper" varStatus="loop">
                                     <tr id="${subjectWrapper.subject.subjectName}Row">
                                         <td><a class="subject-name" href="${pageContext.request.contextPath}/servlet/postSubject?<%=SUBJECT_NAME_PARAM%>=${subjectWrapper.subject.subjectName}">
                                             <c:out value="${subjectWrapper.subject.subjectName}"/></a>
                                         </td>
-                                         <td>
-                                             <%--<label class="checkbox"><i class="glyphicon glyphicon-heart"></i>--%>
+                                         <td align="center">
                                             <div class="checkbox_wrapper">
                                                  <input class="checkbox" id="${subjectWrapper.subject.subjectName}Checkbox" type="checkbox" value="${subjectWrapper.subject.subjectName}" onclick=changeFavorite(this.value,this.id) <c:if test="${subjectWrapper.favorite}">checked</c:if>>
                                                  <label></label>
                                             </div>
                                          </td>
                                         <% if (request.isUserInRole("admin")) { %>
-                                        <td>
+                                        <td align="center">
                                                 <button type="button" class="btn btn-default standardButton" onclick="removeSubject('${subjectWrapper.subject.subjectName}')"><i class="glyphicon glyphicon-trash"></i></button>
                                         </td>
                                         <% } %>

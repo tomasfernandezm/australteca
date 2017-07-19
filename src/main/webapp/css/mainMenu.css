@@ -102,3 +102,7 @@ dropdown-toggle{
 .active-work, .activeModerators2:hover{
     background-color: black;
 }
+
+.active-work, .activeContact2:hover{
+    background-color: black;
+}

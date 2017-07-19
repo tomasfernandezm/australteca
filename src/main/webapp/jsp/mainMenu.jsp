@@ -28,6 +28,7 @@
                     <li class="activeHome2"><a href="<%=response.encodeURL("/servlet/userListPost")%>">Inicio</a></li>
                     <li class="activeSubject2"><a href="<%=response.encodeURL("/servlet/listSubjects")%>">Materias</a></li>
                     <li class="activeWork2"><a href="<%=response.encodeURL("/servlet/listPublications")%>">Trabajo</a></li>
+                    <li class="activeContact2"><a href="<%=response.encodeURL("/jsp/contact.jsp")%>">Nosotros</a></li>
                 <%if(request.isUserInRole(Constants.ADMINISTRATOR)){%>
                     <li class="activeModerators2"><a href="<%=response.encodeURL("/servlet/postModerators")%>">Administracion</a></li>
                 <%}%>

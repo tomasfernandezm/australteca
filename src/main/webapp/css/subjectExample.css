@@ -121,3 +121,37 @@ img.fileImg{
     border-color: orangered;
     color: white;
 }
+
+
+.btn-moderator{
+    background-color: #699064 !important;
+    border-color: white !important;
+    color: white !important;
+    border-radius: 2px;
+}
+
+.btn-moderator:hover{
+    background-color:  #486345 !important;
+    border-color: white !important;
+    color: white !important;
+}
+
+.btn-delete{
+    background-color: firebrick !important;
+    border-color: white !important;
+    color: white !important;
+    border-radius: 2px !important;
+}
+.btn-delete:hover{
+    background-color: #761c19 !important;
+    border-color: white !important;
+    color: white !important;
+    border-radius: 2px !important;
+}
+
+.btn-blocked{
+    background-color: #9d9d9d;
+    color: #000000 !important;
+    border-color: white;
+    border-radius: 2px !important;
+}

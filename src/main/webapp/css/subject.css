@@ -65,13 +65,12 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label{
-    background:url('/images/likeOff.svg') no-repeat;
+    background:url('/images/heartoff.svg') no-repeat;
     height: 100%;
     width: 100%;
     display:inline-block;
     position: absolute;
     cursor: pointer;
-
 }
 
 input[type="checkbox"]:checked + label{
@@ -118,5 +117,5 @@ body{
 }
 
 .modal-content{
-    width: 30%;
+    max-width: 400px;
 }

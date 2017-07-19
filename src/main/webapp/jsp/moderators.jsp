@@ -121,8 +121,6 @@
                                         <td></td>
                                     </thead>
                                     <tbody>
-
-                                            <!---- ARREGLAR ESTOOOOO------>
                                             <c:set var="professorListParam" value="<%=Constants.PROFESSOR_LIST%>"/>
                                             <c:set var="professorList" value="${requestScope[professorListParam]}"/>
                                             <c:forEach items="${professorList}" var="professor" varStatus="loop">
@@ -172,7 +170,7 @@
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label">Email:</label>
                                             <div class="col-lg-8">
-                                                <input class="form-control" type="email" pattern="^[A-Za-z0-9._%-]+@ing.austral.edu.ar" name="<%=PROFESSOR_EMAIL_PARAM%>" required>
+                                                <input class="form-control" type="email" name="<%=PROFESSOR_EMAIL_PARAM%>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
