@@ -2,6 +2,8 @@ package org.australteca.entity;
 
 import com.google.gson.Gson;
 import org.australteca.Constants;
+import org.australteca.dao.PublicationDao;
+import org.australteca.dao.UserDao;
 import org.junit.Test;
 
 /**
@@ -18,11 +20,6 @@ public class PublicationTester {
         publication.setId(1);
 
         System.out.println(new Gson().toJson(publication));
-
-    }
-
-    @Test
-    public void addWithLongDescription(){
 
     }
 }
