@@ -2,6 +2,7 @@ package org.australteca.entity;
 
 import org.australteca.Constants;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -23,6 +24,7 @@ public class Publication extends AbstractEntity{
     @ManyToMany
     private List<User> suscribedUsers = new ArrayList<>();
 
+    @Column(length = 1024*1024)
     private String description;
     private String role;
 
