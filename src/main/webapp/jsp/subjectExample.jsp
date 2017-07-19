@@ -84,17 +84,17 @@
                         <c:set var="wannabeModerator" value="${requestScope[wannabeModeratorParam]}"/>
                         <!------- si sos moderador de la materia te aparece este boton para eliminarte de moderador ----->
                         <c:if test="${moderator}">
-                            <button id="stopBeingModeratorButton" type="submit"  class="btn btn-danger pull-right" onclick="stopBeingModerator('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Dejar de ser moderador</button>
+                            <button id="stopBeingModeratorButton" type="submit"  class="btn btn-delete pull-right" onclick="stopBeingModerator('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Dejar de ser moderador</button>
                         </c:if>
                         <!-------- si no sos moderador de la materia y no te postulaste te aparece este boton -------->
                         <c:if test="${!moderator && !wannabeModerator}">
-                            <button id= "addModeratorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
+                            <button id= "addModeratorButton" type="submit"  class="btn btn-moderator pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')">Aplicar a moderador</button>
                         </c:if>
 
                         <!-- se actualizo -->
 
                         <c:if test="${wannabeModerator}">
-                            <button id= "moderatorButton" type="submit"  class="btn btn-success pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')" disabled>Has aplicado</button>
+                            <button id= "moderatorButton" type="submit"  class="btn btn-blocked pull-right" onclick="addModeratorPostulation('<%=request.getRemoteUser()%>','<%=request.getAttribute(SUBJECT_NAME_PARAM)%>')" disabled>Has aplicado</button>
                         </c:if>
 
 
@@ -191,12 +191,13 @@
                                                 <!----- writting box ------->
 
                                                 <%--<form id="commentForm" method="post">--%>
+
                                                 <div id="commentForm" class="commentBox" >
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
                                                     <textarea  id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
                                                     <button type="submit" class="btn btn-subject-example btn-comment pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')">Comentar</button>
                                                 </div>
-                                                    <%--</form>--%>
+
                                                 <div class="col-xs-12"><hr></div>
 
                                                 <!------- List of comments ------->

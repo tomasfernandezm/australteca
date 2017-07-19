@@ -13,3 +13,34 @@ img:before {
     position: absolute;
     background-image: url(/images/avatar.jpg);
 }
+
+
+.btn-delete-account{
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    border-color: transparent;
+    border-radius: 2px;
+}
+
+.btn-delete-account:hover{
+    background-color: #c9302c;
+    color: white;
+    border-color: transparent;
+}
+
+.btn-save-account{
+    background-color: transparent;
+    border-color: #bbbbbb;
+    border-radius: 2px;
+}
+
+.btn-save-account:hover{
+    background-color: #bbbbbb;
+    border-color: #bbbbbb;
+    color: white;
+}
+
+
+
+.form-control{border-radius: 2px !important;}

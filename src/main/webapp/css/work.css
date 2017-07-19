@@ -96,7 +96,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label{
-    background:url('../images/likeOff.svg') no-repeat;
+    background:url('../images/likeOff2.svg') no-repeat;
     height: 100%;
     width: 100%;
     display:inline-block;

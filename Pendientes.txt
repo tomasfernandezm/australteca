@@ -13,27 +13,28 @@ TOMAS FORMAN (* items plus)
 
     -home.jsp
         boton mostrar mas
-        agregar nombre materias*
+        agregar materias
+
 
      -subjects
-        arreglar el boton fav y centrarlo (todos)
+        arreglar el boton fav y centrarlo (todos)  HECHO
         scrollbar max
 
     -SubjectExample
         -Arreglar comentarios
-        -revisar color estrellas
-        -botones moderador
+        -revisar color estrellas        QUEDAN ASI
+        -botones moderador              HECHO
 
     -userSettings.jsp
-        -sacar boton reset
+        -sacar boton reset              HECHO
 
      -mdoerator.jsp
         cambiar largo texto
-        -boton eliminar aprobados
+        -boton eliminar aprobados       HECHO
 
 
     -work.jsp
-        en trabajo cambiar corazon a blanco
+        en trabajo cambiar corazon a blanco     HECHO
         boton megusta.
         poner link para ver más publicaciones
 
@@ -41,12 +42,12 @@ TOMAS FORMAN (* items plus)
     COMENTARIOS (para lo ultimi)
      - agregarlo al principio
      - acomodar visual
-     - comentar con el enter
+     - comentar con el enter                    NO PUEDO PORQUE NO HAY 'FORM'
 
      MAIL
      - template email marketing
 
-    nuevo navbar nosotros - lugar de contacto
+    nuevo navbar nosotros - lugar de contacto   HECHO
     Llena publications constant
     Arreglar todos los modal
     revisar toda la parte de agregado dinamico con js
