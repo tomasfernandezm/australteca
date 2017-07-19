@@ -68,6 +68,16 @@
     <!-- ~~~~~~~~~~~~~ SERVLET CONFIGURATION AND MAPPING ~~~~~~~~~~~~~~~~~ -->
 
         <servlet>
+            <servlet-name>SearchPublicationServlet</servlet-name>
+            <servlet-class>org.australteca.servlet.publication.SearchPublicationsServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>SearchPublicationServlet</servlet-name>
+            <url-pattern>/servlet/searchPublication</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
             <servlet-name>PublicationPagination</servlet-name>
             <servlet-class>org.australteca.servlet.publication.PaginationPublicationServlet</servlet-class>
         </servlet>
