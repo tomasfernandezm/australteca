@@ -21,3 +21,4 @@ lib/
 .DS_Store
 /pom.xml
 src/test/test.iml
+/org.australteca.entity.Publication/
