@@ -35,14 +35,15 @@ public class EmailSender {
         });
     }
 
-    public void send(String recipient, String subject, String text){
+    public void send(String recipient, String subject, String text, boolean isHTML){
         try {
 
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipient));
             message.setSubject(subject);
-            message.setText(text);
+            if(isHTML) message.setContent(text, "text/html; charset=utf-8");
+            else message.setText(text);
 
             Transport.send(message);
         } catch (MessagingException e) {

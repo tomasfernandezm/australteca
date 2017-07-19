@@ -42,7 +42,7 @@ public class PublicationPetitionServlet extends HttpServlet {
         String toSend = user.getFirstName() + " " + user.getLastName() + " is interested in your publication ________ !. Why don't you contact him ? His contact email is: " + email;
 
         EmailSender emailSender = new EmailSender();
-        emailSender.send(authorEmail, "Good News! Someone is interested in your publication", toSend);
+        emailSender.send(authorEmail, "Good News! Someone is interested in your publication", toSend, false);
 
         resp.setContentType("application/json");
         resp.getWriter().write(new Gson().toJson("OK"));

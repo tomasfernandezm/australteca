@@ -35,7 +35,15 @@ function getUserRating(){
     });
 }
 
-$(document).ready(getUserRating());
+$(document).ready(function(){
+    getUserRating();
+    var textarea = document.getElementById('commentTextarea');
+    var submitButton = document.getElementById('submitCommentButton');
+    textarea.addEventListener("keypress", function(e){
+        console.log(e);
+        if(e.keyCode === 13) submitButton.click();
+    })
+});
 
 function removeNote(noteID, subjectName){
     $.ajax({
