@@ -47,11 +47,11 @@ TOMAS FORMAN (* items plus)
      MAIL
      - template email marketing
 
-    nuevo navbar nosotros - lugar de contacto   HECHO
+    nuevo navbar nosotros - lugar de contacto           HECHO
     Llena publications constant
     Arreglar todos los modal
     revisar toda la parte de agregado dinamico con js
-    paginacion
+    paginacion                                          HECHO
     buscador de trabajos
 
 

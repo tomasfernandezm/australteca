@@ -204,3 +204,7 @@ input[type="checkbox"]:checked + label{
     height: 100px !important;
 }
 
+.search-input{
+    margin-top: 15px;
+    border-radius: 2px;
+}

@@ -41,9 +41,15 @@
         </div>
 
         <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <input type="text" class="form-control search-input" id="poner" data-action="filter" data-filters="poner" placeholder="Buscar" />
+            </div>
+        </div>
+        <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 <div class="panel-body">
                     <div class="tab-content">
+
                         <div class="tab-pane fade in active" id="tab1default">
                             <!---------- WORK ---------->
 
@@ -107,6 +113,14 @@
                             </div>
 
                         </c:forEach>
+
+                            <div class="row">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Anterior</button>
+                                    <button type="button" class="btn btn-primary">Siguiente</button>
+                                </div>
+                            </div>
+
                         </div>
 
                         <!------ INVESTIGATION  -------->
@@ -161,6 +175,12 @@
                                     </div>
                                 </div>
                             </c:forEach>
+                            <div class="row">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Anterior</button>
+                                    <button type="button" class="btn btn-primary">Siguiente</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
