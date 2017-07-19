@@ -1,9 +1,17 @@
 package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
+import org.australteca.Constants;
 import org.australteca.entity.Publication;
 import org.australteca.entity.User;
+import org.australteca.utils.HibernateUtil;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,5 +47,22 @@ public class PublicationDao extends AbstractDao<Publication> {
                 u.getPublications().remove(publication);
             }
         }
+    }
+
+    public List<Publication> list(String roleType){
+        Session session = HibernateUtil.getCurrentSession();
+        String hql = "from Publication p where p.role = :role";
+        Transaction tx = null;
+        List<Publication> publications = null;
+        try{
+            tx = session.beginTransaction();
+            Query query = session.createQuery(hql).setParameter("role", roleType);
+            publications = query.getResultList();
+            tx.commit();
+        }catch (HibernateException | NoResultException e){
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        }
+        return publications;
     }
 }

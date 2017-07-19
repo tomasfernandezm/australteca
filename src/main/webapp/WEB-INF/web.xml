@@ -68,6 +68,16 @@
     <!-- ~~~~~~~~~~~~~ SERVLET CONFIGURATION AND MAPPING ~~~~~~~~~~~~~~~~~ -->
 
         <servlet>
+            <servlet-name>PublicationPagination</servlet-name>
+            <servlet-class>org.australteca.servlet.publication.PaginationPublicationServlet</servlet-class>
+        </servlet>
+
+        <servlet-mapping>
+            <servlet-name>PublicationPagination</servlet-name>
+            <url-pattern>/servlet/getPublicationPagination</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
             <servlet-name>GoogleOAuthServlet</servlet-name>
             <servlet-class>org.australteca.oauth.google.GoogleLoginServlet</servlet-class>
         </servlet>

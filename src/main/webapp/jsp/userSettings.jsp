@@ -99,7 +99,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label"></label>
                 <div class="col-md-8">
-                    <form action="/userDelete" method="post">
+                    <form action="/servlet/userDelete" method="post">
                         <input type="submit" class="btn btn-danger btn-block" value="Eliminar cuenta">
                     </form>
                 </div>

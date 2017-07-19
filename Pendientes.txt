@@ -35,6 +35,7 @@ TOMAS FORMAN (* items plus)
     -work.jsp
         en trabajo cambiar corazon a blanco
         boton megusta.
+        poner link para ver más publicaciones
 
 
     COMENTARIOS (para lo ultimi)

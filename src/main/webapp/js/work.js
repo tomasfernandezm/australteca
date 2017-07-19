@@ -64,6 +64,38 @@ function addPublication(){
     });
 }
 
+var publicationPageCounter = 1;
+
+function showMorePublications(publicationRole){
+    $.ajax({
+        type: 'get',
+        url: '/servlet/getPublicationPagination',
+        dataType:'JSON',
+        data:{
+            publicationPage: publicationPageCounter,
+            publicationRole: publicationRole
+        },
+        success: function(jsonObject){
+            console.log(jsonObject);
+            var div;
+            for(var i = 0;i < jsonObject.length;i++){
+                /**
+                 * Agregar posible botón de favorite en la creación
+                 * Arreglar undefined
+                 */
+                console.log(i);
+                if(publicationRole === 'Trabajo') div = document.getElementById("tab1default");
+                else div = document.getElementById("tab2default");
+                var boolean = jsonObject[i][0] === 'true';
+                var htmlDescription = JSON.stringify(jsonObject[i][1]);
+                var name = JSON.stringify(jsonObject[i][2][3]);
+                var id = JSON.stringify(jsonObject[i][2][2]);
+                div.appendChild(createPublicationDiv(name, htmlDescription, id, boolean));
+            }
+        }
+    })
+}
+
 function changeFavorite(publicationID, checkBoxId) {
     $.ajax({
         type:'post',
@@ -104,7 +136,7 @@ function sendPublicationPetition(publicationID){
     });
 }
 
-function createPublicationDiv(name, description, id){
+function createPublicationDiv(name, description, id, author){
 
     var firstDiv = document.createElement("div");
         firstDiv.id = name + id;

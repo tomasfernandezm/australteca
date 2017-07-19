@@ -21,4 +21,8 @@ public abstract class AbstractEntity implements EntityInterface{
         return id;
     }
 
+    public void setId(int id){
+        this.id = id;
+    }
+
 }

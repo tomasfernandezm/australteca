@@ -257,7 +257,7 @@
 <div id="noteModal" class="modal">
     <div class="modal-content">
         <span onclick="closeModal(document.getElementById('noteModal'))" class="close">&times;</span>
-        <form id="agregar" action="servlet/upload" method="POST" enctype="multipart/form-data">
+        <form id="agregar" action="/servlet/upload" method="POST" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row centered-form  ">
                     <div >

@@ -6,8 +6,6 @@ import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.UserDao;
 import org.australteca.entity.User;
-import org.australteca.oauth.HttpClient;
-import org.australteca.oauth.HttpParameterPair;
 import org.securityfilter.authenticator.FormAuthenticator;
 
 import javax.servlet.ServletException;

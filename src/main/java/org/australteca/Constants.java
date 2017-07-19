@@ -175,18 +175,25 @@ public interface Constants {
     /* ~~~~~~~~~~~~~~~~ Publication Types ~~~~~~~~~~~~~~~~~ */
     String WORK_PUBLICATION = "Trabajo";
     String INVESTIGATION_PUBLICATION = "Investigacion";
+
     /* ~~~~~~~~~~~~~~~~ Publication Servlet Parameters ~~~~~~~~ */
+
     String PUBLICATION_NAME = "publicationName";
     String PUBLICATION_REQUIREMENTS = "publicationRequirements";
     String PUBLICATION_DESCRIPTION  = "publicationDescription";
     String PUBLICATION_ROLE = "publicationRole";
     String PUBLICATION_ID = "publicationID";
     String INVESTIGATION_PUBLICATION_LIST = "investigationList";
-
     String WORK_PUBLICATION_LIST = "workList";
-
     String HTML_MARKDOWN_DESCRIPTIONS = "htmlMarkdownDescription";
+
+    String PAGE_NUMBER = "pageNumber";
+
+    String WORK_TOTAL_PAGES = "workTotalPages";
+    String INVESTIGATION_TOTAL_PAGES = "investigationTotalPages";
+
     /* ~~~~~~~~~~~ Admin Username and Password ~~~~~~~~~~~~~~~*/
+
     String ADMIN_USERNAME = "admin@australteca";
     String ADMIN_PASSWORD = "admin";
     String ADMIN_USERNAME_1 = "tomas.martinez@ing.austral.edu.ar";
@@ -195,6 +202,7 @@ public interface Constants {
     String PROFESSOR_LIST = "professorList";
 
     /* ~~~~~~~~~~~ Authentification Type ~~~~~~~~~~~~~~~~~ */
+
     String GOOGLE_OAUTH = "googleOAuth";
     String FACEBOOK_OAUTH = "facebookOAuth";
     String OAUTH_TYPE = "OAuthType";
