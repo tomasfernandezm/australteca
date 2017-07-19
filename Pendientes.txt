@@ -29,30 +29,30 @@ TOMAS FORMAN (* items plus)
         -sacar boton reset              HECHO
 
      -mdoerator.jsp
-        cambiar largo texto
+        cambiar largo texto             HECHO
         -boton eliminar aprobados       HECHO
 
 
     -work.jsp
         en trabajo cambiar corazon a blanco     HECHO
         boton megusta.
-        poner link para ver más publicaciones
+        poner link para ver más publicaciones (HECHO)
 
 
     COMENTARIOS (para lo ultimi)
      - agregarlo al principio
      - acomodar visual
-     - comentar con el enter                    NO PUEDO PORQUE NO HAY 'FORM'
+     - comentar con el enter                    NO PUEDO PORQUE NO HAY 'FORM' (PROBAR)
 
      MAIL
-     - template email marketing
+     - template email marketing                         Falta conectar
 
     nuevo navbar nosotros - lugar de contacto           HECHO
     Llena publications constant
     Arreglar todos los modal
     revisar toda la parte de agregado dinamico con js
     paginacion                                          HECHO
-    buscador de trabajos
+    buscador de trabajos                                HECHO
 
 
 

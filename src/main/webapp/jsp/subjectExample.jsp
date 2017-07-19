@@ -195,7 +195,7 @@
                                                 <div id="commentForm" class="commentBox" >
                                                     <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
                                                     <textarea  id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
-                                                    <button type="submit" class="btn btn-subject-example btn-comment pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')">Comentar</button>
+                                                    <button id="submitCommentButton" type="submit" class="btn btn-subject-example btn-comment pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')">Comentar</button>
                                                 </div>
 
                                                 <div class="col-xs-12"><hr></div>
@@ -368,7 +368,6 @@
 <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/js/tootip.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/jquery-timeago.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/filePreview.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/js/commentary.js"/>"></script>
