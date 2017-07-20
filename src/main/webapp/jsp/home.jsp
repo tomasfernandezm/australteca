@@ -90,7 +90,9 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="" id="show${publicationWrapper.publication.name}">
+                                                        <c:if test="${publicationWrapper.publication.author.email != remoteUser}">
                                                         <button type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                        </c:if>
                                                     </div>
                                                 </div>
                                             </div>

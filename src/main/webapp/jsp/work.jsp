@@ -226,7 +226,7 @@
                                                     <div class="col col-md-12 discussionBox">
                                                         <c:set var="userEmail" value="${pageContext.request.remoteUser}"/>
                                                         <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
-                                                        <c:if test="${investigationWrapper.publication.author.email == remoteUser}">
+                                                        <c:if test="${investigationWrapper.publication.author.email != remoteUser}">
                                                             <%--<button type="button" class="btn btn-send-mail pull-right" onclick="sendPublicationPetition(${investigationWrapper.publication.id})">Enviar peticion</button>--%>
                                                             <button id="modalButton" type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
                                                         </c:if>
