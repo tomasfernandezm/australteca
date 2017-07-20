@@ -113,7 +113,7 @@
                                     <thead>
                                         <td>Nombre</td>
                                         <td></td>
-                                        <td>Tipo</td>
+                                        <td class="hidden-xs">Tipo</td>
                                         <td>Fecha</td>
                                         <td class="hidden-xs">Descargas</td>
                                         <td>Subido por</td>
@@ -136,7 +136,7 @@
                                                 <input type="hidden" name="<%=Constants.NOTE_NAME_PARAM%>" value="${note.name}">
                                                 <input type="hidden" name="<%=Constants.NOTE_FORMAT_PARAM%>" value="${note.format}">
                                             </form>
-                                            <td><c:out value="${note.type}"/></td>
+                                            <td class="hidden-xs"><c:out value="${note.type}"/></td>
                                             <td><abbr class="timeago" title="<c:out value="${note.getFormatDate()}"/>"></abbr></td>
                                             <td class="hidden-xs"><c:out value="${note.downloads}"/></td>
                                             <td><c:out value="${note.author.firstName} ${note.author.lastName}"/></td>
@@ -204,23 +204,30 @@
                             <c:forEach items="${commentaryList}" var="commentary" varStatus="loop">
                                 <div class="row">
                                     <div id="commentary${loop.count}" >
+
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-1  hidden-xs">
                                             <div class="thumbnail">
                                                 <img class="img-responsive user-photo" src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';">
                                             </div> <!-- /thumbnail -->
                                         </div> <!-- /col-sm-1 -->
+
                                         <div class="col-lg-8 col-md-10 col-sm-10 col-xs-12">
                                             <div class="panel panel-default">
+
                                                 <div class="panel-heading">
-                                                    <strong style="color: white"><c:out value="${commentary.author.email}"/></strong> <span class="text-muted" style="color: whitesmoke"><abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr></span>
+                                                    <strong><c:out value="${commentary.author.email}"/></strong> <span class="text-muted"><abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr></span>
                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
+
                                                     <c:if test="${(commentary.author.email == remoteUser) || moderator || admin}">
                                                         <button type="submit" class="btn pull-right remove-comment" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>
                                                     </c:if>
+
                                                 </div>
+
                                                 <div class="panel-body">
                                                     <c:out value="${commentary.commentary}"/>
                                                 </div><!-- /panel-body -->
+
                                             </div><!-- /panel panel-default -->
                                         </div><!-- /col-sm-5 -->
                                     </div><!-- /id -->

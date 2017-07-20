@@ -1,19 +1,23 @@
-.img-circle{
-    width: 200px;
-    height: 200px;
-    border-radius: 150px;
-    -webkit-border-radius: 150px;
-    -moz-border-radius: 150px;
-    margin-bottom: 10px;
-}
+/*.img-circle{*/
+    /*width: 200px;*/
+    /*height: 200px;*/
+    /*border-radius: 150px;*/
+    /*-webkit-border-radius: 150px;*/
+    /*-moz-border-radius: 150px;*/
+    /*margin-bottom: 10px;*/
+/*}*/
 
-img:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    background-image: url(/images/avatar.jpg);
-}
+/*img:before {*/
+    /*content: ' ';*/
+    /*display: block;*/
+    /*position: absolute;*/
+    /*background-image: url(/images/avatar.jpg);*/
+/*}*/
 
+
+.thumbnail {
+    padding:0px;
+}
 
 .btn-delete-account{
     margin-top: 20px;

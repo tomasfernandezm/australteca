@@ -4,14 +4,6 @@
 
 var simplemde;
 
-// function show(divId) {
-//     $(divId).readmore(    {
-//         speed: 400,
-//         lessLink:'<a href="#">Read less</a>'
-//     })
-//
-// }
-
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({

@@ -1,9 +1,6 @@
-
-
 body{
     background-color: whitesmoke;
 }
-
 
 .bs-calltoaction{
     position: relative;
@@ -15,7 +12,6 @@ body{
     margin-bottom: 10px;
     border-radius: 3px;
 }
-
 
 .bs-calltoaction-work{
     color: black;
@@ -48,12 +44,12 @@ body{
     margin-top: 5px;
 }
 
-
 .btnAddWork{
     margin-bottom: 15px;
     background-color: transparent !important;
     color: #E74C3C;
     border-color: #E74C3C;
+    border-radius: 2px;
 }
 
 .btnAddWork:hover{
@@ -65,15 +61,19 @@ body{
 .nav-pills > li > a {
     border: none;
     color: #E74C3C; !important;
+    border-radius: 2px;
 
 }
-
 
 .nav-pills > li.active > a {
     background-color:  #E74C3C !important;
 
 }
 
+.btn-search{
+    margin-top: 15px;
+
+}
 
 .checkbox_wrapper{
     position: relative;
@@ -82,7 +82,6 @@ body{
     margin-top: 15px;
     margin-right: 5px;
 }
-
 
 input[type="checkbox"] {
     opacity:0;
@@ -123,8 +122,6 @@ input[type="checkbox"]:checked + label{
     padding-right: 10px;
 }
 
-
-
 .btnremovework:hover{
     border-color: transparent !important;
     background-color: transparent; !important;
@@ -145,18 +142,69 @@ input[type="checkbox"]:checked + label{
     box-shadow: none !important;
 }
 
-.hideContent {
-    overflow: hidden;
-    line-height: 1em;
-    height: 2em;
+.btn-send-mail{
+    background-color: #1D60B4;
+    color: white;
+    border-color: #1D60B4 ;
+    border-radius: 2px;
 }
 
-.showContent {
-    line-height: 1em;
-    height: auto;
+.btn-send-mail:hover{
+    background-color: #20579A;
+    color: white;
+    border-color: #20579A;
 }
 
-.modal {
+.btn-page-number{
+    background-color: #8c8c8c;
+    color: white;
+    border-left-color: whitesmoke;
+    border-right-color: whitesmoke;
+    cursor: default;
+}
+
+.btn-page-number:hover{
+    background-color: #8c8c8c;
+    color: white;
+}
+
+.btn-page-number:focus{
+    background-color: #8c8c8c;
+    color: white;
+}
+
+.btn-page-number:active{
+    background-color: #8c8c8c;
+    color: white;
+}
+
+
+.markDown {
+    height: 50% !important;
+    /*overflow: auto;*/
+
+}
+
+.discussionBox{
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 10px;
+}
+
+#textarea{
+    height: 100px !important;
+}
+
+.search-input{
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+textarea { resize: vertical; }
+
+/*-------- Modal css --------*/
+
+.modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -175,8 +223,7 @@ input[type="checkbox"]:checked + label{
     margin: 5% auto; /* 15% from the top and centered */
     padding: 10px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    /*overflow: visible;*/
+    width: 80%;
 }
 
 /* The Close Button */
@@ -194,17 +241,11 @@ input[type="checkbox"]:checked + label{
     cursor: pointer;
 }
 
-.markDown {
-    height: 50% !important;
-    /*overflow: auto;*/
-
-}
-
-#textarea{
-    height: 100px !important;
-}
-
-.search-input{
-    margin-top: 15px;
-    border-radius: 2px;
+.modal-content-2 {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: auto;
+    max-width: 500px;
 }

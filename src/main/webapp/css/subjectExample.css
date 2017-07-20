@@ -158,3 +158,11 @@ img.fileImg{
     border-color: white;
     border-radius: 2px !important;
 }
+
+strong{
+    color: white;
+}
+
+.text-muted{
+    color: whitesmoke;
+}
