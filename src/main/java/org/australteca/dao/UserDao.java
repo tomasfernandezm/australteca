@@ -2,8 +2,8 @@ package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
 import org.australteca.entity.Commentary;
-import org.australteca.entity.Publication;
 import org.australteca.entity.Subject;
+import org.australteca.entity.SubjectModeratorRelationship;
 import org.australteca.entity.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -13,7 +13,6 @@ import org.australteca.utils.HibernateUtil;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import java.util.List;
-import java.util.Set;
 
 
 /**
@@ -27,9 +26,20 @@ public class UserDao extends AbstractDao<User> {
         user.getCommentaries().clear();
         removeAllPublications(user);
         user.getPublications().clear();
+        removeAllSubjects(user);
+        user.getSubjects().clear();
+        removeAllModerators(user);
+        user.getSubjectModeratorRelationships().clear();
         merge(user);
         delete(User.class, userID);
 
+    }
+
+    private void removeAllModerators(User user) {
+        for(SubjectModeratorRelationship smr: user.getSubjectModeratorRelationships()){
+            Subject s = smr.getSubject();
+            s.getModeratorRelationshipList().remove(smr);
+        }
     }
 
     public List<User> list() {
@@ -55,6 +65,12 @@ public class UserDao extends AbstractDao<User> {
             e.printStackTrace();
         }
         return user;
+    }
+
+    private void removeAllSubjects(User user) {
+        for(Subject s: user.getSubjects()){
+            s.getUserList().remove(user);
+        }
     }
 
     private void removeAllPublications(User user) {

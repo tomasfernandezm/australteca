@@ -1,14 +1,13 @@
 package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
-import org.australteca.entity.Commentary;
-import org.australteca.entity.Subject;
-import org.australteca.entity.User;
+import org.australteca.entity.*;
 import org.australteca.utils.HibernateUtil;
 import org.australteca.utils.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.procedure.spi.ParameterRegistrationImplementor;
 
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
@@ -24,6 +23,10 @@ public class SubjectDao extends AbstractDao<Subject> {
         removeAllUsers(subject);
         removeAllCommentariesFromUsers(subject);
         subject.getCommentaryList().clear();
+        removeAllProfessors(subject);
+        subject.getProfessors().clear();
+        removeAllModerators(subject);
+        subject.getModeratorRelationshipList().clear();
         merge(subject);
         delete(Subject.class, subjectID);
     }
@@ -71,6 +74,19 @@ public class SubjectDao extends AbstractDao<Subject> {
 
             }
             subject.getCommentaryList().clear();
+        }
+    }
+
+    private void removeAllProfessors(@NotNull Subject subject){
+        for(Professor p: subject.getProfessors()){
+            p.getSubjects().remove(subject);
+        }
+    }
+
+    private void removeAllModerators(Subject subject){
+        for(SubjectModeratorRelationship smr: subject.getModeratorRelationshipList()){
+            User user = smr.getUser();
+            user.getSubjectModeratorRelationships().remove(smr);
         }
     }
 }

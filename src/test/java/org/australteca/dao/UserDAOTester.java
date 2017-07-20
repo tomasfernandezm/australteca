@@ -1,9 +1,6 @@
 package org.australteca.dao;
 
-import org.australteca.entity.Commentary;
-import org.australteca.entity.Professor;
-import org.australteca.entity.Subject;
-import org.australteca.entity.User;
+import org.australteca.entity.*;
 import org.junit.Test;
 
 import java.util.List;
@@ -15,97 +12,25 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class UserDAOTester {
 
-    /*private User giveUser(){
-        return new User("Pepito", "Rodriguez", "p.rodriguez@ing.austral.edu.ar",
-                "Informática", "123456789", false, false);
-    }
-
-    private Commentary giveCommentary(User author, Subject subject){
-        return new Commentary("aaaaa", author, subject);
-    }
-
-    private Subject persistAndGiveSubject(Professor professor){
-        SubjectDao subjectDAO = new SubjectDao();
-        Integer subjectID = subjectDAO.add(new Subject("Ingles"));
-        return subjectDAO.get(Subject.class, subjectID);
-    }
-
-    private Professor persistAndGiveProfessor(){
-        ProfessorDao professorDAO = new ProfessorDao();
-        Integer professorID = professorDAO.add(new Professor("Pepito",
-                "Gimenez", "licenciado"));
-        return professorDAO.get(Professor.class, professorID);
-    }
-
     @Test
-    public void addCommentaryTest(){
-        UserDao userDAO = new UserDao();
+    public void removeModerator(){
+        Subject subject = new Subject("Analisis");
+        SubjectDao subjectDao = new SubjectDao();
+        Integer subjectId = subjectDao.add(subject);
+        UserDao userDao = new UserDao();
+        User user = new User("a", "b","aaa", "aaa", "aawe", false, false);
+        Integer userID = userDao.add(user);
 
-        Integer userID = userDAO.add(giveUser());
-        User user = userDAO.get(User.class, userID);
+        subject = subjectDao.get(subjectId);
+        user = userDao.get(subjectId);
 
-        Professor professor = persistAndGiveProfessor();
-        Subject subject = persistAndGiveSubject(professor);
+        SubjectModeratorRelationship smr = new SubjectModeratorRelationship(subject, user);
+        SubjectModeratorRelationshipDao smrDao = new SubjectModeratorRelationshipDao();
+        smr.accept();
+        smrDao.add(smr);
 
-        user.getCommentaries().add(new Commentary("aaaaa", user,subject));
-        user.getCommentaries().add(new Commentary("bbbbb", user,subject));
-        user.getCommentaries().add(new Commentary("ccccc", user,subject));
+        userDao.delete(userID);
 
-        userDAO.merge(user);
-        CommentaryDao commentaryDAO = new CommentaryDao();
-        List<Commentary> list = commentaryDAO.list();
-
-        for(Commentary c: user.getCommentaries()){
-            assertThat(list).contains(c);
-        }
+        assertThat(userDao.get(userID)).isNull();
     }
-
-    @Test
-    public void deleteAllCommentariesOnUserdelete(){
-        UserDao userDAO = new UserDao();
-
-        Integer userID = userDAO.add(giveUser());
-        User user = userDAO.get(User.class, userID);
-
-        Professor professor = persistAndGiveProfessor();
-        Subject subject = persistAndGiveSubject(professor);
-
-        user.getCommentaries().add(new Commentary("aaaaa", user,subject));
-        user.getCommentaries().add(new Commentary("bbbbb", user,subject));
-        user.getCommentaries().add(new Commentary("ccccc", user,subject));
-
-        userDAO.merge(user);
-
-        CommentaryDao commentaryDAO = new CommentaryDao();
-        userDAO.delete(user.getId());
-
-        List<Commentary> list = commentaryDAO.list();
-        assertThat(list).hasSize(0);
-    }
-
-    @Test
-    public void addSubjectTest(){
-        UserDao userDAO = new UserDao();
-
-        Integer userID = userDAO.add(giveUser());
-        User user = userDAO.get(userID);
-
-        Professor professor = persistAndGiveProfessor();
-        Subject subject = persistAndGiveSubject(professor);
-
-        user.getSubjects().add(subject);
-        userDAO.merge(user);
-        List<Subject> list = (new SubjectDao()).list();
-        assertThat(list).hasSize(1);
-    }
-
-    @Test
-    public void removeCommentaryTest(){
-
-    }
-
-    @Test
-    public void removeSubjectTest(){
-
-    }*/
 }

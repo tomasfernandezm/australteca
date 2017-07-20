@@ -31,7 +31,7 @@ public class Subject extends AbstractEntity{
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "subject")
     private final List<Note> noteList = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
     private final List<SubjectModeratorRelationship> moderatorRelationshipList = new ArrayList<>();
 
     public Subject() {
