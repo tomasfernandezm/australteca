@@ -236,3 +236,27 @@ input[type="checkbox"]:checked + label{
     margin-left: 10px;
     border-top: 20px solid #666666;
 }
+
+
+.btn-send-mail{
+    background-color: #1D60B4;
+    color: white;
+    border-color: #1D60B4 ;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.btn-send-mail:hover{
+    background-color: #20579A;
+    color: white;
+    border-color: #20579A;
+}
+
+.modal-content-2 {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: auto;
+    max-width: 500px;
+}

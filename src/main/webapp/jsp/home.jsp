@@ -19,6 +19,7 @@
     <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/mainMenu.css"/>" rel="stylesheet" type="text/css">
     <link href="<c:url value="/css/home.css"/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/css/modalBox.css"/>" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -82,22 +83,21 @@
                                             </div>
                                             <div class="arrow-down"></div>
                                             <div class="panel-body">
-                                                <article>
-                                                    ${publicationWrapper.htmlDescription}
-                                                </article>
-                                                <div class="panel-body showMore" id="show${publicationWrapper.publication.name}" hidden>
-                                                    <button type="button" class="btn btn-success pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                <div class="row">
+                                                    <article>
+                                                        ${publicationWrapper.htmlDescription}
+                                                    </article>
                                                 </div>
-                                                <%--<button type="button" class="btn btn-default btn-show-more pull-right" onclick="show('#show${publicationWrapper.publication.name}')"><i>Mostrar mas</i></button>--%>
+                                                <div class="row">
+                                                    <div class="" id="show${publicationWrapper.publication.name}">
+                                                        <button type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 <%--</c:if>--%>
                             </c:forEach>
-
-
-
-
 
                     </div>
                 </div>
@@ -141,10 +141,48 @@
         </div>
     </div>
 
+    <%--<!------ Modal Box send request ----->--%>
+    <div id="sendRequest" class="modal">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="modal-content-2">
+                <span onclick="closeModal(document.getElementById('sendRequest'))" class="close">&times;</span>
+                <div class="container-fluid">
+                    <div class="row">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <div class="modal-header">
+                                    <h3>Peticion de trabajo</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row form-group">
+                                        <label class="col-lg-3 control-label">Asunto</label>
+                                        <div class="col-lg-5">
+                                            <input class="form-control" type="text" name="" required>
+                                        </div>
+                                    </div>
+                                    <div class=" row form-group">
+                                        <label class="col-lg-3 control-label">Descripcion</label>
+                                        <div class="col-lg-8">
+                                            <textarea class="form-control" type="text" name="" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <button type="submit" class="btn btn-send-mail pull-right" onclick="closeModal(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/home.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/readmore.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/readMoreWork.js"/>"></script>
 
