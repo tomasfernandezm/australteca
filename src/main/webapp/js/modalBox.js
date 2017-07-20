@@ -6,6 +6,12 @@ var modal;
         modal = btnId;
     }
 
+    function modalBox(btnId, title){
+        btnId.style.display = "block";
+        btnId.title = title;
+        modal = btnId;
+    }
+
 // When the user clicks on <span> (x), close the modal
     function closeModal(btnId){
     modal.style.display = "none";

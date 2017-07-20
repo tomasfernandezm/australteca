@@ -32,9 +32,8 @@ $(document).ready(function(){
     simplemde = loadSimpleMDE("descriptionTextarea");
 });
 
-$(document).on("click", "#modalButton", function () {
-    var pubId = $(this).data('id');
-    document.getElementById('publicationModalID').value = pubId;
+$("#modalButton").on('click', function () {
+    document.getElementById('publicationModalID').value = $(this).closest("input").attr('id');
 });
 
 function addPublication(){
@@ -86,18 +85,21 @@ function removePublication(publicationID, containerID){
     });
 }
 
-function sendPublicationPetition(emailTopic, emailDescription, publicationID){
+function sendPublicationPetition(){
+
+    var emailDescription = document.getElementById('emailDescription').value;
+    var publicationID = document.getElementById('sendRequest').title;
+
     $.ajax({
         type:'post',
         url: '/servlet/publicationPetition',
         dataType: 'JSON',
         data:{
-            emailTopic: emailTopic,
             emailDescription: emailDescription,
             publicationID: publicationID
         },
         success: function(){
-
+            modal.style.display = "none";
         }
     });
 }

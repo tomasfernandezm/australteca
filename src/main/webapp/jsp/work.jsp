@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="arrow-down"></div>
                                     <div class="panel-body">
-                                        <div class="row" about="pub" id="">
+                                        <div class="row">
                                             <div class="col col-md-12 discussionBox">
                                                 <div id="show${workWrapper.publication.name}">
                                                     <article>
@@ -103,11 +103,12 @@
                                         </div>
                                         <div class="row">
                                             <div class="col col-md-12 discussionBox">
+                                                <input type="hidden" id="${workWrapper.publication.id}" name="publicationID"/>
                                                 <div  id="show${workWrapper.publication.name}">
                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                     <c:if test="${workWrapper.publication.author.email != remoteUser}">
                                                         <%--<button type="button" class="btn btn-primary pull-right" onclick="sendPublicationPetition(${workWrapper.publication.id})">Enviar peticion</button>--%>
-                                                        <button id="modalButton" type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                        <button id="modalButton" type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'), ${workWrapper.publication.id})">Enviar peticion</button>
                                                     </c:if>
                                                 </div>
                                             </div>
@@ -286,24 +287,17 @@
 
 
         <%--<!------ Modal Box send request ----->--%>
-        <div id="sendRequest" class="modal">
+        <div id="sendRequest" title="" class="modal">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="modal-content-2">
                     <span onclick="closeModal(document.getElementById('sendRequest'))" class="close">&times;</span>
                     <div class="container-fluid">
                         <div class="row">
-                            <form action="" method="post">
                                 <div class="form-group">
                                     <div class="modal-header">
                                         <h3>Peticion de trabajo</h3>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="row form-group">
-                                            <label class="col-lg-3 control-label">Asunto</label>
-                                            <div class="col-lg-5">
-                                                <input id="emailTopic" class="form-control" type="text" name="" required>
-                                            </div>
-                                        </div>
                                         <div class=" row form-group">
                                             <label class="col-lg-3 control-label">Descripcion</label>
                                             <div class="col-lg-8">
@@ -312,11 +306,10 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <button type="submit" class="btn btn-send-mail pull-right" onclick="closeModal(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                            <button type="submit" class="btn btn-send-mail pull-right" onclick="sendPublicationPetition()">Enviar peticion</button>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -379,8 +372,8 @@
         <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/js/simplemde.min.js"/>"></script>
-        <script type="text/javascript" src="<c:url value="/js/work.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/js/modalBox.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="/js/work.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/js/readmore.js"/>"></script>
         <script type="text/javascript" src="<c:url value="/js/readMoreWork.js"/>"></script>
 

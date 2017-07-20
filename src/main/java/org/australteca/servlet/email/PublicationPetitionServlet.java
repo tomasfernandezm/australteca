@@ -21,16 +21,10 @@ import java.io.IOException;
 public class PublicationPetitionServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
-    }
-
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String publicationIDString = req.getParameter(Constants.PUBLICATION_ID);
 
-        String emailTopic = req.getParameter(Constants.EMAIL_TOPIC);
         String emailDescription = req.getParameter(Constants.EMAIL_DESCRIPTION);
         Integer publicationID = Integer.parseInt(publicationIDString);
 
@@ -49,11 +43,9 @@ public class PublicationPetitionServlet extends HttpServlet {
 
         final String filePath = "/home/tomi/projects/australteca/src/main/webapp/html/EmailTemplate.html";
 
-        String message = emailTopic + "\n\n" + emailDescription;
-
         HTMLParser htmlParser = new HTMLParser();
         String parsedHTML = htmlParser.parse(filePath);
-        parsedHTML = htmlParser.setParameters(parsedHTML, authorName, senderName, publication.getName(), message);
+        parsedHTML = htmlParser.setParameters(parsedHTML, authorName, senderName, publication.getName(), emailDescription);
 
         EmailSender emailSender = new EmailSender();
         emailSender.send(author.getEmail(), "Australteca - Alguien está interesado en tu publicación", parsedHTML, true);
