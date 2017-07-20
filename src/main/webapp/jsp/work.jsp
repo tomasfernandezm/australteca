@@ -50,7 +50,7 @@
                     <div class="input-group">
                         <input name="<%=Constants.PUBLICATION_NAME%>" type="text" class="form-control search-input" data-action="filter" placeholder="Buscar"/>
                         <div class="input-group-btn">
-                            <button class="btn btn-default btn-search form-control" type="submit">Buscar</button>
+                            <button class="btn btn-default btn-search" type="submit">Buscar</button>
                         </div>
                     </div>
                 </form>
@@ -131,7 +131,7 @@
                                     <c:set var="searchTitle" value="${requestScope[searchTitleParam]}"/>
                                     <%--<p> ${workPageNumber}</p>--%>
                                     <c:if test="${!(workPageNumber eq 1)}">
-                                        <form action="/servlet/listPublications" method="get">
+                                        <form action="/servlet/listPublications" class="btn-group" method="get">
                                             <input type="hidden" value="${workPageNumber-1}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
                                             <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
                                             <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>" value="<%=Constants.WORK_PUBLICATION%>"/>
@@ -147,6 +147,7 @@
                                             <button type="submit" class="btn btn-default btn-page-active">Anterior</button>
                                         </form>
                                     </c:if>
+
                                     <c:if test="${(workPageNumber eq 1)}">
                                         <button type="submit" class="btn btn-default btn-page-disabled disabled">Anterior</button>
                                     </c:if>
@@ -155,7 +156,7 @@
 
 
                                     <c:if test="${!(workPageNumber eq workTotalPages)}">
-                                        <form action="/servlet/listPublications" method="get">
+                                        <form action="/servlet/listPublications" class="btn-group" method="get">
                                             <input type="hidden" value="${workPageNumber+1}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
                                             <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
                                             <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>" value="<%=Constants.WORK_PUBLICATION%>"/>
@@ -165,12 +166,14 @@
                                             <c:if test="${!(searchTitle eq null)}">
                                                 <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="${searchTitle}">
                                             </c:if>
-                                        <button type="submit" class="btn btn-default btn-page-active">Siguiente</button>
+                                            <button type="submit" class="btn btn-default btn-page-active">Siguiente</button>
                                         </form>
                                     </c:if>
+
                                     <c:if test="${(workPageNumber eq workTotalPages)}">
                                         <button type="submit" class="btn btn-default btn-page-disabled disabled">Siguiente</button>
                                     </c:if>
+
                                 </div>
                                 </div>
                             </div>

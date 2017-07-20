@@ -210,6 +210,15 @@ input[type="checkbox"]:checked + label{
 }
 textarea { resize: vertical; }
 
+
+.input-group{
+    z-index: -1;
+}
+
+.form-control{
+    z-index: -1;
+}
+
 /*-------- Modal css --------*/
 
 .modal{
