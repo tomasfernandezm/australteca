@@ -41,7 +41,8 @@ public class GoogleLoginServlet extends HttpServlet {
             response.add(email);
 
             if(user == null) {
-                user = new User(name, "", email, "", password, false, false);
+                boolean isAdmin = email.equals(Constants.ADMIN_USERNAME_1) || email.equals(Constants.ADMIN_USERNAME_2);
+                user = new User(name, "", email, "", password, false, isAdmin);
                 userDao.add(user);
                 response.add(password);
             }else{

@@ -189,9 +189,9 @@
                                         <div id ="comments_container" class="status-upload">
                                             <!----- writting box ------->
                                             <div id="commentForm" class="commentBox" >
-                                                <input type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
+                                                <input id="subjectName" type="hidden" name="<%=Constants.SUBJECT_NAME_PARAM%>" value="<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>">
                                                 <textarea  id="commentTextarea" name="<%=Constants.COMMENTARY%>" placeholder="Danos tu opinion" ></textarea>
-                                                <button type="submit" class="btn btn-subject-example btn-comment pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')">Comentar</button>
+                                                <button id="submitCommentButton" type="submit" class="btn btn-subject-example btn-comment pull-right" onclick="addComment('<%=request.getParameter(Constants.SUBJECT_NAME_PARAM)%>', '<%=request.getRemoteUser()%>')">Comentar</button>
                                             </div>
                                         </div>
                                     </div>
