@@ -22,7 +22,7 @@ public class Subject extends AbstractEntity{
     @ManyToMany
     private final List<Professor> professors = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
     private final List<Commentary> commentaries = new LinkedList<>();
 
     @ManyToMany
