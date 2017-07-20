@@ -1,5 +1,6 @@
 package org.australteca.servlet.subject;
 
+import com.google.gson.Gson;
 import org.australteca.Constants;
 import org.australteca.dao.NoteDao;
 import org.australteca.dao.SubjectDao;
@@ -48,8 +49,9 @@ public class SubjectNoteDelete extends HttpServlet {
 
                 subject.getNoteList().remove(note);
                 noteDao.delete(id);
+                resp.setContentType("application/json");
+                resp.getWriter().write(new Gson().toJson("OK"));
             }
         }
-        resp.sendRedirect("/servlet/postSubject?"+ SUBJECT_NAME_PARAM + "="+subjectName);
     }
 }

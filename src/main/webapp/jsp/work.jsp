@@ -228,7 +228,7 @@
                                                         <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                         <c:if test="${investigationWrapper.publication.author.email != remoteUser}">
                                                             <%--<button type="button" class="btn btn-send-mail pull-right" onclick="sendPublicationPetition(${investigationWrapper.publication.id})">Enviar peticion</button>--%>
-                                                            <button id="modalButton" type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                            <button id="modalButton" type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'), ${investigationWrapper.publication.id})">Enviar peticion</button>
                                                         </c:if>
                                                     </div>
                                                 </div>
@@ -244,13 +244,16 @@
                                     <div class="btn-group">
                                         <c:if test="${!(investPageNumber eq 1)}">
                                             <form action="/servlet/listPublications" class="btn-group" method="get">
-                                                <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                                <input type="hidden" value="${workTotalPages}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
                                                 <input type="hidden" value="${investPageNumber-1}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
-                                                <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>"
+                                                <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>" value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
 
-
-
-                                                       value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
+                                                <c:if test="${searchTitle eq null}">
+                                                    <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="">
+                                                </c:if>
+                                                <c:if test="${!(searchTitle eq null)}">
+                                                    <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="${searchTitle}">
+                                                </c:if>
                                                 <button type="submit" class="btn btn-default btn-page-active">Anterior</button>
                                             </form>
                                         </c:if>
@@ -264,9 +267,14 @@
                                         <c:if test="${!(investPageNumber eq investigationTotalPages)}">
                                             <form action="/servlet/listPublications" class="btn-group" method="get">
                                                 <input type="hidden" value="${investPageNumber+1}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
-                                                <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
-                                                <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>"
-                                                       value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
+                                                <input type="hidden" value="${workTotalPages}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
+                                                <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>" value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
+                                                <c:if test="${searchTitle eq null}">
+                                                    <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="">
+                                                </c:if>
+                                                <c:if test="${!(searchTitle eq null)}">
+                                                    <input type="hidden" name="<%=Constants.PUBLICATION_NAME%>" value="${searchTitle}">
+                                                </c:if>
                                                 <button type="submit" class="btn btn-default btn-page-active">Siguiente</button>
                                             </form>
 

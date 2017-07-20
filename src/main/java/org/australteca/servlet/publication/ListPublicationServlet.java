@@ -102,9 +102,4 @@ public class ListPublicationServlet extends HttpServlet{
         if(a == 0) return listSize/pubsPerPage;
         else return listSize/pubsPerPage + 1;
     }
-
-    private String getOtherRole(String currentRole){
-        if(currentRole.equals(Constants.WORK_PUBLICATION)) return Constants.INVESTIGATION_PUBLICATION;
-        else return Constants.WORK_PUBLICATION;
-    }
 }
