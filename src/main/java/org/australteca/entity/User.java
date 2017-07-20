@@ -38,7 +38,7 @@ public class User extends AbstractEntity{
     @ElementCollection
     private final Map<String, Integer> subjectScores = new HashMap<>();
 
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
     private final Set<Commentary> commentaries = new HashSet<>();
 
     @OneToMany

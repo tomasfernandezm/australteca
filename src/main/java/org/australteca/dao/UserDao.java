@@ -1,6 +1,9 @@
 package org.australteca.dao;
 
 import com.sun.istack.internal.NotNull;
+import org.australteca.entity.Commentary;
+import org.australteca.entity.Publication;
+import org.australteca.entity.Subject;
 import org.australteca.entity.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,6 +13,7 @@ import org.australteca.utils.HibernateUtil;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -18,6 +22,12 @@ import java.util.List;
 public class UserDao extends AbstractDao<User> {
 
     public void delete(@NotNull Integer userID) {
+        User user = get(userID);
+        removeAllCommentariesFromSubject(user);
+        user.getCommentaries().clear();
+        removeAllPublications(user);
+        user.getPublications().clear();
+        merge(user);
         delete(User.class, userID);
 
     }
@@ -45,5 +55,17 @@ public class UserDao extends AbstractDao<User> {
             e.printStackTrace();
         }
         return user;
+    }
+
+    private void removeAllPublications(User user) {
+        PublicationDao publicationDao = new PublicationDao();
+        publicationDao.deleteAll(user.getId());
+    }
+
+    private void removeAllCommentariesFromSubject(User user){
+        for(Commentary c: user.getCommentaries()){
+            Subject s = c.getSubject();
+            s.getCommentaryList().remove(c);
+        }
     }
 }

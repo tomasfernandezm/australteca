@@ -42,7 +42,7 @@ TOMAS FORMAN (* items plus)
     COMENTARIOS (para lo ultimi)
      - agregarlo al principio                   HECHO
      - acomodar visual                          HECHO
-     - comentar con el enter                    NO PUEDO PORQUE NO HAY 'FORM' (PROBAR)
+     - comentar con el enter                    HECHO
 
      MAIL
      - template email marketing                         Falta conectar

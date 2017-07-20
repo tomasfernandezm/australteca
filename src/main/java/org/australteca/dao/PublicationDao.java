@@ -53,6 +53,22 @@ public class PublicationDao extends AbstractDao<Publication> {
         }
     }
 
+    public void deleteAll(Integer id){
+        Session session = HibernateUtil.getCurrentSession();
+        String hql = "delete from Publication p where p.author.id = :id";
+        Transaction tx = null;
+        List<Publication> publications = null;
+        try{
+            tx = session.beginTransaction();
+            Query query = session.createQuery(hql).setParameter("id", id);
+            query.executeUpdate();
+            tx.commit();
+        }catch (HibernateException | NoResultException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        }
+    }
+
     public List<Publication> list(String roleType){
         Session session = HibernateUtil.getCurrentSession();
         String hql = "from Publication p where p.role = :role";
@@ -79,18 +95,13 @@ public class PublicationDao extends AbstractDao<Publication> {
         // alternatively you can write the Lucene query using the Lucene query parser
         // or the Lucene programmatic API. The Hibernate Search DSL is recommended though
         QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Publication.class).get();
-
        org.apache.lucene.search.Query query = queryBuilder.keyword().onField("name").matching(title).createQuery();
-
         // wrap Lucene query in a org.hibernate.Query
         org.hibernate.query.Query hibQuery =
                 fullTextSession.createFullTextQuery(query, Publication.class);
-
         // execute search
         List<Publication> result = (List<Publication>) hibQuery.list();
-
         tx.commit();
-
         return result;
     }
 }

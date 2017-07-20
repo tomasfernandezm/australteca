@@ -49,7 +49,6 @@ public class SubjectAddCommentaryServlet extends HttpServlet {
         user.getCommentaries().add(commentary);
 
         List<String> response = new ArrayList<>();
-        response.add(user.getFirstName());
         response.add(commentary.getFormatDate2());
         response.add(String.valueOf(commentary.getId()));
 
