@@ -20,6 +20,6 @@ public class EmailSenderTester {
         HTMLParser htmlParser = new HTMLParser();
         String parsedHTML = htmlParser.parse(filePath);
         parsedHTML = htmlParser.setParameters(parsedHTML, "Tomás Fernández", "Mark Zuckerberg", "asdfasdfasdfasd", "fracasado");
-        emailSender.send("tomas.martinez@ing.austral.edu.ar", "LAB", parsedHTML, true);
+        emailSender.send("tomas.forman@ing.austral.edu.ar", "LAB", parsedHTML, true);
     }
 }
