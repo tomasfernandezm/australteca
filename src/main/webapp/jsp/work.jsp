@@ -28,11 +28,11 @@
                 <button type="button" id="addWork" class="btn btn-default col-xs-12 col-sm-4 col-sm-offset-4 btnAddWork" onclick="modalBox(document.getElementById('addWorkModal'))">Agregar oferta</button>
             </div>
         </div>
-        <div class="row">
+        <div id="successBox" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
                 <div class="alert alert-success alert-dismissable">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>Bien!</strong> Ya se agrego tu oferta de trabajo
+                    <%--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>--%>
+                    <strong>Bien!</strong> Ya se agrego tu oferta de trabajo. Actualiza la pagina para verlo al final de la lista.
                 </div>
             </div>
         </div>

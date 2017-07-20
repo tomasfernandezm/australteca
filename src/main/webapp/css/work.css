@@ -2,6 +2,10 @@ body{
     background-color: whitesmoke;
 }
 
+#successBox{
+    display: none;
+}
+
 .bs-calltoaction{
     position: relative;
     width:auto;

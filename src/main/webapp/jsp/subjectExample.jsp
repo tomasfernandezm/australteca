@@ -183,7 +183,7 @@
 
                         <!------------ Comments tab ------------>
                         <div class="tab-pane fade" id="tab3default">
-                            <div class="row writting-box">
+                            <div id="row writing-box" class="row writting-box">
                                 <div class="col-lg-10 col-lg-offset-1">
                                     <div class="writting-box">
                                         <div id ="comments_container" class="status-upload">

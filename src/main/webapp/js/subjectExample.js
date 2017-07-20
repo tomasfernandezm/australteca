@@ -186,8 +186,9 @@ function addComment(subjectName, userEmail){
         },
 
         success: function (jsonObject) {
-           var div = document.getElementById("comments_container");
-           div.appendChild(createComment(userEmail, jsonObject[0],commentaryText, jsonObject[1], jsonObject[2],subjectName));
+           var div = document.getElementById('tab3default');
+           var comment = createComment(userEmail, commentaryText, jsonObject[0], jsonObject[1],subjectName);
+           div.insertBefore(comment,div.childNodes.item(3));
         }
     });
 }

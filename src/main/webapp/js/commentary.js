@@ -2,25 +2,25 @@
  * Created by tomi on 11/06/17.
  */
 
-function createComment(userEmail, firstName, commentary, date, commentaryID, subjectName){
+function createComment(userEmail, commentary, date, commentaryID, subjectName){
     var div1 = document.createElement("div");
     div1.className = "row";
     var div2 = document.createElement("div");
     div2.id ="newCommentary" + commentaryID;
-    div2.appendChild(createImageDiv(userEmail, firstName));
+    div2.appendChild(createImageDiv(userEmail));
     div2.appendChild(createTextDiv(userEmail, date, commentaryID, subjectName, commentary));
     div1.appendChild(div2);
     return div1;
 }
 
-function createImageDiv(userEmail, firstName){
+function createImageDiv(userEmail){
     var div1 = document.createElement("div");
     div1.className="col-lg-2 col-md-2 col-sm-2 col-lg-offset-1  hidden-xs";
     var div2 = document.createElement("div");
     div2.className="thumbnail";
     var img = document.createElement("img");
     img.src = "/servlet/userPostPhoto?userEmail="+userEmail;
-    img.setAttribute("onerror", "if (this.src != 'images/avatar.jpg') this.src = 'images/avatar.jpg';");
+    img.setAttribute("onerror", "if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';");
     img.className="img-responsive user-photo";
     div2.appendChild(img);
     div1.appendChild(div2);
@@ -35,7 +35,7 @@ function createTextDiv(userEmail, date, commentaryID, subjectName, commentary){
     var div3 = document.createElement("div");
     div3.className = "panel-body";
     div3.innerText = commentary;
-    div2.appendChild(makeHeader(userEmail,date, commentaryID, subjectName, articleID));
+    div2.appendChild(makeHeader(userEmail,date, commentaryID, subjectName));
     div2.appendChild(div3);
     div1.appendChild(div2);
     return div1;
