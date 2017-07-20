@@ -4,6 +4,19 @@
 
 var simplemde;
 
+$('#myPill').click(function(e) {
+    e.preventDefault();
+    $(this).tab('show');
+});
+
+$("ul.nav-pills > li > a").on("shown.bs.tab", function(e) {
+    var id = $(e.target).attr("href").substr(1);
+    window.location.hash = id;
+});
+
+var hash = window.location.hash;
+$('#myPill').find('a[href="' + hash + '"]').tab('show');
+
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({

@@ -36,14 +36,16 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
-                <ul class="nav nav-pills nav-justified">
+                <ul class="nav nav-pills nav-justified" id="myPill">
                     <li class="active"><a href="#tab1default" data-toggle="tab">Trabajo</a></li>
                     <li class=""><a href="#tab2default" data-toggle="tab">Investigacion</a></li>
                 </ul>
             </div>
         </div>
+
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
                 <form action="/servlet/listPublications" method="get" role="search">
@@ -237,26 +239,42 @@
                             </c:forEach>
 
                             <div class="row">
-                                <div class="btn-group">
-                                    <c:if test="${!(investPageNumber eq 1)}">
-                                        <form action="/servlet/listPublications" method="get">
-                                            <input type="hidden" value="${workPageNumber}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
-                                            <input type="hidden" value="${investPageNumber-1}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
-                                            <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>"
-                                            value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
-                                            <button type="submit" class="btn btn-primary">Anterior</button>
-                                        </form>
-                                    </c:if>
+                                <div class="col-md-12 text-center">
+                                    <div class="btn-group">
+                                        <c:if test="${!(investPageNumber eq 1)}">
+                                            <form action="/servlet/listPublications" class="btn-group" method="get">
+                                                <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                                <input type="hidden" value="${investPageNumber-1}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                                <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>"
 
-                                    <c:if test="${!(investPageNumber eq investigationTotalPages)}">
-                                        <form action="/servlet/listPublications" method="get">
-                                            <input type="hidden" value="${workPageNumber+1}" name="<%=Constants.WORK_PAGE_NUMBER%>"/>
-                                            <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
-                                            <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>"
-                                                   value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
-                                            <button type="submit" class="btn btn-primary">Siguiente</button>
-                                        </form>
-                                    </c:if>
+
+
+                                                       value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
+                                                <button type="submit" class="btn btn-default btn-page-active">Anterior</button>
+                                            </form>
+                                        </c:if>
+
+                                        <c:if test="${(investPageNumber eq 1)}">
+                                            <button type="submit" class="btn btn-default btn-page-disabled disabled">Anterior</button>
+                                        </c:if>
+
+                                        <button type="button" class="btn btn-page-number"> ${investPageNumber}</button>
+
+                                        <c:if test="${!(investPageNumber eq investigationTotalPages)}">
+                                            <form action="/servlet/listPublications" class="btn-group" method="get">
+                                                <input type="hidden" value="${investPageNumber+1}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                                <input type="hidden" value="${investPageNumber}" name="<%=Constants.INVESTIGATION_PAGE_NUMBER%>"/>
+                                                <input type="hidden" name="<%=Constants.PUBLICATION_ROLE%>"
+                                                       value="<%=Constants.INVESTIGATION_PUBLICATION%>"/>
+                                                <button type="submit" class="btn btn-default btn-page-active">Siguiente</button>
+                                            </form>
+
+
+                                            <c:if test="${(investPageNumber eq investigationTotalPages)}">
+                                                <button type="submit" class="btn btn-default btn-page-disabled disabled">Siguiente</button>
+                                            </c:if>
+                                        </c:if>
+                                    </div>
                                 </div>
                             </div>
                         </div>

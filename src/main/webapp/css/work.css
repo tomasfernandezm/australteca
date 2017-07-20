@@ -50,7 +50,7 @@ body{
 
 .btnAddWork{
     margin-bottom: 15px;
-    background-color: transparent !important;
+    background-color: white !important;
     color: #E74C3C;
     border-color: #E74C3C;
     border-radius: 2px;
@@ -216,11 +216,11 @@ textarea { resize: vertical; }
 
 
 .input-group{
-    z-index: -1;
+    z-index: 0;
 }
 
 .form-control{
-    z-index: -1;
+    z-index: 0;
 }
 
 /*-------- Modal css --------*/
