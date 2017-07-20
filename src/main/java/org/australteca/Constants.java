@@ -127,6 +127,12 @@ public interface Constants {
     String COMMENTARY = "commentaryText";
 
     String COMMENTARY_ID = "commentaryID";
+
+    /* ~~~~~~~~~~~~ Email Servlet Parameters ~~~~~~~~~~~~~~~~ */
+
+    String EMAIL_DESCRIPTION = "emailDescription";
+    String EMAIL_TOPIC = "emailTopic";
+
     /* ~~~~~~~~~~~~ Subject_Moderator Relationship Servlet Parameters ~~~~~~~~ */
     String ACCEPTED_LIST = "acceptedList";
 

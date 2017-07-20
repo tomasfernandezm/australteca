@@ -17,10 +17,10 @@ public class HTMLParser{
     }
 
     public String setParameters(String s, String p1, String p2, String p3, String p4){
-        s = s.replace("________", p1);
-        s = s.replace("________", p2);
-        s = s.replace("________", p3);
-        s = s.replace("________", p4);
+        s = s.replace("param1", p1);
+        s = s.replace("param2", p2);
+        s = s.replace("param3", p3);
+        s = s.replace("param4", p4);
         return s;
     }
 

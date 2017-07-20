@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="arrow-down"></div>
                                     <div class="panel-body">
-                                        <div class="row">
+                                        <div class="row" about="pub" id="">
                                             <div class="col col-md-12 discussionBox">
                                                 <div id="show${workWrapper.publication.name}">
                                                     <article>
@@ -107,7 +107,7 @@
                                                     <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                     <c:if test="${workWrapper.publication.author.email != remoteUser}">
                                                         <%--<button type="button" class="btn btn-primary pull-right" onclick="sendPublicationPetition(${workWrapper.publication.id})">Enviar peticion</button>--%>
-                                                        <button type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                        <button id="modalButton" type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
                                                     </c:if>
                                                 </div>
                                             </div>
@@ -227,7 +227,7 @@
                                                         <c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>
                                                         <c:if test="${investigationWrapper.publication.author.email == remoteUser}">
                                                             <%--<button type="button" class="btn btn-send-mail pull-right" onclick="sendPublicationPetition(${investigationWrapper.publication.id})">Enviar peticion</button>--%>
-                                                            <button type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                            <button id="modalButton" type="button" class="btn btn-send-mail pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
                                                         </c:if>
                                                     </div>
                                                 </div>
@@ -301,13 +301,14 @@
                                         <div class="row form-group">
                                             <label class="col-lg-3 control-label">Asunto</label>
                                             <div class="col-lg-5">
-                                                <input class="form-control" type="text" name="" required>
+                                                <input id="emailTopic" class="form-control" type="text" name="" required>
                                             </div>
                                         </div>
                                         <div class=" row form-group">
                                             <label class="col-lg-3 control-label">Descripcion</label>
                                             <div class="col-lg-8">
-                                                <textarea class="form-control" type="text" name="" required></textarea>
+                                                <textarea id="emailDescription" class="form-control" type="text" name="" required></textarea>
+                                                <input type="hidden" id="publicationModalID" value="" name="publicationID"/>
                                             </div>
                                         </div>
                                         <div class="row">

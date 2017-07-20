@@ -32,6 +32,11 @@ $(document).ready(function(){
     simplemde = loadSimpleMDE("descriptionTextarea");
 });
 
+$(document).on("click", "#modalButton", function () {
+    var pubId = $(this).data('id');
+    document.getElementById('publicationModalID').value = pubId;
+});
+
 function addPublication(){
 
     var publicationName = document.getElementById('nameInput').value;
@@ -81,16 +86,18 @@ function removePublication(publicationID, containerID){
     });
 }
 
-function sendPublicationPetition(publicationID){
+function sendPublicationPetition(emailTopic, emailDescription, publicationID){
     $.ajax({
         type:'post',
         url: '/servlet/publicationPetition',
         dataType: 'JSON',
         data:{
+            emailTopic: emailTopic,
+            emailDescription: emailDescription,
             publicationID: publicationID
         },
         success: function(){
-            alert("your petition has been sent!")
+
         }
     });
 }
