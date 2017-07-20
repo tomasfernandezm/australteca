@@ -97,7 +97,9 @@ public class ListPublicationServlet extends HttpServlet{
     }
 
     private int calculateNumberOfPages(int listSize, int pubsPerPage){
-        if(listSize % pubsPerPage == 0) return listSize/pubsPerPage;
+        int a = listSize % pubsPerPage;
+        if(listSize == 0) return 1;
+        if(a == 0) return listSize/pubsPerPage;
         else return listSize/pubsPerPage + 1;
     }
 

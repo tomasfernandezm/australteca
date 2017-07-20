@@ -49,7 +49,7 @@
                     <%}else{ %>
                     <h4 class="text-center">Ups! algo ocurrio!</h4>
                     <p>Intentalo de nuevo</p>
-                    <a href="loginForm.jsp" class="btn">Volver</a>
+                    <a href="/jsp/loginForm.jsp" class="btn">Volver</a>
                     <%}%>
                 </div>
                 <%} %>
