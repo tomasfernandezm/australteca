@@ -16,14 +16,12 @@ import java.util.TimeZone;
 public class Commentary extends AbstractEntity{
 
     @Temporal(TemporalType.DATE)
-    @Column (name = "COMMENTARY_CREATION_DATE")
     private Date creationDate;
 
     @Temporal(TemporalType.DATE)
-    @Column (name = "COMMENTARY_LAST_MODIFICATION_DATE")
     private Date lastModificationDate;
 
-    @Column (name = "COMMENTARY_COMMENTARY")
+    @Column (length = 1024*1024)
     private String commentary;
 
     @ManyToOne

@@ -13,16 +13,14 @@ import java.util.List;
 @Table(name = "PROFESSOR")
 public class Professor extends AbstractEntity{
 
-    @Column(name = "PROFESSOR_FNAME")
+
     private String firstName;
 
-    @Column(name = "PROFESSOR_LNAME")
     private String lastName;
 
-    @Column(name = "PROFESSOR_EMAIL")
     private String email;
 
-    @Column(name = "PROFESSOR_INFORMATION", length = 1024*1024)
+    @Column(length = 1024*1024)
     private  String information;
 
     @ManyToMany

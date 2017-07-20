@@ -41,7 +41,7 @@ public class User extends AbstractEntity{
     @OneToMany(orphanRemoval = true)
     private final Set<Commentary> commentaries = new HashSet<>();
 
-    @OneToMany
+    @OneToMany(orphanRemoval = true)
     private final List<SubjectModeratorRelationship> subjectModeratorRelationships = new ArrayList<>();
 
     public User() {}

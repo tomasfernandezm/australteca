@@ -1,5 +1,6 @@
 package org.australteca.dao;
 
+import org.australteca.entity.Publication;
 import org.australteca.entity.SubjectModeratorRelationship;
 import org.australteca.utils.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -80,5 +81,35 @@ public class SubjectModeratorRelationshipDao extends AbstractDao<SubjectModerato
             e.printStackTrace();
         }
         return smrList;
+    }
+
+    public void deleteAllFromSubject(int id){
+        Session session = HibernateUtil.getCurrentSession();
+        String hql = "delete from SubjectModeratorRelationship smr where smr.subject.id = :id";
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            Query query = session.createQuery(hql).setParameter("id", id);
+            query.executeUpdate();
+            tx.commit();
+        }catch (HibernateException | NoResultException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteAllFromUser(int id){
+        Session session = HibernateUtil.getCurrentSession();
+        String hql = "delete from SubjectModeratorRelationship smr where smr.user.id = :id";
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            Query query = session.createQuery(hql).setParameter("id", id);
+            query.executeUpdate();
+            tx.commit();
+        }catch (HibernateException | NoResultException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        }
     }
 }
