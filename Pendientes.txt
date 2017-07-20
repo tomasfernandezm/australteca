@@ -12,13 +12,13 @@ TOMAS FORMAN (* items plus)
 
 
     -home.jsp
-        boton mostrar mas
+        boton mostrar mas                   HECHO
         agregar materias
 
 
      -subjects
         arreglar el boton fav y centrarlo (todos)  HECHO
-        scrollbar max
+        scrollbar max                               HECHO
 
     -SubjectExample
         -Arreglar comentarios
@@ -35,13 +35,13 @@ TOMAS FORMAN (* items plus)
 
     -work.jsp
         en trabajo cambiar corazon a blanco     HECHO
-        boton megusta.
+        boton megusta.                          HECHO
         poner link para ver más publicaciones (HECHO)
 
 
     COMENTARIOS (para lo ultimi)
-     - agregarlo al principio
-     - acomodar visual
+     - agregarlo al principio                   HECHO
+     - acomodar visual                          HECHO
      - comentar con el enter                    NO PUEDO PORQUE NO HAY 'FORM' (PROBAR)
 
      MAIL

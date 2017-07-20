@@ -220,4 +220,4 @@ $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
 });
 
 var hash = window.location.hash;
-$('#myTab a[href="' + hash + '"]').tab('show');
+$('#myTab').find('a[href="' + hash + '"]').tab('show');

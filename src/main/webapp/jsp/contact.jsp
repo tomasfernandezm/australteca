@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-md-offset-2 col-lg-offset-2 col-sm-offset-3 col-xs-offset-3">
                         <div class="card">
-                            <img src="../images/avatar.jpg" alt="tomifor" class=" img-contact img-responsive">
+                            <img src="../images/contact-tomifor.png" alt="tomifor" class=" img-contact img-responsive">
                             <div class="text-center">
                                 <h3>Tomas Forman</h3>
                                 <p class="title">Co-Founder</p>
@@ -68,7 +68,7 @@
 
                     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-lg-offset-2 col-sm-offset-3 col-xs-offset-3">
                         <div class="card">
-                            <img src="../images/avatar.jpg" alt="tomifer" class="img-contact img-responsive">
+                            <img src="../images/contact-tomifer.JPG" alt="tomifer" class="img-contact img-responsive">
                             <div class="text-center">
                                 <h3>Tomas Fernandez</h3>
                                 <p class="title">Co-Founder</p>

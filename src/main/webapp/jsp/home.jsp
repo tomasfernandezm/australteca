@@ -82,14 +82,13 @@
                                             </div>
                                             <div class="arrow-down"></div>
                                             <div class="panel-body">
-
-                                            ${publicationWrapper.htmlDescription}
-
-                                            <div class="panel-body showMore" id="show${publicationWrapper.publication.name}" hidden>
-                                                <button type="button" class="btn btn-success pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
-                                            </div>
-
-                                            <button type="button" class="btn btn-default btn-show-more pull-right" onclick="show('#show${publicationWrapper.publication.name}')"><i>Mostrar mas</i></button>
+                                                <article>
+                                                    ${publicationWrapper.htmlDescription}
+                                                </article>
+                                                <div class="panel-body showMore" id="show${publicationWrapper.publication.name}" hidden>
+                                                    <button type="button" class="btn btn-success pull-right" onclick="modalBox(document.getElementById('sendRequest'))">Enviar peticion</button>
+                                                </div>
+                                                <%--<button type="button" class="btn btn-default btn-show-more pull-right" onclick="show('#show${publicationWrapper.publication.name}')"><i>Mostrar mas</i></button>--%>
                                             </div>
                                         </div>
                                     </div>
@@ -146,5 +145,8 @@
     <script type="text/javascript" src="<c:url value="/js/jquery-3.2.0.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/bootstrap.min.js"/>"></script>
     <script type="text/javascript" src="<c:url value="/js/home.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/readmore.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/js/readMoreWork.js"/>"></script>
+
 </body>
 </html>
