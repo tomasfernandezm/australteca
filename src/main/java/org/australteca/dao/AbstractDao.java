@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.australteca.utils.HibernateUtil;
 
+import javax.persistence.PersistenceException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public abstract class AbstractDao<T extends EntityInterface> implements Dao<T>{
             tx = session.beginTransaction();
             result = (Integer) session.save(t);
             tx.commit();
-        }catch (HibernateException e) {
+        }catch (PersistenceException e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
         }

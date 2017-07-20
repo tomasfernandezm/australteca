@@ -37,11 +37,14 @@ public class UserRegisterServlet extends HttpServlet {
         if (!password.equals(passwordC)) {
             status = 1;
         } else {
-            Integer userID;
-
-            if (email.equals(Constants.ADMIN_USERNAME_1) || email.equals(Constants.ADMIN_USERNAME_2)) {
+            Integer userID = null;
+            UserDao userDao = new UserDao();
+            if(userDao.getUserByEmail(email) != null){
+                status = 2;
+            }
+            else if (email.equals(Constants.ADMIN_USERNAME_1) || email.equals(Constants.ADMIN_USERNAME_2)) {
                 userID = new UserDao().add(new User(name, lname, email, career, password, false, true));
-            } else {
+            }else {
                 userID = new UserDao().add(new User(name, lname, email, career, password, false, false));
             }
             if (userID == null) status = 2;
