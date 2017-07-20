@@ -30,6 +30,14 @@
         </div>
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
+                <div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Bien!</strong> Ya se agrego tu oferta de trabajo
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
                 <ul class="nav nav-pills nav-justified">
                     <li class="active"><a href="#tab1default" data-toggle="tab">Trabajo</a></li>
                     <li class=""><a href="#tab2default" data-toggle="tab">Investigacion</a></li>

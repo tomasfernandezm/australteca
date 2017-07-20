@@ -199,7 +199,15 @@ input[type="checkbox"]:checked + label{
     margin-top: 15px;
     border-radius: 2px;
 }
+.alert{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 2px;
+}
 
+.close-alert{
+    margin-bottom: 15px !important;
+}
 textarea { resize: vertical; }
 
 /*-------- Modal css --------*/
