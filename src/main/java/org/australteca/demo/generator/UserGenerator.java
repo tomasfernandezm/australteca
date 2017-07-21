@@ -15,7 +15,7 @@ public class UserGenerator extends AbstractGenerator {
     private UserDao userDao = new UserDao();
     private int numberOfUsersAdded = 0;
 
-    UserGenerator(){
+    public UserGenerator(){
         numberOfUsers = 100;
     }
 

@@ -56,7 +56,7 @@ function removeNote(noteID, subjectName){
         },
 
         success: function(){
-            $(this).closest('tr').remove();
+            document.getElementById(noteID);
         }
     });
 }

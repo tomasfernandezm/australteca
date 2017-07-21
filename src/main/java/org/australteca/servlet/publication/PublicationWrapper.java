@@ -11,11 +11,12 @@ public class PublicationWrapper {
     Publication publication;
     boolean favorite;
     String htmlDescription;
+    String extendedProcess = "\n[$PROFILE$]: extended";
 
-    PublicationWrapper(Publication publication, boolean favorite) {
+    public PublicationWrapper(Publication publication, boolean favorite) {
         this.publication = publication;
         this.favorite = favorite;
-        htmlDescription = Processor.process(publication.getDescription());
+        htmlDescription = Processor.process(publication.getDescription()+extendedProcess);
     }
 
     public Publication getPublication() {
