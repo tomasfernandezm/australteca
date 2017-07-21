@@ -5,16 +5,16 @@ package org.australteca.demo.constants;
  */
 public class SubjectConstants {
 
-    public static final String[] carrerasIngenieríaInformática = {"Álgebra 1", "Álgebra 2", "Álgebra 3", "Ánalisis 1", "Análisis Matemático 1",
-            "Análisis Matemático 2", "Análisis Matemático 3", "Análisis Matemático 4", "Química",
-            "Introducción a la Programación 1", "Introducción a la Programación 2", "Algoritmos y Estructuras de             Datos", "Análisis y Diseño de Algoritmos, Laboratorio 1, Bases de Datos y Recursos de la Información",
-            "Laboratorio 2", "Laboratorio 3", "Investigación Operativa", "Introducción a la Filosofía",
-            "Lógica", "Ética General", "Física 1", "Física 2", "Física 3", "Antropología", "Teología 1",
-            "Teología 2", "Introducción a la Ingeniería", "Estadística 1", "Estadística 2", "Medios de                      Representación", "Matemática Discreta", "Técnicas de Comunicación", "Teoría de la Empresa",
-            "Lógica y Circuitos Digitales", "Lenguajes de Programación", "Organización de Computadoras",
-            "Introducción a la Computación", "Diseño de Sistemas", "Redes de Comunicación de Datos",
-            "Ingeniería de Sistemas", "Sistemas Operativos", "Aseguramiento de la Calidad del Software",
-            "Ética Profesional", "Contabilidad y Presupuestos", "Finanzas y Evaluación de Proyectos",
-            "Doctrina Social de la Iglesia", "Legal", "Factor Humano", "Dirección de Proyectos",
-            "Economía Política", "Sistemas de información gerencial"};
+    public static final String[] carrerasIngenieríaInformática = {"Algebra 1", "Algebra 2", "Algebra 3", "Analisis 1", "Analisis Matematico 1",
+            "Analisis Matematico 2", "Analisis Matematico 3", "Analisis Matematico 4", "Quimica",
+            "Introduccion a la Programacion 1", "Introduccion a la Programacion 2", "Algoritmos y Estructuras de             Datos", "Analisis y Diseño de Algoritmos, Laboratorio 1, Bases de Datos y Recursos de la Informacion",
+            "Laboratorio 2", "Laboratorio 3", "Investigacion Operativa", "Introduccion a la Filosofia",
+            "Logica", "Etica General", "Fisica 1", "Fisica 2", "Fisica 3", "Antropologia", "Teologia 1",
+            "Teologia 2", "Introduccion a la Ingenieria", "Estadística 1", "Estadistica 2", "Medios de                      Representacion", "Matematica Discreta", "Tecnicas de Comunicacion", "Teoria de la Empresa",
+            "Logica y Circuitos Digitales", "Lenguajes de Programacion", "Organizacion de Computadoras",
+            "Introduccion a la Computacion", "Diseño de Sistemas", "Redes de Comunicacion de Datos",
+            "Ingenieria de Sistemas", "Sistemas Operativos", "Aseguramiento de la Calidad del Software",
+            "Etica Profesional", "Contabilidad y Presupuestos", "Finanzas y Evaluacion de Proyectos",
+            "Doctrina Social de la Iglesia", "Legal", "Factor Humano", "Direccion de Proyectos",
+            "Economia Politica", "Sistemas de informacion gerencial"};
 }

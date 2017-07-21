@@ -9,7 +9,7 @@ abstract class AbstractGenerator implements Generator {
 
     protected Random random = new Random();
 
-    int getIndex(int low, int high, double percentage){
+    protected int getIndex(int low, int high, double percentage){
         double index = (high - low)*percentage + low;
         return (int) Math.floor(index) ;
     }

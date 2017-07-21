@@ -6,6 +6,7 @@ import org.australteca.dao.UserDao;
 import org.australteca.entity.Publication;
 import org.australteca.entity.SubjectModeratorRelationship;
 import org.australteca.entity.User;
+import org.australteca.servlet.publication.PublicationWrapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -44,7 +45,7 @@ public class UserListPostServlet extends HttpServlet {
 
         List<PublicationWrapper> publicationWrappers = new ArrayList<>();
         for(Publication p: user.getPublications()){
-            publicationWrappers.add(new PublicationWrapper(p, Processor.process(p.getDescription())));
+            publicationWrappers.add(new PublicationWrapper(p, true));
         }
         req.setAttribute(Constants.USER_PUBLICATION_LIST, publicationWrappers);
 
@@ -58,32 +59,5 @@ public class UserListPostServlet extends HttpServlet {
         req.setAttribute(AMOUNT_OF_COMMENTARIES, user.getCommentaries().size());
 
         req.getRequestDispatcher("/jsp/home.jsp").forward(req, resp);
-    }
-
-    public class PublicationWrapper{
-
-        public Publication publication;
-        public String htmlDescription;
-
-        public PublicationWrapper(Publication publication, String htmlDescription) {
-            this.publication = publication;
-            this.htmlDescription = htmlDescription;
-        }
-
-        public Publication getPublication() {
-            return publication;
-        }
-
-        public void setPublication(Publication publication) {
-            this.publication = publication;
-        }
-
-        public String getHtmlDescription() {
-            return htmlDescription;
-        }
-
-        public void setHtmlDescription(String htmlDescription) {
-            this.htmlDescription = htmlDescription;
-        }
     }
 }

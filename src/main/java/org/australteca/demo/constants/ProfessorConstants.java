@@ -5,27 +5,19 @@ package org.australteca.demo.constants;
  */
 public class ProfessorConstants {
 
-    private static String info1 = "";
-    private static String info2 = "";
-    private static String info3 = "";
-    private static String info4 = "";
-    private static String info5 = "";
-    private static String info6 = "";
-    private static String info7 = "";
-    private static String info8 = "";
-    private static String info9 = "";
-    private static String info10 = "";
-    private static String info11 = "";
-    private static String info12 = "";
-    private static String info13 = "";
-    private static String info14 = "";
-    private static String info15 = "";
-    private static String info16 = "";
-    private static String info17 = "";
-    private static String info18 = "";
-    private static String info19 = "";
-    private static String info20 = "";
+    private static String info1 = "Ingenieria Industrial";
+    private static String info2 = "Ingenieria Química";
+    private static String info3 = "Ingenieria en Sistemas";
+    private static String info4 = "Ingenieria Informática";
+    private static String info5 = "Ingenieria Civil";
+    private static String info6 = "Licenciado en Física";
+    private static String info7 = "Ingenieria Mecánica";
+    private static String info8 = "Licenciatura en Ciencias de la Computación";
+    private static String info9 = "Licenciatura en Matematica";
+    private static String info10 = "Doctorado en Física";
+    private static String info11 = "Doctorado en Ciencias de la Computación";
+    private static String info12 = "Doctorado en Matemática";
 
     public static String[] information = {info1, info2, info3, info4, info5, info6, info7, info8, info9, info10,
-            info11, info12, info13, info14, info15, info16, info17, info18, info19, info20};
+            info11, info12};
 }
