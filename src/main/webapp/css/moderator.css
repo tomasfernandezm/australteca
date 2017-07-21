@@ -75,3 +75,8 @@
 .close{
     margin-right: 10px;
 }
+
+.table{
+    max-height: 500px;
+    overflow-y: auto;
+}

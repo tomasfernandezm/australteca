@@ -27,6 +27,7 @@ public class Note extends AbstractEntity{
     @Column(name = "NOTE_DATE")
     private Date date;
 
+
     @Column(name = "NOTE_SCORE")
     private float score;
 
@@ -54,6 +55,8 @@ public class Note extends AbstractEntity{
         this.data = data;
         this.author = author;
         this.subject = subject;
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC -3"));
+//        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
         date = new Date();
         score = 0;
         downloads = 0;

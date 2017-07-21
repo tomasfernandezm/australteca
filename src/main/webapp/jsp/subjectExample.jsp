@@ -234,46 +234,6 @@
                                 </div><!-- /row -->
                             </c:forEach>
                         </div>
-                                <%--<!------- List of comments ------->--%>
-                                <%--<c:set var="commentaryListParam" value="<%=SUBJECT_COMMENTARY_LIST%>"/>--%>
-                                <%--<c:set var="commentaryList" value='${requestScope[commentaryListParam]}' />--%>
-                                <%--<c:set var="subjectName" value="<%=SUBJECT_NAME_PARAM%>"/>--%>
-                                <%--<c:forEach items="${commentaryList}" var="commentary" varStatus="loop">--%>
-                                    <%--<div class="row">--%>
-                                        <%--<div class="prueba">--%>
-                                        <%--<div class="col-lg-10 col-lg-offset-1">--%>
-
-                                            <%--<article id="commentary${loop.count}" class="commentList">--%>
-                                                <%--<div class="col-lg-2 col-md-2 col-sm-2 hidden-xs img-comment">--%>
-                                                        <%--<img src="/servlet/userPostPhoto?userEmail=${commentary.author.email}" onerror="if (this.src != '/images/avatar.jpg') this.src = '/images/avatar.jpg';" class="avatar img-circle" alt="avatar">--%>
-                                                        <%--<figcaption class="text-center"><c:out value="${commentary.author.firstName}"/></figcaption>--%>
-                                                <%--</div>--%>
-
-                                                <%--<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="background-color: transparent">--%>
-                                                    <%--<div class="panel panel-default">--%>
-                                                        <%--<div class="panel-body comment">--%>
-                                                            <%--<header class="text-left">--%>
-                                                                <%--<div class="comment-user"><i class="glyphicon glyphicon-user"></i><c:out value="${commentary.author.email}"/></div>--%>
-                                                                <%--<abbr class="timeago" title="<c:out value="${commentary.getFormatDate2()}"/>"></abbr>--%>
-                                                            <%--</header>--%>
-                                                            <%--<c:set var="remoteUser" value="<%=request.getRemoteUser()%>"/>--%>
-                                                            <%--<c:if test="${(commentary.author.email == remoteUser) || moderator || admin}">--%>
-                                                                <%--<button type="submit" class="btn pull-right remove" onclick="removeComment('${commentary.id}','${commentary.subject.subjectName}','commentary${loop.count}')"><i class="glyphicon glyphicon-trash"></i></button>--%>
-                                                            <%--</c:if>--%>
-                                                            <%--<div class="comment-post">--%>
-                                                                <%--<p>--%>
-                                                                    <%--<c:out value="${commentary.commentary}"/>--%>
-                                                                <%--</p>--%>
-                                                            <%--</div>--%>
-                                                        <%--</div>--%>
-                                                    <%--</div>--%>
-                                                <%--</div>--%>
-                                            <%--</article>--%>
-                                            <%--</div>--%>
-                                        <%--</div>--%>
-                                     <%--</div>--%>
-                                <%--</c:forEach>--%>
-
                     </div>
                 </div>
             </div>
